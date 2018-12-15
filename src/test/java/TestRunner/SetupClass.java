@@ -32,7 +32,7 @@ public class SetupClass {
 	public static void before_Class() throws Exception {
 
 		log = Logger.getLogger(BeforeClass.class.getName());
-		property.load(new FileReader("C:\\Users\\Administrator\\eclipse-workspace\\SlideApp_TestOnFF_Browser\\AutoSlideTest_FFBrowser\\src\\main\\resources\\configure.properties"));
+		property.load(new FileReader("C:\\Users\\Administrator\\eclipse-workspace\\AutoSlideTest_FFBrowser\\src\\main\\resources\\configure.properties"));
 		AppURL = property.getProperty("App_url");
 		
 		local_chromebrowser = property.getProperty("local_chrome_browser");
