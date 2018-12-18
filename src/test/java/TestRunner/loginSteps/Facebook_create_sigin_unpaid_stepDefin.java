@@ -86,8 +86,9 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	@And("^Click on faceblink\\.$")
 	public void click_on_faceblink() throws InterruptedException {
 		webelement = driver.findElement(FbandGP_Object.fbLink);
-		webelement.click();
-		Thread.sleep(1000);
+		wait.implictywait(driver);
+		js.executeScript("arguments[0].click();", webelement);
+		Thread.sleep(3000);
 	}
 
 	@Then("^Fb user enter a valid email\\.$")

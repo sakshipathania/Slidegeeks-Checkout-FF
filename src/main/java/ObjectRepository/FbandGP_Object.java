@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class FbandGP_Object {
 //Facebook
-	public static By fbLink=By.cssSelector(".main .inchoo-socialconnect-facebook-inner");
+	public static By fbLink=By.cssSelector(".main .inchoo-socialconnect-facebook-inner>a");
 	public static By Femai = By.id("email");
 	public static By Fpassword=By.id("pass");
 	public static By FbLogin=By.id("loginbutton");
