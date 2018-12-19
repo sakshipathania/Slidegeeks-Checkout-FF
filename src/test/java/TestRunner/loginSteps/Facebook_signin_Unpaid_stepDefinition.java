@@ -78,14 +78,15 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	@And("^Click on fblink\\.$")
 	public void fb_link() throws InterruptedException {
 		webelement = driver.findElement(FbandGP_Object.fbLink);
+		Thread.sleep(1000);
 		wait.implictywait(driver);
 		js.executeScript("arguments[0].click();", webelement);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	}
 
 	@Then("^Facebook user enter a email as\\.$")
 	public void enter_user_mail() throws InterruptedException {
-		
+		Thread.sleep(1000);
 		try {
 		webelement = driver.findElement(FbandGP_Object.Femai);
 		webelement.click();
@@ -123,7 +124,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		wait.implictywait(driver);
 		webelement.click();
 		wait.implictywait(driver);
-		Thread.sleep(8000);
+		Thread.sleep(10000);
 	} catch (NoSuchElementException alredylogin) {
 
 	}
