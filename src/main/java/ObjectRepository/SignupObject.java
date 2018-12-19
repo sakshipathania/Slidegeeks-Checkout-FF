@@ -7,7 +7,7 @@ public class SignupObject {
 		public static By Most = By.cssSelector("#new-menu>li:nth-child(3)>a>p");
 		public static By Select_item = By.cssSelector(".product-info>h2>a[title='Project Scoping Powerpoint Presentation Slides']");
 		public static By Downloaded = By.cssSelector(".download-wishlist-button>div>button");
-		public static By create = By.cssSelector(".buttons-set>button[title='Create an Account']");
+		public static By create = By.cssSelector(".buttons-set>button[title='Create an Account']>span");
 		public static By Email = By.id("email_address");
 		public static By FName = By.id("firstname");
 		public static By lastname = By.id("lastname");
