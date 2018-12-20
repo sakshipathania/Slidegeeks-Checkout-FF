@@ -78,10 +78,8 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	@And("^Click on fblink\\.$")
 	public void fb_link() throws InterruptedException {
 		webelement = driver.findElement(FbandGP_Object.fbLink);
-		Thread.sleep(1000);
-		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
-		Thread.sleep(5000);
+		webelement.click();
+		Thread.sleep(2000);
 	}
 
 	@Then("^Facebook user enter a email as\\.$")
