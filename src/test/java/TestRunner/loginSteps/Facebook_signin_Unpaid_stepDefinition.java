@@ -77,8 +77,9 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	@And("^Click on fblink\\.$")
 	public void fb_link() throws InterruptedException {
-		webelement = driver.findElement(FbandGP_Object.fbLink);
-		webelement.click();
+		WebElement FbLink = driver.findElement(FbandGP_Object.Login_fbLink);
+		wait.implictywait(driver);
+		FbLink.click();
 		Thread.sleep(2000);
 	}
 
@@ -86,12 +87,13 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	public void enter_user_mail() throws InterruptedException {
 		Thread.sleep(1000);
 		try {
-		webelement = driver.findElement(FbandGP_Object.Femai);
-		webelement.click();
+		WebElement Fbemail = driver.findElement(FbandGP_Object.Femai);
 		wait.implictywait(driver);
-		webelement.clear();
+		Fbemail.click();
 		wait.implictywait(driver);
-		webelement.sendKeys("amw.vrushali@gmail.com");
+		Fbemail.clear();
+		wait.implictywait(driver);
+		Fbemail.sendKeys("amw.vrushali@gmail.com");
 		wait.implictywait(driver);
 		} catch (NoSuchElementException alreadylogged) {
 
@@ -102,12 +104,13 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	@Then("^Facebook user enter password\\.$")
 	public void enter_user_password() throws Throwable {
 		try {
-		webelement = driver.findElement(FbandGP_Object.Fpassword);
-		webelement.click();
+		WebElement Fpass= driver.findElement(FbandGP_Object.Fpassword);
 		wait.implictywait(driver);
-		webelement.clear();
+		Fpass.click();
 		wait.implictywait(driver);
-		webelement.sendKeys("vrushali@786");
+		Fpass.clear();
+		wait.implictywait(driver);
+		Fpass.sendKeys("vrushali@786");
 		wait.implictywait(driver);
 	} catch (NoSuchElementException alreadpass) {
 
