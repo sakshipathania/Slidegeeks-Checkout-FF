@@ -1,0 +1,372 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "id": "signup-test-on-web-application;",
+        "after": [
+          {
+            "result": {
+              "duration": 126900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "TakeImageStep.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6738278300,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Navigates to website url.",
+            "match": {
+              "location": "SignUp_Step.navigates_to_website_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7360220700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Click on Most Downloaded link.",
+            "match": {
+              "location": "SignUp_Step.click_most_download()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2273894100,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Select a product items.",
+            "match": {
+              "location": "SignUp_Step.select_product()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1854878200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on Download this presentation link.",
+            "match": {
+              "location": "SignUp_Step.click_on_Download_this_presentation_link()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2404448000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Create an Account CTA.",
+            "match": {
+              "location": "SignUp_Step.reate_an_Account_CTA()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@signupTest_1"
+          }
+        ]
+      },
+      {
+        "line": 46,
+        "name": "Data driving for valid sign-up.",
+        "description": "",
+        "id": "signup-test-on-web-application;data-driving-for-valid-sign-up.;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 32400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "TakeImageStep.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 431222000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "Enter Email \"selenium.testing\".",
+            "match": {
+              "arguments": [
+                {
+                  "val": "selenium.testing",
+                  "offset": 13
+                }
+              ],
+              "location": "SignUp_Step.Enter_Email_credentials(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 342555400,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "Enter First Name as \"Test\".",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 21
+                }
+              ],
+              "location": "SignUp_Step.enter_First_Name_as(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 342398200,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "Enter Last Name as \"Test\".",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 20
+                }
+              ],
+              "location": "SignUp_Step.enter_Last_Name_as(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1373687000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "Enter Password as \"123456\".",
+            "match": {
+              "arguments": [
+                {
+                  "val": "123456",
+                  "offset": 19
+                }
+              ],
+              "location": "SignUp_Step.enter_password(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 358262700,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "Enter Confirm password as \"123456\".",
+            "match": {
+              "arguments": [
+                {
+                  "val": "123456",
+                  "offset": 27
+                }
+              ],
+              "location": "SignUp_Step.enter_Confirm_password_as(String)"
+            },
+            "matchedColumns": [
+              4
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1360513400,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "Enter the captcha.",
+            "match": {
+              "location": "SignUp_Step.enter_the_captcha()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3135749700,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "click on Signup button.",
+            "match": {
+              "location": "SignUp_Step.click_on_Signup_button()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 1,
+            "name": "@signupTest"
+          }
+        ]
+      },
+      {
+        "line": 49,
+        "name": "",
+        "description": "",
+        "id": "signup-test-on-web-application;",
+        "after": [
+          {
+            "result": {
+              "duration": 33900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "TakeImageStep.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1089961300,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "After signup see the price page.",
+            "match": {
+              "location": "SignUp_Step.verify_the_price_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4795820800,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "Select price subscription.",
+            "match": {
+              "location": "SignUp_Step.select_price_subscription()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4077079800,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "Verify the payment option.",
+            "match": {
+              "location": "SignUp_Step.payement_option()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2030340200,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "Click on My account link.",
+            "match": {
+              "location": "SignUp_Step.my_account_link()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1233189700,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "Click on delete account link.",
+            "match": {
+              "location": "SignUp_Step.delete_account_link()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1124043500,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "Click on Yes button.",
+            "match": {
+              "location": "SignUp_Step.confirm_yes_()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4086646800,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "Verify the delete account confirmation message.",
+            "match": {
+              "location": "SignUp_Step.delete_confirmation_message()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 48,
+            "name": "@signupTest"
+          }
+        ]
+      }
+    ],
+    "name": "signup Test On Web Application",
+    "description": "",
+    "id": "signup-test-on-web-application",
+    "keyword": "Feature",
+    "uri": "src/test/resources/Signup.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@signupTest"
+      }
+    ]
+  }
+]

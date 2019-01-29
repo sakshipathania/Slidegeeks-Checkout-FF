@@ -439,36 +439,41 @@ public class SignUp_Step extends SetupClass {
 	@Then("^Click on My account link\\.$")
 	public void my_account_link() throws InterruptedException {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		webelement = driver.findElement(SignupObject.MyAccount);
+		
+
+		WebElement myaccount = new WebDriverWait(driver, 50)
+				.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.MyAccount));
 		wait.implictywait(driver);
-		webelement.click();
-		Thread.sleep(3000);
+		myaccount.click();
+		Thread.sleep(1000);
 
 	}
 
 	@Then("^Click on delete account link\\.$")
 	public void delete_account_link() throws InterruptedException {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		webelement = driver.findElement(SignupObject.Delete);
+		WebElement delete = new WebDriverWait(driver, 50)
+				.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Delete));
 		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
-		Thread.sleep(3000);
+		js.executeScript("arguments[0].click();", delete);
+		Thread.sleep(1000);
 
 	}
 
 	@Then("^Click on Yes button\\.$")
 	public void confirm_yes_() throws InterruptedException {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		webelement = driver.findElement(SignupObject.Delete_Yes);
+		WebElement yes_delete = new WebDriverWait(driver, 50)
+				.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Delete_Yes));
 		wait.implictywait(driver);
-		webelement.click();
-		Thread.sleep(5000);
+		js.executeScript("arguments[0].click();", yes_delete);
+		Thread.sleep(1000);
 
 	}
 
 	@Then("^Verify the delete account confirmation message\\.$")
 	public void delete_confirmation_message() throws InterruptedException {
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		String Account_delete = driver.findElement(SignupObject.Conf_delete).getText();
 		wait.implictywait(driver);
 		String expecte_delete = "Your account has been deleted successfully.";
