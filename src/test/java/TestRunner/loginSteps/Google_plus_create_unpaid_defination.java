@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import ObjectRepository.FbandGP_Object;
 import ObjectRepository.SignupObject;
@@ -95,15 +97,19 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	@Then("^enter a email\\.$")
 	public void enter_user_mail() throws InterruptedException {
 		try {
-			WebElement useaccount=driver.findElement(By.xpath("//*[text()='Use another account']"));
+			WebElement useraccount = new WebDriverWait(driver, 50)
+					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Use another account']")));
 			wait.implictywait(driver);
-			useaccount.click();
-			Thread.sleep(2000);
+			useraccount .click();
+			wait.implictywait(driver);
 		}catch(NoSuchElementException usenewaccount) {	
 	}
 	
 	try {
-		webelement = driver.findElement(FbandGP_Object.GPEmail);
+//		webelement = driver.findElement(FbandGP_Object.GPEmail);
+		webelement= new WebDriverWait(driver, 50)
+				.until(ExpectedConditions.visibilityOfElementLocated(FbandGP_Object.GPEmail));
+		wait.implictywait(driver);
 		webelement.click();
 		wait.implictywait(driver);
 		webelement.clear();
