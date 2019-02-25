@@ -12,6 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.interactions.Actions;
+
 import webApp.CommonData;
 
 public class SetupClass {
@@ -27,7 +29,7 @@ public class SetupClass {
 	
 	public static String local_chromebrowser;
 	public static String local_chrome;
-
+	public Actions ac=new Actions(driver);
 	@BeforeClass
 	public static void before_Class() throws Exception {
 

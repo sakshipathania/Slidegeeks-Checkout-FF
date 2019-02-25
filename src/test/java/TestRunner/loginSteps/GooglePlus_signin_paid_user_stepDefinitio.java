@@ -1,12 +1,15 @@
 package TestRunner.loginSteps;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import ObjectRepository.FbandGP_Object;
 import ObjectRepository.SignupObject;
@@ -50,9 +53,23 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 
 	@And("^Select style as complete ppt\\.$")
 	public void click_most_download() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Most);
-		webelement.click();
-		wait.implictywait(driver);
+		WebDriverWait wait1 = new WebDriverWait(driver, 30);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		webelement = driver.findElement(SignupObject.Others);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		ac.moveToElement(webelement).build().perform();
+		Thread.sleep(1000);
+		
+		
+		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		ac.moveToElement(Complete_Desk).build().perform();
+		Thread.sleep(1000);
+		
+		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
+		ac.moveToElement(Complete_All).build().perform();
+		Thread.sleep(500);
+		ac.click(Complete_All).build().perform();
+		
 		Thread.sleep(1000);
 		try {
 			WebElement recommended=driver.findElement(By.cssSelector(".scd-assistant-cards-close>i"));

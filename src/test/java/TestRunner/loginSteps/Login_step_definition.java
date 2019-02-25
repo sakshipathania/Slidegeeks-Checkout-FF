@@ -2,12 +2,15 @@ package TestRunner.loginSteps;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import ObjectRepository.LoginObject;
 import ObjectRepository.SignupObject;
@@ -51,10 +54,23 @@ public class Login_step_definition extends SetupClass {
 	@Then("^click on most downloaded link\\.$")
 	public void click_most_download() throws InterruptedException {
 		driver.navigate().refresh();
-		Thread.sleep(2000);
-		webelement = driver.findElement(SignupObject.Most);
-		webelement.click();
-		wait.implictywait(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		webelement = driver.findElement(SignupObject.Others);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		ac.moveToElement(webelement).build().perform();
+		Thread.sleep(1000);
+		
+		
+		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		ac.moveToElement(Complete_Desk).build().perform();
+		Thread.sleep(1000);
+		
+		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
+		ac.moveToElement(Complete_All).build().perform();
+		Thread.sleep(500);
+		ac.click(Complete_All).build().perform();
+		
 		Thread.sleep(1000);
 	}
 
