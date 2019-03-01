@@ -23,7 +23,7 @@ import webApp.PerformAction;
 	 PerformAction wait = new PerformAction();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Random rad = new Random();
-
+//test changes
 		// Open web site URl
 		@Given("^To the application URL\\.$")
 		public void navigates_to_website_url() throws InterruptedException {
