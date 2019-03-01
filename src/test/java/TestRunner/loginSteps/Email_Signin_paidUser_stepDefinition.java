@@ -20,7 +20,8 @@ import cucumber.api.java.en.Then;
 import webApp.PerformAction;
 
 public class Email_Signin_paidUser_stepDefinition extends SetupClass {
-
+//git change
+	
 	PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
