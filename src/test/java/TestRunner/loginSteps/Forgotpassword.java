@@ -53,24 +53,23 @@ import webApp.PerformAction;
 
 		@And("^Select on Complete ppts CTA\\.$")
 		public void click_most_download() throws InterruptedException {
-			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+			WebDriverWait wait1 = new WebDriverWait(driver, 30);
+			wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+			
 			webelement = driver.findElement(SignupObject.Others);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			ac.moveToElement(webelement).build().perform();
-			Thread.sleep(1000);
-			
-			
+			Thread.sleep(3000);
 			WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+			wait.implictywait(driver);
 			ac.moveToElement(Complete_Desk).build().perform();
 			Thread.sleep(1000);
-			
 			WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
+			wait.implictywait(driver);
 			ac.moveToElement(Complete_All).build().perform();
-			Thread.sleep(500);
+			Thread.sleep(2000);
 			ac.click(Complete_All).build().perform();
-			
-			Thread.sleep(1000);
+		
+			Thread.sleep(3000);
 		}
 
 		@And("^Select as a Project Scoping Powerpoint\\.$")
@@ -86,7 +85,8 @@ import webApp.PerformAction;
 			webelement = driver.findElement(SignupObject.Downloaded);
 			wait.implictywait(driver);
 			webelement.click();
-			Thread.sleep(8000);
+			Thread.sleep(9000);
+			
 		try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
@@ -101,7 +101,7 @@ import webApp.PerformAction;
 						 driver.switchTo().defaultContent();
 						 Thread.sleep(1000);
 						 driver.switchTo().parentFrame();
-					 Thread.sleep(1000);
+					 Thread.sleep(2000);
 			}
 			else {
 				
@@ -116,14 +116,19 @@ import webApp.PerformAction;
 
 		@And("^Click on forgot password link\\.$")
 		public void google_create() throws InterruptedException {
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(LoginObject.Forgot));
 			webelement = driver.findElement(LoginObject.Forgot);
 			webelement.click();
-			Thread.sleep(3000);
+			
 
 		}
 
 		@And("^Enter the user email address is registerd as \"([^\"]*)\"\\.$")
 		public void user_mail(String email) throws InterruptedException {
+			
+			WebDriverWait wait1 = new WebDriverWait(driver, 30);
+			wait1.until(ExpectedConditions.visibilityOfElementLocated(LoginObject.enter_mail));
 			webelement = driver.findElement(LoginObject.enter_mail);
 			wait.implictywait(driver);
 			webelement.click();

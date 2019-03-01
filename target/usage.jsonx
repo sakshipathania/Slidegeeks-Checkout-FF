@@ -1,0 +1,201 @@
+[
+  {
+    "source": "^Click on forgot password link\\.$",
+    "steps": [
+      {
+        "name": "Click on forgot password link.",
+        "aggregatedDurations": {
+          "average": 0.8142542,
+          "median": 0.8142542
+        },
+        "durations": [
+          {
+            "duration": 0.7997268,
+            "location": "src/test/resources/ForgotPassword.feature:8"
+          },
+          {
+            "duration": 0.8287816,
+            "location": "src/test/resources/ForgotPassword.feature:20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on download link cta\\.$",
+    "steps": [
+      {
+        "name": "Click on download link cta.",
+        "aggregatedDurations": {
+          "average": 9.0309854,
+          "median": 9.0309854
+        },
+        "durations": [
+          {
+            "duration": 9.0150522,
+            "location": "src/test/resources/ForgotPassword.feature:7"
+          },
+          {
+            "duration": 9.0469186,
+            "location": "src/test/resources/ForgotPassword.feature:19"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^To the application URL\\.$",
+    "steps": [
+      {
+        "name": "To the application URL.",
+        "aggregatedDurations": {
+          "average": 25.3641592,
+          "median": 25.3641592
+        },
+        "durations": [
+          {
+            "duration": 6.8651082,
+            "location": "src/test/resources/ForgotPassword.feature:4"
+          },
+          {
+            "duration": 43.8632102,
+            "location": "src/test/resources/ForgotPassword.feature:16"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on submit button\\.$",
+    "steps": [
+      {
+        "name": "Click on submit button.",
+        "aggregatedDurations": {
+          "average": 3.07175725,
+          "median": 3.07175725
+        },
+        "durations": [
+          {
+            "duration": 3.0751195,
+            "location": "src/test/resources/ForgotPassword.feature:10"
+          },
+          {
+            "duration": 3.068395,
+            "location": "src/test/resources/ForgotPassword.feature:22"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^\"([^\"]*)\" validation message\\.$",
+    "steps": [
+      {
+        "name": "\"If there is an account associated with test.shadab@gmail.com you will receive an email with a link to reset your password.\" validation message.",
+        "aggregatedDurations": {
+          "average": 2.0183343,
+          "median": 2.0183343
+        },
+        "durations": [
+          {
+            "duration": 2.0183343,
+            "location": "src/test/resources/ForgotPassword.feature:23"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select as a Project Scoping Powerpoint\\.$",
+    "steps": [
+      {
+        "name": "Select as a Project Scoping Powerpoint.",
+        "aggregatedDurations": {
+          "average": 4.21162605,
+          "median": 4.21162605
+        },
+        "durations": [
+          {
+            "duration": 4.2484732,
+            "location": "src/test/resources/ForgotPassword.feature:6"
+          },
+          {
+            "duration": 4.1747789,
+            "location": "src/test/resources/ForgotPassword.feature:18"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select on Complete ppts CTA\\.$",
+    "steps": [
+      {
+        "name": "Select on Complete ppts CTA.",
+        "aggregatedDurations": {
+          "average": 9.7137089,
+          "median": 9.7137089
+        },
+        "durations": [
+          {
+            "duration": 9.7700145,
+            "location": "src/test/resources/ForgotPassword.feature:5"
+          },
+          {
+            "duration": 9.6574033,
+            "location": "src/test/resources/ForgotPassword.feature:17"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Enter the user email address is registerd as \"([^\"]*)\"\\.$",
+    "steps": [
+      {
+        "name": "Enter the user email address is registerd as \"\".",
+        "aggregatedDurations": {
+          "average": 0.4005212,
+          "median": 0.4005212
+        },
+        "durations": [
+          {
+            "duration": 0.4005212,
+            "location": "src/test/resources/ForgotPassword.feature:9"
+          }
+        ]
+      },
+      {
+        "name": "Enter the user email address is registerd as \"test.shadab@gmail.com\".",
+        "aggregatedDurations": {
+          "average": 0.4147815,
+          "median": 0.4147815
+        },
+        "durations": [
+          {
+            "duration": 0.4147815,
+            "location": "src/test/resources/ForgotPassword.feature:21"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify \"([^\"]*)\" the validation message\\.$",
+    "steps": [
+      {
+        "name": "Verify \"This is a required field.\" the validation message.",
+        "aggregatedDurations": {
+          "average": 2.0920423,
+          "median": 2.0920423
+        },
+        "durations": [
+          {
+            "duration": 2.0920423,
+            "location": "src/test/resources/ForgotPassword.feature:11"
+          }
+        ]
+      }
+    ]
+  }
+]

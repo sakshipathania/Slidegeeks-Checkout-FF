@@ -1,153 +1,425 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/Google_Plus(+)_Create_Singin_unpaid.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/ForgotPassword.feature");
 formatter.feature({
   "line": 2,
-  "name": "google plus user.",
+  "name": "Verify the forgot password.",
   "description": "",
-  "id": "google-plus-user.",
+  "id": "verify-the-forgot-password.",
   "keyword": "Feature",
   "tags": [
     {
       "line": 1,
-      "name": "@Google_plus_create"
+      "name": "@forgotTest"
     }
   ]
 });
-formatter.scenario({
+formatter.scenarioOutline({
   "line": 3,
-  "name": "google plus user signin the app.",
+  "name": "Test the forgot password.",
   "description": "",
-  "id": "google-plus-user.;google-plus-user-signin-the-app.",
-  "type": "scenario",
-  "keyword": "Scenario"
+  "id": "verify-the-forgot-password.;test-the-forgot-password.",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
 });
 formatter.step({
   "line": 4,
-  "name": "launch application.",
+  "name": "To the application URL.",
   "keyword": "Given "
 });
 formatter.step({
   "line": 5,
-  "name": "the product list as Complete ppts.",
+  "name": "Select on Complete ppts CTA.",
   "keyword": "And "
 });
 formatter.step({
   "line": 6,
-  "name": "Project list as Scoping Powerpoint product.",
+  "name": "Select as a Project Scoping Powerpoint.",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "go to download link.",
+  "name": "Click on download link cta.",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "Click on Create account cta.",
-  "keyword": "And "
+  "name": "Click on forgot password link.",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 9,
-  "name": "then click on Google plus link button.",
-  "keyword": "And "
+  "name": "Enter the user email address is registerd as \"\u003cEmail Address\u003e\".",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 10,
-  "name": "enter a email.",
+  "name": "Click on submit button.",
   "keyword": "Then "
 });
 formatter.step({
   "line": 11,
-  "name": "Go to next page.",
+  "name": "Verify \"\u003cEmail AddressVal\u003e\" the validation message.",
   "keyword": "Then "
 });
-formatter.step({
+formatter.examples({
   "line": 12,
-  "name": "enter password.",
-  "keyword": "Then "
+  "name": "",
+  "description": "",
+  "id": "verify-the-forgot-password.;test-the-forgot-password.;",
+  "rows": [
+    {
+      "cells": [
+        "Email Address",
+        "Email AddressVal"
+      ],
+      "line": 13,
+      "id": "verify-the-forgot-password.;test-the-forgot-password.;;1"
+    },
+    {
+      "cells": [
+        "",
+        "This is a required field."
+      ],
+      "line": 14,
+      "id": "verify-the-forgot-password.;test-the-forgot-password.;;2"
+    }
+  ],
+  "keyword": "Examples"
 });
-formatter.step({
-  "line": 13,
-  "name": "Click on next button.",
-  "keyword": "Then "
-});
-formatter.step({
+formatter.scenario({
   "line": 14,
-  "name": "Redirected to price page.",
+  "name": "Test the forgot password.",
+  "description": "",
+  "id": "verify-the-forgot-password.;test-the-forgot-password.;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 1,
+      "name": "@forgotTest"
+    }
+  ]
+});
+formatter.step({
+  "line": 4,
+  "name": "To the application URL.",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 5,
+  "name": "Select on Complete ppts CTA.",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 6,
+  "name": "Select as a Project Scoping Powerpoint.",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "Click on download link cta.",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "Click on forgot password link.",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 15,
-  "name": "Subscribe randomly the product.",
+  "line": 9,
+  "name": "Enter the user email address is registerd as \"\".",
+  "matchedColumns": [
+    0
+  ],
   "keyword": "Then "
+});
+formatter.step({
+  "line": 10,
+  "name": "Click on submit button.",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 11,
+  "name": "Verify \"This is a required field.\" the validation message.",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Forgotpassword.navigates_to_website_url()"
+});
+formatter.result({
+  "duration": 6865108200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Forgotpassword.click_most_download()"
+});
+formatter.result({
+  "duration": 9770014500,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Forgotpassword.select_product()"
+});
+formatter.result({
+  "duration": 4248473200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Forgotpassword.click_on_Download_this_presentation_link()"
+});
+formatter.result({
+  "duration": 9015052200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Forgotpassword.google_create()"
+});
+formatter.result({
+  "duration": 799726800,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "",
+      "offset": 46
+    }
+  ],
+  "location": "Forgotpassword.user_mail(String)"
+});
+formatter.result({
+  "duration": 400521200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Forgotpassword.enter_user_mail()"
+});
+formatter.result({
+  "duration": 3075119500,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "This is a required field.",
+      "offset": 8
+    }
+  ],
+  "location": "Forgotpassword.password_page(String)"
+});
+formatter.result({
+  "duration": 2092042300,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 262600,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "line": 15,
+  "name": "",
+  "description": "",
+  "id": "verify-the-forgot-password.;",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
 });
 formatter.step({
   "line": 16,
-  "name": "the payment information is verify.",
+  "name": "To the application URL.",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 17,
+  "name": "Select on Complete ppts CTA.",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Select as a Project Scoping Powerpoint.",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Click on download link cta.",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Click on forgot password link.",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 21,
+  "name": "Enter the user email address is registerd as \"\u003cEmail Address\u003e\".",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 22,
+  "name": "Click on submit button.",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 23,
+  "name": "\"\u003cpassword SendVal\u003e\" validation message.",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 24,
+  "name": "",
+  "description": "",
+  "id": "verify-the-forgot-password.;;",
+  "rows": [
+    {
+      "cells": [
+        "Email Address",
+        "password SendVal"
+      ],
+      "line": 25,
+      "id": "verify-the-forgot-password.;;;1"
+    },
+    {
+      "cells": [
+        "test.shadab@gmail.com",
+        "If there is an account associated with test.shadab@gmail.com you will receive an email with a link to reset your password."
+      ],
+      "line": 26,
+      "id": "verify-the-forgot-password.;;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 26,
+  "name": "",
+  "description": "",
+  "id": "verify-the-forgot-password.;;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 1,
+      "name": "@forgotTest"
+    }
+  ]
+});
+formatter.step({
+  "line": 16,
+  "name": "To the application URL.",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 17,
+  "name": "Select on Complete ppts CTA.",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Select as a Project Scoping Powerpoint.",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Click on download link cta.",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Click on forgot password link.",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 21,
+  "name": "Enter the user email address is registerd as \"test.shadab@gmail.com\".",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 22,
+  "name": "Click on submit button.",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 23,
+  "name": "\"If there is an account associated with test.shadab@gmail.com you will receive an email with a link to reset your password.\" validation message.",
+  "matchedColumns": [
+    1
+  ],
   "keyword": "Then "
 });
 formatter.match({
-  "location": "Google_plus_create_unpaid_defination.navigates_to_website_url()"
+  "location": "Forgotpassword.navigates_to_website_url()"
 });
 formatter.result({
-  "duration": 6801934400,
+  "duration": 43863210200,
   "status": "passed"
 });
 formatter.match({
-  "location": "Google_plus_create_unpaid_defination.click_most_download()"
+  "location": "Forgotpassword.click_most_download()"
 });
 formatter.result({
-  "duration": 8461121800,
+  "duration": 9657403300,
   "status": "passed"
 });
 formatter.match({
-  "location": "Google_plus_create_unpaid_defination.select_product()"
+  "location": "Forgotpassword.select_product()"
 });
 formatter.result({
-  "duration": 4308380100,
+  "duration": 4174778900,
   "status": "passed"
 });
 formatter.match({
-  "location": "Google_plus_create_unpaid_defination.click_on_Download_this_presentation_link()"
+  "location": "Forgotpassword.click_on_Download_this_presentation_link()"
 });
 formatter.result({
-  "duration": 1888806100,
+  "duration": 9046918600,
   "status": "passed"
 });
 formatter.match({
-  "location": "Google_plus_create_unpaid_defination.create_accuont()"
+  "location": "Forgotpassword.google_create()"
 });
 formatter.result({
-  "duration": 1919922800,
+  "duration": 828781600,
   "status": "passed"
 });
 formatter.match({
-  "location": "Google_plus_create_unpaid_defination.fb_link()"
+  "arguments": [
+    {
+      "val": "test.shadab@gmail.com",
+      "offset": 46
+    }
+  ],
+  "location": "Forgotpassword.user_mail(String)"
 });
 formatter.result({
-  "duration": 2858202800,
+  "duration": 414781500,
   "status": "passed"
 });
 formatter.match({
-  "location": "Google_plus_create_unpaid_defination.enter_user_mail()"
+  "location": "Forgotpassword.enter_user_mail()"
 });
 formatter.result({
-  "duration": 22607393400,
+  "duration": 3068395000,
   "status": "passed"
 });
 formatter.match({
-  "location": "Google_plus_create_unpaid_defination.password_page()"
+  "arguments": [
+    {
+      "val": "If there is an account associated with test.shadab@gmail.com you will receive an email with a link to reset your password.",
+      "offset": 1
+    }
+  ],
+  "location": "Forgotpassword.Verify_user_send_email(String)"
 });
 formatter.result({
-  "duration": 3342428100,
+  "duration": 2018334300,
   "status": "passed"
 });
-formatter.match({
-  "location": "Google_plus_create_unpaid_defination.enter_user_password()"
-});
-formatter.result({
-  "duration": 3389348900,
+formatter.after({
+  "duration": 95500,
   "status": "passed"
 });
-formatter.match({
-  "location": "Google_plus_create_unpaid_defination.click_on_Login_button()"
 });

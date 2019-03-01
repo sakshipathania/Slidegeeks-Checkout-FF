@@ -55,24 +55,23 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	@And("^Select a product list as Complete ppts\\.$")
 	public void click_most_download() throws InterruptedException {
 		driver.navigate().refresh();
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		WebDriverWait wait1 = new WebDriverWait(driver, 30);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		
 		webelement = driver.findElement(SignupObject.Others);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		ac.moveToElement(webelement).build().perform();
-		Thread.sleep(1000);
-		
-		
+		Thread.sleep(3000);
 		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-		
 		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
+		wait.implictywait(driver);
 		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(500);
+		Thread.sleep(2000);
 		ac.click(Complete_All).build().perform();
-		
-		Thread.sleep(1000);
+	
+		Thread.sleep(4000);
 	}
 
 	@And("^Click on Project Scoping Powerpoint product\\.$")
@@ -93,7 +92,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	@And("^Click on fblink\\.$")
 	public void fb_link() throws InterruptedException {
-		WebElement FbLink = driver.findElement(FbandGP_Object.Login_fbLink);
+		WebElement FbLink = driver.findElement(FbandGP_Object.fbLink);
 		wait.implictywait(driver);
 		FbLink.click();
 		Thread.sleep(2000);

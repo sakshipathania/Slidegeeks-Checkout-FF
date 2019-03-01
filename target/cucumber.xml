@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="109.339019">
+<testcase classname="Verify the forgot password." name="Test the forgot password." time="36.26632">
+<system-out><![CDATA[Given To the application URL................................................passed
+And Select on Complete ppts CTA.............................................passed
+And Select as a Project Scoping Powerpoint..................................passed
+And Click on download link cta..............................................passed
+Then Click on forgot password link..........................................passed
+Then Enter the user email address is registerd as ""........................passed
+Then Click on submit button.................................................passed
+Then Verify "This is a required field." the validation message..............passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify the forgot password." name="" time="73.072699">
+<system-out><![CDATA[Given To the application URL................................................passed
+And Select on Complete ppts CTA.............................................passed
+And Select as a Project Scoping Powerpoint..................................passed
+And Click on download link cta..............................................passed
+Then Click on forgot password link..........................................passed
+Then Enter the user email address is registerd as "test.shadab@gmail.com"...passed
+Then Click on submit button.................................................passed
+Then "If there is an account associated with test.shadab@gmail.com you will receive an email with a link to reset your password." validation message..passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,0 +1,300 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 14,
+        "name": "Test the forgot password.",
+        "description": "",
+        "id": "verify-the-forgot-password.;test-the-forgot-password.;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 262600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "TakeImageStep.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6865108200,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "To the application URL.",
+            "match": {
+              "location": "Forgotpassword.navigates_to_website_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9770014500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Select on Complete ppts CTA.",
+            "match": {
+              "location": "Forgotpassword.click_most_download()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4248473200,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Select as a Project Scoping Powerpoint.",
+            "match": {
+              "location": "Forgotpassword.select_product()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9015052200,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Click on download link cta.",
+            "match": {
+              "location": "Forgotpassword.click_on_Download_this_presentation_link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 799726800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on forgot password link.",
+            "match": {
+              "location": "Forgotpassword.google_create()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 400521200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Enter the user email address is registerd as \"\".",
+            "match": {
+              "arguments": [
+                {
+                  "val": "",
+                  "offset": 46
+                }
+              ],
+              "location": "Forgotpassword.user_mail(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3075119500,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Click on submit button.",
+            "match": {
+              "location": "Forgotpassword.enter_user_mail()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2092042300,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Verify \"This is a required field.\" the validation message.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "This is a required field.",
+                  "offset": 8
+                }
+              ],
+              "location": "Forgotpassword.password_page(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 1,
+            "name": "@forgotTest"
+          }
+        ]
+      },
+      {
+        "line": 26,
+        "name": "",
+        "description": "",
+        "id": "verify-the-forgot-password.;;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 95500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "TakeImageStep.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 43863210200,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "To the application URL.",
+            "match": {
+              "location": "Forgotpassword.navigates_to_website_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9657403300,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Select on Complete ppts CTA.",
+            "match": {
+              "location": "Forgotpassword.click_most_download()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4174778900,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Select as a Project Scoping Powerpoint.",
+            "match": {
+              "location": "Forgotpassword.select_product()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9046918600,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Click on download link cta.",
+            "match": {
+              "location": "Forgotpassword.click_on_Download_this_presentation_link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 828781600,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Click on forgot password link.",
+            "match": {
+              "location": "Forgotpassword.google_create()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 414781500,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Enter the user email address is registerd as \"test.shadab@gmail.com\".",
+            "match": {
+              "arguments": [
+                {
+                  "val": "test.shadab@gmail.com",
+                  "offset": 46
+                }
+              ],
+              "location": "Forgotpassword.user_mail(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3068395000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Click on submit button.",
+            "match": {
+              "location": "Forgotpassword.enter_user_mail()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2018334300,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "\"If there is an account associated with test.shadab@gmail.com you will receive an email with a link to reset your password.\" validation message.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "If there is an account associated with test.shadab@gmail.com you will receive an email with a link to reset your password.",
+                  "offset": 1
+                }
+              ],
+              "location": "Forgotpassword.Verify_user_send_email(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 1,
+            "name": "@forgotTest"
+          }
+        ]
+      }
+    ],
+    "name": "Verify the forgot password.",
+    "description": "",
+    "id": "verify-the-forgot-password.",
+    "keyword": "Feature",
+    "uri": "src/test/resources/ForgotPassword.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@forgotTest"
+      }
+    ]
+  }
+]

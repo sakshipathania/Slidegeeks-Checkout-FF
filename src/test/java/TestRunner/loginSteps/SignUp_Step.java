@@ -67,10 +67,9 @@ public class SignUp_Step extends SetupClass {
 		
 		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
 		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(500);
+		Thread.sleep(2000);
 		ac.click(Complete_All).build().perform();
-		
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	}
 
 	@Then("^Select a product items\\.$")

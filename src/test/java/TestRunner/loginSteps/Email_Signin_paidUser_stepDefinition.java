@@ -54,40 +54,31 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 
 	@Then("^Click on Complete ppts$")
 	public void click_most_download() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		WebDriverWait wait1 = new WebDriverWait(driver, 30);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		
 		webelement = driver.findElement(SignupObject.Others);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		ac.moveToElement(webelement).build().perform();
-		Thread.sleep(1000);
-		
-		
+		Thread.sleep(3000);
 		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-		
 		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
+		wait.implictywait(driver);
 		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(500);
+		Thread.sleep(2000);
 		ac.click(Complete_All).build().perform();
-		
-		Thread.sleep(1000);
-		try {
-			WebElement recommended=driver.findElement(By.cssSelector(".scd-assistant-cards-close>i"));
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			recommended.click();
-	Thread.sleep(2000);
-	} catch (NoSuchElementException recomm) {
-
-	}
+	
+		Thread.sleep(4000);
 	}
 	
 
 	@Then("^Select a product as Project Scoping Powerpoint$")
 	public void select_product() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Select_item));
+		WebDriverWait wait1 = new WebDriverWait(driver, 30);
 		WebElement et = driver.findElement(SignupObject.Select_item);
+		wait1.until(ExpectedConditions.elementToBeClickable(et));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		et.click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -43,7 +43,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 			if (logout.isEnabled()) {
 				logout.click();
 				Thread.sleep(8000);
-				driver.navigate().refresh();
+//				driver.navigate().refresh();
 				Thread.sleep(2000);
 			}
 		} catch (NoSuchElementException Ext) {
@@ -55,24 +55,23 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		
 		webelement = driver.findElement(SignupObject.Others);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		ac.moveToElement(webelement).build().perform();
-		Thread.sleep(1000);
-		
-		
+		Thread.sleep(3000);
 		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-		
 		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
+		wait.implictywait(driver);
 		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(500);
+		Thread.sleep(2000);
 		ac.click(Complete_All).build().perform();
+		Thread.sleep(8000);
 		
-		Thread.sleep(1000);
 		try {
-			WebElement recommended=driver.findElement(By.cssSelector(".scd-assistant-cards-close>i"));
+			WebElement recommended=driver.findElement(By.cssSelector(".scd-assistant-cards-close :nth-child(1)"));
 			wait.implictywait(driver);
 			recommended.click();
 	Thread.sleep(1000);
@@ -83,9 +82,12 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 
 	@And("^Select any project slider\\.$")
 	public void select_product() throws InterruptedException {
+		
+		Thread.sleep(3000);
+		
 		webelement = driver.findElement(SignupObject.Select_item);
-		webelement.click();
 		wait.implictywait(driver);
+		webelement.click();
 		Thread.sleep(2000);
 	}
 
