@@ -25,7 +25,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
 
-	// Open web site URl and test
+	// Open web site test on ff
 
 	@Given("^Launching the application URL\\.$")
 	public void launching_the_application_URL() throws InterruptedException {
