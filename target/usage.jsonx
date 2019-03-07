@@ -1,198 +1,1081 @@
 [
   {
-    "source": "^Click on forgot password link\\.$",
+    "source": "^go to Complete ppts$",
     "steps": [
       {
-        "name": "Click on forgot password link.",
+        "name": "go to Complete ppts",
         "aggregatedDurations": {
-          "average": 0.8142542,
-          "median": 0.8142542
+          "average": 10.8579236,
+          "median": 10.8579236
         },
         "durations": [
           {
-            "duration": 0.7997268,
-            "location": "src/test/resources/ForgotPassword.feature:8"
+            "duration": 10.8579236,
+            "location": "src/test/resources/1facebookUser_already_subscribe.feature:5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on faceblink\\.$",
+    "steps": [
+      {
+        "name": "Click on faceblink.",
+        "aggregatedDurations": {
+          "average": 3.14905824,
+          "median": 3.077187
+        },
+        "durations": [
+          {
+            "duration": 3.3269827,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:9"
           },
           {
-            "duration": 0.8287816,
-            "location": "src/test/resources/ForgotPassword.feature:20"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "source": "^Click on download link cta\\.$",
-    "steps": [
-      {
-        "name": "Click on download link cta.",
-        "aggregatedDurations": {
-          "average": 9.0309854,
-          "median": 9.0309854
-        },
-        "durations": [
-          {
-            "duration": 9.0150522,
-            "location": "src/test/resources/ForgotPassword.feature:7"
+            "duration": 3.061616,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:24"
           },
           {
-            "duration": 9.0469186,
-            "location": "src/test/resources/ForgotPassword.feature:19"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "source": "^To the application URL\\.$",
-    "steps": [
-      {
-        "name": "To the application URL.",
-        "aggregatedDurations": {
-          "average": 25.3641592,
-          "median": 25.3641592
-        },
-        "durations": [
-          {
-            "duration": 6.8651082,
-            "location": "src/test/resources/ForgotPassword.feature:4"
+            "duration": 3.077187,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:40"
           },
           {
-            "duration": 43.8632102,
-            "location": "src/test/resources/ForgotPassword.feature:16"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "source": "^Click on submit button\\.$",
-    "steps": [
-      {
-        "name": "Click on submit button.",
-        "aggregatedDurations": {
-          "average": 3.07175725,
-          "median": 3.07175725
-        },
-        "durations": [
-          {
-            "duration": 3.0751195,
-            "location": "src/test/resources/ForgotPassword.feature:10"
+            "duration": 3.2023745,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:54"
           },
           {
-            "duration": 3.068395,
-            "location": "src/test/resources/ForgotPassword.feature:22"
+            "duration": 3.077131,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:70"
           }
         ]
       }
     ]
   },
   {
-    "source": "^\"([^\"]*)\" validation message\\.$",
+    "source": "^Enter user google pass\\.$",
     "steps": [
       {
-        "name": "\"If there is an account associated with test.shadab@gmail.com you will receive an email with a link to reset your password.\" validation message.",
+        "name": "Enter user google pass.",
         "aggregatedDurations": {
-          "average": 2.0183343,
-          "median": 2.0183343
+          "average": 2.3737977,
+          "median": 2.3737977
         },
         "durations": [
           {
-            "duration": 2.0183343,
-            "location": "src/test/resources/ForgotPassword.feature:23"
+            "duration": 2.3737977,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:11"
           }
         ]
       }
     ]
   },
   {
-    "source": "^Select as a Project Scoping Powerpoint\\.$",
+    "source": "^See the this link as download this presenetion link is appeared$",
     "steps": [
       {
-        "name": "Select as a Project Scoping Powerpoint.",
+        "name": "See the this link as download this presenetion link is appeared",
         "aggregatedDurations": {
-          "average": 4.21162605,
-          "median": 4.21162605
+          "average": 1.0583048,
+          "median": 1.0583048
         },
         "durations": [
           {
-            "duration": 4.2484732,
-            "location": "src/test/resources/ForgotPassword.feature:6"
+            "duration": 1.0583048,
+            "location": "src/test/resources/1facebookUser_already_subscribe.feature:12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select product list as Complete ppts\\.$",
+    "steps": [
+      {
+        "name": "Select product list as Complete ppts.",
+        "aggregatedDurations": {
+          "average": 6.31470982,
+          "median": 6.311228
+        },
+        "durations": [
+          {
+            "duration": 6.2946987,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:5"
           },
           {
-            "duration": 4.1747789,
-            "location": "src/test/resources/ForgotPassword.feature:18"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "source": "^Select on Complete ppts CTA\\.$",
-    "steps": [
-      {
-        "name": "Select on Complete ppts CTA.",
-        "aggregatedDurations": {
-          "average": 9.7137089,
-          "median": 9.7137089
-        },
-        "durations": [
-          {
-            "duration": 9.7700145,
-            "location": "src/test/resources/ForgotPassword.feature:5"
+            "duration": 6.3603764,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:20"
           },
           {
-            "duration": 9.6574033,
-            "location": "src/test/resources/ForgotPassword.feature:17"
+            "duration": 6.311228,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:36"
+          },
+          {
+            "duration": 6.2957993,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:50"
+          },
+          {
+            "duration": 6.3114467,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:66"
           }
         ]
       }
     ]
   },
   {
-    "source": "^Enter the user email address is registerd as \"([^\"]*)\"\\.$",
+    "source": "^Apply the code\\.$",
     "steps": [
       {
-        "name": "Enter the user email address is registerd as \"\".",
+        "name": "Apply the code.",
         "aggregatedDurations": {
-          "average": 0.4005212,
-          "median": 0.4005212
+          "average": 5.11447165,
+          "median": 5.11447165
         },
         "durations": [
           {
-            "duration": 0.4005212,
-            "location": "src/test/resources/ForgotPassword.feature:9"
-          }
-        ]
-      },
-      {
-        "name": "Enter the user email address is registerd as \"test.shadab@gmail.com\".",
-        "aggregatedDurations": {
-          "average": 0.4147815,
-          "median": 0.4147815
-        },
-        "durations": [
+            "duration": 5.1223488,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:29"
+          },
           {
-            "duration": 0.4147815,
-            "location": "src/test/resources/ForgotPassword.feature:21"
+            "duration": 5.1065945,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:59"
           }
         ]
       }
     ]
   },
   {
-    "source": "^Verify \"([^\"]*)\" the validation message\\.$",
+    "source": "^Go to the application URL\\.$",
     "steps": [
       {
-        "name": "Verify \"This is a required field.\" the validation message.",
+        "name": "Go to the application URL.",
         "aggregatedDurations": {
-          "average": 2.0920423,
-          "median": 2.0920423
+          "average": 37.2461155,
+          "median": 37.2461155
         },
         "durations": [
           {
-            "duration": 2.0920423,
-            "location": "src/test/resources/ForgotPassword.feature:11"
+            "duration": 37.2461155,
+            "location": "src/test/resources/Facebook_Sigin_Unpaid_User.feature:4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Open application URL$",
+    "steps": [
+      {
+        "name": "Open application URL",
+        "aggregatedDurations": {
+          "average": 40.4946823,
+          "median": 40.4946823
+        },
+        "durations": [
+          {
+            "duration": 40.4946823,
+            "location": "src/test/resources/Email_signin_paid_user.feature:4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select any project slider\\.$",
+    "steps": [
+      {
+        "name": "Select any project slider.",
+        "aggregatedDurations": {
+          "average": 7.2953019,
+          "median": 7.2953019
+        },
+        "durations": [
+          {
+            "duration": 7.2953019,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^click on login cta on fb page\\.$",
+    "steps": [
+      {
+        "name": "click on login cta on fb page.",
+        "aggregatedDurations": {
+          "average": 33.3606263,
+          "median": 33.3606263
+        },
+        "durations": [
+          {
+            "duration": 33.3606263,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^On the Scoping Powerpoint product\\.$",
+    "steps": [
+      {
+        "name": "On the Scoping Powerpoint product.",
+        "aggregatedDurations": {
+          "average": 4.479391,
+          "median": 4.4206926
+        },
+        "durations": [
+          {
+            "duration": 4.4206926,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:6"
+          },
+          {
+            "duration": 4.3717875,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:21"
+          },
+          {
+            "duration": 4.4366602,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:37"
+          },
+          {
+            "duration": 4.8735861,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:51"
+          },
+          {
+            "duration": 4.2942286,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:67"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Fb user enter a valid email\\.$",
+    "steps": [
+      {
+        "name": "Fb user enter a valid email.",
+        "aggregatedDurations": {
+          "average": 0.599794,
+          "median": 0.599794
+        },
+        "durations": [
+          {
+            "duration": 0.599794,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^open the google plus page\\.$",
+    "steps": [
+      {
+        "name": "open the google plus page.",
+        "aggregatedDurations": {
+          "average": 17.9812146,
+          "median": 17.9812146
+        },
+        "durations": [
+          {
+            "duration": 17.9812146,
+            "location": "src/test/resources/2Google_plus_user_logout.feature:4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify the payement section on the app\\.$",
+    "steps": [
+      {
+        "name": "Verify the payement section on the app.",
+        "aggregatedDurations": {
+          "average": 1.0460217,
+          "median": 1.0460217
+        },
+        "durations": [
+          {
+            "duration": 1.0460217,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:15"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on download this presentation$",
+    "steps": [
+      {
+        "name": "Click on download this presentation",
+        "aggregatedDurations": {
+          "average": 1.9364591,
+          "median": 1.9364591
+        },
+        "durations": [
+          {
+            "duration": 1.9364591,
+            "location": "src/test/resources/1facebookUser_already_subscribe.feature:7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on downloadbtn test5 link\\.$",
+    "steps": [
+      {
+        "name": "Click on downloadbtn test5 link.",
+        "aggregatedDurations": {
+          "average": 2.9514847,
+          "median": 2.9514847
+        },
+        "durations": [
+          {
+            "duration": 2.9514847,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^The user is redirected to price page\\.$",
+    "steps": [
+      {
+        "name": "The user is redirected to price page.",
+        "aggregatedDurations": {
+          "average": 2.06098514,
+          "median": 2.0615827
+        },
+        "durations": [
+          {
+            "duration": 2.058585,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:13"
+          },
+          {
+            "duration": 2.0615827,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:25"
+          },
+          {
+            "duration": 2.0616413,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:41"
+          },
+          {
+            "duration": 2.0614908,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:55"
+          },
+          {
+            "duration": 2.0616259,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:71"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^the download this presenetion link is appeared$",
+    "steps": [
+      {
+        "name": "the download this presenetion link is appeared",
+        "aggregatedDurations": {
+          "average": 1.0614663,
+          "median": 1.0614663
+        },
+        "durations": [
+          {
+            "duration": 1.0614663,
+            "location": "src/test/resources/Email_signin_paid_user.feature:12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Fb user enter valid password\\.$",
+    "steps": [
+      {
+        "name": "Fb user enter valid password.",
+        "aggregatedDurations": {
+          "average": 2.3512411,
+          "median": 2.3512411
+        },
+        "durations": [
+          {
+            "duration": 2.3512411,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^By default payment option as paypal is selected\\.$",
+    "steps": [
+      {
+        "name": "By default payment option as paypal is selected.",
+        "aggregatedDurations": {
+          "average": 1.1710553,
+          "median": 1.1710553
+        },
+        "durations": [
+          {
+            "duration": 1.2803708,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:27"
+          },
+          {
+            "duration": 1.0617398,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:43"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify the payment page\\.$",
+    "steps": [
+      {
+        "name": "Verify the payment page.",
+        "aggregatedDurations": {
+          "average": 7.0928454,
+          "median": 7.0928454
+        },
+        "durations": [
+          {
+            "duration": 7.0928454,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:45"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Launching the application URL\\.$",
+    "steps": [
+      {
+        "name": "Launching the application URL.",
+        "aggregatedDurations": {
+          "average": 37.34854866,
+          "median": 37.1836207
+        },
+        "durations": [
+          {
+            "duration": 37.6212208,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:4"
+          },
+          {
+            "duration": 37.1359329,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:19"
+          },
+          {
+            "duration": 37.1521649,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:35"
+          },
+          {
+            "duration": 37.649804,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:49"
+          },
+          {
+            "duration": 37.1836207,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:65"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^user email as$",
+    "steps": [
+      {
+        "name": "user email as",
+        "aggregatedDurations": {
+          "average": 0.4852004,
+          "median": 0.4852004
+        },
+        "durations": [
+          {
+            "duration": 0.4852004,
+            "location": "src/test/resources/1facebookUser_already_subscribe.feature:9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^chat window option\\.$",
+    "steps": [
+      {
+        "name": "chat window option.",
+        "aggregatedDurations": {
+          "average": 6.7643894,
+          "median": 6.7643894
+        },
+        "durations": [
+          {
+            "duration": 6.7643894,
+            "location": "src/test/resources/Email_signin_paid_user.feature:8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select a product as Project Scoping Powerpoint$",
+    "steps": [
+      {
+        "name": "Select a product as Project Scoping Powerpoint",
+        "aggregatedDurations": {
+          "average": 3.3427736,
+          "median": 3.3427736
+        },
+        "durations": [
+          {
+            "duration": 3.3427736,
+            "location": "src/test/resources/Email_signin_paid_user.feature:6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on test fblink$",
+    "steps": [
+      {
+        "name": "Click on test fblink",
+        "aggregatedDurations": {
+          "average": 2.1396852,
+          "median": 2.1396852
+        },
+        "durations": [
+          {
+            "duration": 2.1396852,
+            "location": "src/test/resources/1facebookUser_already_subscribe.feature:8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Enter user google email addess\\.$",
+    "steps": [
+      {
+        "name": "Enter user google email addess.",
+        "aggregatedDurations": {
+          "average": 2.5299734,
+          "median": 2.5299734
+        },
+        "durations": [
+          {
+            "duration": 2.5299734,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on download this presentation link$",
+    "steps": [
+      {
+        "name": "Click on download this presentation link",
+        "aggregatedDurations": {
+          "average": 8.9362687,
+          "median": 8.9362687
+        },
+        "durations": [
+          {
+            "duration": 8.9362687,
+            "location": "src/test/resources/Email_signin_paid_user.feature:7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^product as Project Scoping Powerpoint$",
+    "steps": [
+      {
+        "name": "product as Project Scoping Powerpoint",
+        "aggregatedDurations": {
+          "average": 4.3112957,
+          "median": 4.3112957
+        },
+        "durations": [
+          {
+            "duration": 4.3112957,
+            "location": "src/test/resources/1facebookUser_already_subscribe.feature:6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Enter a user email$",
+    "steps": [
+      {
+        "name": "Enter a user email",
+        "aggregatedDurations": {
+          "average": 0.3763652,
+          "median": 0.3763652
+        },
+        "durations": [
+          {
+            "duration": 0.3763652,
+            "location": "src/test/resources/Email_signin_paid_user.feature:9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify the apply offer code is appeared\\.$",
+    "steps": [
+      {
+        "name": "Verify the apply offer code is appeared.",
+        "aggregatedDurations": {
+          "average": 3.19440165,
+          "median": 3.19440165
+        },
+        "durations": [
+          {
+            "duration": 3.1708853,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:30"
+          },
+          {
+            "duration": 3.217918,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:60"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^The Page is redirect to download presenetion link\\.$",
+    "steps": [
+      {
+        "name": "The Page is redirect to download presenetion link.",
+        "aggregatedDurations": {
+          "average": 1.0770037,
+          "median": 1.0770037
+        },
+        "durations": [
+          {
+            "duration": 1.0770037,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:13"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Open the download presentation link\\.$",
+    "steps": [
+      {
+        "name": "Open the download presentation link.",
+        "aggregatedDurations": {
+          "average": 1.81164628,
+          "median": 1.811637
+        },
+        "durations": [
+          {
+            "duration": 1.7803828,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:7"
+          },
+          {
+            "duration": 1.811637,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:22"
+          },
+          {
+            "duration": 1.8428947,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:38"
+          },
+          {
+            "duration": 1.827256,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:52"
+          },
+          {
+            "duration": 1.7960609,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:68"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Place order the product\\.$",
+    "steps": [
+      {
+        "name": "Place order the product.",
+        "aggregatedDurations": {
+          "average": 5.10461655,
+          "median": 5.10838075
+        },
+        "durations": [
+          {
+            "duration": 5.1083844,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:31"
+          },
+          {
+            "duration": 5.10843,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:44"
+          },
+          {
+            "duration": 5.0932747,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:61"
+          },
+          {
+            "duration": 5.1083771,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:74"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^user password as$",
+    "steps": [
+      {
+        "name": "user password as",
+        "aggregatedDurations": {
+          "average": 0.3584677,
+          "median": 0.3584677
+        },
+        "durations": [
+          {
+            "duration": 0.3584677,
+            "location": "src/test/resources/1facebookUser_already_subscribe.feature:10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Open given the application URL$",
+    "steps": [
+      {
+        "name": "Open given the application URL",
+        "aggregatedDurations": {
+          "average": 37.4463536,
+          "median": 37.4463536
+        },
+        "durations": [
+          {
+            "duration": 37.4463536,
+            "location": "src/test/resources/1facebookUser_already_subscribe.feature:4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on googlePlus link\\.$",
+    "steps": [
+      {
+        "name": "Click on googlePlus link.",
+        "aggregatedDurations": {
+          "average": 3.2327648,
+          "median": 3.2327648
+        },
+        "durations": [
+          {
+            "duration": 3.2327648,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^go to password page\\.$",
+    "steps": [
+      {
+        "name": "go to password page.",
+        "aggregatedDurations": {
+          "average": 5.3113784,
+          "median": 5.3113784
+        },
+        "durations": [
+          {
+            "duration": 5.3113784,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Enter the the offer code is off is showing\\.$",
+    "steps": [
+      {
+        "name": "Enter the the offer code is off is showing.",
+        "aggregatedDurations": {
+          "average": 0.13371765,
+          "median": 0.13371765
+        },
+        "durations": [
+          {
+            "duration": 0.1259478,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:28"
+          },
+          {
+            "duration": 0.1414875,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:58"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on Complete ppts$",
+    "steps": [
+      {
+        "name": "Click on Complete ppts",
+        "aggregatedDurations": {
+          "average": 10.8112887,
+          "median": 10.8112887
+        },
+        "durations": [
+          {
+            "duration": 10.8112887,
+            "location": "src/test/resources/Email_signin_paid_user.feature:5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^the randamly the subscription product\\.$",
+    "steps": [
+      {
+        "name": "the randamly the subscription product.",
+        "aggregatedDurations": {
+          "average": 5.64900168,
+          "median": 5.6395595
+        },
+        "durations": [
+          {
+            "duration": 5.498868,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:14"
+          },
+          {
+            "duration": 5.7021989,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:26"
+          },
+          {
+            "duration": 5.57717,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:42"
+          },
+          {
+            "duration": 5.6395595,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:56"
+          },
+          {
+            "duration": 5.827212,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:72"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify the payment option as on card page\\.$",
+    "steps": [
+      {
+        "name": "Verify the payment option as on card page.",
+        "aggregatedDurations": {
+          "average": 7.09246315,
+          "median": 7.09246315
+        },
+        "durations": [
+          {
+            "duration": 7.0922197,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:62"
+          },
+          {
+            "duration": 7.0927066,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:75"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^click on Login cta$",
+    "steps": [
+      {
+        "name": "click on Login cta",
+        "aggregatedDurations": {
+          "average": 8.2161334,
+          "median": 8.2161334
+        },
+        "durations": [
+          {
+            "duration": 8.2161334,
+            "location": "src/test/resources/Email_signin_paid_user.feature:11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^navigate to the facebook url\\.$",
+    "steps": [
+      {
+        "name": "navigate to the facebook url.",
+        "aggregatedDurations": {
+          "average": 14.7272322,
+          "median": 14.7272322
+        },
+        "durations": [
+          {
+            "duration": 14.7272322,
+            "location": "src/test/resources/2facebook_logout.feature:4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Enter the user password$",
+    "steps": [
+      {
+        "name": "Enter the user password",
+        "aggregatedDurations": {
+          "average": 0.3578909,
+          "median": 0.3578909
+        },
+        "durations": [
+          {
+            "duration": 0.3578909,
+            "location": "src/test/resources/Email_signin_paid_user.feature:10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on next CTA\\.$",
+    "steps": [
+      {
+        "name": "Click on next CTA.",
+        "aggregatedDurations": {
+          "average": 12.9673148,
+          "median": 12.9673148
+        },
+        "durations": [
+          {
+            "duration": 12.9673148,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Open home page of the application\\.$",
+    "steps": [
+      {
+        "name": "Open home page of the application.",
+        "aggregatedDurations": {
+          "average": 14.1779092,
+          "median": 14.1779092
+        },
+        "durations": [
+          {
+            "duration": 14.1779092,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select style as complete ppt\\.$",
+    "steps": [
+      {
+        "name": "Select style as complete ppt.",
+        "aggregatedDurations": {
+          "average": 16.0689394,
+          "median": 16.0689394
+        },
+        "durations": [
+          {
+            "duration": 16.0689394,
+            "location": "src/test/resources/1Google_Plus_paid_user.feature:5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on create as account link\\.$",
+    "steps": [
+      {
+        "name": "Click on create as account link.",
+        "aggregatedDurations": {
+          "average": 2.59915558,
+          "median": 2.5147567
+        },
+        "durations": [
+          {
+            "duration": 3.0149611,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:8"
+          },
+          {
+            "duration": 2.4679065,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:23"
+          },
+          {
+            "duration": 2.5147567,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:39"
+          },
+          {
+            "duration": 2.4520881,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:53"
+          },
+          {
+            "duration": 2.5460655,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:69"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^click on Login button$",
+    "steps": [
+      {
+        "name": "click on Login button",
+        "aggregatedDurations": {
+          "average": 47.5459279,
+          "median": 47.5459279
+        },
+        "durations": [
+          {
+            "duration": 47.5459279,
+            "location": "src/test/resources/1facebookUser_already_subscribe.feature:11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select the payment option as CARD is given\\.$",
+    "steps": [
+      {
+        "name": "Select the payment option as CARD is given.",
+        "aggregatedDurations": {
+          "average": 2.38972125,
+          "median": 2.38972125
+        },
+        "durations": [
+          {
+            "duration": 2.295916,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:57"
+          },
+          {
+            "duration": 2.4835265,
+            "location": "src/test/resources/FBUser_Create_sigin.feature:73"
           }
         ]
       }

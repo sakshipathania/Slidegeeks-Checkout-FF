@@ -53,6 +53,7 @@ public class SignUp_Step extends SetupClass {
 	@Then("^Click on Most Downloaded link\\.$")
 	public void click_most_download() throws InterruptedException {
 		driver.navigate().refresh();
+		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
 		webelement = driver.findElement(SignupObject.Others);
@@ -74,6 +75,8 @@ public class SignUp_Step extends SetupClass {
 
 	@Then("^Select a product items\\.$")
 	public void select_product() throws InterruptedException {
+		WebDriverWait wait1 = new WebDriverWait(driver, 30);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Select_item));
 		webelement = driver.findElement(SignupObject.Select_item);
 		wait.implictywait(driver);
 		webelement.click();
@@ -82,7 +85,8 @@ public class SignUp_Step extends SetupClass {
 
 	@Then("^Click on Download this presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-
+		WebDriverWait wait1 = new WebDriverWait(driver, 30);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Downloaded));
 		webelement = driver.findElement(SignupObject.Downloaded);
 		wait.implictywait(driver);
 		webelement.click();
