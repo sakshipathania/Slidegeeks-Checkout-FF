@@ -75,6 +75,7 @@ public class SignUp_Step extends SetupClass {
 
 	@Then("^Select a product items\\.$")
 	public void select_product() throws InterruptedException {
+		Thread.sleep(1000);
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Select_item));
 		webelement = driver.findElement(SignupObject.Select_item);
