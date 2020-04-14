@@ -55,22 +55,15 @@ public class SignUp_Step extends SetupClass {
 		driver.navigate().refresh();
 		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
-		webelement = driver.findElement(SignupObject.Others);
+		webelement download= driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		ac.moveToElement(webelement).build().perform();
+		ac.moveToElement(download).build().perform();
 		Thread.sleep(1000);
 		
-		
-		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/ul/li[4]/a/p"));
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
 		
-		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
-		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(2000);
-		ac.click(Complete_All).build().perform();
-		Thread.sleep(3000);
 	}
 
 	@Then("^Select a product items\\.$")
@@ -78,61 +71,60 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(1000);
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Select_item));
-		webelement = driver.findElement(SignupObject.Select_item);
+		webelement product= driver.findElement(SignupObject.Select_item);
 		wait.implictywait(driver);
-		webelement.click();
+		product.click();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	}
 
 	@Then("^Click on Download this presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Downloaded));
-		webelement = driver.findElement(SignupObject.Downloaded);
+		webelement Download_ppt= driver.findElement(By.xpath("//*[@id='clicking']"));
 		wait.implictywait(driver);
-		webelement.click();
+		Download_ppt.click();
 		Thread.sleep(1000);
 	}
 
 	@Then("^Click on Create an Account CTA\\.$")
 	public void reate_an_Account_CTA() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.create);
-		webelement.click();
+		webelement create_account= driver.findElement(SignupObject.create);
+		create_account.click();
 		Thread.sleep(1500);
 	}
 
 	@Then("^Enter Email Address as \"([^\"]*)\"\\.$")
 	public void enter_Email_Address_as(String email) throws Throwable {
-		webelement = driver.findElement(SignupObject.Email);
-		webelement.click();
+		webelement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
+		Email_Address.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		Email_Address.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys(email);
+		Email_Address.sendKeys(email);
 		wait.implictywait(driver);
 		log.info("It's entering the user email Address");
 	}
 
 	@Then("^Enter First Name as \"([^\"]*)\"\\.$")
 	public void enter_First_Name_as(String Fname) throws Throwable {
-		webelement = driver.findElement(SignupObject.FName);
-		webelement.click();
+		webelement FirstName= driver.findElement(By.xpath("//*[@id='firstname']"));
+		FirstName.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		FirstName.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys(Fname);
+		FirstName.sendKeys(Fname);
 		wait.implictywait(driver);
 		log.info("It's entering the user First Name");
 	}
 
 	@Then("^Enter Last Name as \"([^\"]*)\"\\.$")
 	public void enter_Last_Name_as(String LName) throws Throwable {
-		webelement = driver.findElement(SignupObject.lastname);
-		webelement.click();
+		webelement LastName= driver.findElement(By.xpath("//*[@id='lastname']");
+		LastName.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		LastName.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys(LName);
+		LastName.sendKeys(LName);
 		wait.implictywait(driver);
 		log.info("It's entering the user Last Name");
 	}
@@ -141,38 +133,38 @@ public class SignUp_Step extends SetupClass {
 	public void enter_password(String pwd) throws InterruptedException {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(1000);
-		webelement = driver.findElement(SignupObject.password);
-		webelement.click();
+		webelement Pass_word = driver.findElement(By.xpath("//*[@id='password']");
+		Pass_word.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		Pass_word.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys(pwd);
+		Pass_word.sendKeys(pwd);
 		wait.implictywait(driver);
 		log.info("It's entering the user password");
 	}
 
 	@Then("^Enter Confirm password as \"([^\"]*)\"\\.$")
 	public void enter_Confirm_password_as(String Cpswd) throws Throwable {
-		webelement = driver.findElement(SignupObject.Cpassword);
+		webelement Confirm_password= driver.findElement(By.xpath("//*[@id='password-confirmation']"));
 		wait.implictywait(driver);
-		webelement.click();
+		Confirm_password.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		Confirm_password.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys(Cpswd);
+		Confirm_password.sendKeys(Cpswd);
 		wait.implictywait(driver);
 		log.info("It's entering the user password");
 	}
 
 	@Then("^Enter the captcha\\.$")
 	public void enter_the_captcha() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Captcha);
+		webelement Captcha= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
 		wait.implictywait(driver);
-		webelement.click();
+		Captcha.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		Captcha.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("23102018");
+		Captcha.sendKeys("23102018");
 		Thread.sleep(1000);
 		wait.implictywait(driver);
 		log.info("It's entering the user password");
@@ -182,7 +174,7 @@ public class SignUp_Step extends SetupClass {
 	public void click_on_Signup_button() throws InterruptedException {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 40);
-			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Signup));
+			WebElement element = driver.findElement(By.xpath("/html/body/div[2]/main/div/div/div[2]/div/form/fieldset/div[8]/div[2]/div/div/button"));
 			Thread.sleep(1000);
 			js.executeScript("arguments[0].click();", element);
 			Thread.sleep(2000);
