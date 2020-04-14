@@ -58,9 +58,9 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		webelement = driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
+		WebElement Complete= driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		ac.moveToElement(webelement).build().perform();
+		ac.moveToElement(Complete).build().perform();
 		Thread.sleep(1000);
 		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete/ Decks > p:nth-child(2)"));
 		ac.moveToElement(Complete_Desk).build().perform();
@@ -70,9 +70,9 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Open the download presentation link\\.$")
 	public void open_the_download_presentation_link() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Downloaded);
+		WebElement download = driver.findElement(By.xpath("#clicking"));
 		wait.implictywait(driver);
-		webelement.click();
+		download.click();
 		Thread.sleep(1000);
 	}
 
