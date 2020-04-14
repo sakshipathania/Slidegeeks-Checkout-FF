@@ -75,7 +75,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	}
 	
 
-	@Then("^Select a product as Project Scoping Powerpoint$")
+	/* @Then("^Select a product as Project Scoping Powerpoint$")
 	public void select_product() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
 		WebElement et = driver.findElement(SignupObject.Select_item);
@@ -84,7 +84,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		et.click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(1000);
-	}
+	} */
 
 	@Then("^Click on download this presentation link$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
