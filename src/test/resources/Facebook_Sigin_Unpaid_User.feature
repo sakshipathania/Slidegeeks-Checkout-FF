@@ -3,7 +3,6 @@ Feature: Sign with new facebook user.
 Scenario: Sign in the application with facebook user. 
 	Given Go to the application URL. 
 	And Select a product list as Complete ppts. 
-	And  Click on Project Scoping Powerpoint product. 
 	And  Click on download presentation link. 
 	And  Click on fblink. 
 	Then Facebook user enter a email as. 
@@ -17,7 +16,6 @@ Scenario: Sign in the application with facebook user.
 Scenario: 
 	Given Go to the application URL. 
 	And Select a product list as Complete ppts. 
-	And  Click on Project Scoping Powerpoint product. 
 	And  Click on download presentation link. 
 	And  Click on fblink. 
 	Then See that user is redirected to price page. 
