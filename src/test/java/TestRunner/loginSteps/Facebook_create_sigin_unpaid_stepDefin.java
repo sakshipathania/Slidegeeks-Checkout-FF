@@ -185,7 +185,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^By default payment option as paypal is selected\\.$")
 	public void by_default_payment_option_as_paypal_is_selected() throws Throwable {
-		webelement = driver.findElement(By.cssSelector("#paypal_express");
+		webelement = driver.findElement(By.cssSelector("#paypal_express"));
 		if (!driver.findElement(By.cssSelector("#paypal_express")).isSelected())
 		// to check the check box is already selected or not
 		{
@@ -201,7 +201,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Enter the the offer code is off is showing\\.$")
 	public void enter_coupon() {
-		webelement = driver.findElement(By.xpath("//*[@id='discount-code']");
+		webelement = driver.findElement(By.xpath("//*[@id='discount-code']"));
 		wait.implictywait(driver);
 		js.executeScript("arguments[0].click();", webelement);
 		wait.implictywait(driver);
