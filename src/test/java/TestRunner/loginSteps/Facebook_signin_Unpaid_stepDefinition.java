@@ -52,7 +52,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		}
 	}
 
-	@And("^Select a product list as Complete ppts\\.$")
+	@Then("^Select a product list as Complete ppts\\.$")
 	public void click_most_download() throws InterruptedException {
 		driver.navigate().refresh();
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
@@ -67,15 +67,15 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@And("^Click on Project Scoping Powerpoint product\\.$")
+	/* @And("^Click on Project Scoping Powerpoint product\\.$")
 	public void select_product() throws InterruptedException {
 		webelement = driver.findElement(SignupObject.Select_item);
 		webelement.click();
 		wait.implictywait(driver);
 		Thread.sleep(2000);
-	}
+	} */
 
-	@And("^Click on download presentation link\\.$")
+	@Then("^Click on download presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		webelement = driver.findElement(SignupObject.Downloaded);
 		wait.implictywait(driver);
@@ -83,7 +83,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(2000);
 	}
 
-	@And("^Click on fblink\\.$")
+	@Then("^Click on fblink\\.$")
 	public void fb_link() throws InterruptedException {
 		WebElement FbLink = driver.findElement(FbandGP_Object.fbLink);
 		wait.implictywait(driver);
@@ -147,7 +147,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		}
 	}
 
-	@Given("^See that user is redirected to price page\\.$")
+	@Then("^See that user is redirected to price page\\.$")
 	public void after_signup_redirect_to_price_page() throws Throwable {
 
 		String actualTitle = driver.getTitle();
