@@ -54,36 +54,24 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	@And("^go to Complete ppts$")
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		webelement = wait1.until(ExpectedConditions.elementtobeclickable(By.xpath("/html/body/div[2]/div[3]/ul/li[26]/a/p"));
 		
-		webelement = driver.findElement(SignupObject.Others);
+		//webelement = driver.findElement(SignupObject.Others);
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[26]/ul/li[4]/a/p"));
 		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
-		wait.implictywait(driver);
-		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(2000);
-		ac.click(Complete_All).build().perform();
-	
+		
 		Thread.sleep(4000);
 	
 	}
 
-	@And("^product as Project Scoping Powerpoint$")
-	public void select_product() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Select_item);
-		webelement.click();
-		wait.implictywait(driver);
-		Thread.sleep(2000);
-	}
-
+	
 	@And("^Click on download this presentation$")
 	public void click_on_Download_thist_presentation_link() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Downloaded);
+		webelement = driver.findElement(By.xpath("//*[@id='clicking']"));
 		wait.implictywait(driver);
 		webelement.click();
 		Thread.sleep(1000);
@@ -105,7 +93,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		wait.implictywait(driver);
 		webelement.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("sumit.kumar@slidetech.in");
+		webelement.sendKeys("sakshi.pathania@slidetech.in");
 		wait.implictywait(driver);
 
 		} catch (NoSuchElementException nonemaillink) {
@@ -120,7 +108,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		wait.implictywait(driver);
 		webelement.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("redhat2090");
+		webelement.sendKeys("Sakshi@123");
 		wait.implictywait(driver);
 
 	
