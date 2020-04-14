@@ -3,7 +3,7 @@ Feature: Sign with new facebook user.
 Scenario: Sign in the application with facebook user. 
 	Given Go to the application URL. 
 	Then Select a product list as Complete ppts. 
-	Then  Click on download presentation link. 
+	Then Click on download presentation link. 
 	Then Click on fblink. 
 	Then Facebook user enter a email as. 
 	Then Facebook user enter password. 
