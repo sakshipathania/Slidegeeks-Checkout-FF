@@ -68,9 +68,9 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	@Then("^Click on download presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Downloaded);
+		WebElement = driver.findElement(SignupObject.Downloaded);
 		wait.implictywait(driver);
-		webelement.click();
+		WebElement.click();
 		Thread.sleep(2000);
 	}
 
