@@ -56,22 +56,15 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	public void click_most_download() throws InterruptedException {
 		driver.navigate().refresh();
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		//wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
 		
-		webelement = driver.findElement(SignupObject.Others);
+		webelement = driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/ul/li[4]/a/p"));
 		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
-		wait.implictywait(driver);
-		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(2000);
-		ac.click(Complete_All).build().perform();
-	
-		Thread.sleep(4000);
 	}
 
 	@And("^Click on Project Scoping Powerpoint product\\.$")
