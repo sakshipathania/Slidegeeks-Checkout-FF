@@ -37,7 +37,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
 		}
-
+                  Thread.sleep(1000);
 		try {
 			WebElement logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
 			if (logout.isEnabled()) {
@@ -45,6 +45,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 				Thread.sleep(8000);
 				driver.navigate().refresh();
 				Thread.sleep(2000);
+			}
 		} catch (NoSuchElementException Ext) {
 
 		}
@@ -54,7 +55,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
 		webelement = driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[26]/a/p"));
-		
+		Thread.sleep(1000);
 		//webelement = driver.findElement(SignupObject.Others);
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(3000);
@@ -95,10 +96,11 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 
 		} catch (NoSuchElementException nonemaillink) {
 
-		}}
+		}
+	}
 
-	@Then("^user password as$")
-	public void enter_user_password() throws Throwable {
+	 @Then("^user password as$")
+	 public void enter_user_password() throws Throwable {
 		try {
 		webelement = driver.findElement(FbandGP_Object.Fpassword);
 		webelement.click();
@@ -125,6 +127,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		} catch (NoSuchElementException logincta) {
 			
 		}
+		 Thread.sleep(1000);
 		try {
 			webelement = driver.findElement(FbandGP_Object.continue_as_QA);
 			webelement.click();
@@ -132,6 +135,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		} catch (NoSuchElementException qalink) {
 
 		}
+		  Thread.sleep(1000);
 		try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
 			wait.implictywait(driver);
@@ -141,8 +145,8 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 
 		}
 		
-
 	}
+		
 	@Then("^See the this link as download this presenetion link is appeared$")
 	public void verify_uesr_validation_message_for_Email_Address() throws Throwable {
 
