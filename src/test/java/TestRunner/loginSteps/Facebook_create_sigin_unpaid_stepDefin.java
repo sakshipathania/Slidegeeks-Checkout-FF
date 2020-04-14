@@ -185,11 +185,11 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^By default payment option as paypal is selected\\.$")
 	public void by_default_payment_option_as_paypal_is_selected() throws Throwable {
-		webelement = driver.findElement(SignupObject.paypay_radio_button);
-		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
+		webelement = driver.findElement(By.cssSelector("#paypal_express");
+		if (!driver.findElement(By.cssSelector("#paypal_express")).isSelected())
 		// to check the check box is already selected or not
 		{
-			driver.findElement(SignupObject.paypay_radio_button).click();
+			driver.findElement(By.cssSelector("#paypal_express")).click();
 			wait.implictywait(driver);
 		}
 
@@ -201,7 +201,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Enter the the offer code is off is showing\\.$")
 	public void enter_coupon() {
-		webelement = driver.findElement(SignupObject.Enter_Coupon);
+		webelement = driver.findElement(By.xpath("//*[@id='discount-code']");
 		wait.implictywait(driver);
 		js.executeScript("arguments[0].click();", webelement);
 		wait.implictywait(driver);
@@ -213,7 +213,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Apply the code\\.$")
 	public void apply_the_cuopon_code() throws Throwable {
-		webelement = driver.findElement(SignupObject.Apply_Coupon);
+		webelement = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div[4]/div[3]/ol/li[3]/div/form/fieldset/div[3]/div[2]/form/div[2]/div/button/span/span"));
 		js.executeScript("arguments[0].click();", webelement);
 		Thread.sleep(3000);
 		driver.switchTo().alert().dismiss();
