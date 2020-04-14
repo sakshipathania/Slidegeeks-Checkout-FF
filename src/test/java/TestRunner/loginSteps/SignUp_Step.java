@@ -119,7 +119,7 @@ public class SignUp_Step extends SetupClass {
 
 	@Then("^Enter Last Name as \"([^\"]*)\"\\.$")
 	public void enter_Last_Name_as(String LName) throws Throwable {
-		webelement LastName= driver.findElement(By.xpath("//*[@id='lastname']");
+		webelement LastName= driver.findElement(By.xpath("//*[@id='lastname']"));
 		LastName.click();
 		wait.implictywait(driver);
 		LastName.clear();
@@ -133,7 +133,7 @@ public class SignUp_Step extends SetupClass {
 	public void enter_password(String pwd) throws InterruptedException {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(1000);
-		webelement Pass_word = driver.findElement(By.xpath("//*[@id='password']");
+		webelement Pass_word = driver.findElement(By.xpath("//*[@id='password']"));
 		Pass_word.click();
 		wait.implictywait(driver);
 		Pass_word.clear();
