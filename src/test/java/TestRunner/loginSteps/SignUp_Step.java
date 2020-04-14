@@ -30,7 +30,7 @@ public class SignUp_Step extends SetupClass {
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(2000);
 		try {
-			webelement Website = driver.findElement(SignupObject.close_add);
+			WebElement Website = driver.findElement(SignupObject.close_add);
 			Website.click();
 			Thread.sleep(2000);
 			log.info("It's opening the website URL");
