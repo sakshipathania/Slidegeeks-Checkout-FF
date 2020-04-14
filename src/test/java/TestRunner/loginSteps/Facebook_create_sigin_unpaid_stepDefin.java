@@ -58,33 +58,28 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
-		webelement = driver.findElement(SignupObject.Others);
+		webelement = wait.until(ExpectedConditions.Elementtobeclickable(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
+		// webelement = driver.findElement(SignupObject.Others);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(1000);
 		
 		
-		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete\ Decks > p:nth-child(2)"));
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-		
-		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
-		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(500);
-		ac.click(Complete_All).build().perform();
 		
 		Thread.sleep(3000);
 	}
 
-	@And("^On the Scoping Powerpoint product\\.$")
+	/* @And("^On the Scoping Powerpoint product\\.$")
 	public void on_the_Scoping_Powerpoint_product() throws InterruptedException {
 	
 		webelement = driver.findElement(SignupObject.Select_item);
 		webelement.click();
 		wait.implictywait(driver);
 		Thread.sleep(2000);
-	}
+	} */
 
 	@And("^Open the download presentation link\\.$")
 	public void open_the_download_presentation_link() throws InterruptedException {
