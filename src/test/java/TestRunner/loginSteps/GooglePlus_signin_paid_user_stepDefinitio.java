@@ -54,17 +54,15 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	@Then("^Select style as complete ppt\\.$")
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		webelement = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/div/ul/li[1]/a"));
+		WebElement = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/div/ul/li[1]/a"));
 		
-		//webelement = driver.findElement(SignupObject.Others);
+		//webelement = (SignupObject.Others);//
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(3000);
-		WebElement Complete_Desk= wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div[2]/div/ul/li[2]/strong"));
+		WebElement Complete_Desk= driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/ul/li[2]/strong"));
 		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-	
-		Thread.sleep(8000);
 		
 		try {
 			WebElement recommended=driver.findElement(By.cssSelector(".scd-assistant-cards-close :nth-child(1)"));
