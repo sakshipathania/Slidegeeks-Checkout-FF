@@ -45,16 +45,15 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 				Thread.sleep(8000);
 				driver.navigate().refresh();
 				Thread.sleep(2000);
-			}
 		} catch (NoSuchElementException Ext) {
 
 		}
 	}
 
-	@And("^go to Complete ppts$")
+	@Then("^go to Complete ppts$")
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		webelement = wait1.until(ExpectedConditions.elementtobeclickable(By.xpath("/html/body/div[2]/div[3]/ul/li[26]/a/p"));
+		webelement = driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[26]/a/p"));
 		
 		//webelement = driver.findElement(SignupObject.Others);
 		ac.moveToElement(webelement).build().perform();
@@ -63,13 +62,11 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-		
-		Thread.sleep(4000);
 	
 	}
 
 	
-	@And("^Click on download this presentation$")
+	@Then("^Click on download this presentation$")
 	public void click_on_Download_thist_presentation_link() throws InterruptedException {
 		webelement = driver.findElement(By.xpath("//*[@id='clicking']"));
 		wait.implictywait(driver);
@@ -77,7 +74,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@And("^Click on test fblink$")
+	@Then("^Click on test fblink$")
 	public void fb_link() throws InterruptedException {
 		webelement = driver.findElement(FbandGP_Object.fbLink);
 		webelement.click();
@@ -112,9 +109,10 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		wait.implictywait(driver);
 
 	
-} catch (NoSuchElementException password) {
+            } catch (NoSuchElementException password) {
 
-}}
+            }  
+	}
 
 	@Then("^click on Login button$")
 	public void click_on_Login_button() throws Throwable {
