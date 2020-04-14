@@ -53,7 +53,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		}
 	}
 
-	@And("^Select product list as Complete ppts\\.$")
+	@Then("^Select product list as Complete ppts\\.$")
 	public void select_product_list_as_Complete_ppts() throws InterruptedException {
 
 	
@@ -72,16 +72,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		Thread.sleep(3000);
 	}
 
-	/* @And("^On the Scoping Powerpoint product\\.$")
-	public void on_the_Scoping_Powerpoint_product() throws InterruptedException {
-	
-		webelement = driver.findElement(SignupObject.Select_item);
-		webelement.click();
-		wait.implictywait(driver);
-		Thread.sleep(2000);
-	} */
-
-	@And("^Open the download presentation link\\.$")
+	@Then("^Open the download presentation link\\.$")
 	public void open_the_download_presentation_link() throws InterruptedException {
 		webelement = driver.findElement(SignupObject.Downloaded);
 		wait.implictywait(driver);
@@ -89,14 +80,14 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@And("^Click on create as account link\\.$")
+	@Then("^Click on create as account link\\.$")
 	public void click_on_create_as_account_link() throws InterruptedException {
 		webelement = driver.findElement(SignupObject.create);
 		webelement.click();
 		Thread.sleep(1500);
 	}
 
-	@And("^Click on faceblink\\.$")
+	@Then("^Click on faceblink\\.$")
 	public void click_on_faceblink() throws InterruptedException {
 		webelement = driver.findElement(FbandGP_Object.fbLink);
 		wait.implictywait(driver);
@@ -156,6 +147,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		Thread.sleep(2000);
 		
 	}
+					
 	@Then("^the randamly the subscription product\\.$")
 	public void the_randamly_the_subscription_product() throws Throwable {
 		js.executeScript("window.scrollBy(0,650)");
@@ -265,6 +257,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	
 		 }
 	}
+					
 	@Then("^Select the payment option as CARD is given\\.$")
 	public void select_payment_option_as_Card() throws Throwable {
 		webelement = driver.findElement(SignupObject.card_radio_button);
