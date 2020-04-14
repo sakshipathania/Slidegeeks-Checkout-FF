@@ -58,18 +58,14 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		webelement = wait.until(ExpectedConditions.Elementtobeclickable(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
-		// webelement = driver.findElement(SignupObject.Others);
+		webelement = driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(1000);
-		
-		
 		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete\ Decks > p:nth-child(2)"));
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
 		
-		Thread.sleep(3000);
 	}
 
 	@Then("^Open the download presentation link\\.$")
