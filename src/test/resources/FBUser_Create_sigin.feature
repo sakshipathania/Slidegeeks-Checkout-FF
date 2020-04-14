@@ -3,7 +3,6 @@ Feature: create new fbuser.
 Scenario: create the application with facebook user. 
 	Given Launching the application URL. 
 	And  Select product list as Complete ppts. 
-	And  On the Scoping Powerpoint product. 
 	And  Open the download presentation link. 
 	And  Click on create as account link. 
 	And  Click on faceblink. 
@@ -17,8 +16,7 @@ Scenario: create the application with facebook user.
 	
 Scenario: 
 	Given Launching the application URL. 
-	And   Select product list as Complete ppts. 
-	And  On the Scoping Powerpoint product. 
+	And   Select product list as Complete ppts.  
 	And  Open the download presentation link. 
 	And  Click on create as account link. 
 	And  Click on faceblink. 
