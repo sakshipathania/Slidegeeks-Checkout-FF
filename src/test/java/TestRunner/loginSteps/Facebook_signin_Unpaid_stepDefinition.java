@@ -55,9 +55,8 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	@Then("^Select a product list as Complete ppts\\.$")
 	public void click_most_download() throws InterruptedException {
 		driver.navigate().refresh();
+		Thread.sleep(1000);
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		//wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
-		
 		webelement = driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(3000);
@@ -66,14 +65,6 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
 	}
-
-	/* @And("^Click on Project Scoping Powerpoint product\\.$")
-	public void select_product() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Select_item);
-		webelement.click();
-		wait.implictywait(driver);
-		Thread.sleep(2000);
-	} */
 
 	@Then("^Click on download presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
@@ -248,13 +239,13 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 				String expectedTitle2="PayPal Checkout";
 				wait.implictywait(driver);
 				
-			    if(actualTitle1.equals(expectedTitle1)){
+			    if(actualTitle1.equals(expectedTitle1)) {
 				Assert.assertEquals(expectedTitle1, actualTitle1);
 				wait.implictywait(driver);
 				Thread.sleep(3000);
 				System.out.println("title does not matched");
 	}
-		 else{
+		 else {
 				Assert.assertEquals(expectedTitle2, actualTitle1);
 				wait.implictywait(driver);
 				System.out.println(actualTitle1);
