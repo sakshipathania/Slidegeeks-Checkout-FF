@@ -119,12 +119,12 @@ public class Login_step_definition extends SetupClass {
 	}
 
 	@Then("^Verify uesr \"([^\"]*)\" validation message for Email Address\\.$")
-	public void verify_uesr_validation_message_for_Email_Address(String Email_test) throws Throwable {
+	public void verify_uesr_validation_message_for_Email_Address(String Email) throws Throwable {
 
 		try {
 			String Email_test = driver.findElement(LoginObject.uesremail_val).getText();
 			wait.implictywait(driver);
-			Assert.assertEquals(email, Email_test);
+			Assert.assertEquals(Email, Email_test);
 			wait.implictywait(driver);
 		} catch (NoSuchElementException NSE) {
 
