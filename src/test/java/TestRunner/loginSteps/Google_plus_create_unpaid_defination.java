@@ -32,8 +32,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(2000);
 		try {
-			webelement = driver.findElement(SignupObject.close_add);
-			webelement.click();
+			WebElement web= driver.findElement(SignupObject.close_add);
+			web.click();
 			Thread.sleep(2000);
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
@@ -56,45 +56,41 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	public void click_most_download() throws InterruptedException {
 		driver.navigate().refresh();
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		//wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
 		
-		webelement = driver.findElement(SignupObject.Others);
-		ac.moveToElement(webelement).build().perform();
+		WebElement ppt= driver.findElement(SignupObject.Others);
+		ppt.click();
+		//ac.moveToElement(WebElement).build().perform();
 		Thread.sleep(3000);
 		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
 		wait.implictywait(driver);
-		ac.moveToElement(Complete_Desk).build().perform();
+		//ac.moveToElement(Complete_Desk).build().perform();
+		Complete_Desk.click();
 		Thread.sleep(1000);
-		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
-		wait.implictywait(driver);
-		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(2000);
-		ac.click(Complete_All).build().perform();
-	
-		Thread.sleep(4000);
+		
 	}
 
 	@And("^Project list as Scoping Powerpoint product\\.$")
 	public void select_product() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Select_item);
-		webelement.click();
+		WebElement Project= driver.findElement(SignupObject.Select_item);
+		Project.click();
 		wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
 
 	@And("^go to download link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Downloaded);
+		WebElement link= driver.findElement(SignupObject.Downloaded);
 		wait.implictywait(driver);
-		webelement.click();
+		link.click();
 		Thread.sleep(1000);
 	}
 
 	@And("^Click on Create account cta\\.")
 	public void create_accuont() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.create);
+		WebElement Create= driver.findElement(SignupObject.create);
 		wait.implictywait(driver);
-		webelement.click();
+		Create.click();
 		Thread.sleep(1000);
 	}
 
@@ -102,8 +98,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	public void fb_link() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,100)");
 		Thread.sleep(500);
-		webelement = driver.findElement(FbandGP_Object.GooglePlusLink);
-		webelement.click();
+		WebElement Google= driver.findElement(FbandGP_Object.GooglePlusLink);
+		Google.click();
 		Thread.sleep(2000);
 	}
 
@@ -119,15 +115,14 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	}
 	
 	try {
-//		webelement = driver.findElement(FbandGP_Object.GPEmail);
-		webelement= new WebDriverWait(driver, 50)
-				.until(ExpectedConditions.visibilityOfElementLocated(FbandGP_Object.GPEmail));
+//		WebElement email= driver.findElement(FbandGP_Object.GPEmail);
+		//WebElement = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(FbandGP_Object.GPEmail));
 		wait.implictywait(driver);
-		webelement.click();
+		email.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		email.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("selenium.testing9977@gmail.com");
+		email.sendKeys("selenium.testing9977@gmail.com");
 		wait.implictywait(driver);
 		Thread.sleep(2000);
 	}catch(NoSuchElementException usenewa) {	
@@ -136,8 +131,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	@Then("^Go to next page\\.$")
 	public void password_page() throws InterruptedException {
 
-		webelement = driver.findElement(FbandGP_Object.Next_cta);
-		webelement.click();
+		WebElement next= driver.findElement(FbandGP_Object.Next_cta);
+		next.click();
 		wait.implictywait(driver);
 		Thread.sleep(3000);
 
@@ -145,21 +140,21 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 
 	@Then("^enter password\\.$")
 	public void enter_user_password() throws Throwable {
-		webelement = driver.findElement(FbandGP_Object.GPpass);
-		webelement.click();
+		WebElement password= driver.findElement(FbandGP_Object.GPpass);
+		password.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		password.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("Test@1234");
+		password.sendKeys("Test@1234");
 		wait.implictywait(driver);
 		Thread.sleep(3000);
 	}
 
 	@Then("^Click on next button\\.$")
 	public void click_on_Login_button() throws Throwable {
-		webelement = driver.findElement(FbandGP_Object.Next_button);
+		WebElement button= driver.findElement(FbandGP_Object.Next_button);
 		wait.implictywait(driver);
-		webelement.click();
+		button.click();
 		wait.implictywait(driver);
 		Thread.sleep(10000);
 
@@ -199,7 +194,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 
 	@Then("^then default payment option is paypal\\.$")
 	public void see_default_payment_option_as_paypal() throws Throwable {
-		webelement = driver.findElement(SignupObject.paypay_radio_button);
+		WebElement payment= driver.findElement(SignupObject.paypay_radio_button);
 		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
 		// to check the check box is already selected or not
 		{
@@ -215,20 +210,20 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 
 	@Then("^insert coupon as display in screen\\.$")
 	public void enter_coupon() {
-		webelement = driver.findElement(SignupObject.Enter_Coupon);
+		WebElement display= driver.findElement(SignupObject.Enter_Coupon);
 		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
+		js.executeScript("arguments[0].click();", display);
 		wait.implictywait(driver);
-		webelement.clear();
+		display.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("5OFF");
+		display.sendKeys("5OFF");
 		wait.implictywait(driver);
 	}
 
 	@Then("^apply coupon cta\\.$")
 	public void apply_the_cuopon_code() throws Throwable {
-		webelement = driver.findElement(SignupObject.Apply_Coupon);
-		js.executeScript("arguments[0].click();", webelement);
+		WebElement apply= driver.findElement(SignupObject.Apply_Coupon);
+		js.executeScript("arguments[0].click();", apply);
 		Thread.sleep(3000);
 		driver.switchTo().alert().dismiss();
 		Thread.sleep(2000);
@@ -248,9 +243,9 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 
 	@Then("^Go to checkout payement process page\\.$")
 	public void click_on_place_order_CTA() throws Throwable {
-		webelement = driver.findElement(SignupObject.place_cta);
+		WebElement checkout= driver.findElement(SignupObject.place_cta);
 		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
+		js.executeScript("arguments[0].click();", checkout);
 		Thread.sleep(5000);
 	}
 
@@ -287,8 +282,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 
 	@Then("^Click on card radio button\\.$")
 	public void select_payment_option_as_Card() throws Throwable {
-		webelement = driver.findElement(SignupObject.card_radio_button);
-		webelement.click();
+		WebElement radio= driver.findElement(SignupObject.card_radio_button);
+		radio.click();
 		Thread.sleep(1000);
 		String card_text = driver.findElement(SignupObject.verify_2checkout).getText();
 		System.out.println(card_text);
@@ -314,3 +309,4 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	}
 
 }
+
