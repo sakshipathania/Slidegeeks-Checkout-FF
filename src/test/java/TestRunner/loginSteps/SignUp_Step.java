@@ -281,7 +281,7 @@ public class SignUp_Step extends SetupClass {
 
 	}
 
-	@Given("^After signup see the price page\\.$")
+	@Then("^After signup see the price page\\.$")
 	public void verify_the_price_page() throws InterruptedException {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		String actualTitle = driver.getTitle();
