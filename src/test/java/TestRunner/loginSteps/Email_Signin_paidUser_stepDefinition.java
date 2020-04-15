@@ -56,11 +56,11 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	@Then("^Click on Complete ppts$")
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		WebElement complete_ppt= driver.findElement(cssSelector("#ppt_templates > a:nth-child(1) > p:nth-child(2)"));
+		WebElement complete_ppt= driver.findElement(By.cssSelector("#ppt_templates > a:nth-child(1) > p:nth-child(2)"));
 		//ac.moveToElement(complete_ppt).build().perform();
 		complete_ppt.click();
 		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(cssSelector("#Complete/ Decks > p:nth-child(2)"));
+		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete/ Decks > p:nth-child(2)"));
 		wait.implictywait(driver);
 		//ac.moveToElement(Complete_Desk).build().perform();
 		Complete_Desk.click();
