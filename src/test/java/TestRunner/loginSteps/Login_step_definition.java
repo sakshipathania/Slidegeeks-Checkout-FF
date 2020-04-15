@@ -213,7 +213,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^See default payment option as paypal\\.$")
 	public void see_default_payment_option_as_paypal() throws Throwable {
-		WebElement default = driver.findElement(SignupObject.paypay_radio_button);
+		WebElement paypal = driver.findElement(SignupObject.paypay_radio_button);
 		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
 		// to check the check box is already selected or not
 		{
