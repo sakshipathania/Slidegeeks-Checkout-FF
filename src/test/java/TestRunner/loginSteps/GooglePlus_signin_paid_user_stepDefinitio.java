@@ -31,8 +31,8 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(8000);
 		try {
-			webelement = driver.findElement(SignupObject.close_add);
-			webelement.click();
+			WebElement app = driver.findElement(SignupObject.close_add);
+			app.click();
 			Thread.sleep(2000);
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
@@ -54,14 +54,15 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	@Then("^Select style as complete ppt\\.$")
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		WebElement complete= driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/div/ul/li[1]/a"));
-		
+		WebElement complete.clicl();= driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/div/ul/li[1]/a"));
+		complete.click();
 		//webelement = (SignupObject.Others);//
-		ac.moveToElement(complete).build().perform();
+		//ac.moveToElement(complete).build().perform();
 		Thread.sleep(3000);
 		WebElement Complete_Desk= driver.findElement(By.cssSelector("#Complete/Decks > p:nth-child(2)"));
 		wait.implictywait(driver);
-		ac.moveToElement(Complete_Desk).build().perform();
+		Complete_Desk.click();
+		//ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
 		
 		try {
@@ -79,17 +80,17 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		
 		Thread.sleep(3000);
 		
-		webelement = driver.findElement(SignupObject.Select_item);
+		WebElement slider = driver.findElement(SignupObject.Select_item);
 		wait.implictywait(driver);
-		webelement.click();
+		slider.click();
 		Thread.sleep(2000);
 	}
 
 	@And("^Click on downloadbtn test5 link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Downloaded);
+		WebElement test5 = driver.findElement(SignupObject.Downloaded);
 		wait.implictywait(driver);
-		webelement.click();
+		test5.click();
 		Thread.sleep(2000);
 	}
 
@@ -97,19 +98,19 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	public void fb_link() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(1000);
-		webelement = driver.findElement(FbandGP_Object.GooglePlusLink);
-		webelement.click();
+		WebElement gplus = driver.findElement(FbandGP_Object.GooglePlusLink);
+		gplus.click();
 		Thread.sleep(2000);
 	}
 
 	@Then("^Enter user google email addess\\.$")
 	public void enter_user_mail() throws InterruptedException  {
-		webelement = driver.findElement(FbandGP_Object.GPEmail);
-		webelement.click();
+		WebElement gmail = driver.findElement(FbandGP_Object.GPEmail);
+		gmail.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		gmail.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("selenium_testing@slidetech.in");
+		gmail.sendKeys("selenium_testing@slidetech.in");
 		wait.implictywait(driver);
 		Thread.sleep(2000);
 		
@@ -120,9 +121,9 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	@Then("^go to password page\\.$")
 	public void enter_user_password() throws InterruptedException  {
 	
-		webelement = driver.findElement(FbandGP_Object.Next_cta);
+		WebElement pass_page = driver.findElement(FbandGP_Object.Next_cta);
 		wait.implictywait(driver);
-		webelement.click();
+		pass_page.click();
 		Thread.sleep(5000);
 
 	
@@ -130,12 +131,12 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 
 	 @Then("^Enter user google pass\\.$")
 	public void google_pass() throws InterruptedException {
-		 	 webelement = driver.findElement(FbandGP_Object.GPpass);
-				webelement.click();
+		 	 WebElement google_pass = driver.findElement(FbandGP_Object.GPpass);
+				google_pass.click();
 				wait.implictywait(driver);
-				webelement.clear();
+				google_pass.clear();
 				wait.implictywait(driver);
-				webelement.sendKeys("slideteam");
+				google_pass.sendKeys("slideteam");
 				wait.implictywait(driver);
 				Thread.sleep(2000);
 			
@@ -146,9 +147,9 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	@Then("^Click on next CTA\\.$")
 	public void click_on_Login_button() throws Throwable {
 
-		webelement = driver.findElement(FbandGP_Object.Next_button);
+		WebElement next = driver.findElement(FbandGP_Object.Next_button);
 		wait.implictywait(driver);
-		webelement.click();
+		next.click();
 		wait.implictywait(driver);
 		Thread.sleep(4000);
 
