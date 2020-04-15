@@ -115,7 +115,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	}
 	
 	try {
-//		WebElement email= driver.findElement(FbandGP_Object.GPEmail);
+                WebElement email= driver.findElement(FbandGP_Object.GPEmail);
 		//WebElement = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(FbandGP_Object.GPEmail));
 		wait.implictywait(driver);
 		email.click();
