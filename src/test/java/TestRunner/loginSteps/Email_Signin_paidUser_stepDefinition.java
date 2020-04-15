@@ -56,39 +56,20 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	@Then("^Click on Complete ppts$")
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
-		
-		webelement = driver.findElement(SignupObject.Others);
+		webelement = driver.findElement(cssSelector("#ppt_templates > a:nth-child(1) > p:nth-child(2)");
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		WebElement Complete_Desk=driver.findElement(cssSelector("#Complete\ Decks > p:nth-child(2)");
 		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
-		wait.implictywait(driver);
-		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(2000);
-		ac.click(Complete_All).build().perform();
-	
-		Thread.sleep(4000);
+
 	}
 	
 
-	/* @Then("^Select a product as Project Scoping Powerpoint$")
-	public void select_product() throws InterruptedException {
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		WebElement et = driver.findElement(SignupObject.Select_item);
-		wait1.until(ExpectedConditions.elementToBeClickable(et));
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		et.click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Thread.sleep(1000);
-	} */
-
 	@Then("^Click on download this presentation link$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Downloaded);
+		webelement = driver.findElement(By.cssSelector("#clicking"));
 		wait.implictywait(driver);
 		webelement.click();
 		wait.implictywait(driver);
