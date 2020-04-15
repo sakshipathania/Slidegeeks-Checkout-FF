@@ -31,8 +31,8 @@ import webApp.PerformAction;
 			driver.get("https://www.slideteam.net");
 			Thread.sleep(2000);
 			try {
-				webelement = driver.findElement(SignupObject.close_add);
-				webelement.click();
+				WebElement application= driver.findElement(SignupObject.close_add);
+				application.click();
 				Thread.sleep(2000);
 				log.info("It's opening the website URL");
 			} catch (NoSuchElementException popup) {
@@ -56,35 +56,24 @@ import webApp.PerformAction;
 			WebDriverWait wait1 = new WebDriverWait(driver, 30);
 			wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
 			
-			webelement = driver.findElement(SignupObject.Others);
-			ac.moveToElement(webelement).build().perform();
+			WebElement Complete= driver.findElement(SignupObject.Others);
+			//ac.moveToElement(Complete).build().perform();
+			Complete.click();
 			Thread.sleep(3000);
 			WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
 			wait.implictywait(driver);
-			ac.moveToElement(Complete_Desk).build().perform();
+			Complete_Desk.click();
+			//ac.moveToElement(Complete_Desk).build().perform();
 			Thread.sleep(1000);
-			WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
-			wait.implictywait(driver);
-			ac.moveToElement(Complete_All).build().perform();
-			Thread.sleep(2000);
-			ac.click(Complete_All).build().perform();
+			
+		}
+
 		
-			Thread.sleep(3000);
-		}
-
-		@And("^Select as a Project Scoping Powerpoint\\.$")
-		public void select_product() throws InterruptedException {
-			webelement = driver.findElement(SignupObject.Select_item);
-			webelement.click();
-			wait.implictywait(driver);
-			Thread.sleep(2000);
-		}
-
 		@And("^Click on download link cta\\.$")
 		public void click_on_Download_this_presentation_link() throws InterruptedException {
-			webelement = driver.findElement(SignupObject.Downloaded);
+			WebElement download = driver.findElement(SignupObject.Downloaded);
 			wait.implictywait(driver);
-			webelement.click();
+			download.click();
 			Thread.sleep(9000);
 			
 		try {
@@ -118,8 +107,8 @@ import webApp.PerformAction;
 		public void google_create() throws InterruptedException {
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(LoginObject.Forgot));
-			webelement = driver.findElement(LoginObject.Forgot);
-			webelement.click();
+			WebElement forgot= driver.findElement(LoginObject.Forgot);
+			forgot.click();
 			
 
 		}
@@ -129,20 +118,20 @@ import webApp.PerformAction;
 			
 			WebDriverWait wait1 = new WebDriverWait(driver, 30);
 			wait1.until(ExpectedConditions.visibilityOfElementLocated(LoginObject.enter_mail));
-			webelement = driver.findElement(LoginObject.enter_mail);
+			WebElement registerd = driver.findElement(LoginObject.enter_mail);
 			wait.implictywait(driver);
-			webelement.click();
+			registerd.click();
 			wait.implictywait(driver);
-			webelement.clear();
+			registerd.clear();
 			wait.implictywait(driver);
-			webelement.sendKeys(email);
+			registerd.sendKeys(email);
 			wait.implictywait(driver);
 		}
 
 		@Then("^Click on submit button\\.$")
 		public void enter_user_mail() throws InterruptedException {
-			webelement = driver.findElement(LoginObject.Button_submit);
-			js.executeScript("arguments[0].click();", webelement);
+			WebElement submit= driver.findElement(LoginObject.Button_submit);
+			js.executeScript("arguments[0].click();", submit);
 			wait.implictywait(driver);
 			Thread.sleep(3000);
 		}
@@ -150,7 +139,7 @@ import webApp.PerformAction;
 		@Then("^Verify \"([^\"]*)\" the validation message\\.$")
 		public void password_page(String error) throws InterruptedException {
 
-			webelement = driver.findElement(LoginObject.invalid_error);
+			WebElement validation = driver.findElement(LoginObject.invalid_error);
 			try {
 				String invalid_val = driver.findElement(LoginObject.invalid_error).getText();
 				wait.implictywait(driver);
@@ -175,4 +164,3 @@ import webApp.PerformAction;
 		}
 
 	}
-
