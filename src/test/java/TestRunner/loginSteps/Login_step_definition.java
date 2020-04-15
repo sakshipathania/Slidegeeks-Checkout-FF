@@ -55,7 +55,7 @@ public class Login_step_definition extends SetupClass {
 	public void click_most_download() throws InterruptedException {
 		driver.navigate().refresh();
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
+		//wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
 		
 		WebElement download= driver.findElement(SignupObject.Others);
 		ac.moveToElement(download).build().perform();
@@ -156,7 +156,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Enter user a email address as\\.$")
 
-	public void enter_email_as() {
+	public void enter_email_as() throws InterruptedException  {
 		WebElement address= driver.findElement(LoginObject.UserId);
 		address.click();
 		wait.implictywait(driver);
@@ -284,7 +284,8 @@ public class Login_step_definition extends SetupClass {
 				wait.implictywait(driver);
 				Thread.sleep(3000);
 				System.out.println("title does not matched");
-	}
+	        }
+
 		 else{
 				Assert.assertEquals(expectedTitle2, actualTitle1);
 				wait.implictywait(driver);
