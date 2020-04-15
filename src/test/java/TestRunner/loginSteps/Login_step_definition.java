@@ -46,6 +46,7 @@ public class Login_step_definition extends SetupClass {
 				driver.navigate().refresh();
 				Thread.sleep(2000);
 			}
+		}
 			catch(NoSuchElementException Ext) {
 			
 			}
