@@ -86,12 +86,12 @@ public class Login_step_definition extends SetupClass {
 	@Then("^Enter user email address as \"([^\"]*)\"\\.$")
 	public void enter_user_email_address_as(String email) {
 	
-		WebElement email= driver.findElement(LoginObject.UserId);
-		email.click();
+		WebElement email_ad= driver.findElement(LoginObject.UserId);
+		email_ad.click();
 		wait.implictywait(driver);
-		email.clear();
+		email_ad.clear();
 		wait.implictywait(driver);
-		email.sendKeys(email);
+		email_ad.sendKeys(email);
 		wait.implictywait(driver);
 		
 	
@@ -119,7 +119,7 @@ public class Login_step_definition extends SetupClass {
 	}
 
 	@Then("^Verify uesr \"([^\"]*)\" validation message for Email Address\\.$")
-	public void verify_uesr_validation_message_for_Email_Address(String email) throws Throwable {
+	public void verify_uesr_validation_message_for_Email_Address(String Email_test) throws Throwable {
 
 		try {
 			String Email_test = driver.findElement(LoginObject.uesremail_val).getText();
