@@ -31,8 +31,8 @@ public class Login_step_definition extends SetupClass {
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(2000);
 		try {
-			webelement = driver.findElement(SignupObject.close_add);
-			webelement.click();
+			WebElement website = driver.findElement(SignupObject.close_add);
+			website.click();
 			Thread.sleep(2000);
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
@@ -57,47 +57,40 @@ public class Login_step_definition extends SetupClass {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
 		
-		webelement = driver.findElement(SignupObject.Others);
-		ac.moveToElement(webelement).build().perform();
+		WebElement download= driver.findElement(SignupObject.Others);
+		ac.moveToElement(download).build().perform();
 		Thread.sleep(3000);
 		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
 		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
-		WebElement Complete_All=driver.findElement(SignupObject.Complete_All);
-		wait.implictywait(driver);
-		ac.moveToElement(Complete_All).build().perform();
-		Thread.sleep(2000);
-		ac.click(Complete_All).build().perform();
-	
-		Thread.sleep(4000);
 	}
 
 	@Then("^select a product item\\.$")
 	public void select_product() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Select_item);
-		webelement.click();
+		WebElement Product= driver.findElement(SignupObject.Select_item);
+		Product.click();
 		wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
 
 	@Then("^click on download this presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Downloaded);
+		WebElement PPT_link = driver.findElement(SignupObject.Downloaded);
 		wait.implictywait(driver);
-		webelement.click();
+		PPT_link.click();
 		Thread.sleep(1000);
 	}
 
 	@Then("^Enter user email address as \"([^\"]*)\"\\.$")
 	public void enter_user_email_address_as(String email) {
 	
-		webelement = driver.findElement(LoginObject.UserId);
-		webelement.click();
+		WebElement email= driver.findElement(LoginObject.UserId);
+		email.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		email.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys(email);
+		email.sendKeys(email);
 		wait.implictywait(driver);
 		
 	
@@ -105,21 +98,21 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Insert the Password \"([^\"]*)\"\\.$")
 	public void enter_user_password_as(String passwd) throws Throwable {
-		webelement = driver.findElement(LoginObject.userpass);
-		webelement.click();
+		WebElement Insert_Pass = driver.findElement(LoginObject.userpass);
+		Insert_Pass.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		Insert_Pass.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys(passwd);
+		Insert_Pass.sendKeys(passwd);
 		wait.implictywait(driver);
 		
 	}
 
 	@Then("^Click on Login button\\.$")
 	public void click_on_Login_button() throws Throwable {
-		webelement = driver.findElement(LoginObject.login);
+		WebElement Login= driver.findElement(LoginObject.login);
 		wait.implictywait(driver);
-		webelement.click();
+		Login.click();
 		wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
@@ -164,23 +157,23 @@ public class Login_step_definition extends SetupClass {
 	@Then("^Enter user a email address as\\.$")
 
 	public void enter_email_as() {
-		webelement = driver.findElement(LoginObject.UserId);
-		webelement.click();
+		WebElement address= driver.findElement(LoginObject.UserId);
+		address.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		address.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("selenium.testing1234@gmail.com");
+		address.sendKeys("selenium.testing1234@gmail.com");
 		wait.implictywait(driver);
 	}
 
 	@Then("^Enter password as\\.$")
 	public void enter_paasword_as() throws InterruptedException {
-		webelement = driver.findElement(LoginObject.userpass);
-		webelement.click();
+		WebElement password= driver.findElement(LoginObject.userpass);
+		password.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		password.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("123456");
+		password.sendKeys("123456");
 		Thread.sleep(1000);
 	}
 
@@ -219,7 +212,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^See default payment option as paypal\\.$")
 	public void see_default_payment_option_as_paypal() throws Throwable {
-		webelement = driver.findElement(SignupObject.paypay_radio_button);
+		WebElement default = driver.findElement(SignupObject.paypay_radio_button);
 		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
 		// to check the check box is already selected or not
 		{
@@ -235,20 +228,20 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Enter coupon code\\.$")
 	public void enter_coupon() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.Enter_Coupon);
+		WebElement code = driver.findElement(SignupObject.Enter_Coupon);
 		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
+		js.executeScript("arguments[0].click();", code);
 		wait.implictywait(driver);
-		webelement.clear();
+		code.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("5OFF");
+		code.sendKeys("5OFF");
 		wait.implictywait(driver);
 	}
 
 	@Then("^Apply cuopon code\\.$")
 	public void apply_the_cuopon_code() throws Throwable {
-		webelement = driver.findElement(SignupObject.Apply_Coupon);
-		js.executeScript("arguments[0].click();", webelement);
+		WebElement coupon= driver.findElement(SignupObject.Apply_Coupon);
+		js.executeScript("arguments[0].click();", coupon);
 		Thread.sleep(3000);
 		driver.switchTo().alert().dismiss();
 		Thread.sleep(2000);
@@ -268,9 +261,9 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^click on place order CTA\\.$")
 	public void click_on_place_order_CTA() throws Throwable {
-		webelement = driver.findElement(SignupObject.place_cta);
+		WebElement CTA= driver.findElement(SignupObject.place_cta);
 		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
+		js.executeScript("arguments[0].click();", CTA);
 		Thread.sleep(5000);
 	}
 
@@ -306,8 +299,8 @@ public class Login_step_definition extends SetupClass {
 	}
 	@Then("^Select payment option as Card\\.$")
 	public void select_payment_option_as_Card() throws Throwable {
-		webelement = driver.findElement(SignupObject.card_radio_button);
-		webelement.click();
+		WebElement option= driver.findElement(SignupObject.card_radio_button);
+		option.click();
 		Thread.sleep(1000);
 		String card_text = driver.findElement(SignupObject.verify_2checkout).getText();
 		System.out.println(card_text);
