@@ -51,7 +51,7 @@ import webApp.PerformAction;
 			}
 		}
 
-		@And("^Select on Complete ppts CTA\\.$")
+		@Then("^Select on Complete ppts CTA\\.$")
 		public void click_most_download() throws InterruptedException {
 			WebDriverWait wait1 = new WebDriverWait(driver, 30);
 			wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
@@ -69,7 +69,7 @@ import webApp.PerformAction;
 		}
 
 		
-		@And("^Click on download link cta\\.$")
+		@Then("^Click on download link cta\\.$")
 		public void click_on_Download_this_presentation_link() throws InterruptedException {
 			WebElement download = driver.findElement(SignupObject.Downloaded);
 			wait.implictywait(driver);
@@ -103,22 +103,22 @@ import webApp.PerformAction;
 				}
 		}
 
-		@And("^Click on forgot password link\\.$")
+		@Then("^Click on forgot password link\\.$")
 		public void google_create() throws InterruptedException {
 			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(LoginObject.Forgot));
-			WebElement forgot= driver.findElement(LoginObject.Forgot);
+			//wait.until(ExpectedConditions.visibilityOfElementLocated(LoginObject.Forgot));
+			WebElement forgot= driver.findElement(By.xpath("//*[@id='login-form']/fieldset/div[4]/div[1]/a/span"));
 			forgot.click();
 			
-
+                        Thread.sleep(2000);
 		}
 
-		@And("^Enter the user email address is registerd as \"([^\"]*)\"\\.$")
+		@Then("^Enter the user email address is registerd as \"([^\"]*)\"\\.$")
 		public void user_mail(String email) throws InterruptedException {
 			
 			WebDriverWait wait1 = new WebDriverWait(driver, 30);
-			wait1.until(ExpectedConditions.visibilityOfElementLocated(LoginObject.enter_mail));
-			WebElement registerd = driver.findElement(LoginObject.enter_mail);
+			//wait1.until(ExpectedConditions.visibilityOfElementLocated(LoginObject.enter_mail));
+			WebElement registerd = driver.findElement(By.cssSelector("#email_address"));
 			wait.implictywait(driver);
 			registerd.click();
 			wait.implictywait(driver);
