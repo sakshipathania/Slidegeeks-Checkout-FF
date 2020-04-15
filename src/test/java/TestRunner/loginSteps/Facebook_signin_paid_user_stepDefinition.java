@@ -31,8 +31,8 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(2000);
 		try {
-			webelement = driver.findElement(SignupObject.close_add);
-			webelement.click();
+			WebElement app = driver.findElement(SignupObject.close_add);
+			app.click();
 			Thread.sleep(2000);
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
@@ -54,14 +54,16 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	@Then("^go to Complete ppts$")
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		webelement = driver.findElement(By.cssSelector("#ppt_templates > a:nth-child(1) > p:nth-child(2)"));
+		WebElement download = driver.findElement(By.cssSelector("#ppt_templates > a:nth-child(1) > p:nth-child(2)"));
 		Thread.sleep(1000);
+		download.click();
 		//webelement = driver.findElement(SignupObject.Others);
-		ac.moveToElement(webelement).build().perform();
+		//ac.moveToElement(webelement).build().perform();
 		Thread.sleep(3000);
 		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete/ Decks > p:nth-child(2)"));
 		wait.implictywait(driver);
-		ac.moveToElement(Complete_Desk).build().perform();
+		Complete_desk.click();
+		//ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
 	
 	}
@@ -69,16 +71,16 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	
 	@Then("^Click on download this presentation$")
 	public void click_on_Download_thist_presentation_link() throws InterruptedException {
-		webelement = driver.findElement(By.xpath("//*[@id='clicking']"));
+		WebElement Download_ppt = driver.findElement(By.xpath("//*[@id='clicking']"));
 		wait.implictywait(driver);
-		webelement.click();
+		Download_ppt.click();
 		Thread.sleep(1000);
 	}
 
 	@Then("^Click on test fblink$")
 	public void fb_link() throws InterruptedException {
-		webelement = driver.findElement(FbandGP_Object.fbLink);
-		webelement.click();
+		WebElement fblink = driver.findElement(FbandGP_Object.fbLink);
+		fblink.click();
 		Thread.sleep(1000);
 	}
 
@@ -86,12 +88,12 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	public void enter_user_mail() throws InterruptedException {
 		
 		try {
-		webelement = driver.findElement(FbandGP_Object.Femai);
-		webelement.click();
+		WebElement user_email = driver.findElement(FbandGP_Object.Femai);
+		user_email.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		user_email.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("sakshi.pathania@slidetech.in");
+		user_email.sendKeys("sakshi.pathania@slidetech.in");
 		wait.implictywait(driver);
 
 		} catch (NoSuchElementException nonemaillink) {
@@ -102,12 +104,12 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	 @Then("^user password as$")
 	 public void enter_user_password() throws Throwable {
 		try {
-		webelement = driver.findElement(FbandGP_Object.Fpassword);
-		webelement.click();
+		WebElement user_pass = driver.findElement(FbandGP_Object.Fpassword);
+		user_pass.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		user_pass.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("Sakshi@123");
+		user_pass.sendKeys("Sakshi@123");
 		wait.implictywait(driver);
 
 	
@@ -119,9 +121,9 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	@Then("^click on Login button$")
 	public void click_on_Login_button() throws Throwable {
 		try {
-		webelement = driver.findElement(FbandGP_Object.FbLogin);
+		WebElement Login_button = driver.findElement(FbandGP_Object.FbLogin);
 		wait.implictywait(driver);
-		webelement.click();
+		Login_button.click();
 		wait.implictywait(driver);
 		Thread.sleep(2000);
 		} catch (NoSuchElementException logincta) {
@@ -129,8 +131,8 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		}
 		 Thread.sleep(1000);
 		try {
-			webelement = driver.findElement(FbandGP_Object.continue_as_QA);
-			webelement.click();
+			WebElement FP_GP = driver.findElement(FbandGP_Object.continue_as_QA);
+			FP_GP.click();
 			Thread.sleep(1000);
 		} catch (NoSuchElementException qalink) {
 
