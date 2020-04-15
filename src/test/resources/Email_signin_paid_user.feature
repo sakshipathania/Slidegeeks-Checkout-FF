@@ -3,7 +3,6 @@ Feature: Already user subcribe the application.
 Scenario: Already subscribe the product. 
 	Given Open application URL 
 	And Click on Complete ppts 
-	And Select a product as Project Scoping Powerpoint 
 	And Click on download this presentation link 
 	Then chat window option.
 	Then Enter a user email 
