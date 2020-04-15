@@ -59,7 +59,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		//webelement = (SignupObject.Others);//
 		ac.moveToElement(complete).build().perform();
 		Thread.sleep(3000);
-		WebElement Complete_Desk= driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/ul/li[2]/strong"));
+		WebElement Complete_Desk= driver.findElement(By.cssSelector("#Complete\ Decks > p:nth-child(2)"));
 		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
