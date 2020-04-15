@@ -57,11 +57,11 @@ public class SignUp_Step extends SetupClass {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		WebElement download= driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		ac.moveToElement(download).build().perform();
+		download.click();
 		Thread.sleep(1000);
 		
 		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/ul/li[4]/a/p"));
-		ac.moveToElement(Complete_Desk).build().perform();
+		Complete_Desk.click();
 		Thread.sleep(1000);
 		
 	}
