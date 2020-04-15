@@ -124,7 +124,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		wait.implictywait(driver);
 		Thread.sleep(10000);
 		try {
-			webelement Fb_GP = driver.findElement(FbandGP_Object.continue_as_QA);
+			WebElement Fb_GP = driver.findElement(FbandGP_Object.continue_as_QA);
 			Fb_GP.click();
 			Thread.sleep(1000);
 		} catch (NoSuchElementException qalink) {
