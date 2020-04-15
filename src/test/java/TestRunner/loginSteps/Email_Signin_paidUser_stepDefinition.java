@@ -33,8 +33,8 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(5000);
 		try {
-			webelement = driver.findElement(SignupObject.close_add);
-			webelement.click();
+			WebElement App_url= driver.findElement(SignupObject.close_add);
+			App_url.click();
 			Thread.sleep(2000);
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
@@ -56,12 +56,14 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	@Then("^Click on Complete ppts$")
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		webelement = driver.findElement(cssSelector("#ppt_templates > a:nth-child(1) > p:nth-child(2)");
-		ac.moveToElement(webelement).build().perform();
+		WebElement complete_ppt= driver.findElement(cssSelector("#ppt_templates > a:nth-child(1) > p:nth-child(2)"));
+		//ac.moveToElement(complete_ppt).build().perform();
+		complete_ppt.click();
 		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(cssSelector("#Complete\ Decks > p:nth-child(2)");
+		WebElement Complete_Desk=driver.findElement(cssSelector("#Complete\ Decks > p:nth-child(2)"));
 		wait.implictywait(driver);
-		ac.moveToElement(Complete_Desk).build().perform();
+		//ac.moveToElement(Complete_Desk).build().perform();
+		Complete_Desk.click();
 		Thread.sleep(1000);
 
 	}
@@ -69,9 +71,9 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 
 	@Then("^Click on download this presentation link$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		webelement = driver.findElement(By.cssSelector("#clicking"));
+		WebElement presentation= driver.findElement(By.cssSelector("#clicking"));
 		wait.implictywait(driver);
-		webelement.click();
+		presentation.click();
 		wait.implictywait(driver);
 		Thread.sleep(8000);
 	}
@@ -107,33 +109,33 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	@Then("^Enter a user email$")
 	public void enter_user_email_address_as() {
 
-		webelement = driver.findElement(LoginObject.UserId);
-		webelement.click();
+		WebElement Email_add= driver.findElement(LoginObject.UserId);
+		Email_add.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		Email_add.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("sumit@slideteam.net");
+		Email_add.sendKeys("sumit@slideteam.net");
 		wait.implictywait(driver);
 
 	}
 
 	@Then("^Enter the user password$")
 	public void enter_user_password_as() throws Throwable {
-		webelement = driver.findElement(LoginObject.userpass);
-		webelement.click();
+		WebElement user_pass = driver.findElement(LoginObject.userpass);
+		user_pass.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		user_pass.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("sumittest@21234");
+		user_pass.sendKeys("sumittest@21234");
 		wait.implictywait(driver);
 
 	}
 
 	@Then("^click on Login cta$")
 	public void click_on_Login_button() throws Throwable {
-		webelement = driver.findElement(LoginObject.login);
+		WebElement Login_button= driver.findElement(LoginObject.login);
 		wait.implictywait(driver);
-		webelement.click();
+		Login_button.click();
 		wait.implictywait(driver);
 		Thread.sleep(2000);
 
