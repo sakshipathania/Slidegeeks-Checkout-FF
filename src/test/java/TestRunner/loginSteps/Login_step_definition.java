@@ -119,8 +119,8 @@ public class Login_step_definition extends SetupClass {
 		Thread.sleep(2000);
 	}
 
-	@Then("^Verify uesr \"([^\"]*)\" validation message for Email Address\\.$")
-	public void verify_uesr_validation_message_for_Email_Address(String Email) throws Throwable {
+	@Then("^Verify user \"([^\"]*)\" validation message for Email Address\\.$")
+	public void verify_user_validation_message_for_Email_Address(String Email) throws Throwable {
 
 		try {
 			String Email_test = driver.findElement(LoginObject.uesremail_val).getText();
@@ -179,7 +179,7 @@ public class Login_step_definition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@Given("^after login redirect to price page\\.$")
+	@Then("^after login redirect to price page\\.$")
 	public void after_signup_redirect_to_price_page() throws Throwable {
 		Thread.sleep(3000);
 		String actualTitle = driver.getTitle();
