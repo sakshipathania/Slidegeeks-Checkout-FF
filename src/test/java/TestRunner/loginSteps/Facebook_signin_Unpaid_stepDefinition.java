@@ -57,12 +57,14 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		driver.navigate().refresh();
 		Thread.sleep(1000);
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		webelement = driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
-		ac.moveToElement(webelement).build().perform();
+		webelement product= driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
+		//ac.moveToElement(webelement).build().perform();
+		product.click();
 		Thread.sleep(3000);
 		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/ul/li[4]/a/p"));
 		wait.implictywait(driver);
-		ac.moveToElement(Complete_Desk).build().perform();
+		Complete_Desk.click();
+		//ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
 	}
 
