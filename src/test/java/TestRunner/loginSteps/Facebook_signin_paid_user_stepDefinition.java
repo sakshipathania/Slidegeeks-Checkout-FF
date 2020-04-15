@@ -59,7 +59,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		//webelement = driver.findElement(SignupObject.Others);
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete\ Decks > p:nth-child(2)"));
+		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete/ Decks > p:nth-child(2)"));
 		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
