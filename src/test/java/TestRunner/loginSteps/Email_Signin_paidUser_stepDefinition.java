@@ -60,7 +60,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		//ac.moveToElement(complete_ppt).build().perform();
 		complete_ppt.click();
 		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(cssSelector("#Complete\ Decks > p:nth-child(2)"));
+		WebElement Complete_Desk=driver.findElement(cssSelector("#Complete/ Decks > p:nth-child(2)"));
 		wait.implictywait(driver);
 		//ac.moveToElement(Complete_Desk).build().perform();
 		Complete_Desk.click();
