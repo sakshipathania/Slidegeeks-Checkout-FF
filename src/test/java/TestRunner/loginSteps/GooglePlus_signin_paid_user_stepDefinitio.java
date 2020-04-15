@@ -175,7 +175,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 			Thread.sleep(1000);
 		} catch (NoSuchElementException er1) {
 
-		}
+		} 
 	}
 
 }
