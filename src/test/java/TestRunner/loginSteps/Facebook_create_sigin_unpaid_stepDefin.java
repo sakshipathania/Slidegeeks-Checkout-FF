@@ -60,10 +60,11 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WebElement Complete= driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		ac.moveToElement(Complete).build().perform();
+		Complete.click();
 		Thread.sleep(1000);
 		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/ul/li[4]/a/p"));
-		ac.moveToElement(Complete_Desk).build().perform();
+		//ac.moveToElement(Complete_Desk).build().perform();
+		Complete_Desk.click();
 		Thread.sleep(1000);
 		
 	}
@@ -78,53 +79,53 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Click on create as account link\\.$")
 	public void click_on_create_as_account_link() throws InterruptedException {
-		webelement = driver.findElement(SignupObject.create);
-		webelement.click();
+		webelement account_link = driver.findElement(SignupObject.create);
+		account_link.click();
 		Thread.sleep(1500);
 	}
 
 	@Then("^Click on faceblink\\.$")
 	public void click_on_faceblink() throws InterruptedException {
-		webelement = driver.findElement(FbandGP_Object.fbLink);
+		webelement Faceblink = driver.findElement(FbandGP_Object.fbLink);
 		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
+		js.executeScript("arguments[0].click();", Faceblink);
 		Thread.sleep(3000);
 	}
 
 	@Then("^Fb user enter a valid email\\.$")
 	public void fb_user_enter_a_valid_email() throws InterruptedException {
-		webelement = driver.findElement(FbandGP_Object.Femai);
-		webelement.click();
+		webelement valid_email= driver.findElement(FbandGP_Object.Femai);
+		valid_email.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		valid_email.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("amw.vrushali@gmail.com");
+		valid_email.sendKeys("amw.vrushali@gmail.com");
 		wait.implictywait(driver);
 
 	}
 
 	@Then("^Fb user enter valid password\\.$")
 	public void fb_user_enter_valid_password() throws Throwable {
-		webelement = driver.findElement(FbandGP_Object.Fpassword);
-		webelement.click();
+		webelement Valid_pass = driver.findElement(FbandGP_Object.Fpassword);
+		Valid_pass.click();
 		wait.implictywait(driver);
-		webelement.clear();
+		Valid_pass.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("vrushali@786");
+		Valid_pass.sendKeys("vrushali@786");
 		wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
 
 	@Then("^click on login cta on fb page\\.$")
 	public void click_on_login_cta_on_fb_page() throws InterruptedException {
-		webelement = driver.findElement(FbandGP_Object.FbLogin);
+		webelement Fb_login= driver.findElement(FbandGP_Object.FbLogin);
 		wait.implictywait(driver);
-		webelement.click();
+		Fb_login.click();
 		wait.implictywait(driver);
 		Thread.sleep(10000);
 		try {
-			webelement = driver.findElement(FbandGP_Object.continue_as_QA);
-			webelement.click();
+			webelement Fb_GP = driver.findElement(FbandGP_Object.continue_as_QA);
+			Fb_GP.click();
 			Thread.sleep(1000);
 		} catch (NoSuchElementException qalink) {
 
@@ -168,7 +169,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^By default payment option as paypal is selected\\.$")
 	public void by_default_payment_option_as_paypal_is_selected() throws Throwable {
-		webelement = driver.findElement(By.cssSelector("#paypal_express"));
+		webelement paypal = driver.findElement(By.cssSelector("#paypal_express"));
 		if (!driver.findElement(By.cssSelector("#paypal_express")).isSelected())
 		// to check the check box is already selected or not
 		{
@@ -184,20 +185,20 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Enter the the offer code is off is showing\\.$")
 	public void enter_coupon() {
-		webelement = driver.findElement(By.xpath("//*[@id='discount-code']"));
+		webelement Offer = driver.findElement(By.xpath("//*[@id='discount-code']"));
 		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
+		js.executeScript("arguments[0].click();", Offer);
 		wait.implictywait(driver);
-		webelement.clear();
+		Offer.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("5OFF");
+		Offer.sendKeys("5OFF");
 		wait.implictywait(driver);
 	}
 
 	@Then("^Apply the code\\.$")
 	public void apply_the_cuopon_code() throws Throwable {
-		webelement = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div[4]/div[3]/ol/li[3]/div/form/fieldset/div[3]/div[2]/form/div[2]/div/button/span/span"));
-		js.executeScript("arguments[0].click();", webelement);
+		webelement coupon_code= driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div[4]/div[3]/ol/li[3]/div/form/fieldset/div[3]/div[2]/form/div[2]/div/button/span/span"));
+		js.executeScript("arguments[0].click();", coupon_code);
 		Thread.sleep(3000);
 		driver.switchTo().alert().dismiss();
 		Thread.sleep(2000);
@@ -217,9 +218,9 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Place order the product\\.$")
 	public void click_on_place_order_CTA() throws Throwable {
-		webelement = driver.findElement(SignupObject.place_cta);
+		webelement product= driver.findElement(SignupObject.place_cta);
 		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
+		js.executeScript("arguments[0].click();", product);
 		Thread.sleep(5000);
 	}
 
@@ -256,8 +257,8 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 					
 	@Then("^Select the payment option as CARD is given\\.$")
 	public void select_payment_option_as_Card() throws Throwable {
-		webelement = driver.findElement(SignupObject.card_radio_button);
-		webelement.click();
+		webelement card= driver.findElement(SignupObject.card_radio_button);
+		card.click();
 		Thread.sleep(1000);
 		String card_text = driver.findElement(SignupObject.verify_2checkout).getText();
 		System.out.println(card_text);
