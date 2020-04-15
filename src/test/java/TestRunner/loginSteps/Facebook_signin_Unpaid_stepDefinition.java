@@ -57,7 +57,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		driver.navigate().refresh();
 		Thread.sleep(1000);
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		webelement product= driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
+		WebElement product= driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
 		//ac.moveToElement(webelement).build().perform();
 		product.click();
 		Thread.sleep(3000);
