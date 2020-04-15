@@ -54,12 +54,12 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	@Then("^go to Complete ppts$")
 	public void click_most_download() throws InterruptedException {
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		webelement = driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[26]/a/p"));
+		webelement = driver.findElement(By.cssSelector("#ppt_templates > a:nth-child(1) > p:nth-child(2)"));
 		Thread.sleep(1000);
 		//webelement = driver.findElement(SignupObject.Others);
 		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[26]/ul/li[4]/a/p"));
+		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete\ Decks > p:nth-child(2)"));
 		wait.implictywait(driver);
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
