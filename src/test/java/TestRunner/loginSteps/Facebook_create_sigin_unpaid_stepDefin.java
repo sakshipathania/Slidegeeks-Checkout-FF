@@ -62,7 +62,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		ac.moveToElement(Complete).build().perform();
 		Thread.sleep(1000);
-		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete/ Decks > p:nth-child(2)"));
+		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/ul/li[4]/a/p"));
 		ac.moveToElement(Complete_Desk).build().perform();
 		Thread.sleep(1000);
 		
