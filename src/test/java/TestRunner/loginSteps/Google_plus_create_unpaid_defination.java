@@ -52,33 +52,20 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		}
 	}
 
-	@And("^the product list as Complete ppts\\.$")
-	public void click_most_download() throws InterruptedException {
-		driver.navigate().refresh();
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		//wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
-		
-		WebElement ppt= driver.findElement(SignupObject.Others);
-		ppt.click();
-		//ac.moveToElement(WebElement).build().perform();
-		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
-		wait.implictywait(driver);
-		//ac.moveToElement(Complete_Desk).build().perform();
-		Complete_Desk.click();
-		Thread.sleep(1000);
-		
-	}
-
-	@And("^Project list as Scoping Powerpoint product\\.$")
-	public void select_product() throws InterruptedException {
-		WebElement Project= driver.findElement(SignupObject.Select_item);
-		Project.click();
-		wait.implictywait(driver);
-		Thread.sleep(2000);
-	}
-
-	@And("^go to download link\\.$")
+	@Then("^user navigate to complete deck from account dashboard page$")
+         public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+    
+	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
+	 Thread.sleep(3000);
+	 
+	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	    Thread.sleep(2000);
+	    
+            }
+	
+	@Then("^go to download link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		WebElement link= driver.findElement(SignupObject.Downloaded);
 		wait.implictywait(driver);
@@ -86,7 +73,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@And("^Click on Create account cta\\.")
+	@Then("^Click on Create account cta\\.")
 	public void create_accuont() throws InterruptedException {
 		WebElement Create= driver.findElement(SignupObject.create);
 		wait.implictywait(driver);
@@ -94,7 +81,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@And("^then click on Google plus link button\\.$")
+	@Then("^then click on Google plus link button\\.$")
 	public void fb_link() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,100)");
 		Thread.sleep(500);
