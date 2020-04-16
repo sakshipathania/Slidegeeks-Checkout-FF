@@ -66,7 +66,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	 select_product.click();
 	   // Thread.sleep(2000);
 	    
-            } */
+            }
 
 	@Then("^Click on download this presentation link$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
