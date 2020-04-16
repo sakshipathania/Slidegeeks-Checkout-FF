@@ -66,9 +66,6 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	    
             }
 
-	}
-	
-
 	@Then("^Click on download this presentation link$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		WebElement presentation= driver.findElement(By.cssSelector("#clicking"));
