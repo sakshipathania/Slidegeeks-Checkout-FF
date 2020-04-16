@@ -51,42 +51,21 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		}
 	}
 
-	@Then("^Select style as complete ppt\\.$")
-	public void click_most_download() throws InterruptedException {
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		WebElement complete = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/div/ul/li[1]/a"));
-		complete.click();
-		//webelement = (SignupObject.Others);//
-		//ac.moveToElement(complete).build().perform();
-		Thread.sleep(3000);
-		WebElement Complete_Desk= driver.findElement(By.cssSelector("#Complete/Decks > p:nth-child(2)"));
-		wait.implictywait(driver);
-		Complete_Desk.click();
-		//ac.moveToElement(Complete_Desk).build().perform();
-		Thread.sleep(1000);
-		
-		try {
-			WebElement recommended=driver.findElement(By.cssSelector(".scd-assistant-cards-close :nth-child(1)"));
-			wait.implictywait(driver);
-			recommended.click();
-	Thread.sleep(1000);
-	} catch (NoSuchElementException recommended) {
+	@Then("^user navigate to complete deck from account dashboard page$")
+         public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+    
+	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
+	 Thread.sleep(3000);
+	 
+	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	    Thread.sleep(2000);
+	    
+            }
 
-	}
-	}
 
-	@And("^Select any project slider\\.$")
-	public void select_product() throws InterruptedException {
-		
-		Thread.sleep(3000);
-		
-		WebElement slider = driver.findElement(SignupObject.Select_item);
-		wait.implictywait(driver);
-		slider.click();
-		Thread.sleep(2000);
-	}
-
-	@And("^Click on downloadbtn test5 link\\.$")
+	@Then("^Click on downloadbtn test5 link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		WebElement test5 = driver.findElement(SignupObject.Downloaded);
 		wait.implictywait(driver);
@@ -94,7 +73,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		Thread.sleep(2000);
 	}
 
-	@And("^Click on googlePlus link\\.$")
+	@Then("^Click on googlePlus link\\.$")
 	public void fb_link() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(1000);
