@@ -59,10 +59,9 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	 wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"))).click();
 	  Thread.sleep(2000);   
-	ac.moveToElement(select_product).build().perform();
-	 //select_product.click();
+	  //select_product
 	    Thread.sleep(2000);
 	    
 }
