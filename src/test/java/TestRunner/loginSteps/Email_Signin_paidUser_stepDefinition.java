@@ -53,17 +53,17 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		}
 	}
 
-	/* @Then("^user navigate to complete deck from account dashboard page$")
-         public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+	 @Then("^user goes to complete deck from account dashboard page$")
+         public void user_goes_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
-	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
-	 wait.implictywait(driver);
+	 //driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
+	 //wait.implictywait(driver);
 	 Thread.sleep(3000);
 	 
-	//wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"))).click();
-	//  Thread.sleep(2000);   
+	WebElement select_product = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"))).click();
+          Thread.sleep(2000);   
 	//ac.moveToElement(select_product).build().perform();	 
-	 //select_product.click();
+	 select_product.click();
 	   // Thread.sleep(2000);
 	    
             } */
