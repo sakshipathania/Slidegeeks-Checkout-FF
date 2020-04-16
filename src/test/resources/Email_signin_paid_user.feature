@@ -2,8 +2,8 @@
 Feature: Already user subcribe the application. 
 Scenario: Already subscribe the product. 
 	Given Open application URL 
-	And Click on Complete ppts 
-	And Click on download this presentation link 
+	Then user navigate to complete deck from account dashboard page 
+	Then Click on download this presentation link 
 	Then chat window option.
 	Then Enter a user email 
 	Then Enter the user password 
