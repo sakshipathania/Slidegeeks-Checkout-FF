@@ -60,7 +60,7 @@ public void user_navigate_to_complete_deck_from_account_dashboard_page() throws 
 	 
 	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
 	  Thread.sleep(2000);   
-	 select_product.click();
+	 ac.moveToElement(select_product).build().perform();
 	    Thread.sleep(2000);
 	    
 }
