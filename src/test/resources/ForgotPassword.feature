@@ -2,8 +2,7 @@
 Feature: Verify the forgot password. 
 Scenario Outline: Test the forgot password. 
 	Given To the application URL. 
-	Then  Select on Complete ppts CTA. 
-	Then Select as a Project Scoping Powerpoint. 
+	Then user navigate to complete deck from account dashboard page. 
 	Then Click on download link cta. 
 	Then Click on forgot password link. 
 	Then Enter the user email address is registerd as "<Email Address>". 
