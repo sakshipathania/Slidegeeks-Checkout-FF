@@ -3,7 +3,7 @@ Feature: signup Test On Web Application
 @signupTest_1 
 Scenario: 
 	Given Navigates to website url. 
-	Then Click on Most Downloaded link.
+	Then user navigate to complete deck from account dashboard page.
 	Then Click on Download this presentation link. 
 	Then Click on Create an Account CTA. 
 	Then Enter Email Address as "<Email Address>".
