@@ -61,7 +61,8 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	 
 	 WebElement select_product= wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
 	  Thread.sleep(2000);   
-	 select_product.click();
+	ac.moveToElement(select_product).build().perform();	 
+	 //select_product.click();
 	    Thread.sleep(2000);
 	    
             }
