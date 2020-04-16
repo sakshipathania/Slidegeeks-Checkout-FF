@@ -2,7 +2,7 @@
 Feature: Already user subcribe the application with google plus id. 
 Scenario: Already subscribe the product with google plus id. 
 	Given Open home page of the application. 
-	Then user navigate to complete deck from account dashboard page.
+	Then user navigate to complete deck from account dashboard page
 	Then Click on downloadbtn test5 link. 
 	Then Click on googlePlus link. 
 	Then Enter user google email addess. 
