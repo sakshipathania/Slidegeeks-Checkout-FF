@@ -66,7 +66,7 @@ public class SignUp_Step extends SetupClass {
 		
 	}
 
-	@Then("^Select a product items\\.$")
+	/*@Then("^Select a product items\\.$")
 	public void select_product() throws InterruptedException {
 		Thread.sleep(1000);
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
@@ -75,7 +75,7 @@ public class SignUp_Step extends SetupClass {
 		wait.implictywait(driver);
 		product.click();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-	}
+	} */
 
 	@Then("^Click on Download this presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
