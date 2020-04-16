@@ -4,7 +4,6 @@ Feature: signup Test On Web Application
 Scenario: 
 	Given Navigates to website url. 
 	Then Click on Most Downloaded link.
-	Then Select a product items. 
 	Then Click on Download this presentation link. 
 	Then Click on Create an Account CTA. 
 	Then Enter Email Address as "<Email Address>".
