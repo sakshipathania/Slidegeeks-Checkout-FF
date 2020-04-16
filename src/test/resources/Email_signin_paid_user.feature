@@ -2,6 +2,7 @@
 Feature: Already user subcribe the application. 
 Scenario: Already subscribe the product. 
 	Given Open application URL  
+	Then user goes to complete deck from account dashboard page
 	Then Click on download this presentation link 
 	Then chat window option.
 	Then Enter a user email 
