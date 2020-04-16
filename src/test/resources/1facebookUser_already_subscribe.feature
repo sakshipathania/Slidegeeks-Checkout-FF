@@ -2,8 +2,7 @@
 Feature: Already user subcribe the application with facebook id. 
 Scenario: Already subscribe the product. 
 	Given Open given the application URL 
-	Then  go to Complete ppts 
-	Then product as Project Scoping Powerpoint 
+	Then  user navigate to complete deck from account dashboard page. 
 	Then Click on download this presentation 
 	Then Click on test fblink 
 	Then  user email as 
