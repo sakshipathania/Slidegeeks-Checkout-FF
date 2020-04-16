@@ -53,18 +53,18 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		}
 	}
 
-	@Then("^Click on Complete ppts$")
-	public void click_most_download() throws InterruptedException {
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		WebElement complete_ppt= driver.findElement(By.cssSelector("#ppt_templates > a:nth-child(1) > p:nth-child(2)"));
-		//ac.moveToElement(complete_ppt).build().perform();
-		complete_ppt.click();
-		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete/ Decks > p:nth-child(2)"));
-		wait.implictywait(driver);
-		//ac.moveToElement(Complete_Desk).build().perform();
-		Complete_Desk.click();
-		Thread.sleep(1000);
+	@Then("^user navigate to complete deck from account dashboard page$")
+         public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+    
+	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
+	 Thread.sleep(3000);
+	 
+	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	    Thread.sleep(2000);
+	    
+            }
 
 	}
 	
