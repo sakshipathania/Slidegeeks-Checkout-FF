@@ -53,21 +53,18 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		}
 	}
 
-	@Then("^Select product list as Complete ppts\\.$")
-	public void select_product_list_as_Complete_ppts() throws InterruptedException {
-
-	
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		WebElement Complete= driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Complete.click();
-		Thread.sleep(1000);
-		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/ul/li[4]/a/p"));
-		//ac.moveToElement(Complete_Desk).build().perform();
-		Complete_Desk.click();
-		Thread.sleep(1000);
-		
-	}
+	@Then("^user navigate to complete deck from account dashboard page$")
+        public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+    
+	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
+	 Thread.sleep(3000);
+	 
+	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	    Thread.sleep(2000);
+	    
+}
 
 	@Then("^Open the download presentation link\\.$")
 	public void open_the_download_presentation_link() throws InterruptedException {
