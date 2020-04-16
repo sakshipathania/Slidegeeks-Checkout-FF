@@ -51,23 +51,18 @@ import webApp.PerformAction;
 			}
 		}
 
-		@Then("^Select on Complete ppts CTA\\.$")
-		public void click_most_download() throws InterruptedException {
-			WebDriverWait wait1 = new WebDriverWait(driver, 30);
-			wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
-			
-			WebElement Complete= driver.findElement(SignupObject.Others);
-			//ac.moveToElement(Complete).build().perform();
-			Complete.click();
-			Thread.sleep(3000);
-			WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
-			wait.implictywait(driver);
-			Complete_Desk.click();
-			//ac.moveToElement(Complete_Desk).build().perform();
-			Thread.sleep(1000);
-			
-		}
-
+		@Then("^user navigate to complete deck from account dashboard page$")
+         public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+    
+	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
+	 Thread.sleep(3000);
+	 
+	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	    Thread.sleep(2000);
+	    
+            }
 		
 		@Then("^Click on download link cta\\.$")
 		public void click_on_Download_this_presentation_link() throws InterruptedException {
