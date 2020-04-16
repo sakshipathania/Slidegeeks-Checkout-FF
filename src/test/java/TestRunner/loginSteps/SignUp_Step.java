@@ -50,32 +50,18 @@ public class SignUp_Step extends SetupClass {
 		}
 	}
 
-	@Then("^Click on Most Downloaded link\\.$")
-	public void click_most_download() throws InterruptedException {
-		driver.navigate().refresh();
-		Thread.sleep(2000);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		WebElement download= driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/a/p"));
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		download.click();
-		Thread.sleep(1000);
-		
-		WebElement Complete_Desk=driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[26]/ul/li[4]/a/p"));
-		Complete_Desk.click();
-		Thread.sleep(1000);
-		
-	}
-
-	/*@Then("^Select a product items\\.$")
-	public void select_product() throws InterruptedException {
-		Thread.sleep(1000);
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Select_item));
-		WebElement product= driver.findElement(SignupObject.Select_item);
-		wait.implictywait(driver);
-		product.click();
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-	} */
+        @Then("^user navigate to complete deck from account dashboard page$")
+         public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+    
+	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
+	 Thread.sleep(3000);
+	 
+	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	    Thread.sleep(2000);
+	    
+            }
 
 	@Then("^Click on Download this presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
