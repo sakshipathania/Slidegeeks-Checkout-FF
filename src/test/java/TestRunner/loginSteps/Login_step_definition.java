@@ -57,11 +57,11 @@ public class Login_step_definition extends SetupClass {
 		driver.navigate().refresh();
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
 		//wait1.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Others));
-		WebElement download= driver.findElement(SignupObject.Others);
+		WebElement download= driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[26]/a/p"));
 		//ac.moveToElement(download).build().perform();
 		download.click();
 		Thread.sleep(3000);
-		WebElement Complete_Desk=driver.findElement(SignupObject.Complete_desk);
+		WebElement Complete_Desk=driver.findElement(By.cssSelector("#Complete/ Decks > p"));
 		wait.implictywait(driver);
 		Complete_Desk.click();
 		//ac.moveToElement(Complete_Desk).build().perform();
