@@ -53,7 +53,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		}
 	}
 
-	 @Then("^user goes to complete deck from account dashboard page$")
+	/* @Then("^user goes to complete deck from account dashboard page$")
          public void user_goes_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
 	 //driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
@@ -66,7 +66,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	 select_product.click();
 	   // Thread.sleep(2000);
 	    
-            }
+            } */
 
 	@Then("^Click on download this presentation link$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
