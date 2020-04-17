@@ -6,6 +6,7 @@ Scenario: Already subscribe the product.
 	Then Enter a user email 
 	Then Enter the user password 
 	Then click on Login cta 
+	Then user navigate to complete deck from account dashboard page
 	Then the download this presenetion link is appeared 
 	Then Click on download this presentation link 
 	
