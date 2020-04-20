@@ -50,7 +50,7 @@ public class SignUp_Step extends SetupClass {
 		}
 	}
 
-        @Then("^user navigate to complete deck from account dashboard page$")
+       /* @Then("^user navigate to complete deck from account dashboard page$")
          public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
@@ -70,7 +70,7 @@ public class SignUp_Step extends SetupClass {
 		wait.implictywait(driver);
 		Download_ppt.click();
 		Thread.sleep(1000);
-	}
+	} */
 
 	@Then("^Click on Create an Account CTA\\.$")
 	public void reate_an_Account_CTA() throws InterruptedException {
