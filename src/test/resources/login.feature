@@ -2,6 +2,7 @@
 Feature: signin Test On Web Application 
 Scenario: 
 	Given Open the website url. 
+	Then user navigate to complete deck from account dashboard page
 	Then select a product item. 
 	Then click on download this presentation link. 
 	Then Enter user email address as "<EmailAddress>". 
