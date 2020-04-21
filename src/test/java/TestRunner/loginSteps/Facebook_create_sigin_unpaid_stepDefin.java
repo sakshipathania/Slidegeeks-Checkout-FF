@@ -24,7 +24,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	//PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
-
+        WebDriverWait wait = new WebDriverWait(driver,50);
 	// Open web site test on ff
 
 	@Given("^Launching the application URL\\.$")
