@@ -61,8 +61,6 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	 
 	 wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"))).click();
 	  Thread.sleep(2000);   
-	  select_product
-	   Thread.sleep(2000);
 	    
 }
 
