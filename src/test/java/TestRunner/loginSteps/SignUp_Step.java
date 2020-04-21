@@ -1,4 +1,5 @@
-package TestRunner.loginSteps;import java.util.List;
+package TestRunner.loginSteps;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +18,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import webApp.PerformAction;
 public class SignUp_Step extends SetupClass {
-	PerformAction wait = new PerformAction();
+	//PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	public static String Email_Address;
 	Random rad = new Random();
