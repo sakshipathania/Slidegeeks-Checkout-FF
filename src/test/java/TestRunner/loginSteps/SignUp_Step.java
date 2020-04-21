@@ -212,14 +212,15 @@ public class SignUp_Step extends SetupClass {
 	        //wait.implictywait(driver);
 			Thread.sleep(2000);
 	         log.info("It's getting HTML5 validation message using JS executor");
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
+			Thread.sleep(2000);
 		}
 
 
 }
 
 	@Then("^Verify \"([^\"]*)\" validation message for First Name\\.$")
-	public void verify_validation_message_for_First_Name(String Fn) throws throwable{
+	public void verify_validation_message_for_First_Name(String Fn) throws InterruptedException  {
 		try {
 			String Fname = driver.findElement(SignupObject.FNVal).getText();
 			Thread.sleep(2000);
@@ -233,7 +234,7 @@ public class SignUp_Step extends SetupClass {
 	}
 
 	@Then("^Verify \"([^\"]*)\" validation message forLast Name\\.$")
-	public void verify_validation_message_forLast_Name(String LastName) throws throwable{
+	public void verify_validation_message_forLast_Name(String LastName) throws InterruptedException  {
 		try {
 			String LName_vali = driver.findElement(SignupObject.LNVal).getText();
 			//wait.implictywait(driver);
@@ -248,7 +249,7 @@ public class SignUp_Step extends SetupClass {
 	}
 
 	@Then("^Verify \"([^\"]*)\" validation message for Password\\.$")
-	public void verify_validation_message_for_password(String pwd) throws throwable{
+	public void verify_validation_message_for_password(String pwd) throws InterruptedException  {
 		// Write code here that turns the phrase above into concrete actions
 		try {
 			String password_validation = driver.findElement(SignupObject.password_errormessage).getText();
@@ -263,7 +264,7 @@ public class SignUp_Step extends SetupClass {
 	}
 
 	@Then("^Verify \"([^\"]*)\" validation message for Confirm_password\\.$")
-	public void verify_validation_message_for_Confirm_password(String Cpass) throws throwable{
+	public void verify_validation_message_for_Confirm_password(String Cpass) throws InterruptedException  {
 		try {
 			String CNP_validation = driver.findElement(SignupObject.repeat_errormessage).getText();
 			Thread.sleep(2000);
@@ -277,7 +278,7 @@ public class SignUp_Step extends SetupClass {
 	}
 
 	@Then("^Verify \"([^\"]*)\" message for all invalid credentials\\.$")
-	public void message_for_all_invalid_credentials(String Error) throws throwable{
+	public void message_for_all_invalid_credentials(String Error) throws InterruptedException  {
 		try {
 			String Email_Reg = driver.findElement(SignupObject.Signup_errormessage).getText();
 			//wait.implictywait(driver);
@@ -291,7 +292,7 @@ public class SignUp_Step extends SetupClass {
 	}
 
 	@Then("^Enter Email \"([^\"]*)\"\\.$")
-	public void Enter_Email_credentials(String Newuser) throws throwable{
+	public void Enter_Email_credentials(String Newuser) throws InterruptedException  {
 		WebElement Enter_email= driver.findElement(SignupObject.Email);
 		Enter_email.click();
 		Thread.sleep(2000);
