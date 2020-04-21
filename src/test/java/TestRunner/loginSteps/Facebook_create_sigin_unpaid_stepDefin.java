@@ -189,7 +189,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	}
 
 	@Then("^Enter the the offer code is off is showing\\.$")
-	public void enter_coupon() {
+	public void enter_coupon() throws Throwable  {
 		WebElement Offer = driver.findElement(By.xpath("//*[@id='discount-code']"));
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
