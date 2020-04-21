@@ -72,14 +72,14 @@ public class Login_step_definition extends SetupClass {
 	public void select_product() throws InterruptedException {
 		WebElement Product= driver.findElement(SignupObject.Select_item);
 		Product.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
 
 	@Then("^click on download this presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		WebElement PPT_link = driver.findElement(SignupObject.Downloaded);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		PPT_link.click();
 		Thread.sleep(1000);
 	}
@@ -89,11 +89,14 @@ public class Login_step_definition extends SetupClass {
 	
 		WebElement email_ad= driver.findElement(LoginObject.UserId);
 		email_ad.click();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		email_ad.clear();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		email_ad.sendKeys(email);
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		
 	
 	}
@@ -102,20 +105,24 @@ public class Login_step_definition extends SetupClass {
 	public void enter_user_password_as(String passwd) throws Throwable {
 		WebElement Insert_Pass = driver.findElement(LoginObject.userpass);
 		Insert_Pass.click();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		Insert_Pass.clear();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		Insert_Pass.sendKeys(passwd);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		
 	}
 
 	@Then("^Click on Login button\\.$")
 	public void click_on_Login_button() throws Throwable {
 		WebElement Login= driver.findElement(LoginObject.login);
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		Login.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
 
@@ -124,9 +131,10 @@ public class Login_step_definition extends SetupClass {
 
 		try {
 			String Email_test = driver.findElement(LoginObject.uesremail_val).getText();
-			wait.implictywait(driver);
+		        Thread.sleep(1000);
+			//wait.implictywait(driver);
 			Assert.assertEquals(Email, Email_test);
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
 		} catch (NoSuchElementException NSE) {
 
 		}
@@ -136,9 +144,10 @@ public class Login_step_definition extends SetupClass {
 	public void verify_user_validation_message_for_Password(String pawd) throws Throwable {
 		try {
 			String password_val = driver.findElement(LoginObject.pass_val).getText();
-			wait.implictywait(driver);
+		        Thread.sleep(1000);
+			//wait.implictywait(driver);
 			Assert.assertEquals(pawd, password_val);
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
 		} catch (NoSuchElementException NSEP) {
 
 		}
@@ -148,9 +157,11 @@ public class Login_step_definition extends SetupClass {
 	public void verify_user_message_for_all_invalid_credentials(String error) throws Throwable {
 		try {
 			String signin_error = driver.findElement(LoginObject.error_val).getText();
-			wait.implictywait(driver);
+		        Thread.sleep(1000);
+			//wait.implictywait(driver);
 			Assert.assertEquals(error, signin_error);
-			wait.implictywait(driver);
+		        Thread.sleep(1000);
+			//wait.implictywait(driver);
 		} catch (NoSuchElementException NF) {
 
 		}
@@ -161,20 +172,25 @@ public class Login_step_definition extends SetupClass {
 	public void enter_email_as() throws InterruptedException  {
 		WebElement address= driver.findElement(LoginObject.UserId);
 		address.click();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		address.clear();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		address.sendKeys("selenium.testing1234@gmail.com");
-		wait.implictywait(driver);
+		Thread.sleep(10000);
+		//wait.implictywait(driver);
 	}
 
 	@Then("^Enter password as\\.$")
 	public void enter_paasword_as() throws InterruptedException {
 		WebElement password= driver.findElement(LoginObject.userpass);
 		password.click();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		password.clear();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		password.sendKeys("123456");
 		Thread.sleep(1000);
 	}
@@ -183,11 +199,13 @@ public class Login_step_definition extends SetupClass {
 	public void after_signup_redirect_to_price_page() throws Throwable {
 		Thread.sleep(3000);
 		String actualTitle = driver.getTitle();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		String expectedTitle = "Pricing";
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
 
@@ -219,7 +237,8 @@ public class Login_step_definition extends SetupClass {
 		// to check the check box is already selected or not
 		{
 			driver.findElement(SignupObject.paypay_radio_button).click();
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
+			Thread.sleep(1000);
 		}
 
 		String paypal_text = driver.findElement(SignupObject.verify_paypal_text).getText();
@@ -231,13 +250,17 @@ public class Login_step_definition extends SetupClass {
 	@Then("^Enter coupon code\\.$")
 	public void enter_coupon() throws InterruptedException {
 		WebElement code = driver.findElement(SignupObject.Enter_Coupon);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", code);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		code.clear();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		code.sendKeys("5OFF");
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 	}
 
 	@Then("^Apply cuopon code\\.$")
@@ -264,7 +287,8 @@ public class Login_step_definition extends SetupClass {
 	@Then("^click on place order CTA\\.$")
 	public void click_on_place_order_CTA() throws Throwable {
 		WebElement CTA= driver.findElement(SignupObject.place_cta);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", CTA);
 		Thread.sleep(5000);
 	}
@@ -274,23 +298,28 @@ public class Login_step_definition extends SetupClass {
 		Thread.sleep(4000);
 		 try {
 			 String actualTitle1 = driver.getTitle();
-				wait.implictywait(driver);
+			 Thread.sleep(1000);
+				//wait.implictywait(driver);
 				System.out.println(actualTitle1);
+			 Thread.sleep(1000);
 				String expectedTitle1 = "Billing Information - PayPal";
-				wait.implictywait(driver);
+			 Thread.sleep(1000);
+				//wait.implictywait(driver);
 				String expectedTitle2="PayPal Checkout";
-				wait.implictywait(driver);
+			 Thread.sleep(1000);
+				//wait.implictywait(driver);
 				
 			    if(actualTitle1.equals(expectedTitle1)){
 				Assert.assertEquals(expectedTitle1, actualTitle1);
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
 				Thread.sleep(3000);
 				System.out.println("title does not matched");
 	        }
 
 		 else{
 				Assert.assertEquals(expectedTitle2, actualTitle1);
-				wait.implictywait(driver);
+			 Thread.sleep(1000);
+				//wait.implictywait(driver);
 				System.out.println(actualTitle1);
 				Thread.sleep(3000);
 				System.out.println("title matched");
@@ -318,11 +347,14 @@ public class Login_step_definition extends SetupClass {
 	public void card_page() throws InterruptedException {
 		Thread.sleep(4000);
 		String actualTitle = driver.getTitle();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		String expectedTitle = "2Checkout";
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		System.out.println(actualTitle);
 		Thread.sleep(2000);
 	}
