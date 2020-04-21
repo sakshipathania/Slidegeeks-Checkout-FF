@@ -85,7 +85,7 @@ public class Login_step_definition extends SetupClass {
 	}
 
 	@Then("^Enter user email address as \"([^\"]*)\"\\.$")
-	public void enter_user_email_address_as(String email) {
+	public void enter_user_email_address_as(String email) throws Throwable {
 	
 		WebElement email_ad= driver.findElement(LoginObject.UserId);
 		email_ad.click();
