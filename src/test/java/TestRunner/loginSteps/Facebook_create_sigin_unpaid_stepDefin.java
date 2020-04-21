@@ -21,7 +21,7 @@ import cucumber.api.java.en.Then;
 import webApp.PerformAction;
 
 public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
-	PerformAction wait = new PerformAction();
+	//PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
 
