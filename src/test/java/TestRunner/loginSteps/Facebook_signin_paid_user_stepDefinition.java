@@ -66,7 +66,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	
 	@Then("^Click on download this presentation$")
 	public void click_on_Download_thist_presentation_link() throws InterruptedException {
-		WebElement Download_ppt = driver.findElement(By.xpath("//*[@id='clicking']"));
+		WebElement Download_ppt = driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[3]/div[3]/form/div/button"));
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
 		Download_ppt.click();
