@@ -56,10 +56,10 @@ public class SignUp_Step extends SetupClass {
         @Then("^user will navigate to complete deck from account dashboard page$")
          public void user_will_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
-	 //driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
+	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 WebElement selectproduct=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	 WebElement selectproduct=driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
 	  Thread.sleep(2000);   
 	 selectproduct.click();
 	  Thread.sleep(2000);
@@ -78,7 +78,7 @@ public class SignUp_Step extends SetupClass {
 
 	@Then("^Click on Create an Account CTA\\.$")
 	public void reate_an_Account_CTA() throws InterruptedException {
-		WebElement create_account= driver.findElement(SignupObject.create);
+		WebElement create_account= driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[1]/div[2]/div/div/a"));
 		create_account.click();
 		Thread.sleep(1500);
 	}
@@ -293,7 +293,7 @@ public class SignUp_Step extends SetupClass {
 
 	@Then("^Enter Email \"([^\"]*)\"\\.$")
 	public void Enter_Email_credentials(String Newuser) throws InterruptedException  {
-		WebElement Enter_email= driver.findElement(SignupObject.Email);
+		WebElement Enter_email= driver.findElement(By.xpath("//*[@id='email_address']"));
 		Enter_email.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
