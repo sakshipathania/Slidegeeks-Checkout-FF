@@ -61,7 +61,7 @@ public class Login_step_definition extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	 WebElement select_product=driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
 	  Thread.sleep(2000);   
 	  select_product.click();
 	 //ac.moveToElement(select_product).build().perform();
@@ -78,7 +78,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^click on download this presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		WebElement PPT_link = driver.findElement(SignupObject.Downloaded);
+		WebElement PPT_link = driver.findElement(By.xpath("//*[@id='clicking']"));
 		//wait.implictywait(driver);
 		PPT_link.click();
 		Thread.sleep(1000);
@@ -87,7 +87,7 @@ public class Login_step_definition extends SetupClass {
 	@Then("^Enter user email address as \"([^\"]*)\"\\.$")
 	public void enter_user_email_address_as(String email) throws Throwable {
 	
-		WebElement email_ad= driver.findElement(LoginObject.UserId);
+		WebElement email_ad= driver.findElement(By.xpath("//*[@id='email']"));
 		email_ad.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
@@ -103,7 +103,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Insert the Password \"([^\"]*)\"\\.$")
 	public void enter_user_password_as(String passwd) throws Throwable {
-		WebElement Insert_Pass = driver.findElement(LoginObject.userpass);
+		WebElement Insert_Pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		Insert_Pass.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
@@ -118,7 +118,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Click on Login button\\.$")
 	public void click_on_Login_button() throws Throwable {
-		WebElement Login= driver.findElement(LoginObject.login);
+		WebElement Login= driver.findElement(By.xpath("//*[@id='send2']"));
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Login.click();
@@ -170,7 +170,7 @@ public class Login_step_definition extends SetupClass {
 	@Then("^Enter user a email address as\\.$")
 
 	public void enter_email_as() throws InterruptedException  {
-		WebElement address= driver.findElement(LoginObject.UserId);
+		WebElement address= driver.findElement(By.xpath("//*[@id='email']"));
 		address.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
@@ -184,7 +184,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Enter password as\\.$")
 	public void enter_paasword_as() throws InterruptedException {
-		WebElement password= driver.findElement(LoginObject.userpass);
+		WebElement password= driver.findElement(By.xpath("//*[@id='pass']"));
 		password.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
@@ -192,6 +192,10 @@ public class Login_step_definition extends SetupClass {
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
 		password.sendKeys("123456");
+		Thread.sleep(1000);
+		WebElement login_butn= driver.findElement(By.xpath("//*[@id='send2']"));
+		Thread.sleep(1000);
+		login_butn.click();
 		Thread.sleep(1000);
 	}
 
