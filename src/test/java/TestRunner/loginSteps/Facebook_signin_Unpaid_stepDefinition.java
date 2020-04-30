@@ -200,7 +200,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	}
 
 	@Then("^Enter the coupon as showing\\.$")
-	public void enter_coupon() {
+	public void enter_coupon() throws Throwable {
 		WebElement cou_pon= driver.findElement(SignupObject.Enter_Coupon);
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
