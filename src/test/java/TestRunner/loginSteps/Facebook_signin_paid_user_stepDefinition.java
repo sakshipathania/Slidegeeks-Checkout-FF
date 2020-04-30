@@ -67,14 +67,16 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	@Then("^Click on download this presentation$")
 	public void click_on_Download_thist_presentation_link() throws InterruptedException {
 		WebElement Download_ppt = driver.findElement(By.xpath("//*[@id='clicking']"));
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Download_ppt.click();
 		Thread.sleep(1000);
 	}
 
 	@Then("^Click on test fblink$")
 	public void fb_link() throws InterruptedException {
-		WebElement fblink = driver.findElement(FbandGP_Object.fbLink);
+		WebElement fblink = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[1]/a"));
+		Thread.sleep(1000);
 		fblink.click();
 		Thread.sleep(1000);
 	}
@@ -83,14 +85,16 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	public void enter_user_mail() throws InterruptedException {
 		
 		try {
-		WebElement user_email = driver.findElement(FbandGP_Object.Femai);
+		WebElement user_email = driver.findElement(By.xpath("//*[@id='email']"));
 		user_email.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		user_email.clear();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		user_email.sendKeys("sakshi.pathania@slidetech.in");
-		wait.implictywait(driver);
-
+		//wait.implictywait(driver);
+                Thread.sleep(1000);
 		} catch (NoSuchElementException nonemaillink) {
 
 		}
@@ -99,13 +103,16 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	 @Then("^user password as$")
 	 public void enter_user_password() throws Throwable {
 		try {
-		WebElement user_pass = driver.findElement(FbandGP_Object.Fpassword);
+		WebElement user_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		user_pass.click();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+			//wait.implictywait(driver);
 		user_pass.clear();
-		wait.implictywait(driver);
+		 Thread.sleep(1000);
+			//wait.implictywait(driver);
 		user_pass.sendKeys("Sakshi@123");
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+			//wait.implictywait(driver);
 
 	
             } catch (NoSuchElementException password) {
@@ -116,10 +123,11 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	@Then("^click on Login button$")
 	public void click_on_Login_button() throws Throwable {
 		try {
-		WebElement Login_button = driver.findElement(FbandGP_Object.FbLogin);
-		wait.implictywait(driver);
+		WebElement Login_button = driver.findElement(By.xpath("//*[@id='loginbutton']"));
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Login_button.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(2000);
 		} catch (NoSuchElementException logincta) {
 			
@@ -135,7 +143,8 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		  Thread.sleep(1000);
 		try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
+			Thread.sleep(1000);
 			close.click();
 			Thread.sleep(500);
 		} catch (NoSuchElementException nonpoptest) {
@@ -149,10 +158,11 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 
 		try {
 			String Email_test = driver.findElement(SignupObject.Downloaded).getText();
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
+			Thread.sleep(1000);
 			String Expected_Cta = "Download this presentation";
 			Assert.assertEquals(Expected_Cta, Email_test);
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
 			Thread.sleep(1000);
 		} catch (NoSuchElementException er1) {
 
