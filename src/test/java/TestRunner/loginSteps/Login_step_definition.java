@@ -70,8 +70,9 @@ public class Login_step_definition extends SetupClass {
 	
 	@Then("^select a product item\\.$")
 	public void select_product() throws InterruptedException {
-		WebElement Product= driver.findElement(SignupObject.Select_item);
-		Product.click();
+		driver.get("https://www.slideteam.net/6-months-project-timeline-roadmap.html");
+		//WebElement Product= driver.findElement(SignupObject.Select_item);
+		//Product.click();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
