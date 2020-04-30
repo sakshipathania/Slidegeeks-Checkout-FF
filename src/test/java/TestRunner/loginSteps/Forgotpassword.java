@@ -66,8 +66,9 @@ import webApp.PerformAction;
 		
 		@Then("^Click on download link cta\\.$")
 		public void click_on_Download_this_presentation_link() throws InterruptedException {
-			WebElement download = driver.findElement(SignupObject.Downloaded);
-			wait.implictywait(driver);
+			WebElement download = driver.findElement(By.xpath("//*[@id='clicking']"));
+			//wait.implictywait(driver);
+			Thread.sleep(2000);
 			download.click();
 			Thread.sleep(9000);
 			
@@ -113,21 +114,25 @@ import webApp.PerformAction;
 			
 			WebDriverWait wait1 = new WebDriverWait(driver, 30);
 			//wait1.until(ExpectedConditions.visibilityOfElementLocated(LoginObject.enter_mail));
-			WebElement registerd = driver.findElement(By.cssSelector("#email_address"));
-			wait.implictywait(driver);
+			WebElement registerd = driver.findElement(By.xpath("//*[@id='email_address']"));
+			//wait.implictywait(driver);
+			Thread.sleep(2000);
 			registerd.click();
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
+			Thread.sleep(2000);
 			registerd.clear();
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
+			Thread.sleep(2000);
 			registerd.sendKeys(email);
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
+			Thread.sleep(2000);
 		}
 
 		@Then("^Click on submit button\\.$")
 		public void enter_user_mail() throws InterruptedException {
-			WebElement submit= driver.findElement(LoginObject.Button_submit);
+			WebElement submit= driver.findElement(By.xpath("//*[@id='form-validate']/div/button/span"));
 			js.executeScript("arguments[0].click();", submit);
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
 			Thread.sleep(3000);
 		}
 
@@ -137,7 +142,8 @@ import webApp.PerformAction;
 			WebElement validation = driver.findElement(LoginObject.invalid_error);
 			try {
 				String invalid_val = driver.findElement(LoginObject.invalid_error).getText();
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
+				Thread.sleep(2000);
 				Assert.assertEquals(error, invalid_val);
 				Thread.sleep(2000);
 			} catch (NoSuchElementException Invalid) {
@@ -150,7 +156,8 @@ import webApp.PerformAction;
 			try {
 				String user_val = driver.findElement(LoginObject.verify_sucess).getText();
 				System.out.println(user_val);
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
+				Thread.sleep(2000);
 				Assert.assertEquals(text, user_val);
 				Thread.sleep(2000);
 			} catch (NoSuchElementException Stest) {
