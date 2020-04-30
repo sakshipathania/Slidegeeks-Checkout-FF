@@ -2,7 +2,7 @@
 Feature: google plus user. 
 Scenario: google plus user signin the app. 
 	Given launch application. 
-	Then  user navigate to complete deck from account dashboard page. 
+	Then  user navigate to complete deck from account dashboard. 
 	Then   go to download link. 
 	Then   Click on Create account cta. 
 	Then   then click on Google plus link button. 
