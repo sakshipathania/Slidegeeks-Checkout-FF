@@ -58,25 +58,27 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	// WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
-	  //Thread.sleep(2000);   
-	 //select_product.click();
-	   // Thread.sleep(2000);
+	WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	   Thread.sleep(2000);
 	    
             }
 	
 	@Then("^go to download link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		WebElement link= driver.findElement(SignupObject.Downloaded);
-		wait.implictywait(driver);
+		WebElement link= driver.findElement(By.xpath("//*[@id='clicking']"));
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		link.click();
 		Thread.sleep(1000);
 	}
 
 	@Then("^Click on Create account cta\\.")
 	public void create_accuont() throws InterruptedException {
-		WebElement Create= driver.findElement(SignupObject.create);
-		wait.implictywait(driver);
+		WebElement Create= driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[1]/div[2]/div/div/a/span"));
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Create.click();
 		Thread.sleep(1000);
 	}
@@ -85,7 +87,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	public void fb_link() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,100)");
 		Thread.sleep(500);
-		WebElement Google= driver.findElement(FbandGP_Object.GooglePlusLink);
+		WebElement Google= driver.findElement(By.xpath("//*[@id='form-validate']/fieldset/div[3]/div/div[2]/a"));
 		Google.click();
 		Thread.sleep(2000);
 	}
@@ -93,10 +95,11 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	@Then("^enter a email\\.$")
 	public void enter_user_mail() throws InterruptedException {
 		try {
-			WebElement useraccount = driver.findElement(By.xpath("//div[text()='Use another account']"));
-			wait.implictywait(driver);
-			useraccount .click();
-			wait.implictywait(driver);
+			WebElement useraccount = driver.findElement(By.xpath("//*[@id='identifierId']"));
+			//wait.implictywait(driver);
+			Thread.sleep(2000);
+			useraccount.click();
+			//wait.implictywait(driver);
 			Thread.sleep(2000);
 		}catch(NoSuchElementException usenewaccount) {	
 	}
@@ -104,45 +107,53 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	try {
                 WebElement email= driver.findElement(FbandGP_Object.GPEmail);
 		//WebElement = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(FbandGP_Object.GPEmail));
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(2000);
 		email.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(2000);
 		email.clear();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(2000);
 		email.sendKeys("selenium.testing9977@gmail.com");
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(2000);
 	}catch(NoSuchElementException usenewa) {	
 	}
 	}
+	
 	@Then("^Go to next page\\.$")
 	public void password_page() throws InterruptedException {
 
-		WebElement next= driver.findElement(FbandGP_Object.Next_cta);
+		WebElement next= driver.findElement(By.xpath("//*[@id='identifierNext']/span/span"));
 		next.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(3000);
 
 	}
 
 	@Then("^enter password\\.$")
 	public void enter_user_password() throws Throwable {
-		WebElement password= driver.findElement(FbandGP_Object.GPpass);
+		WebElement password= driver.findElement(By.xpath("//*[@id='password']/div[1]/div/div[1]/input"));
 		password.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		password.clear();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		password.sendKeys("Test@1234");
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		
 		Thread.sleep(3000);
 	}
 
 	@Then("^Click on next button\\.$")
 	public void click_on_Login_button() throws Throwable {
-		WebElement button= driver.findElement(FbandGP_Object.Next_button);
-		wait.implictywait(driver);
+		WebElement button= driver.findElement(By.xpath("//*[@id='passwordNext']/span"));
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		button.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(10000);
 
 	}
@@ -151,12 +162,14 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	public void after_signup_redirect_to_price_page() throws Throwable {
 
 		String actualTitle = driver.getTitle();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		String expectedTitle = "Pricing";
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		wait.implictywait(driver);
-
+		//wait.implictywait(driver);
+                Thread.sleep(1000);
 	}
 
 	@Then("^Subscribe randomly the product\\.$")
@@ -186,7 +199,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		// to check the check box is already selected or not
 		{
 			driver.findElement(SignupObject.paypay_radio_button).click();
-			wait.implictywait(driver);
+			Thread.sleep(1000);
+			//wait.implictywait(driver);
 		}
 
 		String paypal_text = driver.findElement(SignupObject.verify_paypal_text).getText();
@@ -198,13 +212,17 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	@Then("^insert coupon as display in screen\\.$")
 	public void enter_coupon() {
 		WebElement display= driver.findElement(SignupObject.Enter_Coupon);
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		js.executeScript("arguments[0].click();", display);
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		display.clear();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		display.sendKeys("5OFF");
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 	}
 
 	@Then("^apply coupon cta\\.$")
@@ -231,7 +249,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	@Then("^Go to checkout payement process page\\.$")
 	public void click_on_place_order_CTA() throws Throwable {
 		WebElement checkout= driver.findElement(SignupObject.place_cta);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", checkout);
 		Thread.sleep(5000);
 	}
@@ -241,23 +260,27 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		Thread.sleep(4000);
 		 try {
 			 String actualTitle1 = driver.getTitle();
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
+			 Thread.sleep(1000);
 				System.out.println(actualTitle1);
 				String expectedTitle1 = "Billing Information - PayPal";
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
+			 Thread.sleep(1000);
 				String expectedTitle2="PayPal Checkout";
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
+			 Thread.sleep(1000);
 				
 			    if(actualTitle1.equals(expectedTitle1)){
 				Assert.assertEquals(expectedTitle1, actualTitle1);
-				wait.implictywait(driver);
-				System.out.println(actualTitle1);
+				//wait.implictywait(driver);
+				Thread.sleep(1000);
+				    System.out.println(actualTitle1);
 				Thread.sleep(3000);
 				System.out.println("title does not matched");
 	}
 		 else{
 				Assert.assertEquals(expectedTitle2, actualTitle1);
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
 				Thread.sleep(3000);
 				System.out.println("title matched");
 		    }
@@ -286,11 +309,13 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		Thread.sleep(4000);
 		String actualTitle = driver.getTitle();
 		Thread.sleep(1000);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		String expectedTitle = "2Checkout";
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		System.out.println(actualTitle);
 		Thread.sleep(2000);
 	}
