@@ -85,39 +85,45 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	@Then("^Enter a user email$")
 	public void enter_user_email_address_as() {
 
-		WebElement Email_add= driver.findElement(LoginObject.UserId);
+		WebElement Email_add= driver.findElement(By.xpath("//*[@id='email']"));
 		Email_add.click();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		Email_add.clear();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		Email_add.sendKeys("sumit@slideteam.net");
-		wait.implictywait(driver);
-
+		//wait.implictywait(driver);
+                Thread.sleep(1000);
 	}
 
 	@Then("^Enter the user password$")
 	public void enter_user_password_as() throws Throwable {
-		WebElement user_pass = driver.findElement(LoginObject.userpass);
+		WebElement user_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		user_pass.click();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		user_pass.clear();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		user_pass.sendKeys("sumittest@21234");
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 
 	}
 
 	@Then("^click on Login cta$")
 	public void click_on_Login_button() throws Throwable {
-		WebElement Login_button= driver.findElement(LoginObject.login);
-		wait.implictywait(driver);
+		WebElement Login_button= driver.findElement(By.xpath("//*[@id='send2']"));
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Login_button.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(2000);
 
 		try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
 			close.click();
 			Thread.sleep(500);
 		} catch (NoSuchElementException nonpop) {
@@ -142,10 +148,11 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 
 		try {
 			String Email_test = driver.findElement(SignupObject.Downloaded).getText();
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
+			Thread.sleep(1000);
 			String Expected_Cta = "Download this presentation";
 			Assert.assertEquals(Expected_Cta, Email_test);
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
 			Thread.sleep(1000);
 		} catch (NoSuchElementException er) {
 
@@ -155,9 +162,10 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
         @Then("^Click on download this presentation link$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		WebElement presentation= driver.findElement(By.cssSelector("#clicking"));
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		presentation.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(8000);
 	}
 }
