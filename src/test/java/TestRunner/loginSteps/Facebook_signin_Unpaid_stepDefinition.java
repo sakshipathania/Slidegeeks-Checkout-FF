@@ -52,8 +52,8 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		}
 	}
 
-	@Then("^user navigate to complete deck from account dashboard page$")
-         public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+	@Then("^navigate to complete deck from account dashboard page$")
+         public void navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
