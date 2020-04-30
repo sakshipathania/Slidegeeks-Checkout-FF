@@ -51,7 +51,7 @@ import webApp.PerformAction;
 			}
 		}
 
-		@Then("^user navigate to complete deck from account dashboard page$")
+		@Then("^user navigate to complete deck from$")
          public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
