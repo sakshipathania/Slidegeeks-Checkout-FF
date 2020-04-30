@@ -58,25 +58,26 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	// WebElement select_product= wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
-	  //Thread.sleep(2000);   
-	 //select_product.click();
-	   // Thread.sleep(2000);
+	 WebElement select_product= wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	   Thread.sleep(2000);
 	    
             }
 
 
 	@Then("^Click on download presentation link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		WebElement download= driver.findElement(SignupObject.Downloaded);
-		wait.implictywait(driver);
+		WebElement download= driver.findElement(By.xpath("//*[@id='clicking']"));
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		download.click();
 		Thread.sleep(2000);
 	}
 
 	@Then("^Click on fblink\\.$")
 	public void fb_link() throws InterruptedException {
-		WebElement FbLink = driver.findElement(FbandGP_Object.fbLink);
+		WebElement FbLink = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[1]"));
 		wait.implictywait(driver);
 		FbLink.click();
 		Thread.sleep(2000);
@@ -86,14 +87,18 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	public void enter_user_mail() throws InterruptedException {
 		Thread.sleep(1000);
 		try {
-		WebElement Fbemail = driver.findElement(FbandGP_Object.Femai);
-		wait.implictywait(driver);
-		Fbemail.click();
-		wait.implictywait(driver);
+		WebElement Fbemail = driver.findElement(By.xpath("//*[@id='email']"));
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
+	        Fbemail.click();
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Fbemail.clear();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Fbemail.sendKeys("amw.vrushali@gmail.com");
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		} catch (NoSuchElementException alreadylogged) {
 
 		}
@@ -103,14 +108,18 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	@Then("^Facebook user enter password\\.$")
 	public void enter_user_password() throws Throwable {
 		try {
-		WebElement Fpass= driver.findElement(FbandGP_Object.Fpassword);
-		wait.implictywait(driver);
+		WebElement Fpass= driver.findElement(By.xpath("//*[@id='pass']"));
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Fpass.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Fpass.clear();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Threaad.sleep(1000);
 		Fpass.sendKeys("vrushali@786");
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 	} catch (NoSuchElementException alreadpass) {
 
 	}
@@ -120,18 +129,19 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	@Then("^Login the application\\.$")
 	public void click_on_Login_button() throws Throwable {
 		try {
-		webelement = driver.findElement(FbandGP_Object.FbLogin);
-		wait.implictywait(driver);
-		webelement.click();
-		wait.implictywait(driver);
+		WebElement = driver.findElement(By.xpath("//*[@id='loginbutton']"));
+		//wait.implictywait(driver);
+			Thread.sleep(1000);
+		WebElement.click();
+		//wait.implictywait(driver);
 		Thread.sleep(10000);
 	} catch (NoSuchElementException alredylogin) {
 
 	}
 
 		try {
-			webelement = driver.findElement(FbandGP_Object.continue_as_QA);
-			webelement.click();
+			WebElement FP= driver.findElement(FbandGP_Object.continue_as_QA);
+			FP.click();
 			Thread.sleep(3000);
 		} catch (NoSuchElementException qalink) {
 
@@ -142,11 +152,13 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	public void after_signup_redirect_to_price_page() throws Throwable {
 
 		String actualTitle = driver.getTitle();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		String expectedTitle = "Pricing";
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(1000);
 	}
 
@@ -172,12 +184,13 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	@Then("^Verify the by default payment option as paypal\\.$")
 	public void see_default_payment_option_as_paypal() throws Throwable {
-		webelement = driver.findElement(SignupObject.paypay_radio_button);
+		WebElement Pay_pal = driver.findElement(SignupObject.paypay_radio_button);
 		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
 		// to check the check box is already selected or not
 		{
 			driver.findElement(SignupObject.paypay_radio_button).click();
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
+			Thread.sleep(1000);
 		}
 
 		String paypal_text = driver.findElement(SignupObject.verify_paypal_text).getText();
@@ -188,20 +201,24 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	@Then("^Enter the coupon as showing\\.$")
 	public void enter_coupon() {
-		webelement = driver.findElement(SignupObject.Enter_Coupon);
-		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
-		wait.implictywait(driver);
-		webelement.clear();
-		wait.implictywait(driver);
-		webelement.sendKeys("5OFF");
-		wait.implictywait(driver);
+		WebElement cou_pon= driver.findElement(SignupObject.Enter_Coupon);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", cou_pon);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
+		cou_pon.clear();
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
+		cou_pon.sendKeys("5OFF");
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 	}
 
 	@Then("^Apply coupon the code\\.$")
 	public void apply_the_cuopon_code() throws Throwable {
-		webelement = driver.findElement(SignupObject.Apply_Coupon);
-		js.executeScript("arguments[0].click();", webelement);
+		WebElement Coupon_code = driver.findElement(SignupObject.Apply_Coupon);
+		js.executeScript("arguments[0].click();", Coupon_code);
 		Thread.sleep(3000);
 		driver.switchTo().alert().dismiss();
 		Thread.sleep(2000);
@@ -221,9 +238,10 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	@Then("^Go to payement page\\.$")
 	public void click_on_place_order_CTA() throws Throwable {
-		webelement = driver.findElement(SignupObject.place_cta);
-		wait.implictywait(driver);
-		js.executeScript("arguments[0].click();", webelement);
+		WebElement Pay_ment = driver.findElement(SignupObject.place_cta);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", Pay_ment);
 		Thread.sleep(5000);
 	}
 
@@ -232,22 +250,26 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(4000);
 		 try {
 			 String actualTitle1 = driver.getTitle();
-				wait.implictywait(driver);
+			 Thread.sleep(1000);
+				//wait.implictywait(driver);
 				System.out.println(actualTitle1);
 				String expectedTitle1 = "Billing Information - PayPal";
-				wait.implictywait(driver);
+			 Thread.sleep(1000);
+				//wait.implictywait(driver);
 				String expectedTitle2="PayPal Checkout";
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
+			 Thread.sleep(1000);
 				
 			    if(actualTitle1.equals(expectedTitle1)) {
 				Assert.assertEquals(expectedTitle1, actualTitle1);
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
 				Thread.sleep(3000);
 				System.out.println("title does not matched");
 	}
 		 else {
 				Assert.assertEquals(expectedTitle2, actualTitle1);
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
+			 Thread.sleep(1000);
 				System.out.println(actualTitle1);
 				Thread.sleep(3000);
 				System.out.println("title matched");
@@ -262,8 +284,8 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	@Then("^Select the payment option as CARD\\.$")
 	public void select_payment_option_as_Card() throws Throwable {
-		webelement = driver.findElement(SignupObject.card_radio_button);
-		webelement.click();
+		WebElement Payment_option= driver.findElement(SignupObject.card_radio_button);
+		Payment_option.click();
 		Thread.sleep(1000);
 		String card_text = driver.findElement(SignupObject.verify_2checkout).getText();
 		System.out.println(card_text);
@@ -279,11 +301,13 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(5000);
 		String actualTitle = driver.getTitle();
 		Thread.sleep(1000);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		String expectedTitle = "2Checkout";
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		System.out.println(actualTitle);
 		Thread.sleep(3000);
 	}
