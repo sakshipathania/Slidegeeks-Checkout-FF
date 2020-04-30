@@ -57,18 +57,19 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 //WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
-	  //Thread.sleep(2000);   
-	 //select_product.click();
-	   // Thread.sleep(2000);
+	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	    Thread.sleep(2000);
 	    
             }
 
 
 	@Then("^Click on downloadbtn test5 link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		WebElement test5 = driver.findElement(SignupObject.Downloaded);
-		wait.implictywait(driver);
+		WebElement test5 = driver.findElement(By.xpath("//*[@id='clicking']"));
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
 		test5.click();
 		Thread.sleep(2000);
 	}
@@ -77,31 +78,32 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	public void fb_link() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(1000);
-		WebElement gplus = driver.findElement(FbandGP_Object.GooglePlusLink);
+		WebElement gplus = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/a"));
 		gplus.click();
 		Thread.sleep(2000);
 	}
 
 	@Then("^Enter user google email addess\\.$")
 	public void enter_user_mail() throws InterruptedException  {
-		WebElement gmail = driver.findElement(FbandGP_Object.GPEmail);
+		WebElement gmail = driver.findElement(By.xpath("//*[@id='identifierId']"));
 		gmail.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		gmail.clear();
-		wait.implictywait(driver);
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		gmail.sendKeys("selenium_testing@slidetech.in");
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(2000);
-		
-			
 		
 	}
 
 	@Then("^go to password page\\.$")
 	public void enter_user_password() throws InterruptedException  {
 	
-		WebElement pass_page = driver.findElement(FbandGP_Object.Next_cta);
-		wait.implictywait(driver);
+		WebElement pass_page = driver.findElement(By.xpath("//*[@id='identifierNext']/span"));
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
 		pass_page.click();
 		Thread.sleep(5000);
 
@@ -110,13 +112,15 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 
 	 @Then("^Enter user google pass\\.$")
 	public void google_pass() throws InterruptedException {
-		 	 WebElement google_pass = driver.findElement(FbandGP_Object.GPpass);
+		 	 WebElement google_pass = driver.findElement(By.xpath("//*[@id='password']/div[1]/div/div[1]/input"));
 				google_pass.click();
-				wait.implictywait(driver);
+		                Thread.sleep(1000);
+				//wait.implictywait(driver);
 				google_pass.clear();
-				wait.implictywait(driver);
+		                Thread.sleep(1000);
+				//wait.implictywait(driver);
 				google_pass.sendKeys("slideteam");
-				wait.implictywait(driver);
+				//wait.implictywait(driver);
 				Thread.sleep(2000);
 			
 
@@ -126,15 +130,17 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	@Then("^Click on next CTA\\.$")
 	public void click_on_Login_button() throws Throwable {
 
-		WebElement next = driver.findElement(FbandGP_Object.Next_button);
-		wait.implictywait(driver);
+		WebElement next = driver.findElement(By.xpath("//*[@id='passwordNext']/span"));
+		//wait.implictywait(driver);
+		Thread.sleep(1000);
 		next.click();
-		wait.implictywait(driver);
+		//wait.implictywait(driver);
 		Thread.sleep(4000);
 
 		try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
-			wait.implictywait(driver);
+			//wait.implictywait(driver);
+			Thread.sleep(1000);
 			close.click();
 			Thread.sleep(500);
 		} catch (NoSuchElementException nonpoptest) {
