@@ -210,7 +210,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	}
 
 	@Then("^insert coupon as display in screen\\.$")
-	public void enter_coupon() {
+	public void enter_coupon() throws Throwable {
 		WebElement display= driver.findElement(SignupObject.Enter_Coupon);
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
