@@ -51,8 +51,8 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		}
 	}
 
-	@Then("^user navigate to complete deck from account dashboard page$")
-         public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+	@Then("^user navigate to complete deck from account$")
+         public void user_navigate_to_complete_deck_from_account() throws InterruptedException  {
     
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
