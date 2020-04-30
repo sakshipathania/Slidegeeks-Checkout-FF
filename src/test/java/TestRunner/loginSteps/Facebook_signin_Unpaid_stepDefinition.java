@@ -58,7 +58,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 WebElement select_product= wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	 WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
 	  Thread.sleep(2000);   
 	 select_product.click();
 	   Thread.sleep(2000);
@@ -116,7 +116,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 		Fpass.clear();
 		//wait.implictywait(driver);
-		Threaad.sleep(1000);
+		Thread.sleep(1000);
 		Fpass.sendKeys("vrushali@786");
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
@@ -129,10 +129,10 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	@Then("^Login the application\\.$")
 	public void click_on_Login_button() throws Throwable {
 		try {
-		WebElement = driver.findElement(By.xpath("//*[@id='loginbutton']"));
+		WebElement Appl= driver.findElement(By.xpath("//*[@id='loginbutton']"));
 		//wait.implictywait(driver);
 			Thread.sleep(1000);
-		WebElement.click();
+		Appl.click();
 		//wait.implictywait(driver);
 		Thread.sleep(10000);
 	} catch (NoSuchElementException alredylogin) {
