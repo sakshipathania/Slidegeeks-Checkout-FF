@@ -88,7 +88,7 @@ public class Login_step_definition extends SetupClass {
 	@Then("^Enter user email address as \"([^\"]*)\"\\.$")
 	public void enter_user_email_address_as(String email) throws Throwable {
 	
-		WebElement email_ad= driver.findElement(By.id("email"));
+		WebElement email_ad= driver.findElement(By.xpath("//*[@id='email']"));
 		email_ad.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
@@ -104,7 +104,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Insert the Password \"([^\"]*)\"\\.$")
 	public void enter_user_password_as(String passwd) throws Throwable {
-		WebElement Insert_Pass = driver.findElement(By.id("pass"));
+		WebElement Insert_Pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		Insert_Pass.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
