@@ -86,10 +86,15 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Click on faceblink\\.$")
 	public void click_on_faceblink() throws InterruptedException {
+		try {
 		WebElement Faceblink = driver.findElement(By.xpath("//*[@id='form-validate']/fieldset/div[3]/div/div[1]/a"));
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", Faceblink);
 		Thread.sleep(3000);
+		}
+		catch (NoSuchElementException Ext) {
+			
+			}
 	}
 
 	@Then("^Fb user enter a valid email\\.$")
@@ -124,10 +129,14 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^click on login cta on fb page\\.$")
 	public void click_on_login_cta_on_fb_page() throws InterruptedException {
+		try {
 		WebElement Fb_login= driver.findElement(By.xpath("//*[@id='loginbutton']"));
 		Thread.sleep(5000);
 		Fb_login.click();
 		Thread.sleep(10000);
+		} catch (NoSuchElementException Ext) {
+			
+			}
 		try {
 			WebElement Fb_GP = driver.findElement(FbandGP_Object.continue_as_QA);
 			Fb_GP.click();
