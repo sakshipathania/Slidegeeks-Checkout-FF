@@ -66,7 +66,8 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Open the download presentation link\\.$")
 	public void open_the_download_presentation_link() throws InterruptedException {
-		WebElement download = driver.findElement(By.xpath("#clicking"));
+		driver.get("https://www.slideteam.net/business-process-evaluation-powerpoint-show.html");
+		WebElement download = driver.findElement(By.cssSelector("#clicking"));
 		//wait.implictywait(driver);
 		download.click();
 		Thread.sleep(1000);
