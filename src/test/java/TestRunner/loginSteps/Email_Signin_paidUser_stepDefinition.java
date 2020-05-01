@@ -57,7 +57,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	@Then("^Enter a user email$")
 	public void enter_user_email_address_as() throws Throwable {
 
-		WebElement Email_add= driver.findElement(By.cssSelector("#email"));
+		WebElement Email_add= driver.findElement(By.xpath("//*[@id='email']"));
 		Email_add.click();
 		Thread.sleep(5000);
 		//wait.implictywait(driver);
