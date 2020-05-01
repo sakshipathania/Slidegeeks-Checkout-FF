@@ -88,14 +88,14 @@ public class Login_step_definition extends SetupClass {
 	@Then("^Enter user email address as \"([^\"]*)\"\\.$")
 	public void enter_user_email_address_as(String email) throws Throwable {
 	
-		WebElement email_ad= driver.findElement(By.xpath("//*[@id='email']"));
+		WebElement email_ad= driver.findElement(By.id("email"));
 		email_ad.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		email_ad.clear();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
-		email_ad.sendKeys(email);
+		email_ad.sendKeys("himanshi.sharma@slidetech.in");
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		
@@ -104,14 +104,14 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Insert the Password \"([^\"]*)\"\\.$")
 	public void enter_user_password_as(String passwd) throws Throwable {
-		WebElement Insert_Pass = driver.findElement(By.xpath("//*[@id='pass']"));
+		WebElement Insert_Pass = driver.findElement(By.id("pass"));
 		Insert_Pass.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Insert_Pass.clear();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
-		Insert_Pass.sendKeys(passwd);
+		Insert_Pass.sendKeys("123456");
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
 		
