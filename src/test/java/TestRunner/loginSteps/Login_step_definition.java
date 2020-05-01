@@ -109,6 +109,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Insert the Password \"([^\"]*)\"\\.$")
 	public void enter_user_password_as(String passwd) throws Throwable {
+		try {
 		WebElement Insert_Pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		Insert_Pass.click();
 		Thread.sleep(1000);
@@ -120,6 +121,11 @@ public class Login_step_definition extends SetupClass {
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
 		
+	} catch ((NoSuchElementException Ext) {
+			
+			}
+		
+	
 	}
 
 	@Then("^Click on Login button\\.$")
