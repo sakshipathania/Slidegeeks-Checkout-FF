@@ -180,13 +180,13 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	public void logout_pld_gmail() throws Throwable {
 	   
 		Thread.sleep(2000);
-	    WebElement my_account_og =  driver.findElement(By.xpath("//a[contains(.,'My Account')]")));
+	    WebElement my_account_og =  driver.findElement(By.xpath("//a[contains(.,'My Account')]"));
 	    Thread.sleep(2000);
 	   my_account_og.click();
 	    Thread.sleep(2000);
    
 		 Thread.sleep(3000);
-		 WebElement sign_out =  driver.findElement(By.xpath("//a[contains(.,'Sign Out')]")));
+		 WebElement sign_out =  driver.findElement(By.xpath("//a[contains(.,'Sign Out')]"));
 		 Thread.sleep(2000);
 		 sign_out.click();
 		 Thread.sleep(3000);
