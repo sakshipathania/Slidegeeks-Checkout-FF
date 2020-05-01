@@ -56,7 +56,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	
 	@Then("^Enter a user email$")
 	public void enter_user_email_address_as() throws Throwable {
-
+                try {
 		WebElement Email_add= driver.findElement(By.xpath("//*[@id='email']"));
 		Email_add.click();
 		Thread.sleep(5000);
@@ -67,6 +67,9 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		Email_add.sendKeys("sakshi.pathania@slideteam.in");
 		//wait.implictywait(driver);
                 Thread.sleep(5000);
+	        } catch (NoSuchElementException Ext) {
+
+		}
 	}
 
 	@Then("^Enter the user password$")
