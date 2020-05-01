@@ -96,7 +96,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		user_email.clear();
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
-		user_email.sendKeys("sakshi.pathania@slidetech.in");
+		user_email.sendKeys("slidetech.qa@gmail.com");
 		//wait.implictywait(driver);
                 Thread.sleep(1000);
 		} catch (NoSuchElementException nonemaillink) {
@@ -114,7 +114,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		user_pass.clear();
 		 Thread.sleep(1000);
 			//wait.implictywait(driver);
-		user_pass.sendKeys("Sakshi@123");
+		user_pass.sendKeys("himanshi@123");
 		Thread.sleep(1000);
 			//wait.implictywait(driver);
 
@@ -159,7 +159,10 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		
 	@Then("^See the this link as download this presenetion link is appeared$")
 	public void verify_uesr_validation_message_for_Email_Address() throws Throwable {
-
+                 driver.get("https://www.slideteam.net/business-process-evaluation-powerpoint-show.html");
+		Thread.sleep(2000);
+		driver.findElement(By.cssSelector("#clicking")).click();
+		Thread.sleep(2000);
 		try {
 			String Email_test = driver.findElement(SignupObject.Downloaded).getText();
 			//wait.implictywait(driver);
