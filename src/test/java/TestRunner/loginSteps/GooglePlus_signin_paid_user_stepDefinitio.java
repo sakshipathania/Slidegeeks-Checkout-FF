@@ -57,16 +57,18 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 WebElement select_product=driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
-	  Thread.sleep(2000);   
-	 select_product.click();
-	    Thread.sleep(2000);
+	// WebElement select_product=driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
+	  //Thread.sleep(2000);   
+	 //select_product.click();
+	   // Thread.sleep(2000);
 	    
             }
 
 
 	@Then("^Click on downloadbtn test5 link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
+		driver.get("https://www.slideteam.net/best-presentation-on-myself-powerpoint-presentation-slide.html");
+		Thread.sleep(2000);
 		WebElement test5 = driver.findElement(By.xpath("//*[@id='clicking']"));
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
@@ -92,7 +94,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		gmail.clear();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
-		gmail.sendKeys("selenium_testing@slidetech.in");
+		gmail.sendKeys("himanshi.sharma@slidetech.in");
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 		
@@ -119,7 +121,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 				google_pass.clear();
 		                Thread.sleep(1000);
 				//wait.implictywait(driver);
-				google_pass.sendKeys("slideteam");
+				google_pass.sendKeys("himanshi@123");
 				//wait.implictywait(driver);
 				Thread.sleep(2000);
 			
@@ -137,7 +139,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		//wait.implictywait(driver);
 		Thread.sleep(4000);
 
-		try {
+		/*try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
 			//wait.implictywait(driver);
 			Thread.sleep(1000);
@@ -145,11 +147,11 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 			Thread.sleep(500);
 		} catch (NoSuchElementException nonpoptest) {
 
-		}
+		}*/
 
 	}
 
-	@Then("^The Page is redirect to download presenetion link\\.$")
+	/*@Then("^The Page is redirect to download presenetion link\\.$")
 	public void verify_uesr_validation_message_for_Email_Address() throws Throwable {
 
 		try {
@@ -162,6 +164,33 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		} catch (NoSuchElementException er1) {
 
 		} 
+	}*/
+	@Then("^user go to All ppts page gmail$")
+	public void user_go_to_All_ppts_page_gmail() throws throwable {
+		Thread.sleep(3000);
+		driver.get("https://www.slideteam.net/best-presentation-on-myself-powerpoint-presentation-slide.html");
+		WebElement Dld_link = driver.findElement(By.xpath("//*[@id='clicking']"));
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		Dld_link.click();
+		Thread.sleep(2000);
+	}
+	
+	@Then("^logout pld gmail$")
+	public void logout_pld_gmail() throws Throwable {
+	   
+		Thread.sleep(2000);
+	    WebElement my_account_og =  driver.findElement(By.xpath("//a[contains(.,'My Account')]")));
+	    Thread.sleep(2000);
+	   my_account_og.click();
+	    Thread.sleep(2000);
+   
+		 Thread.sleep(3000);
+		 WebElement sign_out =  driver.findElement(By.xpath("//a[contains(.,'Sign Out')]")));
+		 Thread.sleep(2000);
+		 sign_out.click();
+		 Thread.sleep(3000);
+		
 	}
 
 }
