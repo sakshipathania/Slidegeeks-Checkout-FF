@@ -75,7 +75,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Click on create as account link\\.$")
 	public void click_on_create_as_account_link() throws InterruptedException {
-		WebElement account_link = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[1]/div[2]/div/div/a/span"));
+		WebElement account_link = driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[1]/div[2]/div/div/a"));
 		account_link.click();
 		Thread.sleep(1500);
 	}
