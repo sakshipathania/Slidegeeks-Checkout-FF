@@ -11,7 +11,6 @@ Scenario: create the application with facebook user.
 	Then click on login cta on fb page. 
 	Then The user is redirected to price page. 
 	Then the randamly the subscription product. 
-	Then Verify the payement section on the app. 
 	Then By default payment option as paypal is selected. 
 	Then Enter the the offer code is off is showing. 
 	Then Apply the code. 
