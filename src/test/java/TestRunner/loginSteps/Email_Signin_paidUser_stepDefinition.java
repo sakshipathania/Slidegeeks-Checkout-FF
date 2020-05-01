@@ -92,14 +92,19 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	}
 
 	@Then("^click on Login cta$")
+	
 	public void click_on_Login_button() throws Throwable {
+		try {
 		WebElement Login_button= driver.findElement(By.xpath("//*[@id='send2']"));
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 		Login_button.click();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
-
+		}
+                   catch (NoSuchElementException Ext) {
+			
+			}
 		try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
 			//wait.implictywait(driver);
