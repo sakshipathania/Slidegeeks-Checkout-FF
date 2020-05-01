@@ -9,7 +9,6 @@ Scenario:
 	Then Insert the Password "<Pass>". 
 	Then Click on Login button. 
 	Then Select any of price subscription. 
-	Then Verify the payment option field. 
 	Then  See default payment option as paypal. 
 	Then  Enter coupon code. 
 	Then  Apply cuopon code. 
