@@ -117,7 +117,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		Thread.sleep(5000);
 		Valid_pass.sendKeys("himanshi@123");
 		Thread.sleep(5000);
-	} (NoSuchElementException Ext) {
+	} catch (NoSuchElementException Ext) {
 
 		}
 	}
