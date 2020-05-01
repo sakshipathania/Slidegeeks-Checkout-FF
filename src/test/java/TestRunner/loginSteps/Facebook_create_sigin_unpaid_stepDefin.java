@@ -165,17 +165,20 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		//wait.implictywait(driver);
 		//Thread.sleep(2000);
 		
-	}
+	} 
 					
 	@Then("^the randamly the subscription product\\.$")
 	public void the_randamly_the_subscription_product() throws Throwable {
 		js.executeScript("window.scrollBy(0,650)");
 		Thread.sleep(4000);
-	
-		List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
-		int randomValue = rad.nextInt(list.size()); // Getting a random value that is between 0 and (list's size)-1
-		Thread.sleep(4000);
-		list.get(randomValue).click();
+	         WebElement join_now_btn  = driver.findElement(By.xpath("(//span[contains(.,'Join now')])[8]"));
+			Thread.sleep(2000);
+		    join_now_btn.click();
+			Thread.sleep(5000);
+		//List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
+		//int randomValue = rad.nextInt(list.size()); // Getting a random value that is between 0 and (list's size)-1
+		//Thread.sleep(4000);
+		//list.get(randomValue).click();
 		Thread.sleep(4000);
 		
 	}
