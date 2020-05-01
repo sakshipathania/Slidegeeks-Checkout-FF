@@ -99,7 +99,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 
 	@Then("^Enter the user password$")
 	public void enter_user_password_as() throws Throwable {
-		WebElement user_pass = driver.findElement(By.Id("id='pass"));
+		WebElement user_pass = driver.findElement(By.Id("pass"));
 		//user_pass.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
