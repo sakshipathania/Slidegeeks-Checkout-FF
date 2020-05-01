@@ -8,12 +8,6 @@ Scenario:
 	Then Enter user email address as "<EmailAddress>". 
 	Then Insert the Password "<Pass>". 
 	Then Click on Login button. 
-	Then Verify user "<EmailAddressVal>" validation message for Email Address. 
-	Then Verify user "<PassVal>" validation message for Password. 
-	Then Verify user "<Signin_error_Msg>" message for all invalid credentials. 
-	Then Enter user a email address as. 
-	Then Enter password as.  
-	Then after login redirect to price page. 
 	Then Select any of price subscription. 
 	Then Verify the payment option field. 
 	Then  See default payment option as paypal. 
