@@ -159,7 +159,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(4000);
 		}
-		catch((Throwable t) {
+		catch (Throwable t) {
 		}
         
 		//wait.implictywait(driver);
