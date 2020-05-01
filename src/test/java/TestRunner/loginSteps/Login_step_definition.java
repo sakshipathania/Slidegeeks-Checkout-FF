@@ -130,12 +130,16 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Click on Login button\\.$")
 	public void click_on_Login_button() throws Throwable {
+		try {
 		WebElement Login= driver.findElement(By.xpath("//*[@id='send2']"));
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Login.click();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+	} catch (NoSuchElementException Ext) {
+			
+			}
 	}
 
 	/* @Then("^Verify user \"([^\"]*)\" validation message for Email Address\\.$")
