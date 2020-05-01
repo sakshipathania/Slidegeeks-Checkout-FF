@@ -75,9 +75,13 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Click on create as account link\\.$")
 	public void click_on_create_as_account_link() throws InterruptedException {
+		try {
 		WebElement account_link = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[1]/div[2]/div/div/a/span"));
 		account_link.click();
 		Thread.sleep(5000);
+	} catch (NoSuchElementException Ext) {
+
+		}
 	}
 
 	@Then("^Click on faceblink\\.$")
@@ -90,6 +94,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^Fb user enter a valid email\\.$")
 	public void fb_user_enter_a_valid_email() throws InterruptedException {
+		try {
 		WebElement valid_email= driver.findElement(By.xpath("//*[@id='email']"));
 		valid_email.click();
 		Thread.sleep(5000);
@@ -97,10 +102,14 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		Thread.sleep(5000);
 		valid_email.sendKeys("slidetech.qa@gmail.com");
                 Thread.sleep(5000);
+	} catch (NoSuchElementException Ext) {
+
+		}
 	}
 
 	@Then("^Fb user enter valid password\\.$")
 	public void fb_user_enter_valid_password() throws Throwable {
+		try {
 		WebElement Valid_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		Valid_pass.click();
 		Thread.sleep(5000);
@@ -108,6 +117,9 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		Thread.sleep(5000);
 		Valid_pass.sendKeys("himanshi@123");
 		Thread.sleep(5000);
+	} (NoSuchElementException Ext) {
+
+		}
 	}
 
 	@Then("^click on login cta on fb page\\.$")
