@@ -221,9 +221,9 @@ public class Login_step_definition extends SetupClass {
 		Thread.sleep(1000);
 	
 		List<WebElement> listin  = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
-		int randomValue = rad.nextInt(listin .size()); // Getting a random value that is between 0 and (list's size)-1
+		int randomValue = rad.nextInt(listin.size()); randomValue++; // Getting a random value that is between 0 and (list's size)-1
 		Thread.sleep(1000);
-		listin .get(randomValue).click();
+		listin.get(randomValue).click();
 		Thread.sleep(2000);
 	}
 
