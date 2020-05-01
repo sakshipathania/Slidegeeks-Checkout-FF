@@ -55,7 +55,7 @@ public class Login_step_definition extends SetupClass {
 			}
 		}
 
-	  /*@Then("^user navigate to complete deck from account dashboard page$")
+	  @Then("^user navigate to complete deck from account dashboard page$")
          public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
@@ -83,22 +83,26 @@ public class Login_step_definition extends SetupClass {
 		//wait.implictywait(driver);
 		PPT_link.click();
 		Thread.sleep(1000);
-	}*/
+	}
 
 	@Then("^Enter user email address as \"([^\"]*)\"\\.$")
 	public void enter_user_email_address_as(String email) throws Throwable {
-	
-		WebElement email_ad=  wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
+	 
+		try {
+		WebElement email_ad= driver.findElement(By.xpath("//*[@id='email']"));
     
-		//email_ad.click();
+		email_ad.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
-		//email_ad.clear();
-		//Thread.sleep(1000);
+		email_ad.clear();
+		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		email_ad.sendKeys("himanshi.sharma@slidetech.in");
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
+		} catch (NoSuchElementException Ext) {
+			
+			}
 		
 	
 	}
