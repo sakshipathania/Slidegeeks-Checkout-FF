@@ -166,7 +166,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		} 
 	}*/
 	@Then("^user go to All ppts page gmail$")
-	public void user_go_to_All_ppts_page_gmail() throws throwable {
+	public void user_go_to_All_ppts_page_gmail() throws Throwable {
 		Thread.sleep(3000);
 		driver.get("https://www.slideteam.net/best-presentation-on-myself-powerpoint-presentation-slide.html");
 		WebElement Dld_link = driver.findElement(By.xpath("//*[@id='clicking']"));
