@@ -9,4 +9,5 @@ Scenario: Already subscribe the product with google plus id.
 	Then go to password page. 
 	Then Enter user google pass. 
 	Then Click on next CTA. 
-	Then The Page is redirect to download presenetion link.
+	Then user go to All ppts page gmail
+	Then logout pld gmail
