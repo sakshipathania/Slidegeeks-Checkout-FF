@@ -53,39 +53,11 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		}
 	}
 
-	@Then ("^chat window option\\.$")
-	public void close_chat_window() throws InterruptedException {
-		try {
-			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
-			if(iframe.isDisplayed()) {
-				driver.switchTo().frame(iframe);   
-				 Actions act = new Actions(driver);
-				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
-				 Thread.sleep(2000);
-					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
-					 Thread.sleep(1000);
-						chat1.click();
-						 Thread.sleep(1000);
-						 driver.switchTo().defaultContent();
-						 Thread.sleep(1000);
-						 driver.switchTo().parentFrame();
-					 Thread.sleep(1000);
-			}
-			else {
-				
-
-			System.out.println("chat window does not open");
-			}
-		}
-				catch(NoSuchElementException NCP) {
-					
-				}
-			}	
-
+	
 	@Then("^Enter a user email$")
 	public void enter_user_email_address_as() throws Throwable {
 
-		WebElement Email_add= driver.findElement(By.xpath("//*[@id='email']"));
+		WebElement Email_add= driver.findElement(By.cssSelector("#email"));
 		Email_add.click();
 		Thread.sleep(5000);
 		//wait.implictywait(driver);
@@ -143,6 +115,35 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	   // Thread.sleep(5000);
           }
 	
+	@Then ("^chat window option\\.$")
+	public void close_chat_window() throws InterruptedException {
+		try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
+			}
+			else {
+				
+
+			System.out.println("chat window does not open");
+			}
+		}
+				catch(NoSuchElementException NCP) {
+					
+				}
+			}	
+
 	@Then("^the download this presenetion link is appeared$")
 	public void verify_uesr_validation_message_for_Email_Address() throws Throwable {
                 driver.get("https://www.slideteam.net/one-page-strategy-vision-goals-strategies-tactics.html");
