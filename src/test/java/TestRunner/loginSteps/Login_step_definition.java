@@ -247,14 +247,14 @@ public class Login_step_definition extends SetupClass {
 
 	}
 
-	@Then("^Verify the payment option field\\.$")
+	/*@Then("^Verify the payment option field\\.$")
 	public void verify_the_payment_option_field() throws Throwable {
 		String payment_text = driver.findElement(SignupObject.payment).getText();
 		String ExpectTitle = "PAYMENT INFORMATION";
 		System.out.println(payment_text);
 		Assert.assertEquals(ExpectTitle, payment_text);
          Thread.sleep(1000);
-	}
+	} */
 
 	@Then("^See default payment option as paypal\\.$")
 	public void see_default_payment_option_as_paypal() throws Throwable {
