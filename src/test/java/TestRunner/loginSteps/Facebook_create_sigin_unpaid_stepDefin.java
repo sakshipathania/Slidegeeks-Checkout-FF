@@ -187,14 +187,14 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	}
 
-	@Then("^Verify the payement section on the app\\.$")
+	/*@Then("^Verify the payement section on the app\\.$")
 	public void verify_the_payement_section_on_the_app() throws Throwable {
 		String payment_text = driver.findElement(SignupObject.payment).getText();
 		String ExpectTitle = "PAYMENT INFORMATION";
 		System.out.println(payment_text);
 		Assert.assertEquals(ExpectTitle, payment_text);
 		Thread.sleep(4000);
-	}
+	} */
 
 	@Then("^By default payment option as paypal is selected\\.$")
 	public void by_default_payment_option_as_paypal_is_selected() throws Throwable {
