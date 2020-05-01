@@ -85,7 +85,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	@Then("^Enter a user email$")
 	public void enter_user_email_address_as() throws Throwable {
 
-		WebElement Email_add= driver.findElement(By.Id("email"));
+		WebElement Email_add= wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
 		//Email_add.click();
 		//Thread.sleep(1000);
 		//wait.implictywait(driver);
@@ -99,7 +99,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 
 	@Then("^Enter the user password$")
 	public void enter_user_password_as() throws Throwable {
-		WebElement user_pass = driver.findElement(By.Id("pass"));
+		WebElement user_pass = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
 		//user_pass.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
