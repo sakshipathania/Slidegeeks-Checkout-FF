@@ -74,6 +74,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 
 	@Then("^Enter the user password$")
 	public void enter_user_password_as() throws Throwable {
+		try {
 		WebElement user_pass = driver.findElement(By.cssSelector("div.field:nth-child(3) > div:nth-child(2) > input:nth-child(1)"));
 		user_pass.click();
 		Thread.sleep(5000);
@@ -84,6 +85,9 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		user_pass.sendKeys("Sakshi@098");
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
+		 } catch (NoSuchElementException Ext) {
+
+		}
 
 	}
 
