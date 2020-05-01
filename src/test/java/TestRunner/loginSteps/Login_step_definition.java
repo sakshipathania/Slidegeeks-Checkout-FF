@@ -258,11 +258,11 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^See default payment option as paypal\\.$")
 	public void see_default_payment_option_as_paypal() throws Throwable {
-		WebElement paypal = driver.findElement(SignupObject.paypay_radio_button);
+		WebElement paypal = driver.findElement(By.cssSelector("#paypal_express"));
 		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
 		// to check the check box is already selected or not
 		{
-			driver.findElement(SignupObject.paypay_radio_button).click();
+			driver.findElement(By.cssSelector("#paypal_express")).click();
 			//wait.implictywait(driver);
 			Thread.sleep(1000);
 		}
@@ -291,7 +291,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Apply cuopon code\\.$")
 	public void apply_the_cuopon_code() throws Throwable {
-		WebElement coupon= driver.findElement(SignupObject.Apply_Coupon);
+		WebElement coupon= driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div[4]/div[3]/ol/li[3]/div/form/fieldset/div[3]/div[2]/form/div[2]/div/button/span/span"));
 		js.executeScript("arguments[0].click();", coupon);
 		Thread.sleep(3000);
 		driver.switchTo().alert().dismiss();
