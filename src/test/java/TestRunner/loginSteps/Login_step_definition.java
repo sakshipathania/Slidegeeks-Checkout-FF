@@ -127,7 +127,7 @@ public class Login_step_definition extends SetupClass {
 		Thread.sleep(2000);
 	}
 
-	@Then("^Verify user \"([^\"]*)\" validation message for Email Address\\.$")
+	/* @Then("^Verify user \"([^\"]*)\" validation message for Email Address\\.$")
 	public void verify_user_validation_message_for_Email_Address(String Email) throws Throwable {
 
 		try {
@@ -212,10 +212,11 @@ public class Login_step_definition extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
-	}
+	} */
 
 	@Then("^Select any of price subscription\\.$")
 	public void select_any_of_price_subscription() throws Throwable {
+		driver.get("https://www.slideteam.net/pricing");
 		js.executeScript("window.scrollBy(0,650)");
 		Thread.sleep(1000);
 	
