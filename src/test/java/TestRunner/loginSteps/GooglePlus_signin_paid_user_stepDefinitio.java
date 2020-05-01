@@ -69,11 +69,16 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		driver.get("https://www.slideteam.net/best-presentation-on-myself-powerpoint-presentation-slide.html");
 		Thread.sleep(2000);
-		WebElement test5 = driver.findElement(By.xpath("//*[@id='clicking']"));
-		Thread.sleep(2000);
+		//WebElement test5 = driver.findElement(By.cssSelector("//*[@id='clicking']"));
+		//Thread.sleep(2000);
 		//wait.implictywait(driver);
-		test5.click();
-		Thread.sleep(2000);
+		//test5.click();
+		//Thread.sleep(2000);
+		driver.findElement(By.cssSelector("#clicking")).click();
+		Thread.sleep(3000);
+		
+		driver.navigate().refresh();
+		Thread.sleep(3000);
 	}
 
 	@Then("^Click on googlePlus link\\.$")
