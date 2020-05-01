@@ -235,11 +235,16 @@ public class Login_step_definition extends SetupClass {
 		js.executeScript("window.scrollBy(0,650)");
 		Thread.sleep(1000);
 	
-		List<WebElement> listin  = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
-		int randomValue = rad.nextInt(listin.size()); randomValue++; // Getting a random value that is between 0 and (list's size)-1
-		Thread.sleep(1000);
-		listin.get(randomValue).click();
-		Thread.sleep(2000);
+		//List<WebElement> listin  = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
+		//int randomValue = rad.nextInt(listin.size());  // Getting a random value that is between 0 and (list's size)-1
+		//Thread.sleep(1000);
+		//listin.get(randomValue).click();
+		//Thread.sleep(2000);
+		WebElement join_now_btn  = driver.findElement(By.xpath("(//span[contains(.,'Join now')])[8]"));
+			Thread.sleep(2000);
+		    join_now_btn.click();
+			Thread.sleep(5000);
+
 	}
 
 	@Then("^Verify the payment option field\\.$")
