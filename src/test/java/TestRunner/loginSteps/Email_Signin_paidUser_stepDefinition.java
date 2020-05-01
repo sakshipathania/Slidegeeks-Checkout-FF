@@ -85,11 +85,11 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	@Then("^Enter a user email$")
 	public void enter_user_email_address_as() throws Throwable {
 
-		WebElement Email_add= driver.findElement(By.xpath("//*[@id='email']"));
-		Email_add.click();
-		Thread.sleep(1000);
+		WebElement Email_add= driver.findElement(By.Id("email"));
+		//Email_add.click();
+		//Thread.sleep(1000);
 		//wait.implictywait(driver);
-		Email_add.clear();
+		//Email_add.clear();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Email_add.sendKeys("sumit@slideteam.net");
@@ -99,12 +99,12 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 
 	@Then("^Enter the user password$")
 	public void enter_user_password_as() throws Throwable {
-		WebElement user_pass = driver.findElement(By.xpath("//*[@id='pass']"));
-		user_pass.click();
+		WebElement user_pass = driver.findElement(By.Id("id='pass"));
+		//user_pass.click();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
-		user_pass.clear();
-		Thread.sleep(1000);
+		//user_pass.clear();
+		//Thread.sleep(1000);
 		//wait.implictywait(driver);
 		user_pass.sendKeys("sumittest@21234");
 		//wait.implictywait(driver);
