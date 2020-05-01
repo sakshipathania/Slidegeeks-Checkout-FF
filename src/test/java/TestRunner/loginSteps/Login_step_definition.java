@@ -258,6 +258,7 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^See default payment option as paypal\\.$")
 	public void see_default_payment_option_as_paypal() throws Throwable {
+		try {
 		WebElement paypal = driver.findElement(By.cssSelector("#paypal_express"));
 		/*if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
 		// to check the check box is already selected or not
@@ -266,7 +267,10 @@ public class Login_step_definition extends SetupClass {
 			//wait.implictywait(driver);
 			Thread.sleep(1000);
 		}*/
-                Thread.sleep(2000);
+                Thread.sleep(2000); }
+		catch (NoSuchElementException Ext) {
+			
+			}
 		String paypal_text = driver.findElement(SignupObject.verify_paypal_text).getText();
 		String ExpectTitle = "You will be redirected to the PayPal website when you place an order.";
 		Assert.assertEquals(ExpectTitle, paypal_text);
