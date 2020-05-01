@@ -121,7 +121,7 @@ public class Login_step_definition extends SetupClass {
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
 		
-	} catch ((NoSuchElementException Ext) {
+	} catch (NoSuchElementException Ext) {
 			
 			}
 		
