@@ -59,8 +59,8 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"))).click();
-	  Thread.sleep(2000);   
+	 //wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"))).click();
+	  //Thread.sleep(2000);   
 	    
 }
 
@@ -70,14 +70,14 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		WebElement download = driver.findElement(By.cssSelector("#clicking"));
 		//wait.implictywait(driver);
 		download.click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 	}
 
 	@Then("^Click on create as account link\\.$")
 	public void click_on_create_as_account_link() throws InterruptedException {
 		WebElement account_link = driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[1]/div[2]/div/div/a"));
 		account_link.click();
-		Thread.sleep(1500);
+		Thread.sleep(5000);
 	}
 
 	@Then("^Click on faceblink\\.$")
@@ -92,28 +92,28 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	public void fb_user_enter_a_valid_email() throws InterruptedException {
 		WebElement valid_email= driver.findElement(By.xpath("//*[@id='email']"));
 		valid_email.click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		valid_email.clear();
-		Thread.sleep(1000);
-		valid_email.sendKeys("amw.vrushali@gmail.com");
-                Thread.sleep(1000);
+		Thread.sleep(5000);
+		valid_email.sendKeys("slidetech.qa@gmail.com");
+                Thread.sleep(5000);
 	}
 
 	@Then("^Fb user enter valid password\\.$")
 	public void fb_user_enter_valid_password() throws Throwable {
 		WebElement Valid_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		Valid_pass.click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		Valid_pass.clear();
-		Thread.sleep(1000);
-		Valid_pass.sendKeys("vrushali@786");
-		Thread.sleep(2000);
+		Thread.sleep(5000);
+		Valid_pass.sendKeys("himanshi@123");
+		Thread.sleep(5000);
 	}
 
 	@Then("^click on login cta on fb page\\.$")
 	public void click_on_login_cta_on_fb_page() throws InterruptedException {
 		WebElement Fb_login= driver.findElement(By.xpath("//*[@id='loginbutton']"));
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		Fb_login.click();
 		Thread.sleep(10000);
 		try {
@@ -129,13 +129,13 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	public void the_user_is_redirected_to_price_page() throws Throwable {
 
 		String actualTitle = driver.getTitle();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		//wait.implictywait(driver);
 		String expectedTitle = "Pricing";
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 		
@@ -144,13 +144,13 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	@Then("^the randamly the subscription product\\.$")
 	public void the_randamly_the_subscription_product() throws Throwable {
 		js.executeScript("window.scrollBy(0,650)");
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 	
 		List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
 		int randomValue = rad.nextInt(list.size()); // Getting a random value that is between 0 and (list's size)-1
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		list.get(randomValue).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 	}
 
@@ -160,7 +160,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		String ExpectTitle = "PAYMENT INFORMATION";
 		System.out.println(payment_text);
 		Assert.assertEquals(ExpectTitle, payment_text);
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 	}
 
 	@Then("^By default payment option as paypal is selected\\.$")
@@ -171,28 +171,28 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		{
 			driver.findElement(By.cssSelector("#paypal_express")).click();
 			//wait.implictywait(driver);
-			Thread.sleep(1000);
+			Thread.sleep(4000);
 		}
 
 		String paypal_text = driver.findElement(SignupObject.verify_paypal_text).getText();
 		String ExpectTitle = "You will be redirected to the PayPal website when you place an order.";
 		Assert.assertEquals(ExpectTitle, paypal_text);
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 	}
 
 	@Then("^Enter the the offer code is off is showing\\.$")
 	public void enter_coupon() throws Throwable  {
 		WebElement Offer = driver.findElement(By.xpath("//*[@id='discount-code']"));
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		//wait.implictywait(driver);
 		js.executeScript("arguments[0].click();", Offer);
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		//wait.implictywait(driver);
 		Offer.clear();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		//wait.implictywait(driver);
 		Offer.sendKeys("5OFF");
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		//wait.implictywait(driver);
 	}
 
