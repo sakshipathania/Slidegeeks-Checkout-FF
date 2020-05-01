@@ -35,7 +35,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		try {
 			WebElement App_url= driver.findElement(SignupObject.close_add);
 			App_url.click();
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
 		}
@@ -85,30 +85,30 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	@Then("^Enter a user email$")
 	public void enter_user_email_address_as() throws Throwable {
 
-		WebElement Email_add= driver.findElement(By.cssSelector("#email"));
+		WebElement Email_add= driver.findElement(By.xpath("//*[@id='email']"));
 		Email_add.click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		//wait.implictywait(driver);
 		Email_add.clear();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		//wait.implictywait(driver);
-		Email_add.sendKeys("sumit@slideteam.net");
+		Email_add.sendKeys("sakshi.pathania@slideteam.in");
 		//wait.implictywait(driver);
-                Thread.sleep(1000);
+                Thread.sleep(5000);
 	}
 
 	@Then("^Enter the user password$")
 	public void enter_user_password_as() throws Throwable {
 		WebElement user_pass = driver.findElement(By.cssSelector("div.field:nth-child(3) > div:nth-child(2) > input:nth-child(1)"));
 		user_pass.click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		//wait.implictywait(driver);
 		user_pass.clear();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		//wait.implictywait(driver);
-		user_pass.sendKeys("sumittest@21234");
+		user_pass.sendKeys("Sakshi@098");
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 
 	}
 
@@ -116,10 +116,10 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	public void click_on_Login_button() throws Throwable {
 		WebElement Login_button= driver.findElement(By.xpath("//*[@id='send2']"));
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		Login_button.click();
 		//wait.implictywait(driver);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 
 		try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
@@ -137,19 +137,19 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
-	  Thread.sleep(2000);   
-	 select_product.click();
-	    Thread.sleep(2000);
+	// WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
+	  //Thread.sleep(5000);   
+	 //select_product.click();
+	   // Thread.sleep(5000);
           }
 	
 	@Then("^the download this presenetion link is appeared$")
 	public void verify_uesr_validation_message_for_Email_Address() throws Throwable {
-
+                driver.get("https://www.slideteam.net/one-page-strategy-vision-goals-strategies-tactics.html");
 		try {
 			String Email_test = driver.findElement(SignupObject.Downloaded).getText();
 			//wait.implictywait(driver);
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			String Expected_Cta = "Download this presentation";
 			Assert.assertEquals(Expected_Cta, Email_test);
 			//wait.implictywait(driver);
@@ -163,7 +163,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		WebElement presentation= driver.findElement(By.cssSelector("#clicking"));
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		presentation.click();
 		//wait.implictywait(driver);
 		Thread.sleep(8000);
