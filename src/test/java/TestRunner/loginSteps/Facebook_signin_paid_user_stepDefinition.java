@@ -77,7 +77,9 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 
 	@Then("^Click on test fblink$")
 	public void fb_link() throws InterruptedException {
-		WebElement fblink = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[1]/a"));
+		driver.get("https://www.slideteam.net/");
+		Thread.sleep(4000);
+		WebElement fblink = driver.findElement(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']"));
 		Thread.sleep(1000);
 		fblink.click();
 		Thread.sleep(1000);
