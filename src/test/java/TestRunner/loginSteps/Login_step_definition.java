@@ -63,7 +63,7 @@ public class Login_step_definition extends SetupClass {
 	 
 	// WebElement select_product=driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
 	  //Thread.sleep(2000);   
-	  select_product.click();
+	//  select_product.click();
 	 //ac.moveToElement(select_product).build().perform();
 	   Thread.sleep(2000);
 	    } 
