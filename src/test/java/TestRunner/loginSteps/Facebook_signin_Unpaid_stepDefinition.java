@@ -187,7 +187,6 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		
 		Thread.sleep(1000);
 	}
-	}
 
 	@Then("^user proceed to pay with paypal\\.$")
 	public void user_proceed_to_pay_with_paypal() throws Throwable {
