@@ -205,8 +205,8 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-        @Then("^paypal popup appears and user navigates back to my account pp$")
-	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
+        @Then("^pay pal popup appears and user navigates back to my account pp$")
+	public void pay_pal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
 	    
 		  // Maximize Window
 		  driver.manage().window().maximize();
