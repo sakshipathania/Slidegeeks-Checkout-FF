@@ -164,26 +164,33 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	@Then("^Subscribe the product\\.$")
 	public void select_any_of_price_subscription() throws Throwable {
-		js.executeScript("window.scrollBy(0,650)");
-		Thread.sleep(1000);
-		List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
-		int randomValue = rad.nextInt(list.size()); // Getting a random value that is between 0 and (list's size)-1
-		Thread.sleep(1000);
-		list.get(randomValue).click();
+		WebElement join_now_btn  = driver.findElement(By.xpath("//div[3]//div[3]//span[1]//form[1]//button[1]//span[1]"));
+			Thread.sleep(2000);
+		    join_now_btn.click();
+			Thread.sleep(5000);
+
+	}
+
+	@Then("^Redirect to payment page\\.$")
+	public void Redirect_to_payment_page() throws Throwable {
 		Thread.sleep(2000);
-	}
-
-	/*@Then("^Verify the payment section information\\.$")
-	public void verify_the_payment_option_field() throws Throwable {
-		String payment_text = driver.findElement(SignupObject.payment).getText();
-		String ExpectTitle = "PAYMENT INFORMATION";
-		System.out.println(payment_text);
-		Assert.assertEquals(ExpectTitle, payment_text);
+		try
+		{
+			WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='paypal_express']")));
+			Thread.sleep(2000);
+		    cp_btn.click();
+		    Thread.sleep(3000);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		Thread.sleep(1000);
 	}
+	}
 
-	@Then("^Verify the by default payment option as paypal\\.$")
-	public void see_default_payment_option_as_paypal() throws Throwable {
+	@Then("^user proceed to pay with paypal\\.$")
+	public void user_proceed_to_pay_with_paypal() throws Throwable {
 		WebElement Pay_pal = driver.findElement(SignupObject.paypay_radio_button);
 		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
 		// to check the check box is already selected or not
@@ -199,117 +206,46 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Enter the coupon as showing\\.$")
-	public void enter_coupon() throws Throwable {
-		WebElement cou_pon= driver.findElement(SignupObject.Enter_Coupon);
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		js.executeScript("arguments[0].click();", cou_pon);
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		cou_pon.clear();
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		cou_pon.sendKeys("5OFF");
-		Thread.sleep(1000);
-		//wait.implictywait(driver);
+        @Then("^paypal popup appears and user navigates back to my account pp$")
+	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
+	    
+		  // Maximize Window
+		  driver.manage().window().maximize();
+		
+		  // Store the CurrentWindow for future reference
+		  
+		  String currentWindow = driver.getWindowHandle();
+		  String popupWindowHandle = null;
+		   
+		  // Switch To Popup Window
+		  
+		  for(String handle : driver.getWindowHandles()){
+		   if(!handle.equals(currentWindow)){
+		    
+		    popupWindowHandle = handle;
+		    
+		   }
+		  }
+		  
+		  driver.switchTo().window(popupWindowHandle);
+		  
+		// page title
+		  String pp_page_title=driver.getTitle();
+			Thread.sleep(3000);
+		    System.out.println("Title of the Page is --> "+pp_page_title);
+		    
+		 // place order button 
+			 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
+				Thread.sleep(2000);
+			    cancel_order_btn.click();
+				Thread.sleep(5000);
+
+				 // Switch To Default Window
+				  
+				  driver.switchTo().window(currentWindow);
+		    
 	}
 
-	@Then("^Apply coupon the code\\.$")
-	public void apply_the_cuopon_code() throws Throwable {
-		WebElement Coupon_code = driver.findElement(SignupObject.Apply_Coupon);
-		js.executeScript("arguments[0].click();", Coupon_code);
-		Thread.sleep(3000);
-		driver.switchTo().alert().dismiss();
-		Thread.sleep(2000);
 
-	}
-
-	@Then("^Verify the apply code is applied\\.$")
-	public void verify_the_applied_coupon_code_offer() throws Throwable {
-		js.executeScript("window.scrollBy(0,500)");
-		Thread.sleep(2000);
-		String applied_code = driver.findElement(SignupObject.verify_apply_code).getText();
-		System.out.println(applied_code);
-		String ExpectTitle = "Discount (5OFF)";
-		Assert.assertEquals(ExpectTitle, applied_code);
-		Thread.sleep(1000);
-	}*/
-
-	@Then("^Go to payement page\\.$")
-	public void click_on_place_order_CTA() throws Throwable {
-		WebElement Pay_ment = driver.findElement(SignupObject.place_cta);
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		js.executeScript("arguments[0].click();", Pay_ment);
-		Thread.sleep(5000);
-	}
-
-	/*@Then("^Verify the payment page is payapal\\.$")
-	public void verify_the_paypal_payement_page() throws Throwable {
-		Thread.sleep(4000);
-		 try {
-			 String actualTitle1 = driver.getTitle();
-			 Thread.sleep(1000);
-				//wait.implictywait(driver);
-				System.out.println(actualTitle1);
-				String expectedTitle1 = "Billing Information - PayPal";
-			 Thread.sleep(1000);
-				//wait.implictywait(driver);
-				String expectedTitle2="PayPal Checkout";
-				//wait.implictywait(driver);
-			 Thread.sleep(1000);
-				
-			    if(actualTitle1.equals(expectedTitle1)) {
-				Assert.assertEquals(expectedTitle1, actualTitle1);
-				//wait.implictywait(driver);
-				Thread.sleep(3000);
-				System.out.println("title does not matched");
-	}
-		 else {
-				Assert.assertEquals(expectedTitle2, actualTitle1);
-				//wait.implictywait(driver);
-			 Thread.sleep(1000);
-				System.out.println(actualTitle1);
-				Thread.sleep(3000);
-				System.out.println("title matched");
-		    }
-		 }
-		 catch (NoSuchElementException checkPaypapayement){
-	
-		 }
-	}
-
-	
-
-	@Then("^Select the payment option as CARD\\.$")
-	public void select_payment_option_as_Card() throws Throwable {
-		WebElement Payment_option= driver.findElement(SignupObject.card_radio_button);
-		Payment_option.click();
-		Thread.sleep(1000);
-		String card_text = driver.findElement(SignupObject.verify_2checkout).getText();
-		System.out.println(card_text);
-		String ExpectTitle = "2Checkout (Visa, Amex, Discover, JCB, Diners Club, Debit Card, PayPal)";
-
-		Assert.assertEquals(ExpectTitle, card_text);
-		Thread.sleep(1000);
-
-	}
-
-	@Then("^Verify the payment page is card chekout\\.$")
-	public void card_page() throws InterruptedException {
-		Thread.sleep(5000);
-		String actualTitle = driver.getTitle();
-		Thread.sleep(1000);
-		//wait.implictywait(driver);
-		String expectedTitle = "2Checkout";
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		System.out.println(actualTitle);
-		Thread.sleep(3000);
-	}*/
 
 }
