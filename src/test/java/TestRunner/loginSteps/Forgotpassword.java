@@ -109,7 +109,7 @@ import webApp.PerformAction;
                         Thread.sleep(2000);
 		}
 
-		@Then("^Enter the user email address is registerd as \"([^\"]*)\"\\.$")
+		@Then("^Enter the user email address is registerd as$")
 		public void user_mail(String email) throws InterruptedException {
 			
 			WebDriverWait wait1 = new WebDriverWait(driver, 30);
@@ -136,33 +136,6 @@ import webApp.PerformAction;
 			Thread.sleep(3000);
 		}
 
-		@Then("^Verify \"([^\"]*)\" the validation message\\.$")
-		public void password_page(String error) throws InterruptedException {
-
-			WebElement validation = driver.findElement(LoginObject.invalid_error);
-			try {
-				String invalid_val = driver.findElement(LoginObject.invalid_error).getText();
-				//wait.implictywait(driver);
-				Thread.sleep(2000);
-				Assert.assertEquals(error, invalid_val);
-				Thread.sleep(2000);
-			} catch (NoSuchElementException Invalid) {
-
-			}
-		}
-
-		@Then("^\"([^\"]*)\" validation message\\.$")
-		public void Verify_user_send_email(String text) throws InterruptedException {
-			try {
-				String user_val = driver.findElement(LoginObject.verify_sucess).getText();
-				System.out.println(user_val);
-				//wait.implictywait(driver);
-				Thread.sleep(2000);
-				Assert.assertEquals(text, user_val);
-				Thread.sleep(2000);
-			} catch (NoSuchElementException Stest) {
-
-			}
-		}
+		
 
 	}
