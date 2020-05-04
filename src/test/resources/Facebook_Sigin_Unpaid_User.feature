@@ -10,6 +10,8 @@ Scenario: Sign in the application with facebook user.
 	Then Login the application. 
 	Then See that user is redirected to price page. 
 	Then Subscribe the product. 
-	Then Go to payement page.
+	Then Redirect to payment page
+	Then user proceed to pay with paypal
+	Then paypal popup appears and user navigates back to my account pp
 	
 	
