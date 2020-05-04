@@ -176,7 +176,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(2000);
 		try
 		{
-			WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='paypal_express']")));
+			WebElement cp_btn  = driver.findElement(By.xpath("//input[@id='paypal_express']"));
 			Thread.sleep(2000);
 		    cp_btn.click();
 		    Thread.sleep(3000);
