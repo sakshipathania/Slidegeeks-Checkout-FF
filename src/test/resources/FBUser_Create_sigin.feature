@@ -10,7 +10,6 @@ Scenario: create the application with facebook user.
 	Then Fb user enter valid password. 
 	Then click on login cta on fb page. 
 	Then The user is redirected to price page. 
-	Then the randamly the subscription product. 
 	Then user is redirected to pricing page and choose a plan to pay pp
 	Then user is redirected to checkout page pp
 	Then user proceed to pay with paypal pp
