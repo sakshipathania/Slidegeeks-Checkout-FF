@@ -10,10 +10,6 @@ Scenario:
 	Then Click on Login button. 
 	Then Select any of price subscription. 
 	Then  See default payment option as paypal. 
-	Then  Enter coupon code. 
-	Then  Apply cuopon code. 
-	Then  Verify applied coupon code offer. 
-	Then  click on place order CTA. 
-	Then  Verify the paypal payement page. 
-	Then  Select payment option as Card. 
-	Then Verify card payement page.
+	Then user will proceed to pay with paypal pp
+	Then pp popup appears and user navigates back to my account pp
+        Then user is deleting the account pp
