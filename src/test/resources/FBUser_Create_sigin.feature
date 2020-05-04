@@ -11,13 +11,9 @@ Scenario: create the application with facebook user.
 	Then click on login cta on fb page. 
 	Then The user is redirected to price page. 
 	Then the randamly the subscription product. 
-	Then By default payment option as paypal is selected. 
-	Then Enter the the offer code is off is showing. 
-	Then Apply the code. 
-	Then Verify the apply offer code is appeared.
-	Then Place order the product. 
-	Then Verify the payment page
-	Then Select the payment option as CARD is given.
-	Then Verify the payment option as on card page
-	
+	Then user is redirected to pricing page and choose a plan to pay pp
+	Then user is redirected to checkout page pp
+	Then user proceed to pay with paypal pp
+	Then paypal popup appears and user navigates back to my account pp
+	Then user deleted the account pp
 	
