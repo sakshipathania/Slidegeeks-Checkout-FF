@@ -132,9 +132,9 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	public void click_on_login_cta_on_fb_page() throws InterruptedException {
 		try {
 		WebElement Fb_login= driver.findElement(By.xpath("//*[@id='loginbutton']"));
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		Fb_login.click();
-		Thread.sleep(10000);
+		Thread.sleep(3000);
 		} catch (NoSuchElementException Ext) {
 			
 			}
@@ -149,7 +149,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^The user is redirected to price page\\.$")
 	public void the_user_is_redirected_to_price_page() throws Throwable {
-
+                driver.get("https://www.slideteam.net/pricing");
 		String actualTitle = driver.getTitle();
 		Thread.sleep(4000);
 		//wait.implictywait(driver);
