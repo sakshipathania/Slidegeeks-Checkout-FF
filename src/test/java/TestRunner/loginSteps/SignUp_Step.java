@@ -192,7 +192,7 @@ public class SignUp_Step extends SetupClass {
 		}
 	}
 
-	@Then("^Verify \"([^\"]*)\" validation message for Email Address\\.$")
+	/*@Then("^Verify \"([^\"]*)\" validation message for Email Address\\.$")
 	public void verify_validation_message_for_Email_Address(String Email) throws InterruptedException {
 
 		try {
@@ -305,7 +305,7 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
 
-	}
+	}*/
 
 	@Then("^After signup see the price page\\.$")
 	public void verify_the_price_page() throws InterruptedException {
