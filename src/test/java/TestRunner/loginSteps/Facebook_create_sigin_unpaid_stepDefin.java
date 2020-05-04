@@ -168,7 +168,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		
 	} 
 					
-	/*@Then("^the randamly the subscription product\\.$")
+	@Then("^the randamly the subscription product\\.$")
 	public void the_randamly_the_subscription_product() throws Throwable {
 		js.executeScript("window.scrollBy(0,650)");
 		Thread.sleep(4000);
@@ -185,8 +185,8 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		//Thread.sleep(4000);
 		//list.get(randomValue).click();
 		
-	} */
-  @Then("^user is redirected to pricing page and choose a plan to pay pp$")
+	} 
+ /* @Then("^user is redirected to pricing page and choose a plan to pay pp$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_pp() throws Throwable {
 	   
 		// choose a plan
@@ -195,7 +195,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		    join_now_btn.click();
 			Thread.sleep(5000);
 
-	}
+	}*/
 
 	@Then("^user is redirected to checkout page pp$")
 	public void user_is_redirected_to_checkout_page_pp() throws Throwable {
