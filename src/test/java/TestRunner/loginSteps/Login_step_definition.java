@@ -229,7 +229,7 @@ public class Login_step_definition extends SetupClass {
 		Thread.sleep(2000);
 	} */
 
-	@Then("^Select any of price subscription\\.$")
+	/*@Then("^Select any of price subscription\\.$")
 	public void select_any_of_price_subscription() throws Throwable {
 		driver.get("https://www.slideteam.net/pricing");
 		js.executeScript("window.scrollBy(0,650)");
@@ -254,7 +254,7 @@ public class Login_step_definition extends SetupClass {
 		System.out.println(payment_text);
 		Assert.assertEquals(ExpectTitle, payment_text);
          Thread.sleep(1000);
-	} */
+	} 
 
 	@Then("^See default payment option as paypal\\.$")
 	public void see_default_payment_option_as_paypal() throws Throwable {
@@ -379,8 +379,42 @@ try {
 		 continue_delete.click();
 		 Thread.sleep(3000);
 		
+	}*/
+	@Then("^user lands on pricing page and then user go to free ppts page cd$")
+	public void user_lands_on_pricing_page_and_then_user_go_to_free_ppts_page_cd() throws InterruptedException  {
+		
+		Thread.sleep(2000);
+		WebElement free_ppt_btn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'Free PPTs')]")));
+		Thread.sleep(2000);
+	    free_ppt_btn.click();
+	    Thread.sleep(2000);
+	   
 	}
 
+	@Then("^user download a free product cd$")
+	public void user_download_a_free_product_cd() throws InterruptedException  {
+		driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.cssSelector("#clicking")).click();
+		Thread.sleep(3000);
+	   driver.get("https://www.slideteam.net/");
+	   Thread.sleep(3000);
+	}
+        @Then("^user wants logout efu\\.$")
+	public void user_wants_logout_efu() throws Throwable {
+	   Thread.sleep(8000);
+	        
+	    WebElement my_account = driver.findElement(By.cssSelector("body > div.page-wrapper > header > div.header.content > div.panel.wrapper > div > div > ul > li:nth-child(1) > a"));
+	    Thread.sleep(4000);
+	   my_account.click();
+	    Thread.sleep(4000);
+	    
+	
+		 Thread.sleep(3000);
+		 WebElement sign_out = driver.findElement(By.cssSelector("body > div.page-wrapper > header > div.header.content > div.panel.wrapper > div > div > ul > li.authorization-link > a"));
+		 Thread.sleep(3000);
+		 sign_out.click();
+		 Thread.sleep(3000);
 
 	
 }
