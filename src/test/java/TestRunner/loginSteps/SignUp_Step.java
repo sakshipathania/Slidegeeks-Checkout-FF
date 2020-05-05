@@ -51,18 +51,25 @@ public class SignUp_Step extends SetupClass {
 		} catch (NoSuchElementException Exb) {
 
 		}
+		try {
+			driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
+			Thread.sleep(2000);
+			log.info("It's opening the website URL and redirect user to sign up page");
+		} 
+		catch (NoSuchElementException popup) {
+		}
 	}
 
-        @Then("^user will navigate to complete deck from account dashboard page$")
+        /*@Then("^user will navigate to complete deck from account dashboard page$")
          public void user_will_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 WebElement selectproduct=driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
-	  Thread.sleep(2000);   
-	 selectproduct.click();
-	  Thread.sleep(2000);
+	// WebElement selectproduct=driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
+	  //Thread.sleep(2000);   
+	 //selectproduct.click();
+	  //Thread.sleep(2000);
 	    
             }
 
@@ -81,7 +88,7 @@ public class SignUp_Step extends SetupClass {
 		WebElement create_account= driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[1]/div[2]/div/div/a"));
 		create_account.click();
 		Thread.sleep(1500);
-	}
+	} */
 
 	@Then("^Enter Email Address as \"([^\"]*)\"\\.$")
 	public void enter_Email_Address_as(String email) throws Throwable {
@@ -321,7 +328,7 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Select price subscription\\.$")
+	/*@Then("^Select price subscription\\.$")
 	public void select_price_subscription() throws InterruptedException {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		js.executeScript("window.scrollBy(0,650)");
@@ -535,6 +542,63 @@ public class SignUp_Step extends SetupClass {
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 
+	}*/
+	@Then("^user will download a free product cd$")
+	public void user_will_download_a_free_product_cd() throws InterruptedException  {
+		driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.cssSelector("#clicking")).click();
+		Thread.sleep(3000);
+	   driver.get("https://www.slideteam.net/");
+	   Thread.sleep(3000);
 	}
+
+	@Then("^user wants to delete the new account created cd$")
+	public void user_wants_to_delete_the_new_account_created_cd() throws InterruptedException  {
+	    
+
+		 driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
+		 Thread.sleep(3000);
+		 
+		
+
+
+                   try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
+			}
+			else {
+				
+
+			System.out.println("chat window does not open");
+			}
+		}
+				catch(NoSuchElementException NCP) {
+					
+				}
+
+
+
+		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
+		 delete_account.click();
+		 Thread.sleep(3000);
+		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
+		 continue_delete.click();
+		 Thread.sleep(3000);
+	}
+
+
 
 }
