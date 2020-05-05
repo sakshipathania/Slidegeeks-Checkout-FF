@@ -31,18 +31,13 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	@Given("^Launching the application URL\\.$")
 	public void launching_the_application_URL() throws InterruptedException {
 		// Maximize Windows
-		driver.get("https://www.slideteam.net");
-		Thread.sleep(2000);
+		driver.get(AppURL);
+		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		log.info("It's opening the website URL");
+		Thread.sleep(1000);
+		
 		try {
-			WebElement app = driver.findElement(SignupObject.close_add);
-			app.click();
-			Thread.sleep(2000);
-			log.info("It's opening the website URL");
-		} catch (NoSuchElementException popup) {
-		}
-
-		try {
-			WebElement logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
+			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
 			if (logout.isEnabled()) {
 				logout.click();
 				Thread.sleep(8000);
@@ -52,9 +47,19 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		} catch (NoSuchElementException Ext) {
 
 		}
+		Thread.sleep(2000);
+		try {
+			driver.findElement(By.xpath("//a[contains(text(),'Sign in with Facebook')]")).click();
+			Thread.sleep(2000);
+			log.info("It's opening the website URL");
+		} 
+		catch (NoSuchElementException popup) {
+		}
+	    
+	
 	}
 
-	@Then("^complete deck from account dashboard page$")
+	/*@Then("^complete deck from account dashboard page$")
         public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
@@ -97,7 +102,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		catch (NoSuchElementException Ext) {
 			
 			}
-	}
+	}*/
 
 	@Then("^Fb user enter a valid email\\.$")
 	public void fb_user_enter_a_valid_email() throws InterruptedException {
