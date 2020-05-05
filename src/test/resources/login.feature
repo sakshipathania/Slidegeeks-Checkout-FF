@@ -8,8 +8,6 @@ Scenario:
 	Then Enter user email address as "<EmailAddress>". 
 	Then Insert the Password "<Pass>". 
 	Then Click on Login button. 
-	Then Select any of price subscription. 
-	Then  See default payment option as paypal. 
-	Then user will proceed to pay with paypal pp
-	Then pp popup appears and user navigates back to my account pp
-        Then user is deleting the account pp
+	Then user lands on pricing page and then user go to free ppts page cd
+	Then user down load a free product cd
+	Then user wants logout efu
