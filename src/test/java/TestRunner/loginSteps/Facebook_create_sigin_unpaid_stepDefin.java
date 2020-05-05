@@ -63,7 +63,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	 WebElement product = driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
 	  Thread.sleep(2000);   
 	    product.click();
-		Threaad.sleep(1000);
+		Thread.sleep(1000);
           }
 
 	@Then("^Open the download presentation link\\.$")
