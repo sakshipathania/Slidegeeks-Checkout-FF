@@ -57,10 +57,10 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 //WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
-	  //Thread.sleep(2000);   
-	 //select_product.click();
-	    //Thread.sleep(2000);
+	 WebElement select_product=driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	    Thread.sleep(2000);
 	    
             }
 	
@@ -163,7 +163,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("#clicking")).click();
 		Thread.sleep(2000);
-		try {
+		/*try {
 			String Email_test = driver.findElement(SignupObject.Downloaded).getText();
 			//wait.implictywait(driver);
 			Thread.sleep(1000);
@@ -173,7 +173,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 			Thread.sleep(1000);
 		} catch (NoSuchElementException er1) {
 
-		}
+		}*/
 	}
 
 }
