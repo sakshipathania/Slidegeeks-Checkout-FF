@@ -14,19 +14,5 @@ Scenario:
 	Then Enter the captcha. 
 	Then click on Signup button. 
 	Then After signup see the price page. 
-	Then Select price subscription. 
-	Then Verify the payment option. 
-	Then Enter the coupon code.
-	Then Apply the coupon code as given.
-	Then Verify the applied coupon code.
-	Then Verify the default payment option as paypal.
-	Then click on place order button.
-	Then Verify the paypal payement process.
-	Then Select the payment option as card.
-	Then Verify the card payement page.
-	Then Navigates to website url home page.
-	Then logout the application.
-	Then Click on My account link.
-	Then Click on delete account link. 
-	Then Click on Yes button. 
-	Then Verify the delete account confirmation message.
+	Then user will download a free product cd
+	Then user wants to delete the new account created cd
