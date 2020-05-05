@@ -11,13 +11,5 @@ Scenario: google plus user signin the app.
 	Then  enter password. 
 	Then Click on next button. 
 	Then Redirected to price page. 
-	Then Subscribe randomly the product. 
-	Then the payment information is verify. 
-	Then then default payment option is paypal.
-	Then insert coupon as display in screen. 
-	Then apply coupon cta. 
-	Then Verify the apply coupon code text is appeared. 
-	Then Go to checkout payement process page. 
-	Then Verify the payment screen is paypal is dispalyed. 
-	Then  Click on card radio button.  
-	Then Verify the payment page is secure card 2checkout title. 
+	Then user go to free ppts page old gp
+	Then user download a free ppt old gp
