@@ -58,15 +58,16 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
-	  Thread.sleep(2000);   
-	 select_product.click();
+	//WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
+	  //Thread.sleep(2000);   
+	 //select_product.click();
 	   Thread.sleep(2000);
 	    
             }
 	
 	@Then("^go to download link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
+		driver.get("https://www.slideteam.net/business-icons-for-planning-and-idea-generation-flat-powerpoint-design.html");
 		WebElement link= driver.findElement(By.xpath("//*[@id='clicking']"));
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
@@ -172,7 +173,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
                 Thread.sleep(1000);
 	}
 
-	@Then("^Subscribe randomly the product\\.$")
+	/*@Then("^Subscribe randomly the product\\.$")
 	public void select_any_of_price_subscription() throws Throwable {
 		js.executeScript("window.scrollBy(0,650)");
 		Thread.sleep(1000);
@@ -318,6 +319,46 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		Thread.sleep(1000);
 		System.out.println(actualTitle);
 		Thread.sleep(2000);
+	}*/
+	@Then("^user go to free ppts page old gp$")
+	public void user_go_to_free_ppts_page_old_gp() throws InterruptedException  {
+	 
+		//free ppt pg
+		Thread.sleep(4000);
+		WebElement free_ppt_btn=driver.findElement(By.xpath("//a[contains(.,'Free PPTs')]"));
+		Thread.sleep(2000);
+	    free_ppt_btn.click();
+		Thread.sleep(1000);
+
+	}
+
+	@Then("^user download a free ppt old gp$")
+	public void user_download_a_free_ppt_old_gp() throws InterruptedException  {
+	 
+		Thread.sleep(2000);
+		Thread.sleep(2000);
+		driver.findElement(By.cssSelector("li.product:nth-child(4) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.cssSelector("#clicking")).click();
+		Thread.sleep(3000);
+		
+		driver.navigate().refresh();
+		
+		// logout
+		Thread.sleep(2000);
+		try {
+			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
+			if (logout.isEnabled()) {
+				Thread.sleep(1000);
+				logout.click();
+				Thread.sleep(8000);
+				driver.navigate().refresh();
+				Thread.sleep(2000);
+			}
+		} catch (NoSuchElementException Ext) {
+
+		}
+		
 	}
 
 }
