@@ -58,10 +58,10 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	// WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
-	  //Thread.sleep(2000);   
-	 //select_product.click();
-	   //Thread.sleep(2000);
+	WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
+	  Thread.sleep(2000);   
+	 select_product.click();
+	   Thread.sleep(2000);
 	    
             }
 
@@ -244,6 +244,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 				  driver.switchTo().window(currentWindow);
 		    
 	} */
+	
 	@Then("^user go to free ppts page fbu$")
 	public void user_go_to_free_ppts_page_efu() throws InterruptedException  {
 		Thread.sleep(2000);
