@@ -400,6 +400,7 @@ try {
 	   driver.get("https://www.slideteam.net/");
 	   Thread.sleep(3000);
 	}
+	
         @Then("^user wants logout efu\\.$")
 	public void user_wants_logout_efu() throws Throwable {
 	   Thread.sleep(8000);
@@ -416,5 +417,5 @@ try {
 		 sign_out.click();
 		 Thread.sleep(3000);
 
-	
+	)
 }
