@@ -16,3 +16,4 @@ Scenario:
 	Then After signup see the price page. 
 	Then user will download a free product cd
 	Then user wants to delete the new account created cd
+ 
