@@ -9,9 +9,6 @@ Scenario: Sign in the application with facebook user.
 	Then Facebook user enter password. 
 	Then Login the application. 
 	Then See that user is redirected to price page. 
-	Then Subscribe the product. 
-	Then Redirect to payment page
-	Then user proceed to pay with paypal
-	Then pay pal popup appears and user navigates back to my account pp
-	
-	
+	Then user go to free ppts page fbu
+	Then user download a free ppt fbu
+	Then user logout fbu
