@@ -52,28 +52,19 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		}
 	}
 
-	@Then("^navigate to complete deck from account dashboard page$")
+	/*@Then("^navigate to complete deck from account dashboard page$")
          public void navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
-	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
-	 Thread.sleep(3000);
-	 
-	//WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
-	  //Thread.sleep(2000);   
-	 //select_product.click();
-	   //Thread.sleep(2000);
-	    
-            }
-
-
-	@Then("^Click on download presentation link\\.$")
-	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		WebElement download= driver.findElement(By.xpath("//*[@id='clicking']"));
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		download.click();
+	 driver.get("https://www.slideteam.net/");
+		Thread.sleep(4000);
+		WebElement fb_link = driver.findElement(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']"));
 		Thread.sleep(2000);
-	}
+	    fb_link.click();
+		Thread.sleep(3000);
+		
+	    
+            }*/
+
 
 	@Then("^Click on fblink\\.$")
 	public void fb_link() throws InterruptedException {
