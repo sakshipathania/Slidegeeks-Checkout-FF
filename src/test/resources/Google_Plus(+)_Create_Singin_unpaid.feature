@@ -2,7 +2,7 @@
 Feature: google plus user. 
 Scenario: google plus user signin the app. 
 	Given launch application. 
-	Then User click on sign in with google button
+	Then then click on Google plus link button
 	Then  enter a email. 
 	Then  Go to next page. 
 	Then  enter password. 
