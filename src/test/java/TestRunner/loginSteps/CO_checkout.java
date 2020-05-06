@@ -92,7 +92,7 @@ public class CO_checkout extends SetupClass{
 				
 
 				Thread.sleep(2000);
-			    WebElement new_email_signup = driver.findElement(By.id("email_address"));
+			    WebElement new_email_signup = driver.findElement(By.xpath("//*[@id='email_address']"));
 				Thread.sleep(2000);
 			    new_email_signup.sendKeys(full_email);
 				Thread.sleep(2000);
