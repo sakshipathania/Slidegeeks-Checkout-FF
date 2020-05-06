@@ -30,8 +30,16 @@ public class CO_checkout extends Set{
 	@Given("^user is already on Website Home Page (\\d+)CO$")
 	public void user_is_already_on_Website_Home_Page_CO(int arg1) throws Throwable {
 		
-		driver.get(AppURL);
-		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		driver.get("https://www.slideteam.net");
+		try {
+			WebElement App_url= driver.findElement(SignupObject.close_add);
+			App_url.click();
+			Thread.sleep(5000);
+			log.info("It's opening the website URL");
+		} catch (NoSuchElementException popup) {
+		}
+
+		//driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 	    Thread.sleep(2000);
 	    try {
