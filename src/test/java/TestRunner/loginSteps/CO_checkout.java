@@ -19,7 +19,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import webApp.PerformAction;
 
-public class CO_checkout extends Set{
+public class CO_checkout extends SetupClass{
 	
 	PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -29,21 +29,19 @@ public class CO_checkout extends Set{
 
 	@Given("^user is already on Website Home Page (\\d+)CO$")
 	public void user_is_already_on_Website_Home_Page_CO(int arg1) throws Throwable {
-		
+	
 		driver.get("https://www.slideteam.net");
+		Thread.sleep(2000);
 		try {
-			WebElement App_url= driver.findElement(SignupObject.close_add);
-			App_url.click();
-			Thread.sleep(5000);
+			WebElement app = driver.findElement(SignupObject.close_add);
+			app.click();
+			Thread.sleep(2000);
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
 		}
-
-		//driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-		log.info("It's opening the website URL");
-	    Thread.sleep(2000);
-	    try {
-			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
+                  Thread.sleep(1000);
+		try {
+			WebElement logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
 			if (logout.isEnabled()) {
 				logout.click();
 				Thread.sleep(8000);
@@ -52,9 +50,8 @@ public class CO_checkout extends Set{
 			}
 		} catch (NoSuchElementException Ext) {
 
-		}
-	    Thread.sleep(1000);
-	    
+		}	
+	
 	}
 
 	@Then("^user navigates to sign up page (\\d+)CO$")
