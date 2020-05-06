@@ -140,7 +140,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	@Then("^Go to next page\\.$")
 	public void password_page() throws InterruptedException {
 
-		WebElement next= driver.findElement(By.xpath("//*[@id='identifierNext']/span/span"));
+		WebElement next= driver.findElement(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)"));
 		next.click();
 		//wait.implictywait(driver);
 		Thread.sleep(3000);
@@ -164,7 +164,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 
 	@Then("^Click on next button\\.$")
 	public void click_on_Login_button() throws Throwable {
-		WebElement button= driver.findElement(By.xpath("//*[@id='passwordNext']/span"));
+		WebElement button= driver.findElement(By.cssSelector("#passwordNext > span:nth-child(3)"));
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
 		button.click();
