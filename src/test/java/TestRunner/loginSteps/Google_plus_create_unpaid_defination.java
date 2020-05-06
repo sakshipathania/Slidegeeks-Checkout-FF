@@ -77,7 +77,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		Thread.sleep(1000);
 		Create.click();
 		Thread.sleep(1000);
-	}*/
+	}
 
 	@Then("^then click on Google plus link button\\.$")
 	public void fb_link() throws InterruptedException {
