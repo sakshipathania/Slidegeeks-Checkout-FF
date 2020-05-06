@@ -77,7 +77,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		Thread.sleep(1000);
 		Create.click();
 		Thread.sleep(1000);
-	}
+	}*/
 
 	@Then("^then click on Google plus link button\\.$")
 	public void fb_link() throws InterruptedException {
@@ -87,7 +87,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		Google.click();
 		Thread.sleep(2000);
 	}*/
-	@Then("^User click on sign in with google button$")
+	/*@Then("^User click on sign in with google button$")
 	public void user_click_on_sign_in_with_google_button() throws InterruptedException  {
 		Thread.sleep(2000);
 		try
@@ -104,7 +104,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		}
 		Thread.sleep(3000);
 		
-	}
+	}*/
 
 
 	@Then("^enter a email\\.$")
@@ -140,7 +140,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	@Then("^Go to next page\\.$")
 	public void password_page() throws InterruptedException {
 
-		WebElement next= driver.findElement(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)"));
+		WebElement next= driver.findElement(By.xpath("#identifierNext > span:nth-child(3) > span:nth-child(1)"));
 		next.click();
 		//wait.implictywait(driver);
 		Thread.sleep(3000);
