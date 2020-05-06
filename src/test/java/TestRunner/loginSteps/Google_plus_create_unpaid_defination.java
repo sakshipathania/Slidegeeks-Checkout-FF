@@ -29,30 +29,25 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	@Given("^launch application\\.$")
 	public void navigates_to_website_url() throws InterruptedException {
 		// Maximize Windows
-		driver.get("https://www.slideteam.net");
+		driver.get(AppURL);
+		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		log.info("It's opening the website URL");
+		Thread.sleep(1000);
+		driver.get("https://www.slideteam.net/");
 		Thread.sleep(2000);
+		
 		try {
-			WebElement web= driver.findElement(SignupObject.close_add);
-			web.click();
+			// click on sign in with google button on home page
+			driver.findElement(By.xpath("//a[contains(text(),'Sign in with Google')]")).click();
 			Thread.sleep(2000);
 			log.info("It's opening the website URL");
-		} catch (NoSuchElementException popup) {
+		} 
+		catch (NoSuchElementException popup) {
 		}
-
-		try {
-			WebElement logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
-			if (logout.isEnabled()) {
-				logout.click();
-				Thread.sleep(8000);
-				driver.navigate().refresh();
-				Thread.sleep(2000);
-			}
-		} catch (NoSuchElementException Ext) {
-
-		}
+		
 	}
 
-	@Then("^user navigate to complete deck from account dashboard$")
+	/*@Then("^user navigate to complete deck from account dashboard$")
          public void user_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
@@ -91,7 +86,26 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		WebElement Google= driver.findElement(By.xpath("//*[@id='form-validate']/fieldset/div[3]/div/div[2]/a"));
 		Google.click();
 		Thread.sleep(2000);
+	}*/
+	@Then("^User click on sign in with google button$")
+	public void user_click_on_sign_in_with_google_button() throws InterruptedException  {
+		Thread.sleep(2000);
+		try
+		{
+			WebElement another_btn=driver.findElement(By.xpath("//div[text()='Use another account']"));
+			another_btn.click();
+			
+			
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			
+		
+		}
+		Thread.sleep(3000);
+		
 	}
+
 
 	@Then("^enter a email\\.$")
 	public void enter_user_mail() throws InterruptedException {
