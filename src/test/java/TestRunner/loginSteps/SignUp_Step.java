@@ -172,6 +172,7 @@ public class SignUp_Step extends SetupClass {
 
 	@Then("^Enter the captcha\\.$")
 	public void enter_the_captcha() throws InterruptedException {
+		try {
 		WebElement Captcha= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
@@ -185,6 +186,8 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user password");
+	} catch (NoSuchElementException popup) {
+		}
 	}
 
 	@Then("^click on Signup button\\.$")
