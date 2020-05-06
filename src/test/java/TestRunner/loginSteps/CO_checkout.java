@@ -25,7 +25,7 @@ public class CO_checkout extends SetupClass{
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
 
-	WebDriverWait wait = new WebDriverWait(driver,50);
+	//WebDriverWait wait = new WebDriverWait(driver,50);
 
 	@Given("^user is already on Website Home Page (\\d+)CO$")
 	public void user_is_already_on_Website_Home_Page_CO(int arg1) throws Throwable {
