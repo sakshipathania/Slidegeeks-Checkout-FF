@@ -101,39 +101,98 @@ public class CO_checkout extends SetupClass{
 		catch( NoSuchElementException popup) {
 		}
 				// enter name
-
-			    WebElement new_fname_signup = driver.findElement(By.id("firstname"));
-				Thread.sleep(2000);
-			    new_fname_signup.sendKeys("Selenium");
-				Thread.sleep(2000);
-
-			    WebElement new_lname_signup = driver.findElement(By.id("lastname"));
-				Thread.sleep(2000);
-			    new_lname_signup.sendKeys("Testing");
-				Thread.sleep(2000);
-				
+               try {
+			   WebElement FirstName= driver.findElement(By.xpath("//*[@id='firstname']"));
+		FirstName.click();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		FirstName.clear();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		FirstName.sendKeys("Selenium");
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		log.info("It's entering the user First Name");
+                    }
+		catch( NoSuchElementException popup) {
+		}
+		try {
+			    WebElement LastName= driver.findElement(By.xpath("//*[@id='lastname']"));
+		LastName.click();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		LastName.clear();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		LastName.sendKeys("Testing");
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		log.info("It's entering the user Last Name");
+			}
+		catch( NoSuchElementException popup) {
+		}	
 				//enter password
-				 WebElement new_pwd_signup = driver.findElement(By.id("password"));
-					Thread.sleep(2000);
-				    new_pwd_signup.sendKeys("selenium@123");
-					Thread.sleep(2000);
-
-				    WebElement new_pwd1_signup = driver.findElement(By.id("password-confirmation"));
-					Thread.sleep(2000);
-				    new_pwd1_signup.sendKeys("selenium@123");
-					Thread.sleep(2000);
-					
+		try {
+				 WebElement Pass_word = driver.findElement(By.xpath("//*[@id='password']"));
+		Pass_word.click();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		Pass_word.clear();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		Pass_word.sendKeys("selenium@123");
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		log.info("It's entering the user password");
+                 }
+		catch( NoSuchElementException popup) {
+		}
+		try {
+				    WebElement Confirm_password= driver.findElement(By.xpath("//*[@id='password-confirmation']"));
+		//wait.implictywait(driver);
+		Thread.sleep(2000);
+		Confirm_password.click();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		Confirm_password.clear();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		Confirm_password.sendKeys("selenium@123");
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		log.info("It's entering the user password");
+			}
+		catch( NoSuchElementException popup) {
+		}		
 					// enter captcha
-					WebElement new_captcha_signup = driver.findElement(By.id("captcha_user_create"));
-					Thread.sleep(2000);
-				    new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
-					Thread.sleep(2000);
-				    
+		try {
+					WebElement Captcha= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
+		//wait.implictywait(driver);
+		Thread.sleep(2000);
+		Captcha.click();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		Captcha.clear();
+		Thread.sleep(2000);
+		//wait.implictywait(driver);
+		Captcha.sendKeys("Aj7W2mtf9namwf55");
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
+		log.info("It's entering the user password");
+			}
+		catch( NoSuchElementException popup) {
+		}	    
 				    // sign  up button
-				    WebElement new_btn_signup = driver.findElement(By.cssSelector(".submit"));
-					Thread.sleep(2000);
-				    new_btn_signup.click();
-					Thread.sleep(2000);
+		try {
+				    WebDriverWait wait = new WebDriverWait(driver, 40);
+			WebElement element = driver.findElement(By.xpath("/html/body/div[2]/main/div/div/div[2]/div/form/fieldset/div[8]/div[2]/div/div/button"));
+			Thread.sleep(1000);
+			js.executeScript("arguments[0].click();", element);
+			Thread.sleep(2000);
+
+			}
+		catch( NoSuchElementException popup) {
+		}
 	}
 
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
