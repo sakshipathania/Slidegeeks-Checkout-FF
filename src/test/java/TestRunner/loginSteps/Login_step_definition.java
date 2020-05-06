@@ -401,7 +401,7 @@ try {
 	   Thread.sleep(3000);
 	}
 	
-        @Then("^user wants logout efu\\.$")
+        @Then("^user wants logout efu$")
 	public void user_wants_logout_efu() throws Throwable {
 	   Thread.sleep(8000);
 	        
