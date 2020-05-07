@@ -251,7 +251,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	@Then("^user download a free ppt fbu$")
 	public void user_download_a_free_ppt_fbu() throws InterruptedException  {
-	    
+	    try {
 		//driver.findElement(By.xpath("//a[contains(.,'3d Puzzle Pieces In Line Powerpoint Presentation …')]")).click();
 		driver.get("https://www.slideteam.net/2d-pyramid-simple-powerpoint-presentation-slides.html");
 		Thread.sleep(3000);
@@ -259,18 +259,25 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(3000);
 		driver.navigate().refresh();
 		Thread.sleep(2300);
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		
 	}
 
 	@Then("^user logout fbu\\.$")
 	public void user_logout_fbu() throws Throwable {
 	   Thread.sleep(8000);
-	        
+	        try {
 	    WebElement my_account =driver.findElement(By.cssSelector("body > div.page-wrapper > header > div.header.content > div.panel.wrapper > div > div > ul > li:nth-child(1) > a"));
 	    Thread.sleep(4000);
 	   my_account.click();
 	    Thread.sleep(4000);
-	    
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		try {
 	
 		 Thread.sleep(3000);
 		 WebElement sign_out = driver.findElement(By.cssSelector("body > div.page-wrapper > header > div.header.content > div.panel.wrapper > div > div > ul > li.authorization-link > a"));
@@ -279,7 +286,10 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		 Thread.sleep(3000);
 		
 	}
-	
+	catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 
 
