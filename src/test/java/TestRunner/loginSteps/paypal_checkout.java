@@ -23,7 +23,10 @@ import webApp.PerformAction;
 public class paypal_checkout extends SetupClass {
 	
 	WebDriverWait wait = new WebDriverWait(driver,100);
-
+        PerformAction wait = new PerformAction();
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	Random rad = new Random();
+	
 	@Given("^user is already on Website Home Page pp$")
 	public void user_is_already_on_Website_Home_Page_pp() throws Throwable {
 		
