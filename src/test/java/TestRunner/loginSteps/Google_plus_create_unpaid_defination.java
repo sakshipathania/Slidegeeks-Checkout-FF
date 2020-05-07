@@ -150,6 +150,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 
 	@Then("^enter password\\.$")
 	public void enter_user_password() throws Throwable {
+		try{
 		WebElement password= driver.findElement(By.xpath("//*[@id='password']/div[1]/div/div[1]/input"));
 		password.click();
 		//wait.implictywait(driver);
@@ -161,7 +162,10 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		//wait.implictywait(driver);
 		
 		Thread.sleep(3000);
+	} catch(NoSuchElementException e) {
+	       }
 	}
+
 
 	@Then("^Click on next button\\.$")
 	public void click_on_Login_button() throws Throwable {
