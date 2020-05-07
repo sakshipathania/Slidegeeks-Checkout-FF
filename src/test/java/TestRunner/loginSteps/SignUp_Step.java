@@ -94,7 +94,7 @@ public class SignUp_Step extends SetupClass {
 	@Then("^Enter Email Address as$")
 	public void enter_Email_Address_as() throws Throwable {
 		//WebElement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
-		
+		try {
 		int leftLimit = 97; // letter 'a'
 	    int rightLimit = 122; // letter 'z'
 	    int targetStringLength = 10;
@@ -118,11 +118,13 @@ public class SignUp_Step extends SetupClass {
 
 		Thread.sleep(2000);
 		
-	   WebElement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
+	   WebElement Email_Address = driver.findElement(By.cssSelector("#email_address"));
 		Thread.sleep(2000);
 	    Email_Address.sendKeys(full_email);
 		Thread.sleep(2000);
 
+	} catch (NoSuchElementException e) {
+		}
 	}
 
 	@Then("^Enter First Name as")
@@ -146,7 +148,7 @@ public class SignUp_Step extends SetupClass {
 	@Then("^Enter Last Name as$")
 	public void enter_Last_Name_as() throws Throwable {
 		try {
-		WebElement LastName= driver.findElement(By.xpath("//*[@id='lastname']"));
+		WebElement LastName= driver.findElement(By.cssSelector("#lastname"));
 		LastName.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
@@ -166,7 +168,7 @@ public class SignUp_Step extends SetupClass {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(1000);
 		try {
-		WebElement Pass_word = driver.findElement(By.xpath("//*[@id='password']"));
+		WebElement Pass_word = driver.findElement(By.cssSelector("#password"));
 		Pass_word.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
@@ -184,7 +186,7 @@ public class SignUp_Step extends SetupClass {
 	@Then("^Enter Confirm password as")
 	public void enter_Confirm_password_as() throws Throwable {
 		try {
-		WebElement Confirm_password= driver.findElement(By.xpath("//*[@id='password-confirmation']"));
+		WebElement Confirm_password= driver.findElement(By.cssSelector("#password-confirmation"));
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 		Confirm_password.click();
