@@ -259,6 +259,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(3000);
 		driver.navigate().refresh();
 		Thread.sleep(2300);
+	    }
 		catch (Exception e) {
 			// TODO: handle exception
 		}
