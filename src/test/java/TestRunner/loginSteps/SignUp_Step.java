@@ -125,7 +125,7 @@ public class SignUp_Step extends SetupClass {
 
 	}
 
-	@Then("^Enter First Name as \"([^\"]*)\"\\.$")
+	@Then("^Enter First Name as")
 	public void enter_First_Name_as() throws Throwable {
 		try {
 		WebElement FirstName= driver.findElement(By.xpath("//*[@id='firstname']"));
@@ -143,7 +143,7 @@ public class SignUp_Step extends SetupClass {
 		}
 	}
 
-	@Then("^Enter Last Name as \"([^\"]*)\"\\.$")
+	@Then("^Enter Last Name as$")
 	public void enter_Last_Name_as() throws Throwable {
 		try {
 		WebElement LastName= driver.findElement(By.xpath("//*[@id='lastname']"));
@@ -161,7 +161,7 @@ public class SignUp_Step extends SetupClass {
 		}
 	}
 
-	@Then("^Enter Password as \"([^\"]*)\"\\.$")
+	@Then("^Enter Password as$")
 	public void enter_password() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(1000);
@@ -181,7 +181,7 @@ public class SignUp_Step extends SetupClass {
 		}
 	}
 
-	@Then("^Enter Confirm password as \"([^\"]*)\"\\.$")
+	@Then("^Enter Confirm password as")
 	public void enter_Confirm_password_as() throws Throwable {
 		try {
 		WebElement Confirm_password= driver.findElement(By.xpath("//*[@id='password-confirmation']"));
