@@ -1,4 +1,4 @@
-@forgotTest 
+@Forgotpassword 
 Feature: Verify the forgot password. 
 Scenario Outline: Test the forgot password. 
 	Given To the application URL. 
