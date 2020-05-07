@@ -151,7 +151,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	@Then("^enter password\\.$")
 	public void enter_user_password() throws Throwable {
 		try{
-		WebElement password= driver.findElement(By.xpath("//*[@id='password']/div[1]/div/div[1]/input"));
+		WebElement password= driver.findElement(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)"));
 		password.click();
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
@@ -162,7 +162,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		//wait.implictywait(driver);
 		
 		Thread.sleep(3000);
-	} catch(NoSuchElementException e) {
+	} catch (NoSuchElementException e) {
 	       }
 	}
 
