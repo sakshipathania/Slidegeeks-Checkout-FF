@@ -91,7 +91,7 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(1500);
 	} */
 
-	@Then("^Enter Email Address as \"([^\"]*)\"\\.$")
+	@Then("^Enter Email Address as$")
 	public void enter_Email_Address_as() throws Throwable {
 		//WebElement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
 		
