@@ -207,7 +207,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 		try
 		{
-			WebElement cp_btn  = driver.findElement(By.xpath("//input[@id='paypal_express']")));
+			WebElement cp_btn  = driver.findElement(By.xpath("//input[@id='paypal_express']"));
 			Thread.sleep(2000);
 		    cp_btn.click();
 		    Thread.sleep(3000);
@@ -226,7 +226,7 @@ public class paypal_checkout extends SetupClass {
 		// place order button 
 		try
 		{
-			  WebElement place_order_btn  = driver.findElement(By.xpath("//span[contains(text(),'Place Order')]")));
+			  WebElement place_order_btn  = driver.findElement(By.xpath("//span[contains(text(),'Place Order')]"));
 			  Thread.sleep(3000);
 		          place_order_btn.click();
 			  Thread.sleep(5000);
@@ -267,7 +267,7 @@ public class paypal_checkout extends SetupClass {
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
 		 // place order button 
-			 WebElement cancel_order_btn  = driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
+			 WebElement cancel_order_btn  = driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]"));
 				Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);
@@ -321,7 +321,7 @@ try {
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
 		 delete_account.click();
 		 Thread.sleep(3000);
-		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
+		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
 		 continue_delete.click();
 		 Thread.sleep(3000);
 		
