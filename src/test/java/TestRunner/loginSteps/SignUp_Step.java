@@ -117,13 +117,12 @@ public class SignUp_Step extends SetupClass {
 		
 
 		Thread.sleep(2000);
-		try {
+		
 	   WebElement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
 		Thread.sleep(2000);
 	    Email_Address.sendKeys(full_email);
 		Thread.sleep(2000);
-	} catch (NoSuchElementException popup) {
-		}
+
 	}
 
 	@Then("^Enter First Name as \"([^\"]*)\"\\.$")
