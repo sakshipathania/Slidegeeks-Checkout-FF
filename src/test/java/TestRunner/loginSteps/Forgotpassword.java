@@ -98,6 +98,27 @@ import webApp.PerformAction;
 					
 				}
 		}*/
+	  @Then("^Enter email address$")
+	public void enter_user_email_address_as(String email) throws Throwable {
+	 
+		try {
+		WebElement email_ad= driver.findElement(By.xpath("//*[@id='email']"));
+    
+		email_ad.click();
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
+		email_ad.clear();
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
+		email_ad.sendKeys("himanshi.sharma@slidetech.in");
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
+		} catch (NoSuchElementException Ext) {
+			
+			}
+		
+	
+	}
 
 		@Then("^Click on forgot password link\\.$")
 		public void google_create() throws InterruptedException {
