@@ -267,7 +267,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		
 	}
 
-	@Then("^user logout fbu\\.$")
+	@Then("^user logout fbu$")
 	public void user_logout_fbu() throws Throwable {
 	   Thread.sleep(8000);
 	        try {
