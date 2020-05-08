@@ -63,7 +63,7 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^user create a new ac count pp$")
 	public void user_create_a_new_ac_count_pp() throws Throwable {
-		WebDriverWait pp = new WebDriverWait(driver,100);
+		//WebDriverWait pp = new WebDriverWait(driver,100);
 		// create new email for sign up
 		
 		int leftLimit = 97; // letter 'a'
