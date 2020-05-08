@@ -162,7 +162,7 @@ public class paypal_checkout extends SetupClass {
 		}		
 					// enter captcha
 		try {
-					WebElement Captcha= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
+		WebElement Captcha= driver.findElement(By.cssSelector("#captcha_user_create"));
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 		Captcha.click();
