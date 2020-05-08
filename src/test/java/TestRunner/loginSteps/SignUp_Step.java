@@ -91,46 +91,42 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(1500);
 	} */
 
-	@Then("^Enter Email Address as$")
-	public void enter_Email_Address_as() throws Throwable {
+	@Then("^Create new account$")
+	public void Create_new_account() throws Throwable {
 		//WebElement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
-		try {
 		int leftLimit = 97; // letter 'a'
-	    int rightLimit = 122; // letter 'z'
-	    int targetStringLength = 10;
-	    Random random = new Random();
-	    StringBuilder buffer = new StringBuilder(targetStringLength);
-	    for (int i = 0; i < targetStringLength; i++) {
-	        int randomLimitedInt = leftLimit + (int) 
-	          (random.nextFloat() * (rightLimit - leftLimit + 1));
-	        buffer.append((char) randomLimitedInt);
-	    }
-	    String generatedString = buffer.toString();
-	 
-	    System.out.println(generatedString);
-	    
-	    String signup_email=generatedString;
-	    String full_email="selenium.testing."+generatedString+"@gmail.com";
-	    System.out.println(full_email);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
-		//driver.findElement(By.id("email_address")).sendKeys(full_email);
-		
+			    int rightLimit = 122; // letter 'z'
+			    int targetStringLength = 10;
+			    Random random = new Random();
+			    StringBuilder buffer = new StringBuilder(targetStringLength);
+			    for (int i = 0; i < targetStringLength; i++) {
+			        int randomLimitedInt = leftLimit + (int) 
+			          (random.nextFloat() * (rightLimit - leftLimit + 1));
+			        buffer.append((char) randomLimitedInt);
+			    }
+			    String generatedString = buffer.toString();
+			 
+			    System.out.println(generatedString);
+			    
+			    String signup_email=generatedString;
+			    String full_email="selenium.testing."+generatedString+"@gmail.com";
+			    System.out.println(full_email);
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
+				//driver.findElement(By.id("email_address")).sendKeys(full_email);
+				
 
-		Thread.sleep(2000);
-		
-	   WebElement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
-		Thread.sleep(2000);
-	    Email_Address.sendKeys(full_email);
-		Thread.sleep(2000);
-
-	} catch (NoSuchElementException e) {
-		}
-	}
-
-	@Then("^Enter First Name as")
-	public void enter_First_Name_as() throws Throwable {
+				Thread.sleep(2000);
 		try {
-		WebElement FirstName= driver.findElement(By.xpath("//*[@id='firstname']"));
+			    WebElement new_email_signup = driver.findElement(By.xpath("//*[@id='email_address']"));
+				Thread.sleep(2000);
+			    new_email_signup.sendKeys(full_email);
+				Thread.sleep(2000);
+		}
+		catch( NoSuchElementException popup) {
+		}
+				// enter name
+               try {
+			   WebElement FirstName= driver.findElement(By.xpath("//*[@id='firstname']"));
 		FirstName.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
@@ -141,14 +137,11 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user First Name");
-	} catch (NoSuchElementException popup) {
+                    }
+		catch( NoSuchElementException popup) {
 		}
-	}
-
-	@Then("^Enter Last Name as$")
-	public void enter_Last_Name_as() throws Throwable {
 		try {
-		WebElement LastName= driver.findElement(By.xpath("//*[@id='lastname']"));
+			    WebElement LastName= driver.findElement(By.xpath("//*[@id='lastname']"));
 		LastName.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
@@ -159,16 +152,12 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user Last Name");
-	} catch (NoSuchElementException popup) {
-		}
-	}
-
-	@Then("^Enter Password as$")
-	public void enter_password() throws InterruptedException {
-		js.executeScript("window.scrollBy(0,200)");
-		Thread.sleep(1000);
+			}
+		catch( NoSuchElementException popup) {
+		}	
+				//enter password
 		try {
-		WebElement Pass_word = driver.findElement(By.xpath("//*[@id='password']"));
+				 WebElement Pass_word = driver.findElement(By.xpath("//*[@id='password']"));
 		Pass_word.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
@@ -179,14 +168,11 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user password");
-	}catch (NoSuchElementException popup) {
+                 }
+		catch( NoSuchElementException popup) {
 		}
-	}
-
-	@Then("^Enter Confirm password as")
-	public void enter_Confirm_password_as() throws Throwable {
 		try {
-		WebElement Confirm_password= driver.findElement(By.cssSelector("#password-confirmation"));
+				    WebElement Confirm_password= driver.findElement(By.xpath("//*[@id='password-confirmation']"));
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 		Confirm_password.click();
@@ -199,14 +185,12 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user password");
-	} catch (NoSuchElementException popup) {
-		}
-	}
-
-	@Then("^Enter the captcha\\.$")
-	public void enter_the_captcha() throws InterruptedException {
+			}
+		catch( NoSuchElementException popup) {
+		}		
+					// enter captcha
 		try {
-		WebElement Captcha= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
+					WebElement Captcha= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 		Captcha.click();
@@ -219,141 +203,26 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user password");
-	} catch (NoSuchElementException popup) {
-		}
-	}
-
-	@Then("^click on Signup button\\.$")
-	public void click_on_Signup_button() throws InterruptedException {
+			}
+		catch( NoSuchElementException popup) {
+		}	    
+				    // sign  up button
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 40);
+				    WebDriverWait wait = new WebDriverWait(driver, 40);
 			WebElement element = driver.findElement(By.xpath("/html/body/div[2]/main/div/div/div[2]/div/form/fieldset/div[8]/div[2]/div/div/button"));
 			Thread.sleep(1000);
 			js.executeScript("arguments[0].click();", element);
 			Thread.sleep(2000);
 
-		} catch (TimeoutException e) {
+			}
+		catch( NoSuchElementException popup) {
 		}
 	}
 
-	/*@Then("^Verify \"([^\"]*)\" validation message for Email Address\\.$")
-	public void verify_validation_message_for_Email_Address(String Email) throws InterruptedException {
-
-		try {
-
-			String Email_val = driver.findElement(SignupObject.Email_AddressVal).getText();
-			//wait.implictywait(driver);
-			Thread.sleep(2000);
-			Assert.assertEquals(Email, Email_val);
-			//wait.implictywait(driver);
-			Thread.sleep(1000);
-			
-		} catch (NoSuchElementException nc) {
-		  Object s = js.executeScript("return document.getElementById('email_address').validationMessage");
-		  //wait.implictywait(driver);
-			Thread.sleep(2000);
-	        System.out.println(s);
-	        //wait.implictywait(driver);
-			Thread.sleep(2000);
-	         log.info("It's getting HTML5 validation message using JS executor");
-				//wait.implictywait(driver);
-			Thread.sleep(2000);
-		}
-
-
-}
-
-	@Then("^Verify \"([^\"]*)\" validation message for First Name\\.$")
-	public void verify_validation_message_for_First_Name(String Fn) throws InterruptedException  {
-		try {
-			String Fname = driver.findElement(SignupObject.FNVal).getText();
-			Thread.sleep(2000);
-			//wait.implictywait(driver);
-			Assert.assertEquals(Fname, Fn);
-			Thread.sleep(2000);
-			//wait.implictywait(driver);
-		} catch (NoSuchElementException FnameElment) {
-
-		}
-	}
-
-	@Then("^Verify \"([^\"]*)\" validation message forLast Name\\.$")
-	public void verify_validation_message_forLast_Name(String LastName) throws InterruptedException  {
-		try {
-			String LName_vali = driver.findElement(SignupObject.LNVal).getText();
-			//wait.implictywait(driver);
-			Thread.sleep(2000);
-			Assert.assertEquals(LName_vali, LastName);
-			//wait.implictywait(driver);
-			Thread.sleep(2000);
-
-		} catch (NoSuchElementException LastNameElement) {
-
-		}
-	}
-
-	@Then("^Verify \"([^\"]*)\" validation message for Password\\.$")
-	public void verify_validation_message_for_password(String pwd) throws InterruptedException  {
-		// Write code here that turns the phrase above into concrete actions
-		try {
-			String password_validation = driver.findElement(SignupObject.password_errormessage).getText();
-			//wait.implictywait(driver);
-			Thread.sleep(2000);
-			Assert.assertEquals(password_validation, pwd);
-			//wait.implictywait(driver);
-			Thread.sleep(2000);
-		} catch (NoSuchElementException PassElement) {
-
-		}
-	}
-
-	@Then("^Verify \"([^\"]*)\" validation message for Confirm_password\\.$")
-	public void verify_validation_message_for_Confirm_password(String Cpass) throws InterruptedException  {
-		try {
-			String CNP_validation = driver.findElement(SignupObject.repeat_errormessage).getText();
-			Thread.sleep(2000);
-			//wait.implictywait(driver);
-			Assert.assertEquals(CNP_validation, Cpass);
-			Thread.sleep(2000);
-			//wait.implictywait(driver);
-		} catch (NoSuchElementException ConfirmElement) {
-
-		}
-	}
-
-	@Then("^Verify \"([^\"]*)\" message for all invalid credentials\\.$")
-	public void message_for_all_invalid_credentials(String Error) throws InterruptedException  {
-		try {
-			String Email_Reg = driver.findElement(SignupObject.Signup_errormessage).getText();
-			//wait.implictywait(driver);
-			Thread.sleep(2000);
-			Assert.assertEquals(Email_Reg, Error);
-			Thread.sleep(2000);
-			//wait.implictywait(driver);
-		} catch (NoSuchElementException EmailElement) {
-			System.out.println("element not found");
-		}
-	}
-
-	@Then("^Enter Email \"([^\"]*)\"\\.$")
-	public void Enter_Email_credentials(String Newuser) throws InterruptedException  {
-		WebElement Enter_email= driver.findElement(By.xpath("//*[@id='email_address']"));
-		Enter_email.click();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Enter_email.clear();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Email_Address = Newuser + name;
-		Enter_email.sendKeys(Email_Address);
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-
-	}*/
-
+	
 	@Then("^After signup see the price page\\.$")
 	public void verify_the_price_page() throws InterruptedException {
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		/*driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		String actualTitle = driver.getTitle();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
@@ -361,225 +230,12 @@ public class SignUp_Step extends SetupClass {
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
+		//wait.implictywait(driver);*/
+		driver.get("https://www.slideteam.net/pricing");
 		Thread.sleep(1000);
 	}
 
-	/*@Then("^Select price subscription\\.$")
-	public void select_price_subscription() throws InterruptedException {
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		js.executeScript("window.scrollBy(0,650)");
-		Thread.sleep(1000);
-		List<WebElement> listings = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
-		int randomValue = rad.nextInt(listings.size()); // Getting a random value that is between 0 and (list's size)-1
-		listings.get(randomValue).click();
-		Thread.sleep(2000);
-
-	}
-
-	@Then("^Verify the payment option\\.$")
-	public void payement_option() throws InterruptedException {
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		String payment_text = driver.findElement(SignupObject.payment).getText();
-		String ExpectTitle = "PAYMENT INFORMATION";
-		Assert.assertEquals(ExpectTitle, payment_text);
-		//wait.implictywait(driver);
-		Thread.sleep(4000);
-	}
-
-	@Then("^Enter the coupon code\\.$")
-	public void Enter_the_coupon_code() throws Throwable {
-
-		WebElement Coupon_code = driver.findElement(SignupObject.Enter_Coupon);
-		Thread.sleep(1000);
-		js.executeScript("arguments[0].click();", webelement);
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-		Coupon_code.clear();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Coupon_code.sendKeys("5OFF");
-		//wait.implictywait(driver);
-                Thread.sleep(2000);
-	}
-
-	@Then("^Apply the coupon code as given\\.$")
-	public void apply_the_coupon_code() throws Throwable {
-		WebElement Apply_coupon = driver.findElement(SignupObject.Apply_Coupon);
-		js.executeScript("arguments[0].click();", Apply_coupon);
-		Thread.sleep(3000);
-		driver.switchTo().alert().dismiss();
-		Thread.sleep(3000);
-	}
-
-	@Then("^Verify the applied coupon code\\.$")
-	public void applied_coupon_code() throws InterruptedException {
-		js.executeScript("window.scrollBy(0,500)");
-		Thread.sleep(2000);
-		String applied_code = driver.findElement(SignupObject.verify_apply_code).getText();
-		System.out.println(applied_code);
-		String ExpectTitle = "Discount (5OFF)";
-		Assert.assertEquals(ExpectTitle, applied_code);
-		Thread.sleep(1000);
-	}
-
-	@Then("^Verify the default payment option as paypal\\.$")
-	public void select_the_default_payment_option_as_paypal() throws Throwable {
-		WebElement verify = driver.findElement(SignupObject.paypay_radio_button);
-		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
-		// to check the check box is already selected or not
-		{
-			driver.findElement(SignupObject.paypay_radio_button).click();
-			//wait.implictywait(driver);
-			Thread.sleep(2000);
-		}
-
-		String paypal_text = driver.findElement(SignupObject.verify_paypal_text).getText();
-		String ExpectTitle = "You will be redirected to the PayPal website when you place an order.";
-		Assert.assertEquals(ExpectTitle, paypal_text);
-		Thread.sleep(1000);
-	}
-
-	@Then("^click on place order button\\.$")
-	public void click_on_place_order_cta() throws InterruptedException {
-		WebElement Button = driver.findElement(SignupObject.place_cta);
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", Button);
-		Thread.sleep(5000);
-	}
-
-	@Then("^Verify the paypal payement process\\.$")
-	public void paypal_payement_place_process_Step() throws InterruptedException {
-		Thread.sleep(4000);
-		try {
-			String actualTitle1 = driver.getTitle();
-			Thread.sleep(2000);
-			//wait.implictywait(driver);
-			System.out.println(actualTitle1);
-			Thread.sleep(2000);
-			String expectedTitle1 = "Billing Information - PayPal";
-			Thread.sleep(2000);
-			//wait.implictywait(driver);
-			String expectedTitle2 = "PayPal Checkout";
-			Thread.sleep(2000);
-			//wait.implictywait(driver);
-
-			if (actualTitle1.equals(expectedTitle1)) {
-				Assert.assertEquals(expectedTitle1, actualTitle1);
-				//wait.implictywait(driver);
-				Thread.sleep(3000);
-				System.out.println("title does not matched");
-			} else {
-				Assert.assertEquals(expectedTitle2, actualTitle1);
-				//wait.implictywait(driver);
-				Thread.sleep(2000);
-				System.out.println(actualTitle1);
-				Thread.sleep(3000);
-				System.out.println("title matched");
-			}
-		} catch (NoSuchElementException PayPal) {
-
-		}
-	}
-
-	@Then("^Select the payment option as card\\.$")
-	public void card_payment() throws InterruptedException {
 	
-		WebElement Payment = driver.findElement(SignupObject.card_radio_button);
-		Payment.click();
-		Thread.sleep(1000);
-		String card_text = driver.findElement(SignupObject.verify_2checkout).getText();
-		System.out.println(card_text);
-		String ExpectTitle = "2Checkout (Visa, Amex, Discover, JCB, Diners Club, Debit Card, PayPal)";
-
-		Assert.assertEquals(ExpectTitle, card_text);
-		Thread.sleep(1000);
-	}
-
-	@Then("^Verify the card payement page\\.$")
-	public void card_page() throws InterruptedException {
-		Thread.sleep(4000);
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		String actualTitle = driver.getTitle();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		String expectedTitle = "2Checkout";
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Assert.assertEquals(expectedTitle, actualTitle);
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		System.out.println(actualTitle);
-		Thread.sleep(7000);
-	}
-
-	@Then("^Navigates to website url home page\\.$")
-	public void website_url_home_page() throws InterruptedException {
-		driver.get("https://www.slideteam.net");
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-	}
-
-	@Then("^logout the application\\.$")
-	public void logout_app() throws InterruptedException {
-		WebElement Logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Logout.click();
-		Thread.sleep(1000);
-
-	}
-
-	@Then("^Click on My account link\\.$")
-	public void my_account_link() throws InterruptedException {
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		
-
-		WebElement myaccount = new WebDriverWait(driver, 50)
-				.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.MyAccount));
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-		myaccount.click();
-		Thread.sleep(1000);
-
-	}
-
-	@Then("^Click on delete account link\\.$")
-	public void delete_account_link() throws InterruptedException {
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		WebElement delete = new WebDriverWait(driver, 50)
-				.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Delete));
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", delete);
-		Thread.sleep(1000);
-
-	}
-
-	@Then("^Click on Yes button\\.$")
-	public void confirm_yes_() throws InterruptedException {
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		WebElement yes_delete = new WebDriverWait(driver, 50)
-				.until(ExpectedConditions.visibilityOfElementLocated(SignupObject.Delete_Yes));
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();", yes_delete);
-		Thread.sleep(1000);
-
-	}
-
-	@Then("^Verify the delete account confirmation message\\.$")
-	public void delete_confirmation_message() throws InterruptedException {
-		Thread.sleep(2000);
-		String Account_delete = driver.findElement(SignupObject.Conf_delete).getText();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		String expecte_delete = "Your account has been deleted successfully.";
-		Assert.assertEquals(expecte_delete, Account_delete);
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-
-	}*/
 	@Then("^user will download a free product cd$")
 	public void user_will_download_a_free_product_cd() throws InterruptedException  {
 		driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
