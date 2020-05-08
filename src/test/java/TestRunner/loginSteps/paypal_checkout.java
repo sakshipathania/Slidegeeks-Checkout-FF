@@ -67,38 +67,37 @@ public class paypal_checkout extends SetupClass {
 		// create new email for sign up
 		
 		int leftLimit = 97; // letter 'a'
-	    int rightLimit = 122; // letter 'z'
-	    int targetStringLength = 10;
-	    Random random = new Random();
-	    StringBuilder buffer = new StringBuilder(targetStringLength);
-	    for (int i = 0; i < targetStringLength; i++) {
-	        int randomLimitedInt = leftLimit + (int) 
-	          (random.nextFloat() * (rightLimit - leftLimit + 1));
-	        buffer.append((char) randomLimitedInt);
-	    }
-	    String generatedString = buffer.toString();
-	 
-	    System.out.println(generatedString);
-	    
-	    String signup_email=generatedString;
-	    String full_email="selenium.testing."+generatedString+"@gmail.com";
-	    System.out.println(full_email);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
-		//driver.findElement(By.id("email_address")).sendKeys(full_email);
-		
+			    int rightLimit = 122; // letter 'z'
+			    int targetStringLength = 10;
+			    Random random = new Random();
+			    StringBuilder buffer = new StringBuilder(targetStringLength);
+			    for (int i = 0; i < targetStringLength; i++) {
+			        int randomLimitedInt = leftLimit + (int) 
+			          (random.nextFloat() * (rightLimit - leftLimit + 1));
+			        buffer.append((char) randomLimitedInt);
+			    }
+			    String generatedString = buffer.toString();
+			 
+			    System.out.println(generatedString);
+			    
+			    String signup_email=generatedString;
+			    String full_email="selenium.testing."+generatedString+"@gmail.com";
+			    System.out.println(full_email);
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
+				//driver.findElement(By.id("email_address")).sendKeys(full_email);
+				
 
-		Thread.sleep(2000);
-	    WebElement new_email_signup = driver.findElement(By.id("email_address"));
-		new_email_signup.click();
-		Thread.sleep(2000);
-		new_email_signup.clear();
-		Thread.sleep(1000);
-	    new_email_signup.sendKeys(full_email);
-		Thread.sleep(2000);
-		
-		// enter name
-
-	    try {
+				Thread.sleep(2000);
+		try {
+			    WebElement new_email_signup = driver.findElement(By.xpath("//*[@id='email_address']"));
+				Thread.sleep(2000);
+			    new_email_signup.sendKeys(full_email);
+				Thread.sleep(2000);
+		}
+		catch( NoSuchElementException popup) {
+		}
+				// enter name
+               try {
 			   WebElement FirstName= driver.findElement(By.xpath("//*[@id='firstname']"));
 		FirstName.click();
 		Thread.sleep(2000);
@@ -163,7 +162,7 @@ public class paypal_checkout extends SetupClass {
 		}		
 					// enter captcha
 		try {
-		WebElement Captcha= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
+					WebElement Captcha= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 		Captcha.click();
