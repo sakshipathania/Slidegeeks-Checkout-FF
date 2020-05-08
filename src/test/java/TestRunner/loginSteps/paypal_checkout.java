@@ -89,7 +89,10 @@ public class paypal_checkout extends SetupClass {
 
 		Thread.sleep(2000);
 	    WebElement new_email_signup = driver.findElement(By.id("email_address"));
+		new_email_signup.click();
 		Thread.sleep(2000);
+		new_email_signup.clear();
+		Thread.sleep(1000);
 	    new_email_signup.sendKeys(full_email);
 		Thread.sleep(2000);
 		
