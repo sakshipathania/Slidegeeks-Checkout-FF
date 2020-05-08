@@ -91,8 +91,8 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(1500);
 	} */
 
-	@Then("^Create new account$")
-	public void Create_new_account() throws Throwable {
+	@Then("^Creating new account$")
+	public void Creating_new_account() throws Throwable {
 		//WebElement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
 		int leftLimit = 97; // letter 'a'
 			    int rightLimit = 122; // letter 'z'
@@ -117,23 +117,23 @@ public class SignUp_Step extends SetupClass {
 
 				Thread.sleep(2000);
 		try {
-			    WebElement new_email_signup = driver.findElement(By.xpath("//*[@id='email_address']"));
+			    WebElement new_signup = driver.findElement(By.xpath("//*[@id='email_address']"));
 				Thread.sleep(2000);
-			    new_email_signup.sendKeys(full_email);
+			    new_signup.sendKeys(full_email);
 				Thread.sleep(2000);
 		}
 		catch( NoSuchElementException popup) {
 		}
 				// enter name
                try {
-			   WebElement FirstName= driver.findElement(By.xpath("//*[@id='firstname']"));
-		FirstName.click();
+			   WebElement First_Name= driver.findElement(By.xpath("//*[@id='firstname']"));
+		First_Name.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		FirstName.clear();
+		First_Name.clear();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		FirstName.sendKeys("Selenium");
+		First_Name.sendKeys("Selenium");
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user First Name");
@@ -141,14 +141,14 @@ public class SignUp_Step extends SetupClass {
 		catch( NoSuchElementException popup) {
 		}
 		try {
-			    WebElement LastName= driver.findElement(By.xpath("//*[@id='lastname']"));
-		LastName.click();
+			    WebElement Last_Name= driver.findElement(By.xpath("//*[@id='lastname']"));
+		Last_Name.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		LastName.clear();
+		Last_Name.clear();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		LastName.sendKeys("Testing");
+		Last_Name.sendKeys("Testing");
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user Last Name");
@@ -157,14 +157,14 @@ public class SignUp_Step extends SetupClass {
 		}	
 				//enter password
 		try {
-				 WebElement Pass_word = driver.findElement(By.xpath("//*[@id='password']"));
-		Pass_word.click();
+				 WebElement Pas_word = driver.findElement(By.xpath("//*[@id='password']"));
+		Pas_word.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		Pass_word.clear();
+		Pas_word.clear();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		Pass_word.sendKeys("selenium@123");
+		Pas_word.sendKeys("selenium@123");
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user password");
@@ -172,16 +172,16 @@ public class SignUp_Step extends SetupClass {
 		catch( NoSuchElementException popup) {
 		}
 		try {
-				    WebElement Confirm_password= driver.findElement(By.xpath("//*[@id='password-confirmation']"));
+				    WebElement Confirm_passw= driver.findElement(By.xpath("//*[@id='password-confirmation']"));
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
-		Confirm_password.click();
+		Confirm_passw.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		Confirm_password.clear();
+		Confirm_passw.clear();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		Confirm_password.sendKeys("selenium@123");
+		Confirm_passw.sendKeys("selenium@123");
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user password");
@@ -190,16 +190,16 @@ public class SignUp_Step extends SetupClass {
 		}		
 					// enter captcha
 		try {
-					WebElement Captcha= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
+					WebElement Captcha_ch= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
-		Captcha.click();
+		//Captcha_ch.click();
+		//Thread.sleep(2000);
+		//wait.implictywait(driver);
+		Captcha_ch.clear();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		Captcha.clear();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Captcha.sendKeys("Aj7W2mtf9namwf55");
+		Captcha_ch.sendKeys("Aj7W2mtf9namwf55");
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		log.info("It's entering the user password");
@@ -209,9 +209,9 @@ public class SignUp_Step extends SetupClass {
 				    // sign  up button
 		try {
 				    WebDriverWait wait = new WebDriverWait(driver, 40);
-			WebElement element = driver.findElement(By.xpath("/html/body/div[2]/main/div/div/div[2]/div/form/fieldset/div[8]/div[2]/div/div/button"));
+			WebElement ele_ment = driver.findElement(By.xpath("/html/body/div[2]/main/div/div/div[2]/div/form/fieldset/div[8]/div[2]/div/div/button"));
 			Thread.sleep(1000);
-			js.executeScript("arguments[0].click();", element);
+			js.executeScript("arguments[0].click();", ele_ment);
 			Thread.sleep(2000);
 
 			}
