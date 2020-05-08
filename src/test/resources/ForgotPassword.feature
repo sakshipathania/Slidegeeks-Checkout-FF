@@ -1,5 +1,5 @@
 @Forgotpassword 
-Feature: Verify the forgot password. 
+Feature: ForgotPassword. 
 Scenario Outline: Test the forgot password. 
 	Given To the application URL. 
 	Then Enter email address
