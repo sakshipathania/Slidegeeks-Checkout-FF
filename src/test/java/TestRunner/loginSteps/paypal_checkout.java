@@ -165,8 +165,8 @@ public class paypal_checkout extends SetupClass {
 		WebElement Captcha= driver.findElement(By.cssSelector("#captcha_user_create"));
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
-		Captcha.click();
-		Thread.sleep(2000);
+		//Captcha.click();
+		//Thread.sleep(2000);
 		//wait.implictywait(driver);
 		Captcha.clear();
 		Thread.sleep(2000);
