@@ -63,7 +63,7 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^user create a new ac count pp$")
 	public void user_create_a_new_ac_count_pp() throws Throwable {
-		
+		WebDriverWait pp = new WebDriverWait(driver,100);
 		// create new email for sign up
 		
 		int leftLimit = 97; // letter 'a'
@@ -88,7 +88,7 @@ public class paypal_checkout extends SetupClass {
 		
 
 		Thread.sleep(2000);
-	    WebElement new_email_signup = driver.findElement(By.xpath("//*[@id='email_address']"));
+	    WebElement new_email_signup = driver.findElement(By.id("email_address"));
 		Thread.sleep(2000);
 	    new_email_signup.sendKeys(full_email);
 		Thread.sleep(2000);
