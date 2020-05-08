@@ -148,7 +148,7 @@ public class SignUp_Step extends SetupClass {
 	@Then("^Enter Last Name as$")
 	public void enter_Last_Name_as() throws Throwable {
 		try {
-		WebElement LastName= driver.findElement(By.cssSelector("#lastname"));
+		WebElement LastName= driver.findElement(By.xpath("//*[@id='lastname']"));
 		LastName.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
@@ -168,7 +168,7 @@ public class SignUp_Step extends SetupClass {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(1000);
 		try {
-		WebElement Pass_word = driver.findElement(By.cssSelector("#password"));
+		WebElement Pass_word = driver.findElement(By.xpath("//*[@id='password']"));
 		Pass_word.click();
 		Thread.sleep(2000);
 		//wait.implictywait(driver);
