@@ -18,6 +18,7 @@ import TestRunner.SetupClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import webApp.PerformAction;
+
 public class SignUp_Step extends SetupClass {
 	//PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -25,7 +26,7 @@ public class SignUp_Step extends SetupClass {
 	Random rad = new Random();
 	WebDriverWait wait = new WebDriverWait(driver,50);
 
-	String name = "" + rad.nextInt(100000) + "@gmail.com";
+//	String name = "" + rad.nextInt(100000) + "@gmail.com";
 
 	// Open web site URl
 	@Given("^Navigates to website url\\.$")
