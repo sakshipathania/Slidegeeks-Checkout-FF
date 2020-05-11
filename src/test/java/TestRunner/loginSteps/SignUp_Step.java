@@ -286,16 +286,24 @@ public class SignUp_Step extends SetupClass {
 					
 				}
 
-
+                 try {
 
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
 		 delete_account.click();
 		 Thread.sleep(3000);
+		 }
+		catch (NoSuchElementException popup) {
+					
+				}
+		try {
+
 		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
 		 continue_delete.click();
 		 Thread.sleep(3000);
-	}
+	} catch (NoSuchElementException popup) {
+					
+				}
 
 
 
-}
+ }
