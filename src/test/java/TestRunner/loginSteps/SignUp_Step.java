@@ -239,17 +239,20 @@ public class SignUp_Step extends SetupClass {
 	
 	@Then("^user will download a free product cd$")
 	public void user_will_download_a_free_product_cd() throws InterruptedException  {
+		try {
 		driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("#clicking")).click();
 		Thread.sleep(3000);
 	   driver.get("https://www.slideteam.net/");
 	   Thread.sleep(3000);
+		}
+		catch( NoSuchElementException popup) {
+		}
 	}
 
 	@Then("^user wants to delete the new account created cd$")
 	public void user_wants_to_delete_the_new_account_created_cd() throws InterruptedException  {
-	    
 
 		 driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
 		 Thread.sleep(3000);
