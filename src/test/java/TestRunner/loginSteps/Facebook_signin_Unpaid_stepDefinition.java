@@ -267,9 +267,9 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		
 	}
 
-	@Then("^user logout fbu$")
-	public void user_logout_fbu() throws Throwable {
-	   Thread.sleep(8000);
+	@Then("^user will logout fbu$")
+	public void user_will_logout_fbu() throws Throwable {
+	   Thread.sleep(3000);
 	        try {
 	    WebElement my_account =driver.findElement(By.cssSelector("body > div.page-wrapper > header > div.header.content > div.panel.wrapper > div > div > ul > li:nth-child(1) > a"));
 	    Thread.sleep(4000);
