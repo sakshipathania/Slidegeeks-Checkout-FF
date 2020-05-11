@@ -248,7 +248,7 @@ public class paypal_checkout extends SetupClass {
 	    
 		  // Maximize Window
 		  driver.manage().window().maximize();
-		
+		try {
 		  // Store the CurrentWindow for future reference
 		  
 		  String currentWindow = driver.getWindowHandle();
@@ -260,9 +260,10 @@ public class paypal_checkout extends SetupClass {
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
-		    
-		   }
-		  }
+		   } 
+		   } catch(exception e) { }
+		  
+		  
 		  
 		  driver.switchTo().window(popupWindowHandle);
 		  
