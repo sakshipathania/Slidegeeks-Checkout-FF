@@ -9,4 +9,4 @@ Scenario: Sign in the application with facebook user.
 	Then See that user is redirected to price page. 
 	Then user go to free ppts page fbu
 	Then user download a free ppt fbu
-	Then user logout fbu
+	Then user will logout fbu
