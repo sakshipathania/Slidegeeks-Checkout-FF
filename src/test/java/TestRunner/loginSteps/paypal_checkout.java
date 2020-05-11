@@ -255,14 +255,15 @@ public class paypal_checkout extends SetupClass {
 		  String popupWindowHandle = null;
 		   
 		  // Switch To Popup Window
-		  
+		   } catch(exception e) { }
+		
 		  for(String handle : driver.getWindowHandles()){
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
 		   } 
-		   } catch(exception e) { }
 		  
+		  }  
 		  
 		  
 		  driver.switchTo().window(popupWindowHandle);
