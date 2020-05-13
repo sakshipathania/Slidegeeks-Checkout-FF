@@ -245,25 +245,23 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^paypal popup appears and user navigates back to my account pp$")
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
-	    
-		  // Maximize Window
+	     // Maximize Window
 		  driver.manage().window().maximize();
+		
 		  // Store the CurrentWindow for future reference
 		  
 		  String currentWindow = driver.getWindowHandle();
 		  String popupWindowHandle = null;
 		   
 		  // Switch To Popup Window
-		 
-		
+		  
 		  for(String handle : driver.getWindowHandles()){
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
-		   } 
-		  
-		  }  
-		  
+		    
+		   }
+		  }
 		  
 		  driver.switchTo().window(popupWindowHandle);
 		  
@@ -274,7 +272,7 @@ public class paypal_checkout extends SetupClass {
 		    
 		 // place order button 
 			 WebElement cancel_order_btn  = driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]"));
-				Thread.sleep(2000);
+                          Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);
 
@@ -282,6 +280,7 @@ public class paypal_checkout extends SetupClass {
 				  
 				  driver.switchTo().window(currentWindow);
 		    
+		
 	}
 
 	@Then("^user deleted the account pp$")
