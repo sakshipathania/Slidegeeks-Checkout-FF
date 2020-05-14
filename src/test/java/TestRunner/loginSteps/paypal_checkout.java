@@ -255,7 +255,7 @@ public class paypal_checkout extends SetupClass {
 		   
 		  // Switch To Popup Window
 		  
-		  for(String handle = driver.getWindowHandles()){
+		  for(String handle : driver.getWindowHandles()){
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
