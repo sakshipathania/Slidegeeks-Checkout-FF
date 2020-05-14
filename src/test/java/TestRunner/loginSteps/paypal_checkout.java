@@ -249,13 +249,13 @@ public class paypal_checkout extends SetupClass {
 		  driver.manage().window().maximize();
 		
 		  // Store the CurrentWindow for future reference
-		  //String handle =" ";
+		  String handle =" ";
 		  String currentWindow = driver.getWindowHandle();
 		  String popupWindowHandle = null;
 		   
 		  // Switch To Popup Window
 		  
-		  for(String handle : driver.getWindowHandles()){
+		  for(handle : driver.getWindowHandles()){
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
