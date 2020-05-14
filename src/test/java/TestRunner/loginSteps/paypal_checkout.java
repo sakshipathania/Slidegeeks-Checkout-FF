@@ -253,9 +253,9 @@ public class paypal_checkout extends SetupClass {
                     
 
              String openWindowsList=driver.getWindowHandles(); 
-	
+	     String currentWindowHandle=driver.getWindowHandle();  
              String popUpWindowHandle=null;
-		String currentWindowHandle=driver.getWindowHandle();  
+		
              for(String windowHandle:openWindowsList)
              {
              if (!windowHandle.equals(currentWindowHandle))
