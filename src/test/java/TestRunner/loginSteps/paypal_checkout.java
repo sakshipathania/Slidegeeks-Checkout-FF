@@ -248,21 +248,23 @@ public class paypal_checkout extends SetupClass {
 	     // Maximize Window
 		  driver.manage().window().maximize();
 		
-		 // To Switch to Popup/Paypal window
-
-                    
-
-             String openWindowsList=driver.getWindowHandles(); 
-	     String currentWindowHandle=driver.getWindowHandle();  
-             String popUpWindowHandle=null;
+		// Maximize Window
+		  driver.manage().window().maximize();
 		
-             for(String windowHandle:driver.getWindowHandles())
-             {
-             if (!windowHandle.equals(currentWindowHandle))
-             popUpWindowHandle=windowHandle;
-             }
-
-            driver.switchTo().window(popUpWindowHandle);      
+		  // Store the CurrentWindow for future reference
+		 // String handle = " ";
+		  String currentWindow = driver.getWindowHandle();
+		  String popupWindowHandle = null;
+		   
+		  // Switch To Popup Window
+		  String currentWindow = driver.getWindowHandle();
+		  for(String handle : driver.getWindowHandles()){
+		   if(!handle.equals(currentWindow)){
+		    
+		    popupWindowHandle = handle;
+		    
+		   }
+		  }      
     // Carrying out my paypal transaction        
             driver.manage().window().maximize();
 		// page title
