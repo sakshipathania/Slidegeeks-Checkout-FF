@@ -260,7 +260,7 @@ public class paypal_checkout extends SetupClass {
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
-		    driver.switchto().currentWindow(popupWindowHandle);
+		    driver.switchto().currentWindow(handle);
 		   }
 		  }      
     // Carrying out my paypal transaction        
