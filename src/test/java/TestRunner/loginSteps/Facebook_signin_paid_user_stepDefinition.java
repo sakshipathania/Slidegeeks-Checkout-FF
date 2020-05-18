@@ -69,10 +69,10 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		//WebElement Download_ppt = driver.findElement(By.cssSelector("#clicking"));
 		driver.get("https://www.slideteam.net/business-process-evaluation-powerpoint-show.html");
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("#clicking")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='clicking']")).click();
 		//Download_ppt.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 	}
 
 	@Then("^Click on test fblink$")
