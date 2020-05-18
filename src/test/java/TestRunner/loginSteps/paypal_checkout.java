@@ -249,29 +249,27 @@ public class paypal_checkout extends SetupClass {
 	     // Maximize Window
 		  driver.manage().window().maximize();
 		
-		Set<String> AllWindowHandles = driver.getWindowHandles();
+		/*Set<String> AllWindowHandles = driver.getWindowHandles();
                 String window1 = (String) AllWindowHandles.toArray()[0];
                 System.out.print("window1 handle code = "+AllWindowHandles.toArray()[0]);
                 String window2 = (String) AllWindowHandles.toArray()[1];
-                System.out.print("\nwindow2 handle code = "+AllWindowHandles.toArray()[1]);
+                System.out.print("\nwindow2 handle code = "+AllWindowHandles.toArray()[1]);*/
 		  // Store the CurrentWindow for future reference
 		 
 		  
-		 // String popupWindowHandle = null;
+		  String popupWindowHandle = null;
 		   
 		  // Switch To Popup Window
-		//String currentWindow = driver.getWindowHandle();
-		  //for(String handle : driver.getWindowHandles()){
-		   //if(!handle.equals(currentWindow)){
+		String currentWindow = driver.getWindowHandle();
+		  for(String handle : driver.getWindowHandles()){
+		   if(!handle.equals(currentWindow)){
 		    
-		    //popupWindowHandle = handle;
-		    //driver.switchto().currentWindow(handle);
+		    popupWindowHandle = handle;
+		    driver.switchTo().window(popupWindowHandle);
 		   }
 		  }      
     // Carrying out my paypal transaction        
-           // driver.manage().window().maximize();
-                //Switch to window2(child window) and performing actions on it.
-                 driver.switchTo().window1(window2);
+        
 		// page title
       
 		  String pp_page_title=driver.getTitle();
@@ -286,7 +284,7 @@ public class paypal_checkout extends SetupClass {
 
 				 // Switch To Default Window
 				  
-				  driver.switchTo().window2(window1);
+				  driver.switchTo().window(currentWindow);
 		    
 		
 	}
