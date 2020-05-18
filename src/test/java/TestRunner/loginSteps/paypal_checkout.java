@@ -271,7 +271,7 @@ public class paypal_checkout extends SetupClass {
     // Carrying out my paypal transaction        
            // driver.manage().window().maximize();
                 //Switch to window2(child window) and performing actions on it.
-                 driver.switchTo().window(window2);
+                 driver.switchTo().window1(window2);
 		// page title
       
 		  String pp_page_title=driver.getTitle();
