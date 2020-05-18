@@ -2,7 +2,8 @@ package TestRunner.loginSteps;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
+import java.util.Arrays;
+import java.util.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -248,24 +249,31 @@ public class paypal_checkout extends SetupClass {
 	     // Maximize Window
 		  driver.manage().window().maximize();
 		
-		
+		Set<String> AllWindowHandles = driver.getWindowHandles();
+                String window1 = (String) AllWindowHandles.toArray()[0];
+                System.out.print("window1 handle code = "+AllWindowHandles.toArray()[0]);
+                String window2 = (String) AllWindowHandles.toArray()[1];
+                System.out.print("\nwindow2 handle code = "+AllWindowHandles.toArray()[1]);
 		  // Store the CurrentWindow for future reference
 		 
 		  
-		  String popupWindowHandle = null;
+		 // String popupWindowHandle = null;
 		   
 		  // Switch To Popup Window
-		String currentWindow = driver.getWindowHandle();
-		  for(String handle : driver.getWindowHandles()){
-		   if(!handle.equals(currentWindow)){
+		//String currentWindow = driver.getWindowHandle();
+		  //for(String handle : driver.getWindowHandles()){
+		   //if(!handle.equals(currentWindow)){
 		    
-		    popupWindowHandle = handle;
-		    driver.switchto().currentWindow(handle);
+		    //popupWindowHandle = handle;
+		    //driver.switchto().currentWindow(handle);
 		   }
 		  }      
     // Carrying out my paypal transaction        
            // driver.manage().window().maximize();
+                //Switch to window2(child window) and performing actions on it.
+                 driver.switchTo().window(window2);
 		// page title
+      
 		  String pp_page_title=driver.getTitle();
 			Thread.sleep(3000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
@@ -278,7 +286,7 @@ public class paypal_checkout extends SetupClass {
 
 				 // Switch To Default Window
 				  
-				  driver.switchTo().window(currentWindow);
+				  driver.switchTo().window2(window1);
 		    
 		
 	}
