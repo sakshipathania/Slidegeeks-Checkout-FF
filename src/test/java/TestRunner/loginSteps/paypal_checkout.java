@@ -250,7 +250,7 @@ public class paypal_checkout extends SetupClass {
 		
 		
 		  // Store the CurrentWindow for future reference
-		 // String handle = " ";
+		 
 		  
 		  String popupWindowHandle = null;
 		   
@@ -260,11 +260,11 @@ public class paypal_checkout extends SetupClass {
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
-		    
+		    driver.switchto().currentWindow(popupWindowHandle);
 		   }
 		  }      
     // Carrying out my paypal transaction        
-            driver.manage().window().maximize();
+           // driver.manage().window().maximize();
 		// page title
 		  String pp_page_title=driver.getTitle();
 			Thread.sleep(3000);
