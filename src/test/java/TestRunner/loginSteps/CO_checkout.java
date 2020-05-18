@@ -201,7 +201,7 @@ public class CO_checkout extends SetupClass{
 		try {
 		 WebElement join_now_btn  = driver.findElement(By.cssSelector("div.col-box:nth-child(2) > div:nth-child(3) > span:nth-child(1) > form:nth-child(1) > button:nth-child(4) > span:nth-child(1)"));
 		// WebElement join_now_btn  = driver.findElement(By.xpath("(//span[contains(.,'Join now')])[8]"));
-			Thread.sleep(2000);
+			Thread.sleep(10000);
 		    join_now_btn.click();
 			Thread.sleep(6000);
 		}catch( NoSuchElementException popup) {
@@ -217,7 +217,7 @@ public class CO_checkout extends SetupClass{
 	@Then("^user proceed to pay with (\\d+)CO (\\d+)CO$")
 	public void user_proceed_to_pay_with_CO_CO(int arg1, int arg2) throws InterruptedException {
 	     try {
-		Thread.sleep(1400);
+		Thread.sleep(4000);
 		// select 2co option
 		WebElement co_btn  = driver.findElement(By.xpath("//input[@id='tco_checkout']"));
 		Thread.sleep(2000);
