@@ -85,7 +85,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	public void fb_link() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(1000);
-		WebElement gplus = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/a"));
+		WebElement gplus = driver.findElement(By.cssSelector("body > div.page-wrapper > header > div.header.content > div.panel.wrapper > div > div > div.social-login-authentication-channel.account-social-login > div > div.actions-toolbar.social-btn.social-btn-actions-toolbar.google-login > a"));
 		gplus.click();
 		Thread.sleep(2000);
 	}
