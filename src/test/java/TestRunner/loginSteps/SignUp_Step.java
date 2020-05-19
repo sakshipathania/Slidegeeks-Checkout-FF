@@ -62,36 +62,7 @@ public class SignUp_Step extends SetupClass {
 		}
 	}
 
-        /*@Then("^user will navigate to complete deck from account dashboard page$")
-         public void user_will_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
-    
-	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
-	 Thread.sleep(3000);
-	 
-	// WebElement selectproduct=driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
-	  //Thread.sleep(2000);   
-	 //selectproduct.click();
-	  //Thread.sleep(2000);
-	    
-            }
-
-	@Then("^Click on Download this presentation link\\.$")
-	public void click_on_Download_this_presentation_link() throws InterruptedException {
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		WebElement Download_ppt= driver.findElement(By.xpath("//*[@id='clicking']"));
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-		Download_ppt.click();
-		Thread.sleep(1000);
-	} 
-
-	@Then("^Click on Create an Account CTA\\.$")
-	public void reate_an_Account_CTA() throws InterruptedException {
-		WebElement create_account= driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[1]/div[2]/div/div/a"));
-		create_account.click();
-		Thread.sleep(1500);
-	} */
-
+       
 	@Then("^Creating new account$")
 	public void Creating_new_account() throws Throwable {
 		//WebElement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
