@@ -52,20 +52,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		}
 	}
 
-	/*@Then("^navigate to complete deck from account dashboard page$")
-         public void navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
-    
-	 driver.get("https://www.slideteam.net/");
-		Thread.sleep(4000);
-		WebElement fb_link = driver.findElement(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']"));
-		Thread.sleep(2000);
-	    fb_link.click();
-		Thread.sleep(3000);
-		
-	    
-            }*/
-
-
+	
 	@Then("^Click on fblink\\.$")
 	public void fb_link() throws InterruptedException {
 		try {
@@ -156,89 +143,6 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	/*@Then("^Subscribe the product\\.$")
-	public void select_any_of_price_subscription() throws Throwable {
-		WebElement join_now_btn  = driver.findElement(By.xpath("//div[3]//div[3]//span[1]//form[1]//button[1]//span[1]"));
-			Thread.sleep(2000);
-		    join_now_btn.click();
-			Thread.sleep(5000);
-
-	}
-
-	@Then("^Redirect to payment page\\.$")
-	public void Redirect_to_payment_page() throws Throwable {
-		Thread.sleep(2000);
-		try
-		{
-			WebElement cp_btn  = driver.findElement(By.xpath("//input[@id='paypal_express']"));
-			Thread.sleep(2000);
-		    cp_btn.click();
-		    Thread.sleep(3000);
-		}
-		catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		Thread.sleep(1000);
-	}
-
-	@Then("^user proceed to pay with paypal\\.$")
-	public void user_proceed_to_pay_with_paypal() throws Throwable {
-		WebElement Pay_pal = driver.findElement(SignupObject.paypay_radio_button);
-		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
-		// to check the check box is already selected or not
-		{
-			driver.findElement(SignupObject.paypay_radio_button).click();
-			//wait.implictywait(driver);
-			Thread.sleep(1000);
-		}
-
-		String paypal_text = driver.findElement(SignupObject.verify_paypal_text).getText();
-		String ExpectTitle = "You will be redirected to the PayPal website when you place an order.";
-		Assert.assertEquals(ExpectTitle, paypal_text);
-		Thread.sleep(1000);
-	}
-
-        @Then("^pay pal popup appears and user navigates back to my account pp$")
-	public void pay_pal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
-	    
-		  // Maximize Window
-		  driver.manage().window().maximize();
-		
-		  // Store the CurrentWindow for future reference
-		  
-		  String currentWindow = driver.getWindowHandle();
-		  String popupWindowHandle = null;
-		   
-		  // Switch To Popup Window
-		  
-		  for(String handle : driver.getWindowHandles()){
-		   if(!handle.equals(currentWindow)){
-		    
-		    popupWindowHandle = handle;
-		    
-		   }
-		  }
-		  
-		  driver.switchTo().window(popupWindowHandle);
-		  
-		// page title
-		  String pp_page_title=driver.getTitle();
-			Thread.sleep(3000);
-		    System.out.println("Title of the Page is --> "+pp_page_title);
-		    
-		 // place order button 
-			 WebElement cancel_order_btn  = driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]"));
-				Thread.sleep(2000);
-			    cancel_order_btn.click();
-				Thread.sleep(5000);
-
-				 // Switch To Default Window
-				  
-				  driver.switchTo().window(currentWindow);
-		    
-	} */
-	
 	@Then("^user go to free ppts page fbu$")
 	public void user_go_to_free_ppts_page_efu() throws InterruptedException  {
 		Thread.sleep(2000);
