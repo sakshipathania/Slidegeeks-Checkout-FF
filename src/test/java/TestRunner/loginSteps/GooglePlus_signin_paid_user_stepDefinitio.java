@@ -156,20 +156,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 
 	}
 
-	/*@Then("^The Page is redirect to download presenetion link\\.$")
-	public void verify_uesr_validation_message_for_Email_Address() throws Throwable {
-
-		try {
-			String Email_test = driver.findElement(SignupObject.Downloaded).getText();
-			wait.implictywait(driver);
-			String Expected_Cta = "Download this presentation";
-			Assert.assertEquals(Expected_Cta, Email_test);
-			wait.implictywait(driver);
-			Thread.sleep(1000);
-		} catch (NoSuchElementException er1) {
-
-		} 
-	}*/
+	
 	@Then("^user go to All ppts page gmail$")
 	public void user_go_to_All_ppts_page_gmail() throws Throwable {
 		Thread.sleep(3000);
