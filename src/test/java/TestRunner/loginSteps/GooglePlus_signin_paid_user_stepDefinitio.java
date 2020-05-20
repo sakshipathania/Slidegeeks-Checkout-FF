@@ -29,7 +29,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	public void navigates_to_website_url() throws InterruptedException {
 		// Maximize Windows
 		driver.get("https://www.slideteam.net");
-		Thread.sleep(8000);
+		Thread.sleep(3000);
 		try {
 			WebElement app = driver.findElement(SignupObject.close_add);
 			app.click();
@@ -42,7 +42,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 			WebElement logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
 			if (logout.isEnabled()) {
 				logout.click();
-				Thread.sleep(8000);
+				Thread.sleep(3000);
 //				driver.navigate().refresh();
 				Thread.sleep(2000);
 			}
@@ -68,7 +68,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	@Then("^Click on downloadbtn test5 link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		driver.get("https://www.slideteam.net/best-presentation-on-myself-powerpoint-presentation-slide.html");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		//WebElement test5 = driver.findElement(By.cssSelector("//*[@id='clicking']"));
 		//Thread.sleep(2000);
 		//wait.implictywait(driver);
@@ -84,7 +84,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	@Then("^Click on googlePlus link\\.$")
 	public void fb_link() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,200)");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		WebElement gplus = driver.findElement(By.cssSelector("body > div.page-wrapper > header > div.header.content > div.panel.wrapper > div > div > div.social-login-authentication-channel.account-social-login > div > div.actions-toolbar.social-btn.social-btn-actions-toolbar.google-login > a"));
 		gplus.click();
 		Thread.sleep(2000);
@@ -95,13 +95,13 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		WebElement gmail = driver.findElement(By.xpath("//*[@id='identifierId']"));
 		gmail.click();
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		gmail.clear();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		gmail.sendKeys("himanshi.sharma@slidetech.in");
 		//wait.implictywait(driver);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 	}
 
@@ -109,10 +109,10 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	public void enter_user_password() throws InterruptedException  {
 	
 		WebElement pass_page = driver.findElement(By.xpath("//*[@id='identifierNext']/span"));
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		pass_page.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 
 	
 	}
@@ -121,14 +121,14 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	public void google_pass() throws InterruptedException {
 		 	 WebElement google_pass = driver.findElement(By.xpath("//*[@id='password']/div[1]/div/div[1]/input"));
 				google_pass.click();
-		                Thread.sleep(1000);
+		                Thread.sleep(3000);
 				//wait.implictywait(driver);
 				google_pass.clear();
-		                Thread.sleep(1000);
+		                Thread.sleep(3000);
 				//wait.implictywait(driver);
 				google_pass.sendKeys("himanshi@123");
 				//wait.implictywait(driver);
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 			
 
 			
@@ -139,10 +139,10 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 
 		WebElement next = driver.findElement(By.xpath("//*[@id='passwordNext']/span"));
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		next.click();
 		//wait.implictywait(driver);
-		Thread.sleep(4000);
+		Thread.sleep(1000);
 
 		/*try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
@@ -162,22 +162,22 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		Thread.sleep(3000);
 		driver.get("https://www.slideteam.net/best-presentation-on-myself-powerpoint-presentation-slide.html");
 		WebElement Dld_link = driver.findElement(By.xpath("//*[@id='clicking']"));
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		Dld_link.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 	
 	@Then("^logout pld gmail$")
 	public void logout_pld_gmail() throws Throwable {
 	   
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	    WebElement my_account_og =  driver.findElement(By.xpath("//a[contains(.,'My Account')]"));
-	    Thread.sleep(2000);
+	    Thread.sleep(3000);
 	   my_account_og.click();
 	    Thread.sleep(2000);
    
-		 Thread.sleep(3000);
+		 //Thread.sleep(3000);
 		 WebElement sign_out =  driver.findElement(By.xpath("//a[contains(.,'Sign Out')]"));
 		 Thread.sleep(2000);
 		 sign_out.click();
