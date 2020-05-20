@@ -210,13 +210,13 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^user is redirected to checkout page pp$")
 	public void user_is_redirected_to_checkout_page_pp() throws Throwable {
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		try
 		{
 			WebElement cp_btn  = driver.findElement(By.xpath("//input[@id='paypal_express']"));
-			Thread.sleep(2000);
+			Thread.sleep(8000);
 		    cp_btn.click();
-		    Thread.sleep(3000);
+		    Thread.sleep(6000);
 		}
 		catch (Exception e) {
 			// TODO: handle exception
@@ -248,7 +248,7 @@ public class paypal_checkout extends SetupClass {
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
 	     // Maximize Window
 		  driver.manage().window().maximize();
-		
+		  Thread.sleep(5000);
 		/*Set<String> AllWindowHandles = driver.getWindowHandles();
                 String window1 = (String) AllWindowHandles.toArray()[0];
                 System.out.print("window1 handle code = "+AllWindowHandles.toArray()[0]);
@@ -273,7 +273,7 @@ public class paypal_checkout extends SetupClass {
 		// page title
       
 		  String pp_page_title=driver.getTitle();
-			Thread.sleep(3000);
+			Thread.sleep(10000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
 		/* // place order button 
