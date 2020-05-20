@@ -34,7 +34,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		
 		try {
 			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
@@ -62,11 +62,11 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		try {
 		WebElement valid_email= driver.findElement(By.xpath("//*[@id='email']"));
 		valid_email.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		valid_email.clear();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		valid_email.sendKeys("slidetech.qa@gmail.com");
-                Thread.sleep(5000);
+                Thread.sleep(3000);
 	} catch (NoSuchElementException Ext) {
 
 		}
@@ -77,11 +77,11 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		try {
 		WebElement Valid_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		Valid_pass.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		Valid_pass.clear();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		Valid_pass.sendKeys("himanshi@123");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	} catch (NoSuchElementException Ext) {
 
 		}
@@ -110,14 +110,14 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	public void the_user_is_redirected_to_price_page() throws Throwable {
                 driver.get("https://www.slideteam.net/pricing");
 		String actualTitle = driver.getTitle();
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		String expectedTitle = "Pricing";
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		try {
 		Assert.assertEquals(expectedTitle, actualTitle);
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		}
 		catch (Throwable t) {
 		}
