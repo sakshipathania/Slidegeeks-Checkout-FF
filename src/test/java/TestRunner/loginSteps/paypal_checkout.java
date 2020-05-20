@@ -249,11 +249,7 @@ public class paypal_checkout extends SetupClass {
 	     // Maximize Window
 		  driver.manage().window().maximize();
 		  Thread.sleep(5000);
-		/*Set<String> AllWindowHandles = driver.getWindowHandles();
-                String window1 = (String) AllWindowHandles.toArray()[0];
-                System.out.print("window1 handle code = "+AllWindowHandles.toArray()[0]);
-                String window2 = (String) AllWindowHandles.toArray()[1];
-                System.out.print("\nwindow2 handle code = "+AllWindowHandles.toArray()[1]);*/
+		
 		  // Store the CurrentWindow for future reference
 		 
 		  
@@ -265,9 +261,10 @@ public class paypal_checkout extends SetupClass {
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
-		    driver.switchTo().window(popupWindowHandle);
+		    
 		   }
 		  }      
+		driver.switchTo().window(popupWindowHandle);
     // Carrying out my paypal transaction        
         
 		// page title
@@ -292,7 +289,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user deleted the account pp$")
 	public void user_deleted_the_account_pp() throws Throwable {
 	   
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 
 		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
