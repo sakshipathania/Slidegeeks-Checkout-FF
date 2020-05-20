@@ -31,11 +31,11 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	public void navigates_to_website_url() throws InterruptedException {
 		// Maximize Windows
 		driver.get("https://www.slideteam.net");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		try {
 			WebElement App_url= driver.findElement(SignupObject.close_add);
 			App_url.click();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
 		}
@@ -44,9 +44,9 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 			WebElement logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
 			if (logout.isEnabled()) {
 				logout.click();
-				Thread.sleep(8000);
+				Thread.sleep(3000);
 				driver.navigate().refresh();
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 			}
 		} catch (NoSuchElementException Ext) {
 
@@ -59,14 +59,14 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
                 try {
 		WebElement Email_add= driver.findElement(By.xpath("//*[@id='email']"));
 		Email_add.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		Email_add.clear();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		Email_add.sendKeys("sakshi.pathania@slideteam.in");
 		//wait.implictywait(driver);
-                Thread.sleep(5000);
+                Thread.sleep(3000);
 	        } catch (NoSuchElementException Ext) {
 
 		}
@@ -77,14 +77,14 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		try {
 		WebElement user_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		user_pass.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		user_pass.clear();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		user_pass.sendKeys("Sakshi@098");
 		//wait.implictywait(driver);
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		 } catch (NoSuchElementException Ext) {
 
 		}
@@ -97,10 +97,10 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		try {
 		WebElement Login_button= driver.findElement(By.xpath("//*[@id='send2']"));
 		//wait.implictywait(driver);
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		Login_button.click();
 		//wait.implictywait(driver);
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		}
                    catch (NoSuchElementException Ext) {
 			
@@ -162,7 +162,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		try {
 			String Email_test = driver.findElement(SignupObject.Downloaded).getText();
 			//wait.implictywait(driver);
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			String Expected_Cta = "Download this presentation";
 			Assert.assertEquals(Expected_Cta, Email_test);
 			//wait.implictywait(driver);
@@ -176,10 +176,10 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		WebElement presentation= driver.findElement(By.cssSelector("#clicking"));
 		//wait.implictywait(driver);
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		presentation.click();
 		//wait.implictywait(driver);
-		Thread.sleep(8000);
+		Thread.sleep(3000);
 	}
 }
 
