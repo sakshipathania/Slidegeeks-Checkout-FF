@@ -236,7 +236,6 @@ public class SignUp_Incorrect_data_Step extends SetupClass {
 
 	@Then("^user download a free product$")
 	public void user_download_a_free_product() throws InterruptedException  {
-		//driver.findElement(By.xpath("//a[@class='product-item-link name-trim'][contains(.,'Information Technology Gantt Chart')]")).click();
 		driver.get("https://www.slideteam.net/bar-graphs-and-histograms-success-powerpoint-templates-themes.html");
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("#clicking")).click();
