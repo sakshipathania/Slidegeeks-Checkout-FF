@@ -255,7 +255,7 @@ public class CO_checkout extends SetupClass{
 	    	System.out.println("user is on the wrong page");
 	    	log.info("USER IS ON THE WRONG PAGE");
 	    }
-		WebElement checkout= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='seller-identity']/div")));
+		WebElement checkout= wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#seller-identity > div")));
 		Thread.sleep(3000);
 	}
 
