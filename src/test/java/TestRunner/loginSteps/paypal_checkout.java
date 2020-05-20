@@ -246,6 +246,7 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^paypal popup appears and user navigates back to my account pp$")
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver,50);
 	     // Maximize Window
 		  driver.manage().window().maximize();
 		  Thread.sleep(5000);
@@ -261,10 +262,10 @@ public class paypal_checkout extends SetupClass {
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
-		    
+		    driver.switchTo().window(popupWindowHandle);
 		   }
 		  }      
-		driver.switchTo().window(popupWindowHandle);
+		
     // Carrying out my paypal transaction        
         
 		// page title
@@ -273,7 +274,7 @@ public class paypal_checkout extends SetupClass {
 			Thread.sleep(10000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
-		/* // place order button 
+		// place order button 
 			 WebElement cancel_order_btn  = driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]"));
                           Thread.sleep(2000);
 			    cancel_order_btn.click();*/
