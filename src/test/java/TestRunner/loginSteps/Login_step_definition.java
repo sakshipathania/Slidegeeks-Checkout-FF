@@ -364,7 +364,8 @@ try {
 
 	@Then("^user down load a free product cd$")
 	public void user_down_load_a_free_product_cd() throws InterruptedException  {
-		driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
+		//driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
+		driver.get("https://www.slideteam.net/prod-development-and-program-management.html");
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("#clicking")).click();
 		Thread.sleep(3000);
