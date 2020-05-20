@@ -43,9 +43,9 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 			WebElement logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
 			if (logout.isEnabled()) {
 				logout.click();
-				Thread.sleep(8000);
+				Thread.sleep(3000);
 				driver.navigate().refresh();
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 			}
 		} catch (NoSuchElementException Ext) {
 
@@ -57,29 +57,29 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	public void fb_link() throws InterruptedException {
 		try {
 		WebElement FbLink = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[1]"));
-		wait.implictywait(driver);
+		Thread.sleep(3000);
 		FbLink.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 		}
 	}
 
 	@Then("^Facebook user enter a email as\\.$")
 	public void enter_user_mail() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 		WebElement Fbemail = driver.findElement(By.xpath("//*[@id='email']"));
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	        Fbemail.click();
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		Fbemail.clear();
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		Fbemail.sendKeys("amw.vrushali@gmail.com");
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		} catch (NoSuchElementException alreadylogged) {
 
 		}
@@ -91,7 +91,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		try {
 		WebElement Fpass= driver.findElement(By.xpath("//*[@id='pass']"));
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		Fpass.click();
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
@@ -99,7 +99,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
 		Fpass.sendKeys("vrushali@786");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		//wait.implictywait(driver);
 	} catch (NoSuchElementException alreadpass) {
 
@@ -112,10 +112,10 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		try {
 		WebElement Appl= driver.findElement(By.xpath("//*[@id='loginbutton']"));
 		//wait.implictywait(driver);
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 		Appl.click();
 		//wait.implictywait(driver);
-		Thread.sleep(10000);
+		Thread.sleep(3000);
 	} catch (NoSuchElementException alredylogin) {
 
 	}
