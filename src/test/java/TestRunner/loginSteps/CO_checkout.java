@@ -21,7 +21,7 @@ import webApp.PerformAction;
 
 public class CO_checkout extends SetupClass{
 	
-	PerformAction wait = new PerformAction();
+	PerformAction wa_it = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
 
@@ -238,6 +238,7 @@ public class CO_checkout extends SetupClass{
 
 	@Then("^paypal popup appears and user navigates back to my account (\\d+)CO$")
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_CO(int arg1) throws Throwable {
+		WebDriverWait wait=new WebDriverWait(driver, 20);
 	    String co_page_title=driver.getTitle();
 		Thread.sleep(15000);
 	    System.out.println("Title of the Page is --> "+co_page_title);
@@ -254,6 +255,7 @@ public class CO_checkout extends SetupClass{
 	    	System.out.println("user is on the wrong page");
 	    	log.info("USER IS ON THE WRONG PAGE");
 	    }
+		WebElement checkout= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='seller-identity']/div")));
 		Thread.sleep(3000);
 	}
 
