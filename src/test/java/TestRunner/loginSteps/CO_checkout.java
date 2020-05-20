@@ -31,22 +31,22 @@ public class CO_checkout extends SetupClass{
 	public void user_is_already_on_Website_Home_Page_CO(int arg1) throws Throwable {
 	
 		driver.get("https://www.slideteam.net");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		try {
 			WebElement app = driver.findElement(SignupObject.close_add);
 			app.click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			log.info("It's opening the website URL");
 		} catch (NoSuchElementException popup) {
 		}
-                  Thread.sleep(1000);
+                  Thread.sleep(3000);
 		try {
 			WebElement logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
 			if (logout.isEnabled()) {
 				logout.click();
-				Thread.sleep(8000);
+				Thread.sleep(3000);
 				driver.navigate().refresh();
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 			}
 		} catch (NoSuchElementException Ext) {
 
@@ -59,7 +59,7 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(3000);
 		try {
 			driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			log.info("It's opening the website URL and redirect user to sign up page");
 		} 
 		catch (NoSuchElementException popup) {
@@ -186,7 +186,7 @@ public class CO_checkout extends SetupClass{
 		try {
 				    WebDriverWait wait = new WebDriverWait(driver, 40);
 			WebElement element = driver.findElement(By.xpath("/html/body/div[2]/main/div/div/div[2]/div/form/fieldset/div[8]/div[2]/div/div/button"));
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			js.executeScript("arguments[0].click();", element);
 			Thread.sleep(2000);
 
@@ -201,9 +201,9 @@ public class CO_checkout extends SetupClass{
 		try {
 		 WebElement join_now_btn  = driver.findElement(By.cssSelector("div.col-box:nth-child(2) > div:nth-child(3) > span:nth-child(1) > form:nth-child(1) > button:nth-child(4) > span:nth-child(1)"));
 		// WebElement join_now_btn  = driver.findElement(By.xpath("(//span[contains(.,'Join now')])[8]"));
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 		    join_now_btn.click();
-			Thread.sleep(6000);
+			Thread.sleep(2000);
 		}catch( NoSuchElementException popup) {
 		}
 
@@ -211,7 +211,7 @@ public class CO_checkout extends SetupClass{
 
 	@Then("^user is redirected to checkout page (\\d+)CO$")
 	public void user_is_redirected_to_checkout_page_CO(int arg1) throws Throwable {
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 	}
 
 	@Then("^user proceed to pay with (\\d+)CO (\\d+)CO$")
@@ -222,7 +222,7 @@ public class CO_checkout extends SetupClass{
 		WebElement co_btn  = driver.findElement(By.xpath("//input[@id='tco_checkout']"));
 		Thread.sleep(2000);
 	         co_btn.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	     } catch( NoSuchElementException popup) { 
 	     }
 	
@@ -231,7 +231,7 @@ public class CO_checkout extends SetupClass{
 		 WebElement place_order_btn  =  driver.findElement(By.xpath("//button[contains(.,'Place Order')]"));
 			Thread.sleep(2000);
 		    place_order_btn.click();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} catch (NoSuchElementException popup) {
 		}
 	}
@@ -239,7 +239,7 @@ public class CO_checkout extends SetupClass{
 	@Then("^paypal popup appears and user navigates back to my account (\\d+)CO$")
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_CO(int arg1) throws Throwable {
 	    String co_page_title=driver.getTitle();
-		Thread.sleep(3000);
+		Thread.sleep(15000);
 	    System.out.println("Title of the Page is --> "+co_page_title);
 	    
 	    String page_title="2Checkout";
