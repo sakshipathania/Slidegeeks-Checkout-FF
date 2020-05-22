@@ -22,40 +22,38 @@ import webApp.PerformAction;
 public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 //git change
 	
-	PerformAction wait = new PerformAction();
+	//PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
+	WebDriverWait wait = new WebDriverWait(driver,50);
 
 	// Open web site URl
 	@Given("^Open application URL$")
 	public void navigates_to_website_url() throws InterruptedException {
 		// Maximize Windows
-		driver.get("https://www.slideteam.net");
-		Thread.sleep(3000);
-		try {
-			WebElement App_url= driver.findElement(SignupObject.close_add);
-			App_url.click();
-			Thread.sleep(3000);
-			log.info("It's opening the website URL");
-		} catch (NoSuchElementException popup) {
-		}
+		driver.get(AppURL);
+	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+	log.info("It's opening the website URL");
+	Thread.sleep(1000);
+	driver.get("https://www.slideteam.net");
+	Thread.sleep(2000);
+	driver.get("https://www.slideteam.net");
+	Thread.sleep(2000);
+    driver.manage().deleteAllCookies();
+    Thread.sleep(2000);
+	try {
+		driver.findElement(By.cssSelector(".authorization-link > a:nth-child(1)")).click();
+		Thread.sleep(2000);
+		log.info("It's opening the website URL");
+	} 
+	catch (NoSuchElementException popup) {
+	}
 
-		try {
-			WebElement logout = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
-			if (logout.isEnabled()) {
-				logout.click();
-				Thread.sleep(3000);
-				driver.navigate().refresh();
-				Thread.sleep(3000);
-			}
-		} catch (NoSuchElementException Ext) {
-
-		}
 	}
 
 	
 	@Then("^Enter a user email$")
-	public void enter_user_email_address_as() throws Throwable {
+	public void enter_a_user_email() throws Throwable {
                 try {
 		WebElement Email_add= driver.findElement(By.xpath("//*[@id='email']"));
 		Email_add.click();
@@ -73,7 +71,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	}
 
 	@Then("^Enter the user password$")
-	public void enter_user_password_as() throws Throwable {
+	public void enter_the_user_password() throws Throwable {
 		try {
 		WebElement user_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		user_pass.click();
@@ -93,7 +91,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 
 	@Then("^click on Login cta$")
 	
-	public void click_on_Login_button() throws Throwable {
+	public void click_on_Login_cta() throws Throwable {
 		try {
 		WebElement Login_button= driver.findElement(By.xpath("//*[@id='send2']"));
 		//wait.implictywait(driver);
@@ -116,19 +114,19 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 	}
         
 	@Then("^user is navigate to complete deck from account dashboard page$")
-         public void user_is_navigating_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
+         public void user_is_navigate_to_complete_deck_from_account_dashboard_page() throws InterruptedException  {
     
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	// WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
-	  //Thread.sleep(5000);   
-	 //select_product.click();
-	   // Thread.sleep(5000);
+	 WebElement select_product= driver.findElement(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"));
+	  Thread.sleep(5000);   
+	 select_product.click();
+	    Thread.sleep(5000);
           }
 	
 	@Then ("^chat window option\\.$")
-	public void close_chat_window() throws InterruptedException {
+	public void chat_window_option() throws InterruptedException {
 		try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
@@ -157,7 +155,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 			}	
 
 	@Then("^the download this presenetion link is appeared$")
-	public void verify_uesr_validation_message_for_Email_Address() throws Throwable {
+	public void the_download_this_presenetion_link_is_appeared() throws Throwable {
                 driver.get("https://www.slideteam.net/one-page-strategy-vision-goals-strategies-tactics.html");
 		try {
 			String Email_test = driver.findElement(SignupObject.Downloaded).getText();
