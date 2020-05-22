@@ -25,21 +25,22 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
         WebDriverWait wait = new WebDriverWait(driver,50);
+	
 	// Open web site URl
-	@Given("^launch application\\.$")
+	@Given("^launch application$")
 	public void launch_application() throws InterruptedException {
 		// Maximize Windows
 		driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.get("https://www.slideteam.net/");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		try {
 			// click on sign in with google button on home page
 			driver.findElement(By.xpath("//a[contains(text(),'Sign in with Google')]")).click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			log.info("It's opening the website URL");
 		} 
 		catch (NoSuchElementException popup) {
@@ -52,10 +53,10 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		try {
 			WebElement useraccount = driver.findElement(By.xpath("//*[@id='identifierId']"));
 			//wait.implictywait(driver);
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			useraccount.click();
 			//wait.implictywait(driver);
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 		}catch(NoSuchElementException usenewaccount) {	
 	}
 	
@@ -63,7 +64,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
                 WebElement email= driver.findElement(FbandGP_Object.GPEmail);
 		//WebElement = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(FbandGP_Object.GPEmail));
 		//wait.implictywait(driver);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		email.click();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
@@ -73,7 +74,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		email.sendKeys("selenium.testing9977@gmail.com");
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
-	}catch(NoSuchElementException usenewa) {	
+	} catch(NoSuchElementException usenewa) {	
 	}
 	}
 	
@@ -120,7 +121,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	       }
 	}
 
-	@Then("^Redirected to price page\\.$")
+	@Then("^Redirected to price page$")
 	public void Redirected_to_price_page() throws Throwable {
                  driver.get("https://www.slideteam.net/pricing");
 		//String actualTitle = driver.getTitle();
