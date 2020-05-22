@@ -30,7 +30,7 @@ public class SignUp_Step extends SetupClass {
 
 	// Open web site URl
 	@Given("^Navigates to website url\\.$")
-	public void navigates_to_website_url() throws InterruptedException {
+	public void Navigates_to_website_url() throws InterruptedException {
 		// Maximize Windows
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(2000);
@@ -192,8 +192,8 @@ public class SignUp_Step extends SetupClass {
 	}
 
 	
-	@Then("^After signup see the price page\\.$")
-	public void verify_the_price_page() throws InterruptedException {
+	@Then("^After signup see the price page$")
+	public void After_signup_see_the_price_page() throws InterruptedException {
 		/*driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		String actualTitle = driver.getTitle();
 		//wait.implictywait(driver);
@@ -204,6 +204,12 @@ public class SignUp_Step extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);*/
 		driver.get("https://www.slideteam.net/pricing");
+		Thread.sleep(2000);
+		WebElement free_ppt_btn= driver.findElement(By.xpath("//a[contains(.,'Free PPTs')]"));
+		Thread.sleep(2000);
+	    free_ppt_btn.click();
+	    Thread.sleep(2000);
+	   
 		Thread.sleep(1000);
 	}
 
