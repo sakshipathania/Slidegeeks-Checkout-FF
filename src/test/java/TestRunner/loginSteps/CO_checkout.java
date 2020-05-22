@@ -27,7 +27,7 @@ public class CO_checkout extends SetupClass{
 
 	WebDriverWait wait = new WebDriverWait(driver,50);
 
-	@Given("^user is already on Website Home Page (\\d+)CO$")
+	@Given("^user is already on Website Home Page CO$")
 	public void user_is_already_on_Website_Home_Page_CO(int arg1) throws Throwable {
 	
 		driver.get("https://www.slideteam.net");
@@ -54,7 +54,7 @@ public class CO_checkout extends SetupClass{
 	
 	}
 
-	@Then("^user navigates to sign up page (\\d+)CO$")
+	@Then("^user navigates to sign up page CO$")
 	public void user_navigates_to_sign_up_page_CO(int arg1) throws Throwable {
 		Thread.sleep(3000);
 		try {
@@ -66,7 +66,7 @@ public class CO_checkout extends SetupClass{
 		}
 	}
 
-	@Then("^user create a new ac count (\\d+)CO$")
+	@Then("^user create a new ac count CO$")
 	public void user_create_a_new_ac_count_CO(int arg1) throws Throwable {
 		// create new email for sign up
 		
@@ -195,7 +195,7 @@ public class CO_checkout extends SetupClass{
 		}
 	}
 
-	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
+	@Then("^user is redirected to pricing page and choose a plan to pay CO$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
 		// choose a plan
 		try {
@@ -209,13 +209,13 @@ public class CO_checkout extends SetupClass{
 
 	}
 
-	@Then("^user is redirected to checkout page (\\d+)CO$")
+	@Then("^user is redirected to checkout page CO$")
 	public void user_is_redirected_to_checkout_page_CO(int arg1) throws Throwable {
 		Thread.sleep(4000);
 	}
 
-	@Then("^user proceed to pay with (\\d+)CO (\\d+)CO$")
-	public void user_proceed_to_pay_with_CO_CO(int arg1, int arg2) throws InterruptedException {
+	@Then("^user proceed to pay with CO$")
+	public void user_proceed_to_pay_with_CO(int arg1, int arg2) throws InterruptedException {
 	     try {
 		Thread.sleep(4000);
 		// select 2co option
@@ -236,7 +236,7 @@ public class CO_checkout extends SetupClass{
 		}
 	}
 
-	@Then("^popup appears and user navigates back to my account (\\d+)CO$")
+	@Then("^popup appears and user navigates back to my account CO$")
 	public void popup_appears_and_user_navigates_back_to_my_account_CO(int arg1) throws Throwable {
 		//WebDriverWait wait=new WebDriverWait(driver, 20);
 	    String co_page_title=driver.getTitle();
@@ -258,7 +258,7 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(3000);
 	}
 
-	@Then("^user deleted the account (\\d+)CO$")
+	@Then("^user deleted the account CO$")
 	public void user_deleted_the_account_CO(int arg1) throws Throwable {
 		Thread.sleep(3000);
 	    driver.get("https://www.slideteam.net/");
