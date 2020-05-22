@@ -29,7 +29,7 @@ public class Login_step_definition extends SetupClass {
 
 	// Open web site URl
 	@Given("^Open the website url\\.$")
-	public void navigates_to_website_url() throws InterruptedException {
+	public void Open_the_website_url() throws InterruptedException {
 		// Maximize Windows
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(2000);
@@ -57,7 +57,7 @@ public class Login_step_definition extends SetupClass {
 
 	
 	@Then("^Enter user email address as \"([^\"]*)\"\\.$")
-	public void enter_user_email_address_as(String email) throws Throwable {
+	public void Enter_user_email_address_as(String email) throws Throwable {
 	 
 		try {
 		WebElement email_ad= driver.findElement(By.xpath("//*[@id='email']"));
@@ -79,7 +79,7 @@ public class Login_step_definition extends SetupClass {
 	}
 
 	@Then("^Insert the Password \"([^\"]*)\"\\.$")
-	public void enter_user_password_as(String passwd) throws Throwable {
+	public void Insert_the_password(String passwd) throws Throwable {
 		try {
 		WebElement Insert_Pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		Insert_Pass.click();
@@ -100,7 +100,7 @@ public class Login_step_definition extends SetupClass {
 	}
 
 	@Then("^Click on Login button\\.$")
-	public void click_on_Login_button() throws Throwable {
+	public void Click_on_Login_button() throws Throwable {
 		try {
 		WebElement Login= driver.findElement(By.xpath("//*[@id='send2']"));
 		Thread.sleep(1000);
