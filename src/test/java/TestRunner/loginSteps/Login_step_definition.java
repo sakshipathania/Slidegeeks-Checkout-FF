@@ -30,46 +30,36 @@ public class Login_step_definition extends SetupClass {
 	// Open web site URl
 	@Given("^Open the website url\\.$")
 	public void Open_the_website_url() throws InterruptedException {
-		// Maximize Windows
-		driver.get("https://www.slideteam.net");
-		Thread.sleep(2000);
+		driver.get(AppURL);
+		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		log.info("It's opening the website URL");
+		Thread.sleep(1000);
+	    
 		try {
-			WebElement website = driver.findElement(SignupObject.close_add);
-			website.click();
+			driver.findElement(By.cssSelector(".authorization-link > a:nth-child(1)")).click();
 			Thread.sleep(2000);
 			log.info("It's opening the website URL");
-		} catch (NoSuchElementException popup) {
+		} 
+		catch (NoSuchElementException popup) {
 		}
-		
-		try {	
-			WebElement logout=driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
-			if(logout.isEnabled()) {
-				logout.click();
-				Thread.sleep(8000);
-				driver.navigate().refresh();
-				Thread.sleep(2000);
-			}
-		}
-			catch(NoSuchElementException Ext) {
-			
-			}
+	    
 		}
 
 	
-	@Then("^Enter user email address as \"([^\"]*)\"\\.$")
-	public void Enter_user_email_address_as(String email) throws Throwable {
+	@Then("^Enter user email address as$")
+	public void Enter_user_email_address_as() throws Throwable {
 	 
 		try {
 		WebElement email_ad= driver.findElement(By.xpath("//*[@id='email']"));
     
 		email_ad.click();
-		Thread.sleep(1000);
+		Thread.sleep(8000);
 		//wait.implictywait(driver);
 		email_ad.clear();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		//wait.implictywait(driver);
-		email_ad.sendKeys("himanshi.sharma@slidetech.in");
-		Thread.sleep(1000);
+		email_ad.sendKeys("sakshi.pathania@slidetech.in");
+		Thread.sleep(8000);
 		//wait.implictywait(driver);
 		} catch (NoSuchElementException Ext) {
 			
@@ -78,19 +68,19 @@ public class Login_step_definition extends SetupClass {
 	
 	}
 
-	@Then("^Insert the Password \"([^\"]*)\"\\.$")
-	public void Insert_the_password(String passwd) throws Throwable {
+	@Then("^Insert the Password$")
+	public void Insert_the_Password() throws Throwable {
 		try {
 		WebElement Insert_Pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		Insert_Pass.click();
-		Thread.sleep(1000);
+		Thread.sleep(8000);
 		//wait.implictywait(driver);
 		Insert_Pass.clear();
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
-		Insert_Pass.sendKeys("123456");
+		Insert_Pass.sendKeys("Qwerty@1");
 		//wait.implictywait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(8000);
 		
 	} catch (NoSuchElementException Ext) {
 			
@@ -99,11 +89,11 @@ public class Login_step_definition extends SetupClass {
 	
 	}
 
-	@Then("^Click on Login button\\.$")
+	@Then("^Click on Login button$")
 	public void Click_on_Login_button() throws Throwable {
 		try {
 		WebElement Login= driver.findElement(By.xpath("//*[@id='send2']"));
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		//wait.implictywait(driver);
 		Login.click();
 		//wait.implictywait(driver);
