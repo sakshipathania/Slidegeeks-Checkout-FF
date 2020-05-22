@@ -23,8 +23,8 @@ import webApp.PerformAction;
 
 public class paypal_checkout extends SetupClass {
 	
-
-        PerformAction wait = new PerformAction();
+        WebDriverWait wait = new WebDriverWait(driver,100);
+        //PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
 	
@@ -246,37 +246,35 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^paypal popup appears and user navigates back to my account pp$")
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver,50);
-	     // Maximize Window
+	        //WebDriverWait wait = new WebDriverWait(driver,100);
+		  // Maximize Window
 		  driver.manage().window().maximize();
-		  Thread.sleep(5000);
 		
 		  // Store the CurrentWindow for future reference
-		 
-		  
+		 // String handle = " ";
+		  String currentWindow = driver.getWindowHandle();
 		  String popupWindowHandle = null;
 		   
 		  // Switch To Popup Window
-		String currentWindow = driver.getWindowHandle();
+		  
 		  for(String handle : driver.getWindowHandles()){
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
 		    driver.switchTo().window(popupWindowHandle);
 		   }
-		  }      
-		
-    // Carrying out my paypal transaction        
-        
+		  }
+		  
+		  
+		  
 		// page title
-      
 		  String pp_page_title=driver.getTitle();
-			Thread.sleep(10000);
+			Thread.sleep(3000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
-		// place order button 
-			 WebElement cancel_order_btn  = driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]"));
-                          Thread.sleep(2000);
+		 // place order button 
+			 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
+				Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);
 
@@ -284,7 +282,6 @@ public class paypal_checkout extends SetupClass {
 				  
 				  driver.switchTo().window(currentWindow);
 		    
-		
 	}
 
 	@Then("^user deleted the account pp$")
