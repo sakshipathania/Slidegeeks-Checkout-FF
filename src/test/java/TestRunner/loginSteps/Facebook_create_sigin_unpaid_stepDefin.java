@@ -57,8 +57,8 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		}
 	}
 
-	@Then("^Fb user enter a valid email\\.$")
-	public void fb_user_enter_a_valid_email() throws InterruptedException {
+	@Then("^Fb user enter a valid email$")
+	public void Fb_user_enter_a_valid_email() throws InterruptedException {
 		try {
 		WebElement valid_email= driver.findElement(By.xpath("//*[@id='email']"));
 		valid_email.click();
@@ -72,8 +72,8 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		}
 	}
 
-	@Then("^Fb user enter valid password\\.$")
-	public void fb_user_enter_valid_password() throws Throwable {
+	@Then("^Fb user enter valid password$")
+	public void Fb_user_enter_valid_password() throws Throwable {
 		try {
 		WebElement Valid_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		Valid_pass.click();
@@ -106,8 +106,8 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		}
 	}
 
-	@Then("^The user is redirected to price page\\.$")
-	public void the_user_is_redirected_to_price_page() throws Throwable {
+	@Then("^The user is redirected to price page$")
+	public void The_user_is_redirected_to_price_page() throws Throwable {
                 driver.get("https://www.slideteam.net/pricing");
 		String actualTitle = driver.getTitle();
 		Thread.sleep(3000);
