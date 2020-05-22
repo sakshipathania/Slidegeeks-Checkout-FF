@@ -2,11 +2,11 @@
 Feature:  CO Checkout
 Scenario: Test CO checkout
 
-Given user is already on Website Home Page 2CO
-Then user navigates to sign up page 2CO
-Then user create a new ac count 2CO
-Then user is redirected to pricing page and choose a plan to pay 2CO
-Then user is redirected to checkout page 2CO
-Then user proceed to pay with 2CO 2CO
-Then paypal popup appears and user navigates back to my account 2CO
-Then user deleted the account 2CO
+Given user is already on Website Home Page CO
+Then user navigates to sign up page CO
+Then user create a new ac count CO
+Then user is redirected to pricing page and choose a plan to pay CO
+Then user is redirected to checkout page CO
+Then user proceed to pay with 2CO CO
+Then popup appears and user navigates back to my account CO
+Then user deleted the account CO
