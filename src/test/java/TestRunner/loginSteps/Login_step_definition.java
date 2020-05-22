@@ -92,7 +92,7 @@ public class Login_step_definition extends SetupClass {
 	@Then("^Click on Login button$")
 	public void Click_on_Login_button() throws Throwable {
 		try {
-		WebElement Login= driver.findElement((By.cssSelector("button.login > span:nth-child(1)"));
+		WebElement Login= driver.findElement(By.cssSelector("button.login > span:nth-child(1)"));
 		Thread.sleep(5000);
 		//wait.implictywait(driver);
 		Login.click();
