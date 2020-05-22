@@ -21,11 +21,11 @@ import webApp.PerformAction;
 
 public class CO_checkout extends SetupClass{
 	
-	PerformAction wa_it = new PerformAction();
+	//PerformAction wa_it = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
 
-	//WebDriverWait wait = new WebDriverWait(driver,50);
+	WebDriverWait wait = new WebDriverWait(driver,50);
 
 	@Given("^user is already on Website Home Page (\\d+)CO$")
 	public void user_is_already_on_Website_Home_Page_CO(int arg1) throws Throwable {
@@ -236,11 +236,11 @@ public class CO_checkout extends SetupClass{
 		}
 	}
 
-	@Then("^paypal popup appears and user navigates back to my account (\\d+)CO$")
-	public void paypal_popup_appears_and_user_navigates_back_to_my_account_CO(int arg1) throws Throwable {
-		WebDriverWait wait=new WebDriverWait(driver, 20);
+	@Then("^popup appears and user navigates back to my account (\\d+)CO$")
+	public void popup_appears_and_user_navigates_back_to_my_account_CO(int arg1) throws Throwable {
+		//WebDriverWait wait=new WebDriverWait(driver, 20);
 	    String co_page_title=driver.getTitle();
-		Thread.sleep(15000);
+		Thread.sleep(3000);
 	    System.out.println("Title of the Page is --> "+co_page_title);
 	    
 	    String page_title="2Checkout";
@@ -255,7 +255,6 @@ public class CO_checkout extends SetupClass{
 	    	System.out.println("user is on the wrong page");
 	    	log.info("USER IS ON THE WRONG PAGE");
 	    }
-		WebElement checkout= wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#seller-identity > div")));
 		Thread.sleep(3000);
 	}
 
