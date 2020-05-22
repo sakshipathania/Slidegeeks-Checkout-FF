@@ -22,159 +22,154 @@ import webApp.PerformAction;
 
 public class Google_plus_create_unpaid_defination extends SetupClass {
 	//PerformAction wait = new PerformAction();
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	Random rad = new Random();
-        WebDriverWait wait = new WebDriverWait(driver,50);
+	WebDriverWait wait = new WebDriverWait(driver,50);
 	
-	// Open web site URl
-	@Given("^launch application$")
-	public void launch_application() throws InterruptedException {
-		// Maximize Windows
+	
+	@Given("^user is already on Home Page new google$")
+	public void user_is_already_on_Home_Page_new_google() throws InterruptedException  {
+	 
 		driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		driver.get("https://www.slideteam.net/");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		try {
 			// click on sign in with google button on home page
 			driver.findElement(By.xpath("//a[contains(text(),'Sign in with Google')]")).click();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			log.info("It's opening the website URL");
 		} 
 		catch (NoSuchElementException popup) {
 		}
 		
+		
 	}
 
-	@Then("^enter a email$")
-	public void enter_a_email() throws InterruptedException {
-		try {
-			WebElement useraccount = driver.findElement(By.xpath("//*[@id='identifierId']"));
-			//wait.implictywait(driver);
-			Thread.sleep(3000);
-			useraccount.click();
-			//wait.implictywait(driver);
-			Thread.sleep(3000);
-		}catch(NoSuchElementException usenewaccount) {	
-	}
-	
-	try {
-                WebElement email= driver.findElement(FbandGP_Object.GPEmail);
-		//WebElement = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(FbandGP_Object.GPEmail));
-		//wait.implictywait(driver);
+	@Then("^User click on sign in with google button$")
+	public void user_click_on_sign_in_with_google_button() throws InterruptedException  {
+		Thread.sleep(2000);
+		try
+		{
+			WebElement another_btn=driver.findElement(By.xpath("//div[text()='Use another account']"));
+			another_btn.click();
+			
+			
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			
+		
+		}
 		Thread.sleep(3000);
-		email.click();
-		//wait.implictywait(driver);
+		WebElement gmail_email = driver.findElement(By.xpath("//*[@id='identifierId']"));
 		Thread.sleep(2000);
-		email.clear();
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-		email.sendKeys("selenium.testing9977@gmail.com");
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-	} catch(NoSuchElementException usenewa) {	
-	}
-	}
-	
-	@Then("^Go to next page$")
-	public void Go_to_next_page() throws InterruptedException {
-               try {
-		WebElement next= driver.findElement(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)"));
-		next.click();
-		//wait.implictywait(driver);
-		Thread.sleep(3000);
-	       } catch(NoSuchElementException e) {
-	       }
+	    gmail_email.sendKeys("slidetech.qa@gmail.com");
+	    Thread.sleep(2000);
+	    WebElement next_1 =  driver.findElement(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)"));
+	    Thread.sleep(2000);
+	    next_1.click();
+	    Thread.sleep(2000);
+	    WebElement gmail_pass =  driver.findElement(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)"));
+	    Thread.sleep(2000);
+	    gmail_pass.sendKeys("Himanshi@123");
+	    Thread.sleep(2000);
+	    
+	    WebElement next_2 =  driver.findElement(By.cssSelector("#passwordNext > span:nth-child(3)"));
+	    Thread.sleep(2000);
+	    next_2.click();
 	}
 
-	@Then("^enter password$")
-	public void enter_password() throws Throwable {
-		try{
-		WebElement password= driver.findElement(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)"));
-		password.click();
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		password.clear();
-		Thread.sleep(1000);
-		//wait.implictywait(driver);
-		password.sendKeys("Test@1234");
-		//wait.implictywait(driver);
+	@Then("^user go to free ppts page new google$")
+	public void user_go_to_free_ppts_page_new_google() throws InterruptedException  {
 		
 		Thread.sleep(3000);
-	} catch (NoSuchElementException e) {
-	       }
-	}
-
-
-	@Then("^Click on next button$")
-	public void Click_on_next_button() throws Throwable {
-		try {
-		WebElement button= driver.findElement(By.cssSelector("#passwordNext > span:nth-child(3)"));
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		button.click();
-		//wait.implictywait(driver);
-		Thread.sleep(10000);
-		} catch(NoSuchElementException e) {
-	       }
-	}
-
-	@Then("^Redirected to price page$")
-	public void Redirected_to_price_page() throws Throwable {
-                 driver.get("https://www.slideteam.net/pricing");
-		//String actualTitle = driver.getTitle();
-		//wait.implictywait(driver);
-		Thread.sleep(1000);
-		//String expectedTitle = "Pricing";
-		//wait.implictywait(driver);
-		//Thread.sleep(1000);
-		//Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
-                //Thread.sleep(1000);*/
-	}
-
-	@Then("^user go to free ppts page old gp$")
-	public void user_go_to_free_ppts_page_old_gp() throws InterruptedException  {
-	 
-		//free ppt pg
-		Thread.sleep(4000);
-		WebElement free_ppt_btn=driver.findElement(By.xpath("//a[contains(.,'Free PPTs')]"));
+		WebElement free_ppt_btn=driver.findElement(By.xpath("//a[contains(text(),'Free PPTs')]"));
 		Thread.sleep(2000);
 	    free_ppt_btn.click();
-		Thread.sleep(1000);
-
+	    Thread.sleep(5000);
+		
 	}
 
-	@Then("^user download a free ppt old gp$")
-	public void user_download_a_free_ppt_old_gp() throws InterruptedException  {
-	 
-		Thread.sleep(2000);
-		Thread.sleep(2000);
-		driver.findElement(By.cssSelector("li.product:nth-child(4) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.cssSelector("#clicking")).click();
+	@Then("^user download a free ppt new google$")
+	public void user_download_a_free_ppt_new_google() throws InterruptedException  {
+	   
+		/*
+		 * driver.findElement(By.
+		 * cssSelector("li.product:nth-child(2) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"
+		 * )).click(); Thread.sleep(5000);
+		 * driver.findElement(By.cssSelector("#clicking")).click(); Thread.sleep(8000);
+		 */
+		
+		driver.get("https://www.slideteam.net/prod-development-and-program-management.html");
+		driver.findElement(By.id("clicking")).click();
+		Thread.sleep(5000);
+		driver.get("https://www.slideteam.net/");
 		Thread.sleep(3000);
 		
-		driver.navigate().refresh();
 		
-		// logout
-		Thread.sleep(2000);
-		try {
-			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
-			if (logout.isEnabled()) {
-				Thread.sleep(1000);
-				logout.click();
-				Thread.sleep(8000);
-				driver.navigate().refresh();
-				Thread.sleep(2000);
+	}
+
+	@Then("^user delete the google account new google$")
+	public void user_delete_the_fb_account_new_google() throws InterruptedException  {
+		
+		/*
+		 * WebElement my_account= (new WebDriverWait(driver, 40))
+		 * .until(ExpectedConditions.presenceOfElementLocated(By.
+		 * xpath("//a[contains(text(),'My Account')]"))); my_account.click();
+		 * Thread.sleep(3000);
+		 */
+		 
+	
+		driver.get("https://www.slideteam.net/");
+		   Thread.sleep(3000);
+		   
+		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		 Thread.sleep(3000);
+		 
+		 
+		 driver.findElement(By.xpath("//a[contains(.,'Delete Account')]")).click();
+		 Thread.sleep(3000);
+		 
+
+
+try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
 			}
-		} catch (NoSuchElementException Ext) {
+			else {
+				
 
+			System.out.println("chat window does not open");
+			}
 		}
+				catch(NoSuchElementException NCP) {
+					
+				}
+
+     
+		 Thread.sleep(3000);
+		 WebElement continue_delete = driver.findElement(By.xpath("//*[@id=\"deleteaccount-form\"]/button[1]"));
+		 Thread.sleep(2000);
+
+		 continue_delete.click();
+		 Thread.sleep(3000);
 		
 	}
+
+
 
 }
-
