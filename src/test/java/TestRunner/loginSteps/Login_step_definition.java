@@ -92,12 +92,12 @@ public class Login_step_definition extends SetupClass {
 	@Then("^Click on Login button$")
 	public void Click_on_Login_button() throws Throwable {
 		try {
-		WebElement Login= driver.findElement(By.xpath("//*[@id='send2']"));
-		Thread.sleep(3000);
+		WebElement Login= driver.findElement((By.cssSelector("button.login > span:nth-child(1)"));
+		Thread.sleep(5000);
 		//wait.implictywait(driver);
 		Login.click();
 		//wait.implictywait(driver);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	} catch (NoSuchElementException Ext) {
 			
 			}
@@ -354,13 +354,12 @@ try {
 
 	@Then("^user down load a free product cd$")
 	public void user_down_load_a_free_product_cd() throws InterruptedException  {
-		//driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
-		driver.get("https://www.slideteam.net/prod-development-and-program-management.html");
+		driver.get("https://www.slideteam.net/2d-pyramid-simple-powerpoint-presentation-slides.html");
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("#clicking")).click();
 		Thread.sleep(3000);
-	   driver.get("https://www.slideteam.net/");
-	   Thread.sleep(3000);
+		driver.navigate().refresh();
+		Thread.sleep(2300);
 	}
 	
         @Then("^user wants logout efu$")
