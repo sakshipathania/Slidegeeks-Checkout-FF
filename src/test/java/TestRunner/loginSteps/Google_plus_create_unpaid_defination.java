@@ -21,13 +21,13 @@ import cucumber.api.java.en.Then;
 import webApp.PerformAction;
 
 public class Google_plus_create_unpaid_defination extends SetupClass {
-	PerformAction wait = new PerformAction();
+	//PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
-
+        WebDriverWait wait = new WebDriverWait(driver,50);
 	// Open web site URl
 	@Given("^launch application\\.$")
-	public void navigates_to_website_url() throws InterruptedException {
+	public void launch_application() throws InterruptedException {
 		// Maximize Windows
 		driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
@@ -47,8 +47,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		
 	}
 
-	@Then("^enter a email\\.$")
-	public void enter_user_mail() throws InterruptedException {
+	@Then("^enter a email$")
+	public void enter_a_email() throws InterruptedException {
 		try {
 			WebElement useraccount = driver.findElement(By.xpath("//*[@id='identifierId']"));
 			//wait.implictywait(driver);
@@ -77,8 +77,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	}
 	}
 	
-	@Then("^Go to next page\\.$")
-	public void password_page() throws InterruptedException {
+	@Then("^Go to next page$")
+	public void Go_to_next_page() throws InterruptedException {
                try {
 		WebElement next= driver.findElement(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)"));
 		next.click();
@@ -88,8 +88,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	       }
 	}
 
-	@Then("^enter password\\.$")
-	public void enter_user_password() throws Throwable {
+	@Then("^enter password$")
+	public void enter_password() throws Throwable {
 		try{
 		WebElement password= driver.findElement(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)"));
 		password.click();
@@ -107,8 +107,8 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	}
 
 
-	@Then("^Click on next button\\.$")
-	public void click_on_Login_button() throws Throwable {
+	@Then("^Click on next button$")
+	public void Click_on_next_button() throws Throwable {
 		try {
 		WebElement button= driver.findElement(By.cssSelector("#passwordNext > span:nth-child(3)"));
 		//wait.implictywait(driver);
@@ -121,7 +121,7 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 	}
 
 	@Then("^Redirected to price page\\.$")
-	public void after_signup_redirect_to_price_page() throws Throwable {
+	public void Redirected_to_price_page() throws Throwable {
                  driver.get("https://www.slideteam.net/pricing");
 		//String actualTitle = driver.getTitle();
 		//wait.implictywait(driver);
