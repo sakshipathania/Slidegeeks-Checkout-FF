@@ -28,8 +28,8 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
         WebDriverWait wait = new WebDriverWait(driver,50);
 	// Open web site test on ff
 
-	@Given("^Launching the application URL\\.$")
-	public void launching_the_application_URL() throws InterruptedException {
+	@Given("^Launching the application URL$")
+	public void Launching_the_application_URL() throws InterruptedException {
 		// Maximize Windows
 		driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
