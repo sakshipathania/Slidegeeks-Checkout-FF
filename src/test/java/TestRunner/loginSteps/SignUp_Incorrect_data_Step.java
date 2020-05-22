@@ -246,12 +246,12 @@ public class SignUp_Incorrect_data_Step extends SetupClass {
 	@Then("^user delete the new account created$")
 	public void user_delete_the_new_account_created() throws InterruptedException  {
 	   
-driver.navigate().refresh();
-Thread.sleep(3000);
+          driver.navigate().refresh();
+          Thread.sleep(3000);
 		 driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
 		 Thread.sleep(3000);
 		 
-try {
+              try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
 				driver.switchTo().frame(iframe);   
