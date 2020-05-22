@@ -22,19 +22,16 @@ import cucumber.api.java.en.Then;
 import webApp.PerformAction;
 
 public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
+	
 	//PerformAction wait = new PerformAction();
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	Random rad = new Random();
-        WebDriverWait wait = new WebDriverWait(driver,50);
-	// Open web site test on ff
-
-	@Given("^Launching the application URL$")
-	public void Launching_the_application_URL() throws InterruptedException {
-		// Maximize Windows
+	WebDriverWait wait = new WebDriverWait(driver,50);
+	
+	@Given("^user is already on Home Page new fb$")
+	public void user_is_already_on_Home_Page_new_fb() throws InterruptedException  {
 		driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		try {
 			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
@@ -55,74 +52,105 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 		} 
 		catch (NoSuchElementException popup) {
 		}
+	    
 	}
 
-	@Then("^Fb user enter a valid email$")
-	public void Fb_user_enter_a_valid_email() throws InterruptedException {
-		try {
-		WebElement valid_email= driver.findElement(By.xpath("//*[@id='email']"));
-		valid_email.click();
-		Thread.sleep(3000);
-		valid_email.clear();
-		Thread.sleep(3000);
-		valid_email.sendKeys("slidetech.qa@gmail.com");
-                Thread.sleep(3000);
-	} catch (NoSuchElementException Ext) {
+	@Then("^User click on sign in with facebook button$")
+	public void user_click_on_sign_in_with_facebook_button() throws InterruptedException  {
+		Thread.sleep(2000);
 
-		}
+		 WebElement fb_email = driver.findElement(By.xpath("//*[@id='email']"));
+			Thread.sleep(2000);
+		    fb_email.sendKeys("amw.vrushali@gmail.com");
+			Thread.sleep(2000);
+
+		    WebElement fb_pass =driver.findElement(By.xpath("//*[@id='pass']"));
+			Thread.sleep(2000);
+		    fb_pass.sendKeys("vrushali@786");
+			Thread.sleep(2000);
+
+		    WebElement fb_login_btn= driver.findElement(By.xpath("//*[@id='loginbutton']"));
+			Thread.sleep(2000);
+		    fb_login_btn.click();
+			Thread.sleep(2000);
+
 	}
 
-	@Then("^Fb user enter valid password$")
-	public void Fb_user_enter_valid_password() throws Throwable {
-		try {
-		WebElement Valid_pass = driver.findElement(By.xpath("//*[@id='pass']"));
-		Valid_pass.click();
-		Thread.sleep(3000);
-		Valid_pass.clear();
-		Thread.sleep(3000);
-		Valid_pass.sendKeys("himanshi@123");
-		Thread.sleep(3000);
-	} catch (NoSuchElementException Ext) {
+	@Then("^user go to free ppts page new fb$")
+	public void user_go_to_free_ppts_page_new_fb() throws InterruptedException  {
+		WebElement free_ppt_btn= driver.findElement(By.cssSelector("li.menu-item:nth-child(2) > a:nth-child(1)"));
+		Thread.sleep(2000);
 
-		}
-	}
-
-	@Then("^click on login cta on fb page\\.$")
-	public void click_on_login_cta_on_fb_page() throws InterruptedException {
-		try {
-		WebElement Fb_login= driver.findElement(By.xpath("//*[@id='loginbutton']"));
-		Thread.sleep(3000);
-		Fb_login.click();
-		Thread.sleep(3000);
-		} catch (NoSuchElementException Ext) {
-			
-			}
-		try {
-			WebElement Fb_GP = driver.findElement(FbandGP_Object.continue_as_QA);
-			Fb_GP.click();
-			Thread.sleep(1000);
-		} catch (NoSuchElementException qalink) {
-
-		}
-	}
-
-	@Then("^The user is redirected to price page$")
-	public void The_user_is_redirected_to_price_page() throws Throwable {
-                driver.get("https://www.slideteam.net/pricing");
-		String actualTitle = driver.getTitle();
-		Thread.sleep(3000);
-		//wait.implictywait(driver);
-		String expectedTitle = "Pricing";
-		Thread.sleep(3000);
-		//wait.implictywait(driver);
-		try {
-		Assert.assertEquals(expectedTitle, actualTitle);
-		Thread.sleep(3000);
-		}
-		catch (Throwable t) {
-		}
-        
-	} 
-					
-}
+	    free_ppt_btn.click();
 	
+	}
+	    
+
+	@Then("^user download a free ppt new fb$")
+	public void user_download_a_free_ppt_new_fb() throws InterruptedException  {
+		/*
+		 * driver.findElement(By.
+		 * cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)"
+		 * )).click(); Thread.sleep(3000);
+		 */
+		
+		driver.get("https://www.slideteam.net/prod-development-and-program-management.html");
+		Thread.sleep(2000);
+
+		driver.findElement(By.cssSelector("#clicking")).click();
+		Thread.sleep(6000);
+	}
+
+	@Then("^user delete the fb account new fb$")
+	public void user_delete_the_fb_account_new_fb() throws InterruptedException  {
+		
+		 driver.get("https://www.slideteam.net/");
+		   Thread.sleep(3000);
+		   
+		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		 Thread.sleep(3000);
+		 
+		 
+		 driver.findElement(By.xpath("//a[contains(.,'Delete Account')]")).click();
+		 Thread.sleep(3000);
+		 
+
+
+try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
+			}
+			else {
+				
+
+			System.out.println("chat window does not open");
+			}
+		}
+				catch(NoSuchElementException NCP) {
+					
+				}
+
+        
+		 Thread.sleep(3000);
+		 WebElement continue_delete = driver.findElement(By.xpath("//*[@id=\"deleteaccount-form\"]/button[1]"));
+		 Thread.sleep(2000);
+
+		 continue_delete.click();
+		 Thread.sleep(3000);
+	}
+
+
+	
+}
