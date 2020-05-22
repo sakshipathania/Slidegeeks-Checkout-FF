@@ -26,7 +26,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 
 	// Open web site URl
 	@Given("^Open given the application URL$")
-	public void navigates_to_website_url() throws InterruptedException  {
+	public void Open_given_the_application_URL() throws InterruptedException  {
 		// Maximize Windows
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(2000);
@@ -65,7 +65,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
             }
 	
 	@Then("^Click on download this presentation$")
-	public void click_on_Download_thist_presentation_link() throws InterruptedException {
+	public void Click_on_download_this_presentation() throws InterruptedException {
 		//WebElement Download_ppt = driver.findElement(By.cssSelector("#clicking"));
 		driver.get("https://www.slideteam.net/business-process-evaluation-powerpoint-show.html");
 		//wait.implictywait(driver);
@@ -76,7 +76,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	}
 
 	@Then("^Click on test fblink$")
-	public void fb_link() throws InterruptedException {
+	public void Click_on_test_fblink() throws InterruptedException {
 		driver.get("https://www.slideteam.net/");
 		Thread.sleep(4000);
 		WebElement fblink = driver.findElement(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']"));
@@ -86,7 +86,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	}
 
 	@Then("^user email as$")
-	public void enter_user_mail() throws InterruptedException {
+	public void user_email_as() throws InterruptedException {
 		
 		try {
 		WebElement user_email = driver.findElement(By.xpath("//*[@id='email']"));
@@ -105,7 +105,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	}
 
 	 @Then("^user password as$")
-	 public void enter_user_password() throws Throwable {
+	 public void user_password_as() throws Throwable {
 		try {
 		WebElement user_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 		user_pass.click();
@@ -158,7 +158,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 	}
 		
 	@Then("^See the this link as download this presenetion link is appeared$")
-	public void verify_uesr_validation_message_for_Email_Address() throws Throwable {
+	public void See_the_this_link_as_download_this_presenetion_link_is_appeared() throws Throwable {
                  driver.get("https://www.slideteam.net/business-process-evaluation-powerpoint-show.html");
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("#clicking")).click();
