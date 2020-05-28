@@ -171,17 +171,52 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	@Then("^logout pld gmail$")
 	public void logout_pld_gmail() throws Throwable {
 	   
-		Thread.sleep(3000);
-	    WebElement my_account_og =  driver.findElement(By.xpath("//a[contains(.,'My Account')]"));
-	    Thread.sleep(3000);
-	   my_account_og.click();
-	    Thread.sleep(2000);
-   
-		 //Thread.sleep(3000);
-		 WebElement sign_out =  driver.findElement(By.xpath("//a[contains(.,'Sign Out')]"));
-		 Thread.sleep(2000);
-		 sign_out.click();
+		driver.get("https://www.slideteam.net/");
+		   Thread.sleep(3000);
+		   
+		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
 		 Thread.sleep(3000);
+		 
+		 
+		 driver.findElement(By.xpath("//a[contains(.,'Delete Account')]")).click();
+		 Thread.sleep(3000);
+		 
+
+
+         try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
+			}
+			else {
+				
+
+			System.out.println("chat window does not open");
+			}
+		}
+				catch(NoSuchElementException NCP) {
+					
+				}
+
+     
+		 Thread.sleep(3000);
+		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"deleteaccount-form\"]/button[1]")));
+		 Thread.sleep(2000);
+
+		 continue_delete.click();
+		 Thread.sleep(3000);
+		
 		
 	}
 
