@@ -59,17 +59,17 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 	public void user_click_on_sign_in_with_facebook_button() throws InterruptedException  {
 		Thread.sleep(2000);
 
-		 WebElement fb_email = driver.findElement(By.xpath("//*[@id='email']"));
+		 WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
 			Thread.sleep(2000);
 		    fb_email.sendKeys("amw.vrushali@gmail.com");
 			Thread.sleep(2000);
 
-		    WebElement fb_pass =driver.findElement(By.xpath("//*[@id='pass']"));
+		    WebElement fb_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='pass']")));
 			Thread.sleep(2000);
 		    fb_pass.sendKeys("vrushali@786");
 			Thread.sleep(2000);
 
-		    WebElement fb_login_btn= driver.findElement(By.xpath("//*[@id='loginbutton']"));
+		    WebElement fb_login_btn= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='loginbutton']")));
 			Thread.sleep(2000);
 		    fb_login_btn.click();
 			Thread.sleep(2000);
