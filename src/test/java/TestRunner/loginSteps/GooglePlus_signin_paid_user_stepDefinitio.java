@@ -99,7 +99,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		gmail.clear();
 		Thread.sleep(3000);
 		//wait.implictywait(driver);
-		gmail.sendKeys("himanshi.sharma@slidetech.in");
+		gmail.sendKeys("sakshi.pathania@slidetech.in");
 		//wait.implictywait(driver);
 		Thread.sleep(3000);
 		
@@ -126,7 +126,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 				google_pass.clear();
 		                Thread.sleep(3000);
 				//wait.implictywait(driver);
-				google_pass.sendKeys("himanshi@123");
+				google_pass.sendKeys("Qwerty@1");
 				//wait.implictywait(driver);
 				Thread.sleep(3000);
 			
