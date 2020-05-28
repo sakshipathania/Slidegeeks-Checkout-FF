@@ -21,9 +21,10 @@ import cucumber.api.java.en.Then;
 import webApp.PerformAction;
 
 public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
-	PerformAction wait = new PerformAction();
+	//PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
+	WebDriverWait wait = new WebDriverWait(driver,50);
 
 	// Open web site URl
 	@Given("^Open home page of the application\\.$")
