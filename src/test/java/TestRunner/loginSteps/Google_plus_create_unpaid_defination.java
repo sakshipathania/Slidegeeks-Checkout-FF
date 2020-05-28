@@ -64,20 +64,21 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		
 		}
 		Thread.sleep(3000);
-		WebElement gmail_email = driver.findElement(By.xpath("//*[@id='identifierId']"));
+		
+		WebElement gmail_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='identifierId']")));
 		Thread.sleep(2000);
 	    gmail_email.sendKeys("slidetech.qa@gmail.com");
 	    Thread.sleep(2000);
-	    WebElement next_1 =  driver.findElement(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)"));
+	    WebElement next_1 =  wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)")));
 	    Thread.sleep(2000);
 	    next_1.click();
 	    Thread.sleep(2000);
-	    WebElement gmail_pass =  driver.findElement(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)"));
+	    WebElement gmail_pass =  wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)")));
 	    Thread.sleep(2000);
 	    gmail_pass.sendKeys("Himanshi@123");
 	    Thread.sleep(2000);
 	    
-	    WebElement next_2 =  driver.findElement(By.cssSelector("#passwordNext > span:nth-child(3)"));
+	    WebElement next_2 =  wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#passwordNext > span:nth-child(3)")));
 	    Thread.sleep(2000);
 	    next_2.click();
 	}
