@@ -65,20 +65,20 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		}
 		Thread.sleep(3000);
 		
-		WebElement gmail_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='identifierId']")));
+		WebElement gmail_email = driver.findElement(By.xpath("//*[@id='identifierId']"));
 		Thread.sleep(2000);
 	    gmail_email.sendKeys("slidetech.qa@gmail.com");
 	    Thread.sleep(2000);
-	    WebElement next_1 =  wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)")));
+	    WebElement next_1 = driver.findElement(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)"));
 	    Thread.sleep(2000);
 	    next_1.click();
 	    Thread.sleep(2000);
-	    WebElement gmail_pass =  wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)")));
+	    WebElement gmail_pass = driver.findElement(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)"));
 	    Thread.sleep(2000);
 	    gmail_pass.sendKeys("Himanshi@123");
 	    Thread.sleep(2000);
 	    
-	    WebElement next_2 =  wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#passwordNext > span:nth-child(3)")));
+	    WebElement next_2 = driver.findElement(By.cssSelector("#passwordNext > span:nth-child(3)"));
 	    Thread.sleep(2000);
 	    next_2.click();
 	}
@@ -127,41 +127,13 @@ public class Google_plus_create_unpaid_defination extends SetupClass {
 		driver.get("https://www.slideteam.net/");
 		   Thread.sleep(3000);
 		   
-		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		 driver.findElement(By.xpath("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
 		 Thread.sleep(3000);
 		 
 		 
-		 driver.findElement(By.xpath("//a[contains(.,'Delete Account')]")).click();
+		 driver.findElement(By.xpath("//*[@id='clicking']")).click();
 		 Thread.sleep(3000);
 		 
-
-
-try {
-			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
-			if(iframe.isDisplayed()) {
-				driver.switchTo().frame(iframe);   
-				 Actions act = new Actions(driver);
-				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
-				 Thread.sleep(2000);
-					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
-					 Thread.sleep(1000);
-						chat1.click();
-						 Thread.sleep(1000);
-						 driver.switchTo().defaultContent();
-						 Thread.sleep(1000);
-						 driver.switchTo().parentFrame();
-					 Thread.sleep(1000);
-			}
-			else {
-				
-
-			System.out.println("chat window does not open");
-			}
-		}
-				catch(NoSuchElementException NCP) {
-					
-				}
-
      
 		 Thread.sleep(3000);
 		 WebElement continue_delete = driver.findElement(By.xpath("//*[@id=\"deleteaccount-form\"]/button[1]"));
