@@ -128,7 +128,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 				google_pass.clear();
 		                Thread.sleep(3000);
 				//wait.implictywait(driver);
-				google_pass.sendKeys("Qwerty@1");
+				google_pass.sendKeys("Sakshi@456");
 				//wait.implictywait(driver);
 				Thread.sleep(3000);
 			
