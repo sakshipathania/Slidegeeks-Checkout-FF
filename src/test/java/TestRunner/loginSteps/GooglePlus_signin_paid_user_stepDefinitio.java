@@ -145,8 +145,9 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		next.click();
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
+		driver.get("https://www.slideteam.net/subscription/index/list/");
 
-		try {
+		/*try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
 			//wait.implictywait(driver);
 			Thread.sleep(1000);
@@ -154,7 +155,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 			Thread.sleep(500);
 		} catch (NoSuchElementException nonpoptest) {
 
-		}
+		}*/
 
 	}
 
