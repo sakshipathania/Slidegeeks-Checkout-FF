@@ -28,7 +28,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 
 	// Open web site URl
 	@Given("^Open home page of the application\\.$")
-	public void navigates_to_website_url() throws InterruptedException {
+	public void Open_home_page_of_the_application() throws InterruptedException {
 		// Maximize Windows
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(3000);
@@ -68,7 +68,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 
 
 	@Then("^Click on downloadbtn test5 link\\.$")
-	public void click_on_Download_this_presentation_link() throws InterruptedException {
+	public void Click_on_downloadbtn_test5_link() throws InterruptedException {
 		driver.get("https://www.slideteam.net/best-presentation-on-myself-powerpoint-presentation-slide.html");
 		Thread.sleep(3000);
 		//WebElement test5 = driver.findElement(By.cssSelector("//*[@id='clicking']"));
@@ -84,7 +84,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	}
 
 	@Then("^Click on googlePlus link\\.$")
-	public void fb_link() throws InterruptedException {
+	public void Click_on_googlePluss_link() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,200)");
 		Thread.sleep(3000);
 		WebElement gplus = driver.findElement(By.cssSelector("body > div.page-wrapper > header > div.header.content > div.panel.wrapper > div > div > div.social-login-authentication-channel.account-social-login > div > div.actions-toolbar.social-btn.social-btn-actions-toolbar.google-login > a"));
@@ -93,7 +93,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	}
 
 	@Then("^Enter user google email addess\\.$")
-	public void enter_user_mail() throws InterruptedException  {
+	public void Enter_user_google_email_address() throws InterruptedException  {
 		WebElement gmail = driver.findElement(By.xpath("//*[@id='identifierId']"));
 		gmail.click();
 		//wait.implictywait(driver);
@@ -108,7 +108,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	}
 
 	@Then("^go to password page\\.$")
-	public void enter_user_password() throws InterruptedException  {
+	public void go_to_password_page() throws InterruptedException  {
 	
 		WebElement pass_page = driver.findElement(By.xpath("//*[@id='identifierNext']/span"));
 		Thread.sleep(3000);
@@ -120,7 +120,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 	}
 
 	 @Then("^Enter user google pass\\.$")
-	public void google_pass() throws InterruptedException {
+	public void Enter_user_google_pass() throws InterruptedException {
 		 	 WebElement google_pass = driver.findElement(By.xpath("//*[@id='password']/div[1]/div/div[1]/input"));
 				google_pass.click();
 		                Thread.sleep(3000);
@@ -137,7 +137,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		}
 	
 	@Then("^Click on next CTA\\.$")
-	public void click_on_Login_button() throws Throwable {
+	public void click_on_next_CTA() throws Throwable {
 
 		WebElement next = driver.findElement(By.xpath("//*[@id='passwordNext']/span"));
 		//wait.implictywait(driver);
@@ -145,11 +145,6 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		next.click();
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
-		WebElement recover = driver.findElement(By.xpath("//*[@id='identifierId']"));
-		recover.sendkeys("slidetech.qa@gmail.com");
-		WebElement rec_page = driver.findElement(By.xpath("//*[@id='identifierNext']/span"));
-		rec_page.click();
-		driver.get("https://www.slideteam.net/subscription/index/list/");
 
 		try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
@@ -160,6 +155,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		} catch (NoSuchElementException nonpoptest) {
 
 		}
+		driver.get("https://www.slideteam.net/subscription/index/list/");
 
 	}
 
