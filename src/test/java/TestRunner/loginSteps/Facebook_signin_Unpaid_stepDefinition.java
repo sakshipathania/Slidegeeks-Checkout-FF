@@ -27,7 +27,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	// Open web site URl
 	@Given("^Go to the application URL\\.$")
-	public void navigates_to_website_url() throws InterruptedException {
+	public void Go_to_the_application_URL() throws InterruptedException {
 		// Maximize Windows
 		driver.get("https://www.slideteam.net");
 		Thread.sleep(2000);
@@ -54,7 +54,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	
 	@Then("^Click on fblink\\.$")
-	public void fb_link() throws InterruptedException {
+	public void Click_on_fblink() throws InterruptedException {
 		try {
 		WebElement FbLink = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[1]"));
 		Thread.sleep(3000);
@@ -65,7 +65,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	}
 
 	@Then("^Facebook user enter a email as\\.$")
-	public void enter_user_mail() throws InterruptedException {
+	public void Facebook_user_enter_a_email_as() throws InterruptedException {
 		Thread.sleep(3000);
 		try {
 		WebElement Fbemail = driver.findElement(By.xpath("//*[@id='email']"));
@@ -87,7 +87,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	
 
 	@Then("^Facebook user enter password\\.$")
-	public void enter_user_password() throws Throwable {
+	public void Facebook_user_enter_password() throws Throwable {
 		try {
 		WebElement Fpass= driver.findElement(By.xpath("//*[@id='pass']"));
 		//wait.implictywait(driver);
@@ -108,7 +108,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	}
 
 	@Then("^Login the application\\.$")
-	public void click_on_Login_button() throws Throwable {
+	public void Login_the_application\() throws Throwable {
 		try {
 		WebElement Appl= driver.findElement(By.xpath("//*[@id='loginbutton']"));
 		//wait.implictywait(driver);
@@ -130,7 +130,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	}
 
 	@Then("^See that user is redirected to price page\\.$")
-	public void after_signup_redirect_to_price_page() throws Throwable {
+	public void See_that_user_is_redirected_to_price_page() throws Throwable {
                 driver.get("https://www.slideteam.net/pricing");
 		String actualTitle = driver.getTitle();
 		//wait.implictywait(driver);
@@ -144,7 +144,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	}
 
 	@Then("^user go to free ppts page fbu$")
-	public void user_go_to_free_ppts_page_efu() throws InterruptedException  {
+	public void user_go_to_free_ppts_page_fbu() throws InterruptedException  {
 		Thread.sleep(2000);
 
 		WebElement free_ppt_btn=driver.findElement(By.xpath("//a[contains(.,'Free PPTs')]"));
