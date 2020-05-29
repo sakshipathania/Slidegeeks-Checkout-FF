@@ -108,7 +108,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 	}
 
 	@Then("^Login the application\\.$")
-	public void Login_the_application\() throws Throwable {
+	public void Login_the_application() throws Throwable {
 		try {
 		WebElement Appl= driver.findElement(By.xpath("//*[@id='loginbutton']"));
 		//wait.implictywait(driver);
