@@ -176,7 +176,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		driver.get("https://www.slideteam.net/");
 		   Thread.sleep(3000);
 		   
-		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		 driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
 		 Thread.sleep(3000);
 		 
 		 
