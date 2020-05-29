@@ -60,17 +60,17 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
            
 		Thread.sleep(2000);
 
-		 WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
+		 WebElement fb_email = driver.findElement(By.xpath("//*[@id='email']"));
 			Thread.sleep(2000);
 		    fb_email.sendKeys("amw.vrushali@gmail.com");
 			Thread.sleep(2000);
 
-		    WebElement fb_pass = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
+		    WebElement fb_pass = driver.findElement(By.xpath("//*[@id='pass']"));
 			Thread.sleep(2000);
 		    fb_pass.sendKeys("vrushali@786");
 			Thread.sleep(2000);
 
-		    WebElement fb_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.id("loginbutton")));
+		    WebElement fb_login_btn= driver.findElement(By.xpath("//*[@id='loginbutton']"));
 			Thread.sleep(2000);
 		    fb_login_btn.click();
 			Thread.sleep(2000);
