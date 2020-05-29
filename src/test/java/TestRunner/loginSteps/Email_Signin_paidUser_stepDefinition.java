@@ -62,7 +62,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		Email_add.clear();
 		Thread.sleep(3000);
 		//wait.implictywait(driver);
-		Email_add.sendKeys("sakshi.pathania@slideteam.in");
+		Email_add.sendKeys("sakshi.pathania@slidetech.in");
 		//wait.implictywait(driver);
                 Thread.sleep(3000);
 	        } catch (NoSuchElementException Ext) {
@@ -80,7 +80,7 @@ public class Email_Signin_paidUser_stepDefinition extends SetupClass {
 		user_pass.clear();
 		Thread.sleep(3000);
 		//wait.implictywait(driver);
-		user_pass.sendKeys("Sakshi@098");
+		user_pass.sendKeys("Qwerty@1");
 		//wait.implictywait(driver);
 		Thread.sleep(3000);
 		 } catch (NoSuchElementException Ext) {
