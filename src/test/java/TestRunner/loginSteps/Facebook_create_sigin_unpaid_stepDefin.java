@@ -57,20 +57,23 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 	@Then("^User click on sign in with facebook button$")
 	public void user_click_on_sign_in_with_facebook_button() throws InterruptedException  {
-              try {
-		WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
-		 Thread.sleep(2000);
-		    fb_email.sendKeys("slidetech.qa@gmail.com");
-		    Thread.sleep(2000);
-	      } catch(NoSuchElementException np) { }
+           
+		Thread.sleep(2000);
+
+		 WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
+			Thread.sleep(2000);
+		    fb_email.sendKeys("amw.vrushali@gmail.com");
+			Thread.sleep(2000);
+
 		    WebElement fb_pass = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
-		    Thread.sleep(2000);
-		    fb_pass.sendKeys("himanshi@123");
-		    Thread.sleep(3000);
+			Thread.sleep(2000);
+		    fb_pass.sendKeys("vrushali@786");
+			Thread.sleep(2000);
+
 		    WebElement fb_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.id("loginbutton")));
-		    Thread.sleep(2000);
+			Thread.sleep(2000);
 		    fb_login_btn.click();
-		    Thread.sleep(2000);
+			Thread.sleep(2000);
 
 	}
 
