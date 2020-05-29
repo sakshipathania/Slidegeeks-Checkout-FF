@@ -146,7 +146,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		//wait.implictywait(driver);
 		Thread.sleep(1000);
 
-		/*try {
+		try {
 			WebElement close = driver.findElement(By.cssSelector(".fancybox-item.fancybox-close"));
 			//wait.implictywait(driver);
 			Thread.sleep(1000);
@@ -154,7 +154,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 			Thread.sleep(500);
 		} catch (NoSuchElementException nonpoptest) {
 
-		}*/
+		}
 
 	}
 
