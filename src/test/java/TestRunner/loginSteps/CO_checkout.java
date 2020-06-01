@@ -21,7 +21,7 @@ import webApp.PerformAction;
 
 public class CO_checkout extends SetupClass{
 	
-	WebDriverWait wait = new WebDriverWait(driver,100);
+	WebDriverWait wait = new WebDriverWait(driver,10);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@Given("^user is already on Website Home Page (\\d+)CO$")
@@ -43,7 +43,7 @@ public class CO_checkout extends SetupClass{
 
 		}
 	    Thread.sleep(1000);
-             try {
+		try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
 				driver.switchTo().frame(iframe);   
@@ -69,7 +69,6 @@ public class CO_checkout extends SetupClass{
 					
 				}
 		Thread.sleep(1000);
-	    
 	    
 	    
 	}
@@ -156,6 +155,7 @@ public class CO_checkout extends SetupClass{
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
 		// choose a plan
+		js.executeScript("window.scrollBy(0,1000)");
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
 			Thread.sleep(2000);
 		    join_now_btn.click();
@@ -173,26 +173,26 @@ public class CO_checkout extends SetupClass{
 	     try {
 		Thread.sleep(1400);
 		// select 2co option
-		WebElement co_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='tco_checkout']")));
+		WebElement co_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#tco_checkout")));
 		Thread.sleep(2000);
 	         co_btn.click();
 		Thread.sleep(5000);
 	     } catch( NoSuchElementException popup) { 
 	     }
-	
 		
 		// place order button 
 		try {
 			
-		 WebElement place_order_btn  =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Place Order')]")));
+		 WebElement place_order_btn  =  driver.findElement(By.cssSelector("#place-order-trigger > span"));
 			Thread.sleep(2000);
+			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);	
 			//js.executeScript("arguments[0].click();", place_order_btn);
-			//js.executeScript("arguments[0].scrollIntoView();",place_order_btn );
-			//Thread.sleep(2000);
+			Thread.sleep(2000);
 		    place_order_btn.click();
 			Thread.sleep(5000);
 		} catch (NoSuchElementException popup) {
 		}
+		
 		
 	}
 
@@ -226,12 +226,45 @@ public class CO_checkout extends SetupClass{
 
 		 driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
 		 Thread.sleep(3000);
+		 
+		
 
+
+try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
+			}
+			else {
+				
+
+			System.out.println("chat window does not open");
+			}
+		}
+				catch(NoSuchElementException NCP) {
+					
+				}
+
+
+      
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
+		js.executeScript("arguments[0].scrollIntoView();",delete_account);
 		 delete_account.click();
 		 Thread.sleep(3000);
 		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
-		 continue_delete.click();
+		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
+		continue_delete.click();
 		 Thread.sleep(3000);
 	}
 
