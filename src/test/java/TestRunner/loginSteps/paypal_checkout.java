@@ -158,7 +158,7 @@ public class paypal_checkout extends SetupClass {
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_pp() throws Throwable {
 	   
 		// choose a plan
-		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[3]//div[3]//span[1]//form[1]//button[1]//span[1]")));
+		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
 		js.executeScript("arguments[0].scrollIntoView();",join_now_btn);	
 		Thread.sleep(2000);
 		    join_now_btn.click();
