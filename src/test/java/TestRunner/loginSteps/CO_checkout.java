@@ -157,7 +157,8 @@ public class CO_checkout extends SetupClass{
 		// choose a plan
 		js.executeScript("window.scrollBy(0,1000)");
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
-			Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView();",join_now_btn);		
+		Thread.sleep(2000);
 		    join_now_btn.click();
 			Thread.sleep(6000);
 
