@@ -23,7 +23,7 @@ import webApp.PerformAction;
 
 public class paypal_checkout extends SetupClass {
 	
-        WebDriverWait wait = new WebDriverWait(driver,100);
+        WebDriverWait wait = new WebDriverWait(driver,10);
         //PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
@@ -342,7 +342,9 @@ public class paypal_checkout extends SetupClass {
 				}
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		WebElement my_account= driver.findElement(By.xpath("//a[contains(.,'My Account')]"));
+		js.executeScript("arguments[0].scrollIntoView();",my_account);
+		my_account.click();
 		 Thread.sleep(3000);
 		
 
