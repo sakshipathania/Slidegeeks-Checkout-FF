@@ -225,6 +225,7 @@ public class paypal_checkout extends SetupClass {
 		try {
 		 WebElement join_now_btn  = driver.findElement(By.cssSelector("div.col-box:nth-child(2) > div:nth-child(3) > span:nth-child(1) > form:nth-child(1) > button:nth-child(4) > span:nth-child(1)"));
 		// WebElement join_now_btn  = driver.findElement(By.xpath("(//span[contains(.,'Join now')])[8]"));
+			js.executeScript("arguments[0].scrollIntoView();",join_now_btn );
 			Thread.sleep(2000);
 		    join_now_btn.click();
 			Thread.sleep(6000);
