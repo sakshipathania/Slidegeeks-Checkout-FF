@@ -260,6 +260,7 @@ public class paypal_checkout extends SetupClass {
 		try
 		{
 			  WebElement place_order_btn  = driver.findElement(By.xpath("//span[contains(text(),'Place Order')]"));
+			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);
 			  Thread.sleep(3000);
 		          place_order_btn.click();
 			  Thread.sleep(5000);
@@ -299,9 +300,10 @@ public class paypal_checkout extends SetupClass {
 			Thread.sleep(3000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
-		/* // place order button 
+		 // place order button 
 			 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
-				Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);		
+		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);*/
 
@@ -345,9 +347,14 @@ public class paypal_checkout extends SetupClass {
 		
 
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
+		 js.executeScript("arguments[0].scrollIntoView();",delete_account);	
+		Thread.sleep(2000);
 		 delete_account.click();
 		 Thread.sleep(3000);
+		
 		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
+		 js.executeScript("arguments[0].scrollIntoView();",continue_delete);		
+		Thread.sleep(2000);
 		 continue_delete.click();
 		 Thread.sleep(3000);
 		
