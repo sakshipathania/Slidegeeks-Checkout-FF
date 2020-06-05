@@ -225,7 +225,7 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(2000);
 		
 
-		 driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
+		 driver.findElement(By.xpath("//a[contains(text(),'My Account')]")).click();
 		 Thread.sleep(3000);
 		 
 		
