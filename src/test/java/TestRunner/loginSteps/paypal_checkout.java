@@ -301,17 +301,16 @@ public class paypal_checkout extends SetupClass {
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
 	// place order button 
-		Thread.sleep(2000);
-			 WebElement cancel_order_btn  = driver.findElement(By.xpath("#cancelLink"));
+		 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
 				js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);
-
+		
 				 // Switch To Default Window
 				  
 				  driver.switchTo().window(currentWindow);
-		driver.get("https://www.slideteam.net/pricing");
+		//driver.get("https://www.slideteam.net/pricing");
 		    
 		    
 	}
