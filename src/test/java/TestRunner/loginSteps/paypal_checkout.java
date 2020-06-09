@@ -300,9 +300,10 @@ public class paypal_checkout extends SetupClass {
 			Thread.sleep(3000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
-		 // place order button 
-			 WebElement cancel_order_btn  = driver.findElement(By.xpath("//*[@id='cancelLink']"));
-		js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);		
+	// place order button 
+		Thread.sleep(2000);
+			 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
+				js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);
@@ -310,6 +311,7 @@ public class paypal_checkout extends SetupClass {
 				 // Switch To Default Window
 				  
 				  driver.switchTo().window(currentWindow);
+		    
 		    
 	}
 
