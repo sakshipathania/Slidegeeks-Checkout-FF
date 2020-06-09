@@ -269,7 +269,7 @@ public class paypal_checkout extends SetupClass {
 		 catch (Exception e) {
 			 //TODO: handle exception	 
 	        } 
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		
 	}
 
@@ -301,6 +301,7 @@ public class paypal_checkout extends SetupClass {
 			Thread.sleep(3000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
+		Thread.sleep(5000);
 	// place order button 
 		 WebElement cancel_order_btn  =  driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])"));
 				//js.executeScript("arguments[0];",cancel_order_btn);
