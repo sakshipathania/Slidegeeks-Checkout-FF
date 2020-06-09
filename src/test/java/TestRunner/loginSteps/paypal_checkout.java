@@ -300,12 +300,12 @@ public class paypal_checkout extends SetupClass {
 			Thread.sleep(3000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
-		/* // place order button 
+		 // place order button 
 			 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
 		js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);		
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
-				Thread.sleep(5000);*/
+				Thread.sleep(5000);
 
 				 // Switch To Default Window
 				  
@@ -315,33 +315,7 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^user deleted the account pp$")
 	public void user_deleted_the_account_pp() throws Throwable {
-	   try {
-			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
-			if(iframe.isDisplayed()) {
-				driver.switchTo().frame(iframe);   
-				 Actions act = new Actions(driver);
-				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
-				 Thread.sleep(2000);
-					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
-					 Thread.sleep(1000);
-						chat1.click();
-						 Thread.sleep(1000);
-						 driver.switchTo().defaultContent();
-						 Thread.sleep(1000);
-						 driver.switchTo().parentFrame();
-					 Thread.sleep(1000);
-			}
-			else {
-				
-
-			System.out.println("chat window does not open");
-			}
-		}
-				catch(NoSuchElementException NCP) {
-					
-				}
-
-		Thread.sleep(3000);
+	  
 		WebElement my_account= driver.findElement(By.xpath("//a[contains(.,'My Account')]"));
 		js.executeScript("arguments[0].scrollIntoView();",my_account);
 		my_account.click();
