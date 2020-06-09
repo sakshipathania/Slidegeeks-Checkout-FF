@@ -23,7 +23,7 @@ import webApp.PerformAction;
 
 public class paypal_checkout extends SetupClass {
 	
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver,20);
         //PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
@@ -303,7 +303,7 @@ public class paypal_checkout extends SetupClass {
 	// place order button 
 		Thread.sleep(2000);
 			 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
-				js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);
+				//js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);
