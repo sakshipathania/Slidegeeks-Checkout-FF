@@ -27,7 +27,7 @@ public class paypal_checkout extends SetupClass {
         //PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
-	Actions act1 = new Actions(driver);
+	
 	
 	@Given("^user is already on Website Home Page pp$")
 	public void user_is_already_on_Website_Home_Page_pp() throws Throwable {
@@ -302,7 +302,7 @@ public class paypal_checkout extends SetupClass {
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
 	// place order button 
-		 WebElement cancel_order_btn  =  act1.moveToElement(driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')]")));
+		 WebElement cancel_order_btn  =  driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])"));
 				js.executeScript("arguments[0];",cancel_order_btn);
 		Thread.sleep(2000);
 			    cancel_order_btn.click().build().perform();
