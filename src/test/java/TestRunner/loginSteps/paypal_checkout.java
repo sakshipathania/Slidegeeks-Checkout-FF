@@ -320,7 +320,6 @@ public class paypal_checkout extends SetupClass {
 	public void user_deleted_the_account_pp() throws Throwable {
 	  
 		WebElement my_account= driver.findElement(By.xpath("//a[contains(.,'My Account')]"));
-		//js.executeScript("arguments[0].scrollIntoView();",my_account);
 		my_account.click();
 		 Thread.sleep(3000);
 		
