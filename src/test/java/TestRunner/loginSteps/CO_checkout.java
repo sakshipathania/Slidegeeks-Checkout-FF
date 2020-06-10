@@ -21,7 +21,7 @@ import webApp.PerformAction;
 
 public class CO_checkout extends SetupClass{
 	
-	WebDriverWait wait = new WebDriverWait(driver,10);
+	WebDriverWait wait = new WebDriverWait(driver,30);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@Given("^user is already on Website Home Page (\\d+)CO$")
@@ -154,7 +154,8 @@ public class CO_checkout extends SetupClass{
 
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
-		
+		Thread.sleep(3000);
+		js.executeScript("window.scrollBy(0,1000)");
 		//to check monthly subscription
 		try {
 		WebElement Monthly= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span"));
