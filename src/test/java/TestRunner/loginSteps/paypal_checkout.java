@@ -259,6 +259,7 @@ public class paypal_checkout extends SetupClass {
 		try
 		{
 			  WebElement place_order_btn  = driver.findElement(By.xpath("//span[contains(text(),'Place Order')]"));
+			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);
 			  Thread.sleep(3000);
 		          place_order_btn.click();
 			  Thread.sleep(5000);
@@ -344,9 +345,11 @@ public class paypal_checkout extends SetupClass {
 		
 
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
+		js.executeScript("arguments[0].scrollIntoView();",delete_account);
 		 delete_account.click();
 		 Thread.sleep(3000);
 		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
+		js.executeScript("arguments[0].scrollIntoView();",continue_delete); 
 		 continue_delete.click();
 		 Thread.sleep(3000);
 		
