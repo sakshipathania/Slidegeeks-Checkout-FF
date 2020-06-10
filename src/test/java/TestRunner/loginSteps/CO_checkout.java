@@ -152,20 +152,10 @@ public class CO_checkout extends SetupClass{
 					Thread.sleep(2000);
 	}
 
-	@Then("^Redirected to pricing page and Check all the subscriptions are present$")
-	public void Redirected_to_pricing_page_and_Check_all_the_subscriptions_are_present(int arg1) throws Throwable {
-		WebElement Pricing= driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[2]/a"));
-		Thread.sleep(2000);
-		WebElement Monthly =driver.findElement(By.xpath("//div[text()='Monthly']"));
-		js.executeScript("Text: Monthly is present");
-                Thread.sleep(2000);
-				
-	}
-		
+
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
-		//Thread.sleep(3000);
-		
+		//Thread.sleep(3000);		
 		// choose a plan
 		js.executeScript("window.scrollBy(0,1000)");
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
