@@ -153,13 +153,13 @@ public class CO_checkout extends SetupClass{
 	}
 
 	@Then("^Redirected to pricing page and Check all the subscriptions are present$")
-	public void Redirected_to_pricing_page_and_Check_all_the_subscriptions_are_present throws Throwable{
+	public void Redirected_to_pricing_page_and_Check_all_the_subscriptions_are_present(int arg1) throws Throwable {
 		
 		//WebElement Monthly =driver.findElement(By.xpath("//div[text()='Monthly']"));
 		String pageSource = driver.getPageSource();
 		{
 			Thread.sleep(2000);
-		if(driver.getPageSource().contains("Monthly")){
+		if(driver.getPageSource().contains("Monthly")) {
                 System.out.println("Monthly is present");
                  } else {
                  System.out.println("Monthly is absent");
