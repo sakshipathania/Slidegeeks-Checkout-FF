@@ -23,7 +23,7 @@ import webApp.PerformAction;
 
 public class paypal_checkout extends SetupClass {
 	
-        WebDriverWait wait = new WebDriverWait(driver,100);
+        WebDriverWait wait = new WebDriverWait(driver,50);
         //PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
@@ -222,6 +222,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and choose a plan to pay pp$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_pp() throws Throwable {
 		
+		driver.get("https://www.slideteam.net/pricing");
 		//to check monthly subscription
 		try {
 		WebElement Monthly= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span"));
