@@ -23,11 +23,10 @@ import webApp.PerformAction;
 
 public class paypal_checkout extends SetupClass {
 	
-        WebDriverWait wait = new WebDriverWait(driver,50);
+        WebDriverWait wait = new WebDriverWait(driver,100);
         //PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
-	
 	
 	@Given("^user is already on Website Home Page pp$")
 	public void user_is_already_on_Website_Home_Page_pp() throws Throwable {
@@ -226,7 +225,6 @@ public class paypal_checkout extends SetupClass {
 		try {
 		 WebElement join_now_btn  = driver.findElement(By.cssSelector("div.col-box:nth-child(2) > div:nth-child(3) > span:nth-child(1) > form:nth-child(1) > button:nth-child(4) > span:nth-child(1)"));
 		// WebElement join_now_btn  = driver.findElement(By.xpath("(//span[contains(.,'Join now')])[8]"));
-			js.executeScript("arguments[0].scrollIntoView();",join_now_btn );
 			Thread.sleep(2000);
 		    join_now_btn.click();
 			Thread.sleep(6000);
@@ -261,7 +259,6 @@ public class paypal_checkout extends SetupClass {
 		try
 		{
 			  WebElement place_order_btn  = driver.findElement(By.xpath("//span[contains(text(),'Place Order')]"));
-			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);
 			  Thread.sleep(3000);
 		          place_order_btn.click();
 			  Thread.sleep(5000);
@@ -269,7 +266,7 @@ public class paypal_checkout extends SetupClass {
 		 catch (Exception e) {
 			 //TODO: handle exception	 
 	        } 
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		
 	}
 
@@ -301,35 +298,21 @@ public class paypal_checkout extends SetupClass {
 			Thread.sleep(3000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
-		Thread.sleep(5000);
-	// place order button 
-		 WebElement cancel_order_btn  =  driver.findElement(By.xpath("//*[text()='Cancel and return to Slideteam Pte. Ltd.']"));
-				//js.executeScript("arguments[0];",cancel_order_btn);
-		Thread.sleep(2000);
+		/* // place order button 
+			 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
+				Thread.sleep(2000);
 			    cancel_order_btn.click();
-				Thread.sleep(5000);
-		
+				Thread.sleep(5000);*/
+
 				 // Switch To Default Window
 				  
 				  driver.switchTo().window(currentWindow);
-		//driver.get("https://www.slideteam.net/pricing");
-		    
 		    
 	}
 
 	@Then("^user deleted the account pp$")
 	public void user_deleted_the_account_pp() throws Throwable {
-	  
-		Thread.sleep(2000);
-		
-
-		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
-		 Thread.sleep(3000);
-		 
-		
-
-
-              try {
+	   try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
 				driver.switchTo().frame(iframe);   
@@ -355,19 +338,19 @@ public class paypal_checkout extends SetupClass {
 					
 				}
 
-
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		 Thread.sleep(3000);
+		
 
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
-		js.executeScript("arguments[0].scrollIntoView();",delete_account);
 		 delete_account.click();
 		 Thread.sleep(3000);
-		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
-		js.executeScript("arguments[0].scrollIntoView();",continue_delete); 
-		continue_delete.click();
+		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
+		 continue_delete.click();
 		 Thread.sleep(3000);
 		
 	}
-
 
 
 }
