@@ -224,11 +224,9 @@ public class paypal_checkout extends SetupClass {
 		
 		//to check monthly subscription
 		try {
-		WebElement Monthly=driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span”));
+		WebElement Monthly= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span"));
 		Thread.sleep(2000);
 		 WebElement Monthly_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div:nth-child(2) > span > span > em"));
-		Thread.sleep(4000);
-               //{System.out.println("Monthly Subscription is present for $49.99"); }
 		Thread.sleep(4000);
 		} catch (NoSuchElementException popup) { }
 	        
@@ -238,11 +236,9 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 		       WebElement  SemiAnnual_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(3) > div.col.col1.discount-block > span.cell-align > span.price > em"));
 		       Thread.sleep(4000);
-		       //{
-		       //System.out.println("SemiAnnual Subscription is present for $149.99");
-		       //}
-		       Thread.sleep(4000);
-		} catch (NoSuchElementException popup) { }
+		  
+		} 
+                 catch (NoSuchElementException popup) { }
 	        
 	       //To check Annual Subscription
 		try {
