@@ -152,6 +152,43 @@ public class CO_checkout extends SetupClass{
 					Thread.sleep(2000);
 	}
 
+	@Then("^Redirected to pricing page and Check all the subscriptions are present$")
+	public void Redirected_to_pricing_page_and_Check_all_the_subscriptions_are_present throws Throwable{
+		
+		//WebElement Monthly =driver.findElement(By.xpath("//div[text()='Monthly']"));
+		String pageSource = driver.getPageSource();
+		{
+		if(driver.getPageSource().contains("Monthly")){
+                System.out.println("Monthly is present");
+                 } else {
+                 System.out.println("Monthly is absent");
+		}
+			//String pageSource = driver.getPageSource();
+		if (driver.getPageSource().contains("Semi Annual")){
+                System.out.println("Semi Annual is present");
+                 } else {
+                 System.out.println("Semi Annual is absent");
+		}
+			//String pageSource = driver.getPageSource();
+		if(driver.getPageSource().contains("Annual")){
+                System.out.println("Annual is present");
+                 } else {
+                 System.out.println("Annual is absent");
+		}
+			//String pageSource = driver.getPageSource();
+		if(driver.getPageSource().contains("Annual Custom Design")){
+                System.out.println("Annual Custom Design is present");
+                 } else {
+                 System.out.println("Annual Custom Design is absent");
+		}
+			
+			if(driver.getPageSource().contains("Team License")){
+                System.out.println("Team License is present");
+                 } else {
+                 System.out.println("Team License is absent");
+			}
+		}
+		
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
 		//Thread.sleep(3000);
