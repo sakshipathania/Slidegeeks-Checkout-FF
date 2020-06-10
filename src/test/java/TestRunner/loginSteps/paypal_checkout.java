@@ -221,7 +221,48 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^user is redirected to pricing page and choose a plan to pay pp$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_pp() throws Throwable {
-	   
+		
+		try {
+		WebElement Monthly=driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span”));
+		WebElement Monthly_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div:nth-child(2) > span > span > em"));
+		Thread.sleep(4000);
+		System.out.println("Monthly Subscription is present for $49.99");
+		Thread.sleep(4000);
+		} catch (NoSuchElementException popup) { }
+	        
+	       try{
+		 WebElement SemiAnnual = driver.findElement(By.cssSelecor("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(3) > div.col.col1.col-bg1 > span > span > em"));
+		 WebElement  SemiAnnual_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(3) > div.col.col1.discount-block > span.cell-align > span.price > em"));
+		       Thread.sleep(4000);
+		       System.out.println("SemiAnnual Subscription is present for $149.99");
+		       Thread.sleep(4000);
+		} catch (NoSuchElementException popup) { }
+	        
+		try{
+			WebElement Annual= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(4) > div.col.col1.col-bg1 > span > span > em"));
+			WebElement Annual_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(4) > div.col.col1.discount-block > span.cell-align > span.price > em"));
+			Thread.sleep(4000);
+		       System.out.println("Annual Subscription is present for $249.99");
+		       Thread.sleep(4000);
+		} catch (NoSuchElementException popup) { }
+		
+	        try{
+			WebElement Annual_Custom Design= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.col-bg1 > span.cell-align > span > em"));
+			WebElement Annual_Custom Design_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.discount-block > span.cell-align > span.price > em"));
+			Thread.sleep(4000);
+		       System.out.println("Annual & Custom Design Subscription is present for $299.99");
+		       Thread.sleep(4000);
+		} catch (NoSuchElementException popup) { }
+			
+		try{
+			WebElement Team_License= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(6) > div.col.col1.col-bg1 > span"));
+			WebElement Team_License_Pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(6) > div.col.col1.discount-block > span.cell-align > span.price > em"));
+			Thread.sleep(4000);
+		       System.out.println("Team License Subscription is present for $599.99");
+		       Thread.sleep(4000);
+		} catch (NoSuchElementException popup) { }
+								     
+								     
 		try {
 		 WebElement join_now_btn  = driver.findElement(By.cssSelector("div.col-box:nth-child(2) > div:nth-child(3) > span:nth-child(1) > form:nth-child(1) > button:nth-child(4) > span:nth-child(1)"));
 		// WebElement join_now_btn  = driver.findElement(By.xpath("(//span[contains(.,'Join now')])[8]"));
