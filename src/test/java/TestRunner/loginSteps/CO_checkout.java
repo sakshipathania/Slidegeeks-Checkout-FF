@@ -155,48 +155,11 @@ public class CO_checkout extends SetupClass{
 	@Then("^Redirected to pricing page and Check all the subscriptions are present$")
 	public void Redirected_to_pricing_page_and_Check_all_the_subscriptions_are_present(int arg1) throws Throwable {
 		WebElement Pricing= driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[2]/a"));
-		//WebElement Monthly =driver.findElement(By.xpath("//div[text()='Monthly']"));
-				String pageSource = driver.getPageSource();
-		{
-			Thread.sleep(2000);
-		if(driver.getPageSource().contains("Monthly")) {
-			
-                System.out.println("Monthly is present");
-                 
-		} else {
-                 
-			System.out.println("Monthly is absent");
-		}
-			Thread.sleep(2000);
-			//String pageSource = driver.getPageSource();
-		if (driver.getPageSource().contains("Semi Annual")) {
-               
-			System.out.println("Semi Annual is present");
-                 } else {
-                 
-			System.out.println("Semi Annual is absent");
-		}
-			Thread.sleep(2000);
-			//String pageSource = driver.getPageSource();
-		if(driver.getPageSource().contains("Annual")){
-                System.out.println("Annual is present");
-                 } else {
-                 System.out.println("Annual is absent");
-		}
-			Thread.sleep(2000);
-			//String pageSource = driver.getPageSource();
-		if(driver.getPageSource().contains("Annual Custom Design")){
-                System.out.println("Annual Custom Design is present");
-                 } else {
-                 System.out.println("Annual Custom Design is absent");
-		}
-			Thread.sleep(2000);
-			if(driver.getPageSource().contains("Team License")){
-                System.out.println("Team License is present");
-                 } else {
-                 System.out.println("Team License is absent");
-			}
-		}
+		Thread.sleep(2000);
+		WebElement Monthly =driver.findElement(By.xpath("//div[text()='Monthly']"));
+		js.executeScript("Text: Monthly is present");
+                Thread.sleep(2000);
+				
 	}
 		
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
