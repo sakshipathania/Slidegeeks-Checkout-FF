@@ -160,16 +160,21 @@ public class CO_checkout extends SetupClass{
 		{
 			Thread.sleep(2000);
 		if(driver.getPageSource().contains("Monthly")) {
+			
                 System.out.println("Monthly is present");
-                 } else {
-                 System.out.println("Monthly is absent");
+                 
+		} else {
+                 
+			System.out.println("Monthly is absent");
 		}
 			Thread.sleep(2000);
 			//String pageSource = driver.getPageSource();
-		if (driver.getPageSource().contains("Semi Annual")){
-                System.out.println("Semi Annual is present");
+		if (driver.getPageSource().contains("Semi Annual")) {
+               
+			System.out.println("Semi Annual is present");
                  } else {
-                 System.out.println("Semi Annual is absent");
+                 
+			System.out.println("Semi Annual is absent");
 		}
 			Thread.sleep(2000);
 			//String pageSource = driver.getPageSource();
@@ -192,6 +197,7 @@ public class CO_checkout extends SetupClass{
                  System.out.println("Team License is absent");
 			}
 		}
+	}
 		
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
