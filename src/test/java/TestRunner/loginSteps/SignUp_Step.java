@@ -22,7 +22,6 @@ import webApp.PerformAction;
 public class SignUp_Step extends SetupClass {
 	//PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-	
 	public static String Email_Address;
 	Random rad = new Random();
 	WebDriverWait wait = new WebDriverWait(driver,50);
@@ -207,7 +206,6 @@ public class SignUp_Step extends SetupClass {
 		driver.get("https://www.slideteam.net/pricing");
 		Thread.sleep(2000);
 		WebElement free_ppt_btn= driver.findElement(By.xpath("//a[contains(.,'Free PPTs')]"));
-		js.executeScript("arguments[0].scrollIntoView();",free_ppt_btn);
 		Thread.sleep(2000);
 	    free_ppt_btn.click();
 	    Thread.sleep(2000);
@@ -221,10 +219,7 @@ public class SignUp_Step extends SetupClass {
 		try {
 		driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
 		Thread.sleep(3000);
-			driver.get("https://www.slideteam.net/prod-development-and-program-management.html");
-		WebElement Down_load= driver.findElement(By.cssSelector("#clicking"));
-			js.executeScript("arguments[0].scrollIntoView();",Down_load);
-			Down_load.click();
+		driver.findElement(By.cssSelector("#clicking")).click();
 		Thread.sleep(3000);
 	   driver.get("https://www.slideteam.net/");
 	   Thread.sleep(3000);
@@ -270,15 +265,15 @@ public class SignUp_Step extends SetupClass {
 
                  try {
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
-			 js.executeScript("arguments[0].scrollIntoView();",delete_account);
-		 delete_account.click();
+		 js.executeScript("arguments[0].scrollIntoView();",delete_account);
+			 delete_account.click();
 		 Thread.sleep(3000);
 		 } catch(NoSuchElementException acc) {
 		 }
 	         try {
 		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
-			 js.executeScript("arguments[0].scrollIntoView();",continue_delete); 
-		 continue_delete.click();
+		 js.executeScript("arguments[0].scrollIntoView();",continue_delete); 
+			 continue_delete.click();
 		 Thread.sleep(3000);
 		 } catch(NoSuchElementException del) {
 		 }
