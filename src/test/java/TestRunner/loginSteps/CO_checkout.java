@@ -157,6 +157,8 @@ public class CO_checkout extends SetupClass{
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
 		//Thread.sleep(3000);		
 		// choose a plan
+		List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + Monthly + "')]"));
+                Assert.assertTrue("Text not found!", list.size() > 0);
 		js.executeScript("window.scrollBy(0,1000)");
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
 		js.executeScript("arguments[0].scrollIntoView();",join_now_btn);		
