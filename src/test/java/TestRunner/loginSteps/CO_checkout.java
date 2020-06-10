@@ -158,30 +158,34 @@ public class CO_checkout extends SetupClass{
 		//WebElement Monthly =driver.findElement(By.xpath("//div[text()='Monthly']"));
 		String pageSource = driver.getPageSource();
 		{
+			Thread.sleep(2000);
 		if(driver.getPageSource().contains("Monthly")){
                 System.out.println("Monthly is present");
                  } else {
                  System.out.println("Monthly is absent");
 		}
+			Thread.sleep(2000);
 			//String pageSource = driver.getPageSource();
 		if (driver.getPageSource().contains("Semi Annual")){
                 System.out.println("Semi Annual is present");
                  } else {
                  System.out.println("Semi Annual is absent");
 		}
+			Thread.sleep(2000);
 			//String pageSource = driver.getPageSource();
 		if(driver.getPageSource().contains("Annual")){
                 System.out.println("Annual is present");
                  } else {
                  System.out.println("Annual is absent");
 		}
+			Thread.sleep(2000);
 			//String pageSource = driver.getPageSource();
 		if(driver.getPageSource().contains("Annual Custom Design")){
                 System.out.println("Annual Custom Design is present");
                  } else {
                  System.out.println("Annual Custom Design is absent");
 		}
-			
+			Thread.sleep(2000);
 			if(driver.getPageSource().contains("Team License")){
                 System.out.println("Team License is present");
                  } else {
