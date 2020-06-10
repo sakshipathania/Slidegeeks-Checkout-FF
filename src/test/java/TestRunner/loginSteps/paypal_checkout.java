@@ -23,7 +23,7 @@ import webApp.PerformAction;
 
 public class paypal_checkout extends SetupClass {
 	
-        WebDriverWait wait = new WebDriverWait(driver,50);
+        WebDriverWait wait = new WebDriverWait(driver,100);
         //PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
@@ -221,15 +221,15 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^user is redirected to pricing page and choose a plan to pay pp$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_pp() throws Throwable {
-								     
-	       //To click on join button							     
+	   
 		try {
 		 WebElement join_now_btn  = driver.findElement(By.cssSelector("div.col-box:nth-child(2) > div:nth-child(3) > span:nth-child(1) > form:nth-child(1) > button:nth-child(4) > span:nth-child(1)"));
 		// WebElement join_now_btn  = driver.findElement(By.xpath("(//span[contains(.,'Join now')])[8]"));
+			js.executeScript("arguments[0].scrollIntoView();",join_now_btn);	
 			Thread.sleep(2000);
 		    join_now_btn.click();
 			Thread.sleep(6000);
-		} catch( NoSuchElementException popup) {
+		}catch( NoSuchElementException popup) {
 		}
 
 
@@ -301,8 +301,8 @@ public class paypal_checkout extends SetupClass {
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
 		 // place order button 
-			 WebElement cancel_order_btn  = driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]"));
-			js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);		
+			 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
+		js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);		
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);
