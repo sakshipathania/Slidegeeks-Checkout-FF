@@ -161,7 +161,8 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(2000);
 		 WebElement Monthly_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div:nth-child(2) > span > span > em"));
 		Thread.sleep(4000);
-			System.out.println("Monthly Subscription is present for $49.99"); 
+			javascript.executeScript("alert('Monthly Subscription is present for $49.99');");
+			//System.out.println("Monthly Subscription is present for $49.99"); 
 		} catch (NoSuchElementException popup) { }
 	        
 	       // To check Semi Annual Subscription
@@ -170,7 +171,8 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(2000);
 		       WebElement  SemiAnnual_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(3) > div.col.col1.discount-block > span.cell-align > span.price > em"));
 		       Thread.sleep(4000);
-		       System.out.println("Semi Annual Subscription is present for $149.99"); 
+		       javascript.executeScript("alert('Semi Annual Subscription is present for $149.99');");
+		       //System.out.println("Semi Annual Subscription is present for $149.99"); 
 		  
 		} 
                  catch (NoSuchElementException popup) { }
@@ -181,7 +183,8 @@ public class CO_checkout extends SetupClass{
 			Thread.sleep(2000);
 			WebElement Annual_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(4) > div.col.col1.discount-block > span.cell-align > span.price > em"));
 			Thread.sleep(4000);
-			 System.out.println("Annual Subscription is present for $249.99"); 
+			javascript.executeScript("alert('Annual Subscription is present for $249.99');");
+			// System.out.println("Annual Subscription is present for $249.99"); 
 		       Thread.sleep(4000);
 		} catch (NoSuchElementException popup) { }
 		
@@ -191,7 +194,8 @@ public class CO_checkout extends SetupClass{
 			Thread.sleep(2000);
 			WebElement Annual_Custom_Design_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.discount-block > span.cell-align > span.price > em"));
 			Thread.sleep(4000);
-			 System.out.println("Annual & Custom Design Subscription is present for $299.99");
+			javascript.executeScript("alert('Annual & Custom Design Subscription is present for $299.99');");
+			// System.out.println("Annual & Custom Design Subscription is present for $299.99");
 		       Thread.sleep(4000);
 		} catch (NoSuchElementException popup) { }
 			
@@ -201,7 +205,8 @@ public class CO_checkout extends SetupClass{
 			Thread.sleep(2000);
 			WebElement Team_License_Pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(6) > div.col.col1.discount-block > span.cell-align > span.price > em"));
 			Thread.sleep(4000);
-			System.out.println("Team License Subscription is present for $599.99"); 
+			javascript.executeScript("alert('Team License Subscription is present for $599.99');");
+			//System.out.println("Team License Subscription is present for $599.99"); 
 		       Thread.sleep(4000);
 		} catch (NoSuchElementException popup) { }
 		
