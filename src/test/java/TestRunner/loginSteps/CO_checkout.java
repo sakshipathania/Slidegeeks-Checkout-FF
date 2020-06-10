@@ -154,8 +154,9 @@ public class CO_checkout extends SetupClass{
 
 	@Then("^Redirected to pricing page and Check all the subscriptions are present$")
 	public void Redirected_to_pricing_page_and_Check_all_the_subscriptions_are_present(int arg1) throws Throwable {
-		
+		WebElement Pricing= driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[2]/a"));
 		//WebElement Monthly =driver.findElement(By.xpath("//div[text()='Monthly']"));
+		getPageSource = "https://www.slideteam.net/pricing";
 		String pageSource = driver.getPageSource();
 		{
 			Thread.sleep(2000);
