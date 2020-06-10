@@ -256,9 +256,9 @@ public class paypal_checkout extends SetupClass {
 		
 		// To check Annual + Custom Design subscription
 	        try {
-			WebElement Annual_Custom Design= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.col-bg1 > span.cell-align > span > em"));
+			WebElement Annual_Custom_Design= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.col-bg1 > span.cell-align > span > em"));
 			Thread.sleep(2000);
-			WebElement Annual_Custom Design_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.discount-block > span.cell-align > span.price > em"));
+			WebElement Annual_Custom_Design_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.discount-block > span.cell-align > span.price > em"));
 			Thread.sleep(4000);
 			//{   System.out.println("Annual & Custom Design Subscription is present for $299.99");}
 		       Thread.sleep(4000);
