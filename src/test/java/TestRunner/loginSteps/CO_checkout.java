@@ -160,7 +160,7 @@ public class CO_checkout extends SetupClass{
 		
 			try {
 				driver.get("https://www.slideteam.net/pricing");
-			Thread.sleep(8000);
+			Thread.sleep(10000);
 			/*if(driver.getPageSource().contains("Monthly"))
 			{
 				System.out.print("Monthly is present");
