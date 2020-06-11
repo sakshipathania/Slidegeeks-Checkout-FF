@@ -163,7 +163,7 @@ public class CO_checkout extends SetupClass{
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
-		String actualTitle = "Monthly;
+		String actualTitle = "Monthly";
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		String expectedTitle = "Monthly";
