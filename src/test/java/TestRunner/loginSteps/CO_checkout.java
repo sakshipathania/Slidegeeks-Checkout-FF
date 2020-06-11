@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -152,6 +153,19 @@ public class CO_checkout extends SetupClass{
 					Thread.sleep(2000);
 				    new_btn_signup.click();
 					Thread.sleep(2000);
+	}
+	
+	@Then("Redirected to pricing page and check text$")
+	public void Redirected_to_pricing_page_and_check_text(int arg1) throws Throwable {
+		driver.get("https://www.slideteam.net/pricing")
+			
+			Thread.sleep(3000);
+			if(driver.getPageSource().contains("Monthly"))
+			{
+				System.out.print("Monthly is present");
+			} else {
+				System.out.print("Monhtly is not present");
+			}
 	}
 
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
