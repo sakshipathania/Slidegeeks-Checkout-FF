@@ -156,7 +156,7 @@ public class CO_checkout extends SetupClass{
 	}
 	
 	@Then("Redirected to pricing page and check text$")
-	public void Redirected_to_pricing_page_and_check_text(int arg1) throws Throwable {
+	public void Redirected_to_pricing_page_and_check_text() throws Throwable {
 		driver.get("https://www.slideteam.net/pricing");
 			
 			Thread.sleep(3000);
