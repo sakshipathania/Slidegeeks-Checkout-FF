@@ -380,8 +380,8 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 	}
 	
-	@Then("^user is redirected to pricing page and check the text10 PP10$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text10_PP10(int arg1) throws Throwable {
+	@Then("^user is redirected to pricing page and check the text10 PP0$")
+	public void user_is_redirected_to_pricing_page_and_check_the_text10_PP0() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
