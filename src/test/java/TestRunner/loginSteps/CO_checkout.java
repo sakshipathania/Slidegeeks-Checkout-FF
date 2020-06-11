@@ -156,27 +156,7 @@ public class CO_checkout extends SetupClass{
 
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
-		Alert simpleAlert = driver.switchTo().alert();
-		{
-		String Monthly = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/span/span/em")).getText( );
-		 System.out.println("Monthly Subscription is present for $49.99" + Monthly);
-		Thread.sleep(2000);
-		String Semi_Annual = driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(3) > div.col.col1.col-bg1 > span > span > em")).getText( );
-                System.out.println("Semi Annual Subscription is present for $149.99" + Semi_Annual);
-		Thread.sleep(2000);
-		String Annual= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(4) > div.col.col1.col-bg1 > span > span > em")).getText( );
-                System.out.println("Annual Subscription is present for $249.99" + Annual);
-		Thread.sleep(2000);
-		String Annual_Custom_Design= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.col-bg1 > span.cell-align > span > em")).getText( );
-		 System.out.println("Annual Custom Design Subscription is present for $299.99" + Annual_Custom_Design);
-		Thread.sleep(2000);
-		String Team_License= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(6) > div.col.col1.col-bg1 > span")).getText( );
-                    System.out.println("Team License Subscription is present for $599.99" + Team_License);
-		Thread.sleep(2000);
-			simpleAlert.accept();
-		}
 		
-	
 		//assertEquals(driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/span/span/em".getText(),"Monthly")));
 		// choose a plan
 		js.executeScript("window.scrollBy(0,1000)");
