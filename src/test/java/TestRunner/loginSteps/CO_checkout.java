@@ -159,7 +159,7 @@ public class CO_checkout extends SetupClass{
 	public void Redirected_to_pricing_page_and_check_text() throws Throwable {
 		driver.get("https://www.slideteam.net/pricing");
 			
-			Thread.sleep(3000);
+			Thread.sleep(10000);
 			/*if(driver.getPageSource().contains("Monthly"))
 			{
 				System.out.print("Monthly is present");
@@ -170,6 +170,7 @@ public class CO_checkout extends SetupClass{
 		WebElement Monthly= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span"));
         Thread.sleep(10000);
                              js.executeScript("alert('Monthly is present');");
+		Thread.sleep(10000);
 	}
 
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
