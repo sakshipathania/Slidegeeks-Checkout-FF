@@ -176,7 +176,7 @@ public class CO_checkout extends SetupClass{
 		}
 		simpleAlert.accept();
 	}
-}
+
 
 
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
