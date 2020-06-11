@@ -5,6 +5,7 @@ Scenario: Test paypal checkout
 Given user is already on Website Home Page pp
 Then user navigates to sign up page pp
 Then user create a new ac count pp
+Then Redirected to pricing page and check text on Paypal
 Then user is redirected to pricing page and choose a plan to pay pp
 Then user is redirected to checkout page pp
 Then user proceed to pay with paypal pp
