@@ -378,7 +378,7 @@ public class paypal_checkout extends SetupClass {
 		    
 		 // place order button 
 			 WebElement cancel_order_btn  = driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]"));
-		js.executeScript("arguments[2].scrollIntoView();",cancel_order_btn);		
+		js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);		
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);
