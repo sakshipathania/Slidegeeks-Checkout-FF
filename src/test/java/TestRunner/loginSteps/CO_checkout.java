@@ -172,10 +172,12 @@ public class CO_checkout extends SetupClass{
         Thread.sleep(10000);
                              js.executeScript("alert('Monthly is present');");
 		Thread.sleep(10000);
+				driver.switchTo().alert().accept();
 		WebElement Monthly_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div:nth-child(2) > span > span > em"));
         Thread.sleep(10000);
 				js.executeScript("alert('Monthly Subscription Payment amount $49.99 is present');");
 				Thread.sleep(10000);
+				driver.switchTo().alert().accept();
 	} catch(NoSuchElementException popup) {
 		}
 	}
