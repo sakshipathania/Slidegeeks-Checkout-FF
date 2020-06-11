@@ -166,8 +166,9 @@ public class CO_checkout extends SetupClass{
 			} else {
 				System.out.print("Monhtly is not present");
 			}*/
+		
 		WebElement Monthly= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span"));
-        Thread.sleep(2000);
+        Thread.sleep(10000);
                              js.executeScript("alert('Monthly is present');");
 	}
 
