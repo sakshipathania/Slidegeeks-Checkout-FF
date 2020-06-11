@@ -160,12 +160,15 @@ public class CO_checkout extends SetupClass{
 		driver.get("https://www.slideteam.net/pricing");
 			
 			Thread.sleep(3000);
-			if(driver.getPageSource().contains("Monthly"))
+			/*if(driver.getPageSource().contains("Monthly"))
 			{
 				System.out.print("Monthly is present");
 			} else {
 				System.out.print("Monhtly is not present");
-			}
+			}*/
+		WebElement Monthly= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span"));
+        Thread.sleep(2000);
+                             js.executeScript("alert('Monthly is present');");
 	}
 
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
