@@ -172,6 +172,7 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+	}
 		
            /* WebElement Monthly = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/span/span/em"));
              String strng1 = Monthly.getText();
