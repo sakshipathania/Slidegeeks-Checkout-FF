@@ -173,8 +173,9 @@ public class CO_checkout extends SetupClass{
 		String Team_License= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(6) > div.col.col1.col-bg1 > span")).getText( );
                     System.out.println("Team License Subscription is present for $599.99" + Team_License);
 		Thread.sleep(2000);
+			simpleAlert.accept();
 		}
-		simpleAlert.accept();
+		
 	
 		//assertEquals(driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/span/span/em".getText(),"Monthly")));
 		// choose a plan
