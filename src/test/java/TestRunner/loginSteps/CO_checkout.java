@@ -24,7 +24,7 @@ import webApp.PerformAction;
 
 public class CO_checkout extends SetupClass{
 	
-	WebDriverWait wait = new WebDriverWait(driver,30);
+	WebDriverWait wait = new WebDriverWait(driver,80);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@Given("^user is already on Website Home Page (\\d+)CO$")
