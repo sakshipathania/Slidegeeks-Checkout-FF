@@ -162,54 +162,54 @@ public class CO_checkout extends SetupClass{
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
 		
-            WebElement Monthly = driver.findElement(By.xpath("//span[text()='Monthly']"));
+            WebElement Monthly = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/span/span/em"));
              String strng1 = Monthly.getText();
             System.out.println(strng1);
             Assert.assertEquals("Monthly", strng1);
 		
-	    WebElement Monthly_pay = driver.findElement(By.xpath("//span[text()='$49.99']"));
+	    WebElement Monthly_pay = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[2]/div[2]/span/span/em"));
              String strng2 = Monthly_pay.getText();
             System.out.println(strng2);
             Assert.assertEquals("$49.99", strng2);
 		
-	    WebElement Semi_Annual = driver.findElement(By.xpath("//span[text()='Semi Annual']"));
+	    WebElement Semi_Annual = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/span/span/em"));
              String strng3 = Semi_Annual.getText();
             System.out.println(strng3);
             Assert.assertEquals("Semi_Annual", strng3);
 		
-	    WebElement Semi_Annual_pay = driver.findElement(By.xpath("//span[text()='$149.99']"));
+	    WebElement Semi_Annual_pay = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[3]/div[2]/span[2]/span[2]/em"));
              String strng4 = Semi_Annual_pay.getText();
             System.out.println(strng4);
             Assert.assertEquals("$149.99", strng4);
 		
-		WebElement Annual = driver.findElement(By.xpath("//span[text()='Annual']"));
+		WebElement Annual = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[4]/div[1]/span/span/em"));
              String strng5 = Annual.getText();
             System.out.println(strng5);
             Assert.assertEquals("Annual", strng5);
 	
 		
-		WebElement Annual_pay = driver.findElement(By.xpath("//span[text()='$249.99']"));
+		WebElement Annual_pay = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[4]/div[2]/span[2]/span[2]/em"));
              String strng6 = Annual_pay.getText();
             System.out.println(strng6);
             Assert.assertEquals("$249.99", strng6);
 		
 		
-		WebElement Annual_Custom = driver.findElement(By.xpath("//span[text()='Annual + Custom Design']"));
+		WebElement Annual_Custom = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[5]/div[1]/span[2]/span/em"));
              String strng7 = Annual_Custom.getText();
             System.out.println(strng7);
             Assert.assertEquals("Annual + Custom Design", strng7);
 		
-		WebElement Annual_Custom_pay = driver.findElement(By.xpath("//span[text()='$299.99']"));
+		WebElement Annual_Custom_pay = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[5]/div[2]/span[2]/span[2]/em"));
              String strng8 = Annual_Custom_pay.getText();
             System.out.println(strng8);
             Assert.assertEquals("$299.99", strng8);
 		
-		WebElement Team_License = driver.findElement(By.xpath("//span[text()='Team License']"));
+		WebElement Team_License = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[6]/div[1]/span/span/em"));
              String strng9 = Team_License.getText();
             System.out.println(strng9);
             Assert.assertEquals("Team License", strng9);
 		
-		WebElement Team_License_pay = driver.findElement(By.xpath("//span[text()='$599.99']"));
+		WebElement Team_License_pay = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[6]/div[2]/span[2]/span[2]/em"));
              String strng10 = Team_License_pay.getText();
             System.out.println(strng10);
             Assert.assertEquals("$599.99", strng10);
