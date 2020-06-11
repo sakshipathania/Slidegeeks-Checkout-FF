@@ -203,7 +203,7 @@ public class CO_checkout extends SetupClass{
 		                Thread.sleep(8000);
 				driver.switchTo().alert().accept();
 				
-                WebElement Annual_Custom_pay= driver.findElement(By.xpath("//a[contains(text(),'Annual + Custom Design')]"));
+                WebElement Annual_Custom= driver.findElement(By.xpath("//a[contains(text(),'Annual + Custom Design')]"));
                                 Thread.sleep(8000);
 				js.executeScript("alert('Annual + Custom Design Text is present');");
 		                Thread.sleep(8000);
