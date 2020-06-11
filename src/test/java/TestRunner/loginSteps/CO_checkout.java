@@ -226,6 +226,8 @@ public class CO_checkout extends SetupClass{
             Assert.assertEquals("$599.99", strng10);*/
 		
             
+		@Then("Join the subscription$")
+		public void Join _the_subscription() throws throwable{
 		//assertEquals(driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/span/span/em".getText(),"Monthly")));
 		// choose a plan
 		Thread.sleep(4000);
