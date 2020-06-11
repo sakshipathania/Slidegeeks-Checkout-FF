@@ -160,7 +160,7 @@ public class CO_checkout extends SetupClass{
 		
 			try {
 				driver.get("https://www.slideteam.net/pricing");
-			Thread.sleep(10000);
+			Thread.sleep(8000);
 			/*if(driver.getPageSource().contains("Monthly"))
 			{
 				System.out.print("Monthly is present");
@@ -168,16 +168,65 @@ public class CO_checkout extends SetupClass{
 				System.out.print("Monhtly is not present");
 			}*/
 		
-		WebElement Monthly= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span"));
-        Thread.sleep(10000);
-                             js.executeScript("alert('Monthly is present');");
-		Thread.sleep(10000);
+		WebElement Monthly= driver.findElement(By.xpath("//a[contains(text(),'Monthly')]"));
+                             Thread.sleep(8000);
+                             js.executeScript("alert('Monthly Text is present');");
+		             Thread.sleep(8000);
+			     driver.switchTo().alert().accept();
+				 
+	       WebElement Monthly_pay= driver.findElement(By.xpath("//a[contains(text(),'$49.99')]"));
+                                Thread.sleep(8000);
+				js.executeScript("alert('Monthly Subscription Payment amount '$49.99' is present');");
+				Thread.sleep(8000);
 				driver.switchTo().alert().accept();
-		WebElement Monthly_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div:nth-child(2) > span > span > em"));
-        Thread.sleep(10000);
-				js.executeScript("alert('Monthly Subscription Payment amount $49.99 is present');");
-				Thread.sleep(10000);
+				
+	       WebElement SemiAnnual = driver.findElement(By.xpath("//a[contains(text(),'Semi Annual')]"));
+                                Thread.sleep(8000);
+				js.executeScript("alert('SemiAnnual Text is present');");
+		                Thread.sleep(8000);
 				driver.switchTo().alert().accept();
+               WebElement  SemiAnnual_pay= driver.findElement(By.xpath("//a[contains(text(),'$149.99')]"));
+                                Thread.sleep(8000);
+				js.executeScript("alert('SemiAnnual Subscription Payment amount '$149.99' is present');");
+		                Thread.sleep(8000);
+				driver.switchTo().alert().accept();
+				
+		WebElement Annual= driver.findElement(By.xpath("//a[contains(text(),'Annual')]"));
+                                Thread.sleep(8000);
+				js.executeScript("alert('Annual Text is present');");
+		                Thread.sleep(8000);
+				driver.switchTo().alert().accept();
+				
+		 WebElement Annual_pay= driver.findElement(By.xpath("//a[contains(text(),'$249.99')]"));
+                                Thread.sleep(8000);
+				js.executeScript("alert('Annual Subscription Payment amount '$249.99' is present');");
+		                Thread.sleep(8000);
+				driver.switchTo().alert().accept();
+				
+                WebElement Annual_Custom_pay= driver.findElement(By.xpath("//a[contains(text(),'Annual + Custom Design')]"));
+                                Thread.sleep(8000);
+				js.executeScript("alert('Annual + Custom Design Text is present');");
+		                Thread.sleep(8000);
+				driver.switchTo().alert().accept();
+				
+		WebElement Annual_Custom_pay= driver.findElement(By.xpath("//a[contains(text(),'$299.99')]"));
+				Thread.sleep(8000);
+				js.executeScript("alert('Annual Custom Design Subscription Payment amount '$299.99' is present');");
+				Thread.sleep(8000);
+				driver.switchTo().alert().accept();
+				
+		WebElement Team_License= driver.findElement(By.xpath("//a[contains(text(),'Team License')]"));
+				Thread.sleep(8000);
+				js.executeScript("alert('Team License Text is present');");
+				Thread.sleep(8000);
+				driver.switchTo().alert().accept();
+				
+		WebElement Team_License_pay= driver.findElement(By.xpath("//a[contains(text(),'$599.99')]"));
+				Thread.sleep(8000);
+				js.executeScript("alert('Team License Subscription Payment amount '$599.99' is present');");
+				Thread.sleep(8000);
+				driver.switchTo().alert().accept();
+				
 	} catch(NoSuchElementException popup) {
 		}
 	}
