@@ -168,13 +168,15 @@ public class CO_checkout extends SetupClass{
 				System.out.print("Monhtly is not present");
 			}*/
 		
-		WebElement Monthly= driver.findElement(By.xpath("//a[contains(text(),'Monthly')]"));
+		WebElement Monthly= wait.until(ExpectedConditions.textToBePresentInElement(Monthly, 'Monthly'));
+			//driver.findElement(By.xpath("//a[contains(text(),'Monthly')]"));
                              Thread.sleep(8000);
                              js.executeScript("alert('Monthly Text is present');");
 		             Thread.sleep(8000);
 			     driver.switchTo().alert().accept();
 				 
-	       WebElement Monthly_pay= driver.findElement(By.xpath("//a[contains(text(),'$49.99')]"));
+	       WebElement Monthly_pay=  wait.until(ExpectedConditions.textToBePresentInElement(Monthly_pay, '$49.99'));
+		       //driver.findElement(By.xpath("//a[contains(text(),'$49.99')]"));
                                 Thread.sleep(8000);
 				js.executeScript("alert('Monthly Subscription Payment amount '$49.99' is present');");
 				Thread.sleep(8000);
