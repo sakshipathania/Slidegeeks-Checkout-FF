@@ -158,7 +158,7 @@ public class CO_checkout extends SetupClass{
 	@Then("Redirected to pricing page and check text$")
 	public void Redirected_to_pricing_page_and_check_text() throws Throwable {
 		driver.get("https://www.slideteam.net/pricing");
-			
+			Try{
 			Thread.sleep(10000);
 			/*if(driver.getPageSource().contains("Monthly"))
 			{
@@ -171,6 +171,12 @@ public class CO_checkout extends SetupClass{
         Thread.sleep(10000);
                              js.executeScript("alert('Monthly is present');");
 		Thread.sleep(10000);
+		WebElement Monthly_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div:nth-child(2) > span > span > em"));
+        Thread.sleep(10000);
+				js.executeScript("alert('Monthly Subscription Payment amount $49.99 is present');");
+				Thread.sleep(10000);
+	} catch(NoSuchElementException popup) {
+		}
 	}
 
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
