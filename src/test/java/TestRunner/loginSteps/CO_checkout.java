@@ -161,6 +161,7 @@ public class CO_checkout extends SetupClass{
 			try {
 				driver.get("https://www.slideteam.net/pricing");
 			Thread.sleep(10000);
+				
 			/*if(driver.getPageSource().contains("Monthly"))
 			{
 				System.out.print("Monthly is present");
@@ -168,62 +169,62 @@ public class CO_checkout extends SetupClass{
 				System.out.print("Monhtly is not present");
 			}*/
 		
-		WebElement Monthly= wait.until(ExpectedConditions.textToBePresentInElement(Monthly, "Monthly"));
+		WebElement Monthly= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span"));
 			//driver.findElement(By.xpath("//a[contains(text(),'Monthly')]"));
                              Thread.sleep(8000);
                              js.executeScript("alert('Monthly Text is present');");
 		             Thread.sleep(8000);
 			     driver.switchTo().alert().accept();
 				 
-	       WebElement Monthly_pay=  wait.until(ExpectedConditions.textToBePresentInElement(Monthly_pay, "$49.99"));
+	       WebElement Monthly_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div:nth-child(2) > span > span > em"));
 		       //driver.findElement(By.xpath("//a[contains(text(),'$49.99')]"));
                                 Thread.sleep(8000);
 				js.executeScript("alert('Monthly Subscription Payment amount '$49.99' is present');");
 				Thread.sleep(8000);
 				driver.switchTo().alert().accept();
 				
-	       WebElement SemiAnnual = driver.findElement(By.xpath("//a[contains(text(),'Semi Annual')]"));
+	      WebElement SemiAnnual = driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(3) > div.col.col1.col-bg1 > span > span > em"));
                                 Thread.sleep(8000);
 				js.executeScript("alert('SemiAnnual Text is present');");
 		                Thread.sleep(8000);
 				driver.switchTo().alert().accept();
-               WebElement  SemiAnnual_pay= driver.findElement(By.xpath("//a[contains(text(),'$149.99')]"));
+              WebElement  SemiAnnual_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(3) > div.col.col1.discount-block > span.cell-align > span.price > em"));
                                 Thread.sleep(8000);
 				js.executeScript("alert('SemiAnnual Subscription Payment amount '$149.99' is present');");
 		                Thread.sleep(8000);
 				driver.switchTo().alert().accept();
 				
-		WebElement Annual= driver.findElement(By.xpath("//a[contains(text(),'Annual')]"));
+		WebElement Annual= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(4) > div.col.col1.col-bg1 > span > span > em"));
                                 Thread.sleep(8000);
 				js.executeScript("alert('Annual Text is present');");
 		                Thread.sleep(8000);
 				driver.switchTo().alert().accept();
 				
-		 WebElement Annual_pay= driver.findElement(By.xpath("//a[contains(text(),'$249.99')]"));
+		 WebElement Annual_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(4) > div.col.col1.discount-block > span.cell-align > span.price > em"));
                                 Thread.sleep(8000);
 				js.executeScript("alert('Annual Subscription Payment amount '$249.99' is present');");
 		                Thread.sleep(8000);
 				driver.switchTo().alert().accept();
 				
-                WebElement Annual_Custom= driver.findElement(By.xpath("//a[contains(text(),'Annual + Custom Design')]"));
+                WebElement Annual_Custom_Design= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.col-bg1 > span.cell-align > span > em"));
                                 Thread.sleep(8000);
 				js.executeScript("alert('Annual + Custom Design Text is present');");
 		                Thread.sleep(8000);
 				driver.switchTo().alert().accept();
 				
-		WebElement Annual_Custom_pay= driver.findElement(By.xpath("//a[contains(text(),'$299.99')]"));
+		WebElement Annual_Custom_Design_pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(5) > div.col.col1.discount-block > span.cell-align > span.price > em"));
 				Thread.sleep(8000);
 				js.executeScript("alert('Annual Custom Design Subscription Payment amount '$299.99' is present');");
 				Thread.sleep(8000);
 				driver.switchTo().alert().accept();
 				
-		WebElement Team_License= driver.findElement(By.xpath("//a[contains(text(),'Team License')]"));
+		WebElement Team_License= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(6) > div.col.col1.col-bg1 > span"));
 				Thread.sleep(8000);
 				js.executeScript("alert('Team License Text is present');");
 				Thread.sleep(8000);
 				driver.switchTo().alert().accept();
 				
-		WebElement Team_License_pay= driver.findElement(By.xpath("//a[contains(text(),'$599.99')]"));
+		WebElement Team_License_Pay= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(6) > div.col.col1.discount-block > span.cell-align > span.price > em"));
 				Thread.sleep(8000);
 				js.executeScript("alert('Team License Subscription Payment amount '$599.99' is present');");
 				Thread.sleep(8000);
