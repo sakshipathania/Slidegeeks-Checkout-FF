@@ -155,7 +155,16 @@ public class CO_checkout extends SetupClass{
 					Thread.sleep(2000);
 	}
 	
-	@Then("Redirected to pricing page and check text$")
+	@Then("verify$")
+               public void verify()throws Exception
+           {
+            driver.get("https://www.slideteam.net/pricing");
+            WebElement Monthly = driver.findElement(By.xpath("//span[text()='Monthly']"));
+             String strng = Monthly.getText();
+            System.out.println(strng);
+            Assert.assertEquals("Monthly", strng);
+            }
+	/*@Then("Redirected to pricing page and check text$")
 	public void Redirected_to_pricing_page_and_check_text() throws Throwable {
 		
 			try {
@@ -167,7 +176,7 @@ public class CO_checkout extends SetupClass{
 				System.out.print("Monthly is present");
 			} else {
 				System.out.print("Monhtly is not present");
-			}*/
+			}
 		
 		WebElement Monthly= driver.findElement(By.cssSelector("#maincontent > div.columns > div > div.pricing-page-container > div.pricing-block.clearfix > div > div > div > div:nth-child(2) > div.col.col1.col-bg1 > span"));
 			//driver.findElement(By.xpath("//a[contains(text(),'Monthly')]"));
@@ -233,7 +242,7 @@ public class CO_checkout extends SetupClass{
 				Thread.sleep(7000);
 	} catch(NoSuchElementException popup) {
 		}
-	}
+	}*/
 
 	@Then("^user is redirected to pricing page and choose a plan to pay (\\d+)CO$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
