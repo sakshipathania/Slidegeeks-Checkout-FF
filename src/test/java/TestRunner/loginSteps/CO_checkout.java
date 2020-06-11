@@ -157,8 +157,9 @@ public class CO_checkout extends SetupClass{
 	
 	@Then("Redirected to pricing page and check text$")
 	public void Redirected_to_pricing_page_and_check_text() throws Throwable {
-		driver.get("https://www.slideteam.net/pricing");
-			Try{
+		
+			try {
+				driver.get("https://www.slideteam.net/pricing");
 			Thread.sleep(10000);
 			/*if(driver.getPageSource().contains("Monthly"))
 			{
