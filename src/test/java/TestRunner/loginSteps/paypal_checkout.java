@@ -219,7 +219,7 @@ public class paypal_checkout extends SetupClass {
 	}
  
 	@Then("^user is redirected to pricing page and check the text1 PP1$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text1_PP1(int arg1) throws Throwable {
+	public void user_is_redirected_to_pricing_page_and_check_the_text1_PP1() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
@@ -237,7 +237,7 @@ public class paypal_checkout extends SetupClass {
 	}
 	
 	@Then("^user is redirected to pricing page and check the text2 PP2$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text2_PP2(int arg1) throws Throwable {
+	public void user_is_redirected_to_pricing_page_and_check_the_text2_PP2() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
@@ -255,7 +255,7 @@ public class paypal_checkout extends SetupClass {
 	}
 	
 	@Then("^user is redirected to pricing page and check the text3 PP3$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text3_PP3(int arg1) throws Throwable {
+	public void user_is_redirected_to_pricing_page_and_check_the_text3_PP3() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
@@ -273,7 +273,7 @@ public class paypal_checkout extends SetupClass {
 	}
 	
 	@Then("^user is redirected to pricing page and check the text4 PP4$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text4_PP4(int arg1) throws Throwable {
+	public void user_is_redirected_to_pricing_page_and_check_the_text4_PP4() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
@@ -291,7 +291,7 @@ public class paypal_checkout extends SetupClass {
 	}
 	
 	@Then("^user is redirected to pricing page and check the text5 PP5$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text5_PP5(int arg1) throws Throwable {
+	public void user_is_redirected_to_pricing_page_and_check_the_text5_PP5() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
@@ -309,7 +309,7 @@ public class paypal_checkout extends SetupClass {
 	}
 	
 	@Then("^user is redirected to pricing page and check the text6 PP6$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text6_PP6(int arg1) throws Throwable {
+	public void user_is_redirected_to_pricing_page_and_check_the_text6_PP6() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
@@ -327,7 +327,7 @@ public class paypal_checkout extends SetupClass {
 	}
 	
 	@Then("^user is redirected to pricing page and check the text7 PP7$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text7_PP7(int arg1) throws Throwable {
+	public void user_is_redirected_to_pricing_page_and_check_the_text7_PP7() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
@@ -345,7 +345,7 @@ public class paypal_checkout extends SetupClass {
 	}
 	
 	@Then("^user is redirected to pricing page and check the text8 PP8$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text8_PP8(int arg1) throws Throwable {
+	public void user_is_redirected_to_pricing_page_and_check_the_text8_PP8() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
@@ -363,7 +363,7 @@ public class paypal_checkout extends SetupClass {
 	}
 	
 	@Then("^user is redirected to pricing page and check the text9 PP9$")
-	public void user_is_redirected_to_pricing_page_and_check_the_text9_PP9(int arg1) throws Throwable {
+	public void user_is_redirected_to_pricing_page_and_check_the_text9_PP9() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
