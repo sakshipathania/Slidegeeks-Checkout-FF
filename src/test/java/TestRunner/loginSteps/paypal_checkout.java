@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.Alert;
 
 import ObjectRepository.LoginObject;
 import ObjectRepository.SignupObject;
@@ -232,8 +233,14 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text Monthly is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
+		//wait.implictywait(driver);
+		
 	}
 	
 	@Then("^user is redirected to pricing page and check the text2 PP2$")
@@ -252,6 +259,11 @@ public class paypal_checkout extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text $49.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text3 PP3$")
@@ -270,6 +282,11 @@ public class paypal_checkout extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text Semi Annual is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text4 PP4$")
@@ -288,6 +305,11 @@ public class paypal_checkout extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text $149.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text5 PP5$")
@@ -306,6 +328,11 @@ public class paypal_checkout extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text Annual is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text6 PP6$")
@@ -322,6 +349,11 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
+		js.executeScript("alert('Text $249.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
@@ -342,6 +374,11 @@ public class paypal_checkout extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text Annual + Custom Design is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(2000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text8 PP8$")
@@ -360,6 +397,11 @@ public class paypal_checkout extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text $299.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text9 PP9$")
@@ -378,6 +420,12 @@ public class paypal_checkout extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text Team License is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
+		
 	}
 	
 	@Then("^user is redirected to pricing page and check the text10 PP0$")
@@ -396,7 +444,14 @@ public class paypal_checkout extends SetupClass {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
+	        js.executeScript("alert('Text $599.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);	
+		
 	}
+	
 	@Then("^user is redirected to pricing page and choose a plan to pay pp$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_pp() throws Throwable {
 	   
