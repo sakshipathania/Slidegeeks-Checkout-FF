@@ -170,8 +170,10 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text Monthly is present and correct');");
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text2 (\\d+)CO$")
@@ -188,8 +190,10 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text $49.99 is present and correct');");
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text3 (\\d+)CO$")
@@ -206,8 +210,10 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text Semi Annual is present and correct');");
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text4 (\\d+)CO$")
@@ -224,8 +230,10 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text $149.99 is present and correct');");
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text5 (\\d+)CO$")
@@ -242,8 +250,10 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text Annual is present and correct');");
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text6 (\\d+)CO$")
@@ -260,8 +270,10 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text $249.99 is present and correct');");
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text7 (\\d+)CO$")
@@ -278,6 +290,8 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
+		Thread.sleep(2000);
+		js.executeScript("alert('Text Annual + Custom Design is present and correct');");
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
@@ -296,8 +310,10 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text $299.99 is present and correct');");
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text9 (\\d+)CO$")
@@ -314,8 +330,10 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text Team License is present and correct');");
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 	
 	@Then("^user is redirected to pricing page and check the text10 (\\d+)CO$")
@@ -332,8 +350,10 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//wait.implictywait(driver);
 		Thread.sleep(2000);
+		js.executeScript("alert('Text $599.99 is present and correct');");
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
 	}
 		
            /* WebElement Monthly = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/span/span/em"));
