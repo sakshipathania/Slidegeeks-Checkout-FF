@@ -172,6 +172,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text Monthly is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 	}
@@ -192,6 +194,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text $49.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 	}
@@ -212,6 +216,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text Semi Annual is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 	}
@@ -232,6 +238,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text $149.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 	}
@@ -252,6 +260,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text Annual is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 	}
@@ -272,6 +282,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text $249.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 	}
@@ -292,6 +304,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text Annual + Custom Design is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
 	}
@@ -312,6 +326,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text $299.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 	}
@@ -332,6 +348,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text Team License is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 	}
@@ -352,6 +370,8 @@ public class CO_checkout extends SetupClass{
 		Assert.assertEquals(expectedTitle, actualTitle);
 		Thread.sleep(2000);
 		js.executeScript("alert('Text $599.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 	}
