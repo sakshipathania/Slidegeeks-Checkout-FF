@@ -534,14 +534,15 @@ public class paypal_checkout extends SetupClass {
 		    System.out.println("Title of the Page is --> "+pp_page_title);
 		    
 		 // place order button 
-		try{
+		/*try{
 			 WebElement cancel_order_btn  = driver.findElement(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]"));
 		js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);		
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);
 		} catch(NoSuchElementException popup) {
-		}
+		} */
+		
 
 				 // Switch To Default Window
 				  
