@@ -510,7 +510,7 @@ public class paypal_checkout extends SetupClass {
 	        //WebDriverWait wait = new WebDriverWait(driver,100);
 		  // Maximize Window
 		  driver.manage().window().maximize();
-		
+		   driver.manage().getCookies();
 		  // Store the CurrentWindow for future reference
 		 // String handle = " ";
 		  String currentWindow = driver.getWindowHandle();
