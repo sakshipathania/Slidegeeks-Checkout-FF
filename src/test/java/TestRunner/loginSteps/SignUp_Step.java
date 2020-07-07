@@ -24,7 +24,7 @@ public class SignUp_Step extends SetupClass {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	public static String Email_Address;
 	Random rad = new Random();
-	WebDriverWait wait = new WebDriverWait(driver,30);
+	WebDriverWait wait = new WebDriverWait(driver,40);
 
 //	String name = "" + rad.nextInt(100000) + "@gmail.com";
 
