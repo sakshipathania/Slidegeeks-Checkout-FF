@@ -524,8 +524,9 @@ public class paypal_checkout extends SetupClass {
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
+			    driver.manage().window().maximize();
 		    driver.switchTo().window(popupWindowHandle);
-			   driver.manage().window().maximize();
+			  
 		   }
 		  }
 		  
