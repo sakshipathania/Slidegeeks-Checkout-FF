@@ -456,12 +456,22 @@ public class paypal_checkout extends SetupClass {
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_pp() throws Throwable {
 	   
 		try {
-		 WebElement join_now_btn  = driver.findElement(By.cssSelector("div.col-box:nth-child(2) > div:nth-child(3) > span:nth-child(1) > form:nth-child(1) > button:nth-child(4) > span:nth-child(1)"));
+			Thread.sleep(4000);
+		//driver.get("https://www.slideteam.net/pricing");
+		js.executeScript("window.scrollBy(0,1000)");
+		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
+		js.executeScript("arguments[0].scrollIntoView();",join_now_btn);		
+		Thread.sleep(2000);
+		    join_now_btn.click();
+			Thread.sleep(6000);
+
+			///
+		/* WebElement join_now_btn  = driver.findElement(By.cssSelector("div.col-box:nth-child(2) > div:nth-child(3) > span:nth-child(1) > form:nth-child(1) > button:nth-child(4) > span:nth-child(1)"));
 		// WebElement join_now_btn  = driver.findElement(By.xpath("(//span[contains(.,'Join now')])[8]"));
 			js.executeScript("arguments[0].scrollIntoView();",join_now_btn);	
 			Thread.sleep(2000);
 		    join_now_btn.click();
-			Thread.sleep(6000);
+			Thread.sleep(6000);*/
 		}catch( NoSuchElementException popup) {
 		}
 
@@ -589,15 +599,14 @@ public class paypal_checkout extends SetupClass {
 		 Thread.sleep(3000);
 		
 
-		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
-		js.executeScript("arguments[0].scrollIntoView();",delete_account);
+		WebElement delete_account =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Delete Account')]")));
+		 js.executeScript("arguments[0].scrollIntoView();",delete_account);
 		 delete_account.click();
 		 Thread.sleep(3000);
-		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
-		js.executeScript("arguments[0].scrollIntoView();",continue_delete); 
-		 continue_delete.click();
+		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
+		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
+		continue_delete.click();
 		 Thread.sleep(3000);
-		
 	}
 
 
