@@ -20,7 +20,7 @@ import cucumber.api.java.After;
 		      scenario.embed(screenshot, "image/png");
 			  
 			    try {
-				    FileUtils.copyFile(src, new File("C:\Failed test cases/error.png"));
+				    FileUtils.copyFile(src, new File("C:/Failed test cases/error.png"));
 				}
 			    catch (IOException e)
                                {
