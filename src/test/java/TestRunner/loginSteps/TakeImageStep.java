@@ -18,7 +18,7 @@ import cucumber.api.java.After;
 		      log.info("Scenario failed, now taking screenshot");
 		      final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		      scenario.embed(screenshot, "image/png");
-			  
+			  File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			    try {
 				    FileUtils.copyFile(src, new File("C:/Failed test cases/error.png"));
 				}
