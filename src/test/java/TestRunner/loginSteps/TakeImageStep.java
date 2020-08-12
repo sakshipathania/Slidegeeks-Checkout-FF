@@ -4,6 +4,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.apache.commons.io.FileUtils;
 import java.io.IOException;
+import java.io.file;
 
 
 import TestRunner.SetupClass;
