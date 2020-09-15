@@ -233,10 +233,9 @@ public class SignUp_Step extends SetupClass {
 	@Then("^user wants to delete the new account created cd$")
 	public void user_wants_to_delete_the_new_account_created_cd() throws InterruptedException  {
 
-		 driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
+		 driver.findElement(By.xpath("//a[contains(text(),'My Account')]")).click();
 		 Thread.sleep(3000);
 		 
-		
 
 
                    try {
