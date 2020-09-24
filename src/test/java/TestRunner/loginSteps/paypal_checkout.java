@@ -600,6 +600,8 @@ public class paypal_checkout extends SetupClass {
 		
 		driver.get("https://www.slideteam.net/customer/account/");
 		
+		 Thread.sleep(3000);
+		
 
 		WebElement delete_account =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Delete Account')]")));
 		 js.executeScript("arguments[0].scrollIntoView();",delete_account);
