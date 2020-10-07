@@ -222,7 +222,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text1 PP1$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text1_PP1() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -246,7 +246,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text2 PP2$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text2_PP2() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -269,7 +269,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text3 PP3$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text3_PP3() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -292,7 +292,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text4 PP4$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text4_PP4() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -315,7 +315,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text5 PP5$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text5_PP5() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -338,7 +338,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text6 PP6$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text6_PP6() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -361,7 +361,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text7 PP7$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text7_PP7() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -384,7 +384,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text8 PP8$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text8_PP8() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -407,7 +407,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text9 PP9$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text9_PP9() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -431,7 +431,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user is redirected to pricing page and check the text10 PP0$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text10_PP0() throws Throwable {
 		Thread.sleep(7000);
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		       Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -457,7 +457,7 @@ public class paypal_checkout extends SetupClass {
 	   
 		try {
 			Thread.sleep(4000);
-		//driver.get("https://www.slideteam.net/pricing");
+		//driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		js.executeScript("window.scrollBy(0,1000)");
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
 		js.executeScript("arguments[0].scrollIntoView();",join_now_btn);		
