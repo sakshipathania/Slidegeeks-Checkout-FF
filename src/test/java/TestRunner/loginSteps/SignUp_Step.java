@@ -203,7 +203,7 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(2000);
 		Assert.assertEquals(expectedTitle, actualTitle);
 		//wait.implictywait(driver);*/
-		driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		Thread.sleep(2000);
 		Actions actions = new Actions(driver);
 		WebElement free_ppt_btn1=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Free Stuff")));
