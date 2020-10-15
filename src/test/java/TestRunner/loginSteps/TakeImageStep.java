@@ -3,8 +3,6 @@ package TestRunner.loginSteps;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-
-
 import TestRunner.SetupClass;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -17,7 +15,6 @@ import cucumber.api.java.After;
 		      log.info("Scenario failed, now taking screenshot");
 		      final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		      scenario.embed(screenshot, "image/png");
-			
 		    }
 		}
 	}
