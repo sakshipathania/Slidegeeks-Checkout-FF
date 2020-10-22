@@ -229,7 +229,9 @@ public class paypal_checkout extends SetupClass {
 	    Thread.sleep(1000);
 	    old_pass.sendKeys("123456");
 	    Thread.sleep(1000);
-	    
+	     WebElement old_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.login > span:nth-child(1)")));
+		 Thread.sleep(1000);
+		    old_login_btn.click();
 		
 	}
  
