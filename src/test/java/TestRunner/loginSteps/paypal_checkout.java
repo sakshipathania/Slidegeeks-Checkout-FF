@@ -220,10 +220,12 @@ public class paypal_checkout extends SetupClass {
 		}*/
 		Thread.sleep(1000);
 		WebElement old_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='email']")));
+		js.executeScript("arguments[0].scrollIntoView();",old_email);
 		Thread.sleep(1000);
 	    old_email.sendKeys("himanshi@test.com");
 	    Thread.sleep(1000);
 	    WebElement old_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='pass']")));
+		js.executeScript("arguments[0].scrollIntoView();",old_pass);
 	    Thread.sleep(1000);
 	    old_pass.sendKeys("123456");
 	    Thread.sleep(1000);
