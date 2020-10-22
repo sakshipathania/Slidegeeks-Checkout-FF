@@ -81,7 +81,8 @@ public class paypal_checkout extends SetupClass {
 	public void user_navigates_to_sign_up_page_pp() throws Throwable {
 		Thread.sleep(3000);
 		try {
-			driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
+			//driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
+			driver.get("https://www.slideteam.net/customer/account/login/referer/aHR0cHM6Ly93d3cuc2xpZGV0ZWFtLm5ldC9jdXN0b21lci9hY2NvdW50L2luZGV4Lw%2C%2C/");
 			Thread.sleep(2000);
 			log.info("It's opening the website URL and redirect user to sign up page");
 		} 
@@ -94,7 +95,7 @@ public class paypal_checkout extends SetupClass {
 		//WebDriverWait pp = new WebDriverWait(driver,100);
 		// create new email for sign up
 		
-		int leftLimit = 97; // letter 'a'
+		/*int leftLimit = 97; // letter 'a'
 			    int rightLimit = 122; // letter 'z'
 			    int targetStringLength = 10;
 			    Random random = new Random();
@@ -216,7 +217,18 @@ public class paypal_checkout extends SetupClass {
 
 			}
 		catch( NoSuchElementException popup) {
-		}
+		}*/
+		Thread.sleep(1000);
+		WebElement old_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='email']")));
+		Thread.sleep(1000);
+	    old_email.sendKeys("himanshi@test.com");
+	    Thread.sleep(1000);
+	    WebElement old_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='pass']")));
+	    Thread.sleep(1000);
+	    old_pass.sendKeys("123456");
+	    Thread.sleep(1000);
+	    
+		
 	}
  
 	@Then("^user is redirected to pricing page and check the text1 PP1$")
@@ -598,7 +610,7 @@ public class paypal_checkout extends SetupClass {
 		/*driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
 		 Thread.sleep(3000);*/
 		
-		driver.get("https://www.slideteam.net/customer/account/");
+		/*driver.get("https://www.slideteam.net/customer/account/");
 		
 		 Thread.sleep(3000);
 		
@@ -610,7 +622,7 @@ public class paypal_checkout extends SetupClass {
 		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
 		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
 		continue_delete.click();
-		 Thread.sleep(3000);
+		 Thread.sleep(3000);*/
 	}
 
 
