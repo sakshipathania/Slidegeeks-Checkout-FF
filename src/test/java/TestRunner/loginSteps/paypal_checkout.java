@@ -615,7 +615,7 @@ public class paypal_checkout extends SetupClass {
 		/*driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
 		 Thread.sleep(3000);*/
 		
-		/*driver.get("https://www.slideteam.net/customer/account/");
+		driver.get("https://www.slideteam.net/customer/account/");
 		
 		 Thread.sleep(3000);
 		
@@ -627,7 +627,7 @@ public class paypal_checkout extends SetupClass {
 		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
 		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
 		continue_delete.click();
-		 Thread.sleep(3000);*/
+		 Thread.sleep(3000);
 	}
 
 
