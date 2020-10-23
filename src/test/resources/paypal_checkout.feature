@@ -13,8 +13,6 @@ Then user is redirected to pricing page and check the text5 PP5
 Then user is redirected to pricing page and check the text6 PP6
 Then user is redirected to pricing page and check the text7 PP7
 Then user is redirected to pricing page and check the text8 PP8
-Then user is redirected to pricing page and check the text9 PP9
-Then user is redirected to pricing page and check the text10 PP0
 Then user is redirected to pricing page and choose a plan to pay pp
 Then user is redirected to checkout page pp
 Then user proceed to pay with paypal pp
