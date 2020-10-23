@@ -334,7 +334,7 @@ public class CO_checkout extends SetupClass{
 		Thread.sleep(5000);
 	}
 	
-	@Then("^user is redirected to pricing page and check the text9 (\\d+)CO$")
+	/*@Then("^user is redirected to pricing page and check the text9 (\\d+)CO$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text9_CO(int arg1) throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
