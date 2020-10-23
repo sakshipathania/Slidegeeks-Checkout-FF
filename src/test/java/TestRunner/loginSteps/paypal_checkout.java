@@ -81,8 +81,8 @@ public class paypal_checkout extends SetupClass {
 	public void user_navigates_to_sign_up_page_pp() throws Throwable {
 		Thread.sleep(3000);
 		try {
-			//driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
-			driver.get("https://www.slideteam.net/customer/account/login/referer/aHR0cHM6Ly93d3cuc2xpZGV0ZWFtLm5ldC9jdXN0b21lci9hY2NvdW50L2luZGV4Lw%2C%2C/");
+			driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
+			//driver.get("https://www.slideteam.net/customer/account/login/referer/aHR0cHM6Ly93d3cuc2xpZGV0ZWFtLm5ldC9jdXN0b21lci9hY2NvdW50L2luZGV4Lw%2C%2C/");
 			Thread.sleep(2000);
 			log.info("It's opening the website URL and redirect user to sign up page");
 		} 
@@ -95,7 +95,7 @@ public class paypal_checkout extends SetupClass {
 		//WebDriverWait pp = new WebDriverWait(driver,100);
 		// create new email for sign up
 		
-		/*int leftLimit = 97; // letter 'a'
+		int leftLimit = 97; // letter 'a'
 			    int rightLimit = 122; // letter 'z'
 			    int targetStringLength = 10;
 			    Random random = new Random();
@@ -217,8 +217,9 @@ public class paypal_checkout extends SetupClass {
 
 			}
 		catch( NoSuchElementException popup) {
-		}*/
-		Thread.sleep(1000);
+		}
+		
+		/*Thread.sleep(1000);
 		WebElement old_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='email']")));
 		js.executeScript("arguments[0].scrollIntoView();",old_email);
 		Thread.sleep(1000);
@@ -231,7 +232,7 @@ public class paypal_checkout extends SetupClass {
 	    Thread.sleep(1000);
 	     WebElement old_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.login > span:nth-child(1)")));
 		 Thread.sleep(1000);
-		    old_login_btn.click();
+		    old_login_btn.click(); */
 		
 	}
  
@@ -420,7 +421,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(5000);
 	}
 	
-	@Then("^user is redirected to pricing page and check the text9 PP9$")
+	/*@Then("^user is redirected to pricing page and check the text9 PP9$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text9_PP9() throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
@@ -466,7 +467,7 @@ public class paypal_checkout extends SetupClass {
 		//wait.implictywait(driver);
 		Thread.sleep(5000);	
 		
-	}
+	}*/
 	
 	@Then("^user is redirected to pricing page and choose a plan to pay pp$")
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_pp() throws Throwable {
