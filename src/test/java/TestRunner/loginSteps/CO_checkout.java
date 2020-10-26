@@ -591,7 +591,7 @@ public class CO_checkout extends SetupClass{
 		//assertEquals(driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/span/span/em".getText(),"Monthly")));
 		// choose a plan
 		Thread.sleep(4000);
-		//driver.get("https://www.slideteam.net/pricing");
+		driver.get("https://www.slideteam.net/pricing");
 		js.executeScript("window.scrollBy(0,1000)");
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
 		js.executeScript("arguments[0].scrollIntoView();",join_now_btn);		
