@@ -690,6 +690,7 @@ public class paypal_checkout extends SetupClass {
 	   
 		try {
 			Thread.sleep(4000);
+			driver.get("https://www.slideteam.net/pricing");
 		//driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
 		js.executeScript("window.scrollBy(0,1000)");
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
