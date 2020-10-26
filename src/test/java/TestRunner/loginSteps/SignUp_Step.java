@@ -1,4 +1,4 @@
-/*package TestRunner.loginSteps;
+package TestRunner.loginSteps;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -193,7 +193,7 @@ public class SignUp_Step extends SetupClass {
 
 	
 	@Then("^After signup see the price page$")
-	public void After_signup_see_the_price_page() throws InterruptedException {*/
+	public void After_signup_see_the_price_page() throws InterruptedException {
 		                                    /*driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		                                        String actualTitle = driver.getTitle();
 		                                       //wait.implictywait(driver);
@@ -203,7 +203,7 @@ public class SignUp_Step extends SetupClass {
 		                                                Thread.sleep(2000);
 		                                                  Assert.assertEquals(expectedTitle, actualTitle);
 		                                                        //wait.implictywait(driver);*/
-		/*driver.get("https://www.slideteam.net/pricing?utm_expid=.ob6CI18MTrailD_9AQRC-g.0&utm_referrer=https%3A%2F%2Fwww.slideteam.net%2Fpricing");
+		driver.get("https://www.slideteam.net/pricing");
 		Thread.sleep(2000);
 		Actions actions = new Actions(driver);
 		WebElement free_ppt_btn1=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Free Stuff")));
@@ -281,4 +281,4 @@ public class SignUp_Step extends SetupClass {
 		 }
 	
       }
-}*/
+}
