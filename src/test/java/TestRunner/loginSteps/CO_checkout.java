@@ -489,35 +489,13 @@ public class CO_checkout extends SetupClass{
 	public void user_is_redirected_to_pricing_page_and_check_the_text15_CO(int arg1) throws Throwable {
 		Thread.sleep(7000);
 		driver.get("https://www.slideteam.net/pricing");
-		Thread.sleep(3000);
-		try {
-			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
-			if(iframe.isDisplayed()) {
-				driver.switchTo().frame(iframe);   
-				 Actions act = new Actions(driver);
-				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
-				 Thread.sleep(2000);
-					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
-					 Thread.sleep(1000);
-						chat1.click();
-						 Thread.sleep(1000);
-						 driver.switchTo().defaultContent();
-						 Thread.sleep(1000);
-						 driver.switchTo().parentFrame();
-					 Thread.sleep(1000);
-			}
-			else {
-				
-
-			System.out.println("chat window does not open");
-			}
-		}
-				catch(NoSuchElementException NCP) {
-					
-				}
+	
+		
 		       Thread.sleep(4000);
 		WebElement Education = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[2]/div[1]/div/div/button[3]")));
-				Thread.sleep(2000);
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView();",Education);				
+		Thread.sleep(2000);
 		Education.click();
 		Thread.sleep(3000);
 	
@@ -542,7 +520,9 @@ public class CO_checkout extends SetupClass{
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
 		WebElement Education = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[2]/div[1]/div/div/button[3]")));
-				Thread.sleep(2000);
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView();",Education);				
+		Thread.sleep(2000);
 		Education.click();
 		Thread.sleep(3000);
 	
@@ -567,7 +547,9 @@ public class CO_checkout extends SetupClass{
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
 		WebElement Education = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[2]/div[1]/div/div/button[3]")));
-				Thread.sleep(2000);
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView();",Education);				
+		Thread.sleep(2000);
 		Education.click();
 		Thread.sleep(3000);
 	
@@ -592,7 +574,9 @@ public class CO_checkout extends SetupClass{
 		driver.get("https://www.slideteam.net/pricing");
 		       Thread.sleep(4000);
 		WebElement Education = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[2]/div[1]/div/div/button[3]")));
-				Thread.sleep(2000);
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView();",Education);			
+		Thread.sleep(2000);
 		Education.click();
 		Thread.sleep(3000);
 	
