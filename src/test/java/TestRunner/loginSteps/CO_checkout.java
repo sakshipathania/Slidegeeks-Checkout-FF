@@ -306,7 +306,7 @@ public class CO_checkout extends SetupClass {
 		//driver.get("https://www.slidegeeks.com/subscriptions");
 		Thread.sleep(3000);
 		//js.executeScript("window.scrollBy(0,1000)");
-		 WebElement Subscribe_btn  =  driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/section[2]/div/div/div[2]/div/div/div/div[1]/div/form/div[2]/div/span/button"));
+		 WebElement Subscribe_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/section[2]/div/div/div[2]/div/div/div/div[1]/div/form/div[2]/div/span/button")));
 		js.executeScript("arguments[0].scrollIntoView();",Subscribe_btn);
 			Thread.sleep(2000);
 		    Subscribe_btn.click();
@@ -339,7 +339,7 @@ public class CO_checkout extends SetupClass {
 		// place order button 
 		try {
 			
-		 WebElement place_order_btn  =  driver.findElement(By.cssSelector("body > div.afterBody.checkout-wrapper.main-wrapper.no-left-menu > div.main_wrapper > div > div.checkout-inner-wrapper > div.checkout-box-wrapper.checkout-order > div > div > table > tbody > tr:nth-child(4) > td:nth-child(1) > button.btn.primary-btn.pg-button.pg-checkout-continue"));
+		 WebElement place_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("body > div.afterBody.checkout-wrapper.main-wrapper.no-left-menu > div.main_wrapper > div > div.checkout-inner-wrapper > div.checkout-box-wrapper.checkout-order > div > div > table > tbody > tr:nth-child(4) > td:nth-child(1) > button.btn.primary-btn.pg-button.pg-checkout-continue")));
 			Thread.sleep(2000);
 			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);	
 			//js.executeScript("arguments[0].click();", place_order_btn);
@@ -380,7 +380,7 @@ public class CO_checkout extends SetupClass {
 		Thread.sleep(2000);
 		
 
-       WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
+       WebElement Signout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href ='/logout']")));
 		Thread.sleep(3000);
 		Signout.click();
 	
