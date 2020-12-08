@@ -90,7 +90,7 @@ public class Non_Logged_In_User extends SetupClass {
 	public void user_logout_from_website_viii() throws Throwable {
 	 
 		Thread.sleep(1000);
-		 WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
+		 WebElement Signout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href ='/logout']"));
 		Thread.sleep(3000);
 		Signout.click();
 		
