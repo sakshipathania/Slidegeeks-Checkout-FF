@@ -98,7 +98,7 @@ public class SignUp_Step extends SetupClass {
 		driver.get("https://www.slidegeeks.com/free-downloads");
 		Thread.sleep(6000);
 		
-		WebElement Download= driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/section[2]/div/div/div[1]/div/div[2]/div[1]/div/div/p/a/span"));
+		WebElement Download= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[3]/div/section[2]/div/div/div[1]/div/div[2]/div[1]/div/div/p/a/span")));
 		
 		//WebElement Download = (WebElement)js.executeScript("('a.btn-download')", "");
 		Thread.sleep(3000);
@@ -106,7 +106,7 @@ public class SignUp_Step extends SetupClass {
 		Download.click();
 		Thread.sleep(3000);
 							
-		WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
+		WebElement Signout =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href ='/logout']")));
 		Thread.sleep(3000);
 		Signout.click();
 	    
