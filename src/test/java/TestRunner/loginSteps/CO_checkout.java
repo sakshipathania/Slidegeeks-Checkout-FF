@@ -19,7 +19,7 @@ import SetupClass.SetupClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-public class CO_Checkout extends SetupClass {
+public class CO_checkout extends SetupClass {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
 	JavascriptExecutor js = (JavascriptExecutor) driver;
