@@ -76,7 +76,7 @@ public class Non_Logged_In_User extends SetupClass {
 	@Then("^user download the product viii$")
 	public void user_download_the_product_viii() throws Throwable {
 	    
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("body > div.afterBody.product-page-wrapper > div.main_wrapper.product-page > div.innermain_content > section.product_content > div > div > div.right-col > div > div:nth-child(1) > div > div.pg-product-addtocart.clearfix > div.pg-product-qty-con.pg-product-field > a")));
+		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[5]/div[1]/section[2]/div/div/div[2]/div/div[1]/div/div[1]/div[2]/a")));
 		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
 		Thread.sleep(2000);
 		download_btn_pdp_fp.click();
