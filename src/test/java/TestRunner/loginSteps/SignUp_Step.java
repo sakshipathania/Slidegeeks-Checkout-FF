@@ -1,4 +1,4 @@
-package SetupClass.StepDefinition;
+package TestRunner.loginSteps;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +11,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.JavascriptExecutor;
 
-import SetupClass.SetupClass;
+import TestRunner.SetupClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
