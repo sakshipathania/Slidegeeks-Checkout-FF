@@ -1,284 +1,115 @@
-package TestRunner.loginSteps;
-import java.util.List;
+package SetupClass.StepDefinition;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.JavascriptExecutor;
 
-import ObjectRepository.SignupObject;
-import TestRunner.SetupClass;
+import SetupClass.SetupClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import webApp.PerformAction;
 
-public class SignUp_Step extends SetupClass {
-	//PerformAction wait = new PerformAction();
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	public static String Email_Address;
-	Random rad = new Random();
-	WebDriverWait wait = new WebDriverWait(driver,40);
-
-//	String name = "" + rad.nextInt(100000) + "@gmail.com";
-
-	// Open web site URl
-	@Given("^Navigates to website url\\.$")
-	public void Navigates_to_website_url() throws InterruptedException {
-		// Maximize Windows
-		driver.get("https://www.slideteam.net");
-		Thread.sleep(2000);
-		try {
-			WebElement Website = driver.findElement(SignupObject.close_add);
-			Website.click();
-			Thread.sleep(2000);
-			log.info("It's opening the website URL");
-		} catch (NoSuchElementException Exc) {
-		}
-
-		try {
-			WebElement User_Signin = driver.findElement(By.cssSelector(".signin-link[title='Sign Out']"));
-			if (User_Signin.isEnabled()) {
-				User_Signin.click();
-				Thread.sleep(8000);
-				driver.navigate().refresh();
-				Thread.sleep(2000);
-			}
-		} catch (NoSuchElementException Exb) {
-
-		}
-		try {
-			driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
-			Thread.sleep(2000);
-			log.info("It's opening the website URL and redirect user to sign up page");
-		} 
-		catch (NoSuchElementException popup) {
-		}
-	}
-
-       
-	@Then("^Creating new account$")
-	public void Creating_new_account() throws Throwable {
-		//WebElement Email_Address = driver.findElement(By.xpath("//*[@id='email_address']"));
-		int leftLimit = 97; // letter 'a'
-			    int rightLimit = 122; // letter 'z'
-			    int targetStringLength = 10;
-			    Random random = new Random();
-			    StringBuilder buffer = new StringBuilder(targetStringLength);
-			    for (int i = 0; i < targetStringLength; i++) {
-			        int randomLimitedInt = leftLimit + (int) 
-			          (random.nextFloat() * (rightLimit - leftLimit + 1));
-			        buffer.append((char) randomLimitedInt);
-			    }
-			    String generatedString = buffer.toString();
-			 
-			    System.out.println(generatedString);
-			    
-			    String signup_email=generatedString;
-			    String full_email="selenium.testing."+generatedString+"@gmail.com";
-			    System.out.println(full_email);
-				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
-				//driver.findElement(By.id("email_address")).sendKeys(full_email);
-				
-
-				Thread.sleep(2000);
-		try {
-			    WebElement new_signup = driver.findElement(By.xpath("//*[@id='email_address']"));
-				Thread.sleep(2000);
-			    new_signup.sendKeys(full_email);
-				Thread.sleep(2000);
-		}
-		catch( NoSuchElementException popup) {
-		}
-				// enter name
-               try {
-			   WebElement First_Name= driver.findElement(By.xpath("//*[@id='firstname']"));
-		First_Name.click();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		First_Name.clear();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		First_Name.sendKeys("Selenium");
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		log.info("It's entering the user First Name");
-                    }
-		catch( NoSuchElementException popup) {
-		}
-		try {
-			    WebElement Last_Name= driver.findElement(By.xpath("//*[@id='lastname']"));
-		Last_Name.click();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Last_Name.clear();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Last_Name.sendKeys("Testing");
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		log.info("It's entering the user Last Name");
-			}
-		catch( NoSuchElementException popup) {
-		}	
-				//enter password
-		try {
-				 WebElement Pas_word = driver.findElement(By.xpath("//*[@id='password']"));
-		Pas_word.click();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Pas_word.clear();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Pas_word.sendKeys("selenium@123");
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		log.info("It's entering the user password");
-                 }
-		catch( NoSuchElementException popup) {
-		}
-		try {
-				    WebElement Confirm_passw= driver.findElement(By.xpath("//*[@id='password-confirmation']"));
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-		Confirm_passw.click();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Confirm_passw.clear();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Confirm_passw.sendKeys("selenium@123");
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		log.info("It's entering the user password");
-			}
-		catch( NoSuchElementException popup) {
-		}		
-					// enter captcha
-		try {
-					WebElement Captcha_ch= driver.findElement(By.xpath("//*[@id='captcha_user_create']"));
-		//wait.implictywait(driver);
-		Thread.sleep(2000);
-		//Captcha_ch.click();
-		//Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Captcha_ch.clear();
-		Thread.sleep(2000);
-		//wait.implictywait(driver);
-		Captcha_ch.sendKeys("Aj7W2mtf9namwf55");
-		Thread.sleep(1000);
-		//wait.implictywait(driver);
-		log.info("It's entering the user password");
-			}
-		catch( NoSuchElementException popup) {
-		}	    
-				    // sign  up button
-		try {
-				    WebDriverWait wait = new WebDriverWait(driver, 40);
-			WebElement ele_ment = driver.findElement(By.xpath("/html/body/div[2]/main/div/div/div[2]/div/form/fieldset/div[8]/div[2]/div/div/button"));
-			Thread.sleep(1000);
-			js.executeScript("arguments[0].click();", ele_ment);
-			Thread.sleep(2000);
-
-			}
-		catch( NoSuchElementException popup) {
-		}
-	}
-
+public class Email_Sign_up_Correct_Data_2 extends SetupClass {
 	
-	@Then("^After signup see the price page$")
-	public void After_signup_see_the_price_page() throws InterruptedException {
-		                                    /*driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		                                        String actualTitle = driver.getTitle();
-		                                       //wait.implictywait(driver);
-		                                          Thread.sleep(2000);
-		                                          String expectedTitle = "Pricing";
-		                                            //wait.implictywait(driver);
-		                                                Thread.sleep(2000);
-		                                                  Assert.assertEquals(expectedTitle, actualTitle);
-		                                                        //wait.implictywait(driver);*/
-		driver.get("https://www.slideteam.net/pricing");
-		Thread.sleep(2000);
-		Actions actions = new Actions(driver);
-		WebElement free_ppt_btn1=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Free Stuff")));
-		actions.moveToElement(free_ppt_btn1).moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Free PPTs')]"))).click().build().perform();
-		Thread.sleep(7000);
+	WebDriverWait wait = new WebDriverWait(driver,50);
+         JavascriptExecutor js = (JavascriptExecutor) driver;
+	
+	@Given("^user is already on Website Home Page ii$")
+	public void user_is_already_on_Website_Home_Page_ii() throws Throwable {
+		driver.get(AppURL);
+		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		log.info("It's opening the website URL");
+		Thread.sleep(1000);
+		
+	}
+
+	@Then("^user navigates to sign up page ii$")
+	public void user_navigates_to_sign_up_page_ii() throws Throwable {
+		
+		/* WebElement login_signup_btn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".t3-navbar > ul:nth-child(1) > li:nth-child(10) > a:nth-child(1)")));
+		 Thread.sleep(3000);
+		 login_signup_btn.click();
+		 Thread.sleep(3000);*/
+		driver.get("https://www.slidegeeks.com/register");
+	
+		
+		 WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_name1")));
+		 Thread.sleep(3000);
+		 name.sendKeys("Automated Program");
+		 Thread.sleep(3000);
 	   
-		Thread.sleep(1000);
-	}
-
 	
-	@Then("^user will download a free product cd$")
-	public void user_will_download_a_free_product_cd() throws InterruptedException  {
-		try {
-		driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
-		Thread.sleep(3000);
-		WebElement Down_load= driver.findElement(By.cssSelector("#clicking"));
-			js.executeScript("arguments[0].scrollIntoView();",Down_load);
-			Down_load.click();
-		Thread.sleep(3000);
-	   driver.get("https://www.slideteam.net/");
-	   Thread.sleep(3000);
-		}
-		catch( NoSuchElementException popup) {
-		}
-	}
-
-	@Then("^user wants to delete the new account created cd$")
-	public void user_wants_to_delete_the_new_account_created_cd() throws InterruptedException  {
-
-		// driver.findElement(By.xpath("//a[contains(text(),'My Account')]")).click();
-		driver.get("https://www.slideteam.net/customer/account/");
+		// Generate Random Email Address
+		int leftLimit = 97; // letter 'a'
+	    int rightLimit = 122; // letter 'z'
+	    int targetStringLength = 10;
+	    Random random = new Random();
+	    StringBuilder buffer = new StringBuilder(targetStringLength);
+	    for (int i = 0; i < targetStringLength; i++) {
+	        int randomLimitedInt = leftLimit + (int) 
+	          (random.nextFloat() * (rightLimit - leftLimit + 1));
+	        buffer.append((char) randomLimitedInt);
+	    }
+	    String generatedString = buffer.toString();
+	 
+	    System.out.println(generatedString);
+	    
+	    String signup_email=generatedString;
+	    String full_email="selenium.testing."+generatedString+"@gmail.com";
+	    System.out.println(full_email);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
+		Thread.sleep(2000);
+		
+		WebElement new_email = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_email1")));
+		 Thread.sleep(3000);
+		 new_email.sendKeys(full_email);
+		 Thread.sleep(3000);
+		
+	
+		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_password1")));
+		 Thread.sleep(3000);
+		password.sendKeys("Geeks@123");
 		 Thread.sleep(3000);
 		 
-
-
-                   try {
-			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
-			if(iframe.isDisplayed()) {
-				driver.switchTo().frame(iframe);   
-				 Actions act = new Actions(driver);
-				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
-				 Thread.sleep(2000);
-					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
-					 Thread.sleep(1000);
-						chat1.click();
-						 Thread.sleep(1000);
-						 driver.switchTo().defaultContent();
-						 Thread.sleep(1000);
-						 driver.switchTo().parentFrame();
-					 Thread.sleep(1000);
-			}
-			else {
-				
-
-			System.out.println("chat window does not open");
-			}
-		}
-				catch(NoSuchElementException NCP) {
-					
-				}
-
-                 try {
-		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
-		 js.executeScript("arguments[0].scrollIntoView();",delete_account);
-			 delete_account.click();
+		 WebElement confirm_passwoed = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_password2")));
 		 Thread.sleep(3000);
-		 } catch(NoSuchElementException acc) {
-		 }
-	         try {
-		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
-		 js.executeScript("arguments[0].scrollIntoView();",continue_delete); 
-			 continue_delete.click();
+		confirm_passwoed.sendKeys("Geeks@123");
 		 Thread.sleep(3000);
-		 } catch(NoSuchElementException del) {
-		 }
+	    
 	
-      }
+		WebElement captcha = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#captchtext")));
+		 Thread.sleep(3000);
+		captcha.sendKeys("Y3Tt6bfwI");
+		 Thread.sleep(3000);
+	    
+
+		WebElement register_btn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));
+		 Thread.sleep(3000);
+		register_btn.click();
+		 Thread.sleep(5000);
+		
+
+		driver.get("https://www.slidegeeks.com/free-downloads");
+		Thread.sleep(6000);
+		
+		WebElement Download= driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/section[2]/div/div/div[1]/div/div[2]/div[1]/div/div/p/a/span"));
+		
+		//WebElement Download = (WebElement)js.executeScript("('a.btn-download')", "");
+		Thread.sleep(3000);
+		js.executeScript("arguments[0].scrollIntoView();",Download);
+		Download.click();
+		Thread.sleep(3000);
+							
+		WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
+		Thread.sleep(3000);
+		Signout.click();
+	    
+	}
+
 }
