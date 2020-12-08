@@ -403,7 +403,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 		
 		
-		 WebElement Signout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href ='/logout']"));
+		 WebElement Signout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href ='/logout']")));
 		Thread.sleep(3000);
 		Signout.click();
 	}
