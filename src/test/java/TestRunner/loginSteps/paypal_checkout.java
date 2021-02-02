@@ -571,29 +571,7 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^paypal popup appears and user navigates back to my account pp$")
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
-	         //WebDriverWait wait = new WebDriverWait(driver,100);
-		  // Maximize Window
-		//  driver.manage().window().maximize();
-		
-		  // Store the CurrentWindow for future reference
-		 // String handle = " ";
-		//  String currentWindow = driver.getWindowHandle();
-		//  String popupWindowHandle = null;
-		   
-		  // Switch To Popup Window
-		  
-		/*  for(String handle : driver.getWindowHandles())
-		  {
-		   if(!handle.equals(currentWindow)){
-		    
-		    popupWindowHandle = handle;
-		    driver.switchTo().window(popupWindowHandle);
-		   }
-		  }*/
-		  
-		  
-		  
-		// page title
+	        // page title
 		  String pp_page_title=driver.getTitle();
 			Thread.sleep(3000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
@@ -604,11 +582,119 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);*/
+		if(driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")).isDisplayed())
+		{  WebElement PP_Email = driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input"));
+                         Thread.sleep(2000);
+		   PP_Email.sendKeys("tatvashardul-buyer@gmail.com");
+		   Thread.sleep(2000);
+		   WebElement Next_1 = driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[2]/button"));
+							 Thread.sleep(3000);
+		 Next_1.click();
+		  Thread.sleep(3000);
+		   String actualTitle = "$1,599.99";
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
+		String expectedTitle = "$1,599.99";
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
+		Assert.assertEquals(expectedTitle, actualTitle);
+		Thread.sleep(2000);
+		js.executeScript("alert('Text $1,599.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
+		driver.get("https://www.slidegeeks.com/component/pago/checkout");
+		Thread.sleep(2000);	
+		}
+		else {
+		Thread.sleep(3000);
+		 driver.get("https://www.slidegeeks.com/component/pago/checkout");
+		Thread.sleep(2000);
+		}
+		Thread.sleep(2000);
+		 driver.get("https://www.slidegeeks.com/subscriptions");
+		Thread.sleep(2000);
+		   WebElement Education = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[1]/div/div/button[3]")));
+				Thread.sleep(2000);
+		Education.click();
+		Thread.sleep(3000);
+		//js.executeScript("window.scrollBy(0,1000)");
+		 WebElement Subscribe_btn1  =  driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[3]/div/div[3]/div[3]/span/form/span/button"));
+		js.executeScript("arguments[0].scrollIntoView();",Subscribe_btn1);
+			Thread.sleep(2000);
+		    Subscribe_btn1.click();
+			Thread.sleep(6000);
+	
+		    try
+		{
+			WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#pg-checkout-billing-payment-form > div > div:nth-child(1) > label > i")));
+			Thread.sleep(2000);
+		    cp_btn.click();
+		    Thread.sleep(3000);
+		}
+		catch (NoSuchElementException popup) {
+			// TODO: handle exception
+		}
 		
-
+		Thread.sleep(1000);
+		   try {
+			
+		 WebElement place_order_btn  =  driver.findElement(By.cssSelector("body > div.afterBody.checkout-wrapper.main-wrapper.no-left-menu > div.main_wrapper > div > div.checkout-inner-wrapper > div.checkout-box-wrapper.checkout-order > div > div > table > tbody > tr:nth-child(4) > td:nth-child(1) > button.btn.primary-btn.pg-button.pg-checkout-continue"));
+			Thread.sleep(2000);
+			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);	
+			//js.executeScript("arguments[0].click();", place_order_btn);
+			Thread.sleep(2000);
+		    place_order_btn.click();
+			Thread.sleep(5000);
+		} catch (NoSuchElementException popup) {
+		}
+		         Thread.sleep(3000);
+			 // page title
+		  String pp_page_title1=driver.getTitle();
+			Thread.sleep(3000);
+		    System.out.println("Title of the Page is --> "+pp_page_title);
+		    
+		/* // place order button 
+			 WebElement cancel_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(.,'Cancel and return to Slideteam Pte. Ltd.')])[2]")));
+		js.executeScript("arguments[0].scrollIntoView();",cancel_order_btn);		
+		Thread.sleep(2000);
+			    cancel_order_btn.click();
+				Thread.sleep(5000);*/
+		if(driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")).isDisplayed())
+			 {
+			WebElement PP_Email = driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input"));
+                         Thread.sleep(2000);
+		   PP_Email.sendKeys("tatvashardul-buyer@gmail.com");
+		   Thread.sleep(2000);
+		   WebElement Next_2 = driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[2]/button"));
+							 Thread.sleep(3000);
+			Next_2.click();
+			 Thread.sleep(3000);
+		   String actualTitle = "$1,999.99";
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
+		String expectedTitle = "$1,999.99";
+		Thread.sleep(1000);
+		//wait.implictywait(driver);
+		Assert.assertEquals(expectedTitle, actualTitle);
+		Thread.sleep(2000);
+		js.executeScript("alert('Text $1,999.99 is present and correct');");
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
+		Thread.sleep(5000);
+		Thread.sleep(3000);
+		 driver.get("https://www.slidegeeks.com/component/pago/checkout");
+		Thread.sleep(2000);
+			 }
+			 else {
+		 driver.get("https://www.slidegeeks.com/component/pago/checkout");
+		Thread.sleep(2000);
 				 // Switch To Default Window
 				  driver.get("https://www.slidegeeks.com/component/pago/checkout");
 				 // driver.switchTo().window(currentWindow);
+			 }
 		    
 	}
 
