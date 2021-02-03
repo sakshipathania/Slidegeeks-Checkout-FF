@@ -583,7 +583,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);*/
-		if(!driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")).isEmpty())
+		if(Null == driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")))
 		{  WebElement PP_Email = driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input"));
                          Thread.sleep(2000);
 		   PP_Email.sendKeys("tatvashardul-buyer@gmail.com");
@@ -662,7 +662,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);*/
-		if(driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")).isDisplayed())
+		if(Null == driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")))
 			 {
 			WebElement PP_Email = driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input"));
                          Thread.sleep(2000);
