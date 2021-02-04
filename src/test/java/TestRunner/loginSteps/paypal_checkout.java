@@ -602,7 +602,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 		js.executeScript("alert('Text $1,599.99 is present and correct');");
 		Thread.sleep(3000);
-		driver.switchTo().alert().accept();
+		//driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 		driver.get("https://www.slidegeeks.com/component/pago/checkout");
@@ -613,6 +613,8 @@ public class paypal_checkout extends SetupClass {
 		 driver.get("https://www.slidegeeks.com/component/pago/checkout");
 		Thread.sleep(2000);
 		}
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
 		Thread.sleep(2000);
 		 driver.get("https://www.slidegeeks.com/subscriptions");
 		Thread.sleep(2000);
@@ -682,7 +684,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 		js.executeScript("alert('Text $1,999.99 is present and correct');");
 		Thread.sleep(3000);
-		driver.switchTo().alert().accept();
+		//driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(5000);
 		Thread.sleep(3000);
@@ -694,7 +696,8 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 				 // Switch To Default Window
 				  driver.get("https://www.slidegeeks.com/component/pago/checkout");
-				 // driver.switchTo().window(currentWindow);
+				 Thread.sleep(5000);
+				  driver.switchTo().window(currentWindow);
 			 }
 		    
 	}
