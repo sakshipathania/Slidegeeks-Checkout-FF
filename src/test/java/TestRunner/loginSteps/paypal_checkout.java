@@ -698,7 +698,7 @@ public class paypal_checkout extends SetupClass {
 				 // driver.switchTo().window(currentWindow);
 			 }
 		    
-	}
+	
 
 
 	@Then("^user Signout account PP$")
