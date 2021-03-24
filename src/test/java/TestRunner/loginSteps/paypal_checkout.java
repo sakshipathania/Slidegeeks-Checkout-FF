@@ -572,7 +572,7 @@ public class paypal_checkout extends SetupClass {
 
 	@Then("^paypal popup appears and user navigates back to my account pp$")
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
-	        // page title
+	       // page title
 		  String pp_page_title=driver.getTitle();
 			Thread.sleep(3000);
 		    System.out.println("Title of the Page is --> "+pp_page_title);
@@ -583,7 +583,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);*/
-		if(null == driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")))
+		/*if(driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")).isDisplayed())
 		{  WebElement PP_Email = driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input"));
                          Thread.sleep(2000);
 		   PP_Email.sendKeys("tatvashardul-buyer@gmail.com");
@@ -603,6 +603,7 @@ public class paypal_checkout extends SetupClass {
 		js.executeScript("alert('Text $1,599.99 is present and correct');");
 		Thread.sleep(3000);
 		driver.switchTo().alert().accept();
+		//wait.implictywait(driver);
 		Thread.sleep(5000);
 		driver.get("https://www.slidegeeks.com/component/pago/checkout");
 		Thread.sleep(2000);	
@@ -612,8 +613,6 @@ public class paypal_checkout extends SetupClass {
 		 driver.get("https://www.slidegeeks.com/component/pago/checkout");
 		Thread.sleep(2000);
 		}
-		//Thread.sleep(3000);
-		//driver.switchTo().alert().accept();
 		Thread.sleep(2000);
 		 driver.get("https://www.slidegeeks.com/subscriptions");
 		Thread.sleep(2000);
@@ -663,7 +662,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 			    cancel_order_btn.click();
 				Thread.sleep(5000);*/
-		if(null == driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")))
+		/*if(driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input")).isDisplayed())
 			 {
 			WebElement PP_Email = driver.findElement(By.xpath("/html/body/div[1]/section[2]/div/div/form/div[3]/div[1]/div[2]/div[1]/input"));
                          Thread.sleep(2000);
@@ -692,11 +691,11 @@ public class paypal_checkout extends SetupClass {
 			 }
 			 else {
 		 driver.get("https://www.slidegeeks.com/component/pago/checkout");
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
 				 // Switch To Default Window
+		Thread.sleep(2000);
 				  driver.get("https://www.slidegeeks.com/component/pago/checkout");
-				 //Thread.sleep(5000);
-				//  driver.switchTo().window(currentWindow);
+				 // driver.switchTo().window(currentWindow);
 			 }
 		    
 	}
