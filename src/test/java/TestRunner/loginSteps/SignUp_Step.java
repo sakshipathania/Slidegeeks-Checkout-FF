@@ -191,8 +191,7 @@ public class SignUp_Step extends SetupClass {
 		//Signout.click();
 	}
 
-}
+
 	    
-	}
 
 }
