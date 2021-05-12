@@ -575,14 +575,14 @@ public class paypal_checkout extends SetupClass {
 
 	}
   
-	@Then("^user is redirected checkout page$")
-	public void user_is_redirected_checkout_page() throws Throwable {
-		Thread.sleep(6000);
+	//@Then("^user is redirected checkout page$")
+	//public void user_is_redirected_checkout_page() throws Throwable {
+		//Thread.sleep(6000);
     //WebElement Continue =  driver.findElement(By.xpath("//*[@id='pg-checkout-shipping-info']/div[1]/div/div/div/div[2]/button"));
 	//js.executeScript("arguments[0].scrollIntoView();",Continue);
 		//Thread.sleep(1000);
 		//Continue.click();
-	}
+	//}
 
 	@Then("^user is redirected checkout page$")
 	public void user_is_redirected_checkout_page() throws Throwable {
