@@ -633,7 +633,7 @@ public class Stripe_checkout extends SetupClass {
 		Thread.sleep(2000);
 			Stripe_back.click();
 		Thread.sleep(5000);
-		driver.switchTo().alert().accept();
+		//driver.switchTo().alert().accept();
 		//driver.get("https://www.slidegeeks.com/component/pago/checkout");
 		//Thread.sleep(2000);
 		
