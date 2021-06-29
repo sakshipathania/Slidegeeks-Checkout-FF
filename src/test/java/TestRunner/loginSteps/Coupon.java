@@ -192,11 +192,11 @@ public class Coupon extends SetupClass {
 		Thread.sleep(3000);
     
     //Aplly Coupon Again
-		WebElement Coupon1= driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[1]/div[1]/form[2]/div[2]/div[1]/label"));
+		WebElement Coupon1= driver.findElement(By.cssSelector("#discount-checkbox"));
 		Thread.sleep(3000);
 		Coupon1.click();
 		Thread.sleep(3000);
-		 WebElement Add_Coupon1= driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[1]/div[1]/form[2]/div[2]/div[2]/input"));
+		 WebElement Add_Coupon1= driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[1]/div[1]/form[2]/div[2]/div[2]/input"));
 		Thread.sleep(3000);
 		Add_Coupon1.sendKeys("5OFF");
 		Thread.sleep(3000);
