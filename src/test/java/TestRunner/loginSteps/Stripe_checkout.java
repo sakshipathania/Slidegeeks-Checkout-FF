@@ -67,6 +67,7 @@ public class Stripe_checkout extends SetupClass {
 		 login_signup_btn.click();
 		 Thread.sleep(3000);
 		 */
+		System.out.println("urlHome " + driver.getCurrentUrl()); 
 		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_name1")));
 		 Thread.sleep(3000);
 		 name.sendKeys("Automated Program");
