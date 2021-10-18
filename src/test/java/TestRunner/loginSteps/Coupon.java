@@ -269,8 +269,9 @@ public class Coupon extends SetupClass {
 		js.executeScript("arguments[0].scrollIntoView();",Delete_Account);	
 		Thread.sleep(3000);
 		Delete_Account.click();
-                 Thread.sleep(3000);
-	WebElement Delete_Account_reason = driver.findElement(By.cssSelector("#only-free-download-product"));
+                 Thread.sleep(4000);
+	//WebElement Delete_Account_reason = driver.findElement(By.cssSelector("#only-free-download-product")); //input[@id='only-free-download-product']
+		WebElement Delete_Account_reason = driver.findElement(By.xpath("//input[@id='only-free-download-product']"));
 		Thread.sleep(3000);
 		Delete_Account_reason.click();
                  Thread.sleep(3000);
