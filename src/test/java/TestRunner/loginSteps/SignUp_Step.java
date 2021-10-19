@@ -39,8 +39,9 @@ public class SignUp_Step extends SetupClass {
 		driver.get("https://www.slidegeeks.com/register");
 	
 		
-		 WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_name1")));
-		 Thread.sleep(3000);
+	//	 WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_name1")));
+		 WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='jform_name1']")));
+		Thread.sleep(3000);
 		 name.sendKeys("Automated Program");
 		 Thread.sleep(3000);
 	   
