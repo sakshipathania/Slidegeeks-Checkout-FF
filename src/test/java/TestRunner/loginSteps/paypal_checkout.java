@@ -699,7 +699,9 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(3000);
 		Delete_Account.click();
                  Thread.sleep(3000);
-	WebElement Delete_Account_reason = driver.findElement(By.cssSelector("#only-free-download-product"));
+		
+		WebElement Delete_Account_reason = driver.findElement(By.xpath("//input[@id='only-free-download-product']"));
+	//WebElement Delete_Account_reason = driver.findElement(By.cssSelector("#only-free-download-product"));
 		Thread.sleep(3000);
 		Delete_Account_reason.click();
                  Thread.sleep(3000);
