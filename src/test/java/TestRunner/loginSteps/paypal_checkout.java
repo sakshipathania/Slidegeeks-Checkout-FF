@@ -605,7 +605,7 @@ public class paypal_checkout extends SetupClass {
 		    try
 		{
 			//WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#pg-checkout-billing-payment-form > div > div:nth-child(2) > label")));
-			WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='paypal_express']")));
+			WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='pg-paypal_subscription']")));
 			    Thread.sleep(2000);
 		    cp_btn.click();
 		    Thread.sleep(3000);
