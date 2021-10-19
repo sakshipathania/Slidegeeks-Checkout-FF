@@ -600,12 +600,14 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user proceed to pay with paypal pp$")
 	public void user_proceed_to_pay_with_paypal_pp() throws Throwable {
 	
-		Thread.sleep(1400);
+		Thread.sleep(1000);
 		
 		    try
 		{
 			//WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#pg-checkout-billing-payment-form > div > div:nth-child(2) > label")));
-			WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='pg-paypal_subscription']")));
+			//WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='pg-paypal_subscription']")));
+			    
+		WebElement cp_btn= driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]");
 			    Thread.sleep(2000);
 		    cp_btn.click();
 		    Thread.sleep(3000);
