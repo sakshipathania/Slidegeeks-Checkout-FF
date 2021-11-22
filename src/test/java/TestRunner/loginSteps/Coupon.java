@@ -178,6 +178,7 @@ public class Coupon extends SetupClass {
 		Coupon.click();
 		Thread.sleep(3000);
 		 WebElement Add_Coupon= driver.findElement(By.cssSelector("#checkbox-input"));
+		//input[@id='discount-checkbox']
 		Thread.sleep(3000);
 		Add_Coupon.sendKeys("5OFF");
 		Thread.sleep(3000);
