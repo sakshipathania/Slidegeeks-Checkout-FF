@@ -145,7 +145,7 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(3000);
 	    System.out.println("Title of the Page is --> "+stripe_page_title);
 	    
-	    String page_title="https://checkout.stripe.com/";
+	    String page_title="SlideTeam Geeks Inc";
 	    
 	    if(page_title.equalsIgnoreCase(stripe_page_title))
 	    {
@@ -161,15 +161,17 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(3000);
 		 WebElement Stripe_back = driver.findElement(By.cssSelector("#root > div > div > div.App-Overview > header > div > div > a > div > div > div.Header-backArrowContainer > svg"));
 		Thread.sleep(2000);
-			Stripe_back.click();
+		js.executeScript("arguments[0].click();",Stripe_back);
+			//Stripe_back.click();
 		Thread.sleep(5000);
 					
 		//Signout
 		 //  driver.get("https://www.slidegeeks.com/component/pago/checkout");
 		//Thread.sleep(2000);
-	WebElement Account = driver.findElement(By.xpath("/html/body/div[1]/header/div/div/nav/div/div[2]/div[2]/div[2]/div/div[2]/ul/li[1]/a"));
+	WebElement Account = driver.findElement(By.xpath("//a[normalize-space()='Account']"));
 		Thread.sleep(3000);
-		Account.click();
+		js.executeScript("arguments[0].click();",Account);
+		//Account.click();
                  Thread.sleep(3000);
 	WebElement Delete_Account = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div/div/div[2]/div/ul/li[6]/a"));
 		Thread.sleep(3000);
