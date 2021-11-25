@@ -161,8 +161,8 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(3000);
 		 WebElement Stripe_back = driver.findElement(By.cssSelector("#root > div > div > div.App-Overview > header > div > div > a > div > div > div.Header-backArrowContainer > svg"));
 		Thread.sleep(2000);
-		js.executeScript("arguments[0].click();",Stripe_back);
-			//Stripe_back.click();
+		//js.executeScript("arguments[0].click();",Stripe_back);
+			Stripe_back.click();
 		Thread.sleep(5000);
 					
 		//Signout
