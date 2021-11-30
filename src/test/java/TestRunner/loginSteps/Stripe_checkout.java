@@ -613,7 +613,7 @@ public class Stripe_checkout extends SetupClass {
 		Thread.sleep(3000);
 	    System.out.println("Title of the Page is --> "+stripe_page_title);
 	    
-	    String page_title="https://checkout.stripe.com/";
+	    String page_title="SlideTeam Geeks Inc";
 	    
 	    if(page_title.equalsIgnoreCase(stripe_page_title))
 	    {
@@ -736,6 +736,9 @@ public class Stripe_checkout extends SetupClass {
 		Thread.sleep(3000);
 	  //  driver.get("https://www.slidegeeks.com/component/pago/checkout");
 		//Thread.sleep(2000);
+		
+		Thread.sleep(3000);
+	    System.out.println("Title of the Page is --> "+driver.getTitle(););
 	WebElement Account = driver.findElement(By.xpath("/html/body/div[1]/header/div/div/nav/div/div[2]/div[2]/div[2]/div/div[2]/ul/li[1]/a"));
 		Thread.sleep(3000);
 		Account.click();
