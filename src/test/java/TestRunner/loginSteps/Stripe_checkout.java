@@ -739,7 +739,7 @@ public class Stripe_checkout extends SetupClass {
 		
 		Thread.sleep(3000);
 	    System.out.println("Title of the Page is --> "+driver.getTitle(););
-	WebElement Account = driver.findElement(By.xpath("/html/body/div[1]/header/div/div/nav/div/div[2]/div[2]/div[2]/div/div[2]/ul/li[1]/a"));
+	WebElement Account = driver.findElement(By.xpath("//a[normalize-space()='Account']"));
 		Thread.sleep(3000);
 		Account.click();
                  Thread.sleep(3000);
