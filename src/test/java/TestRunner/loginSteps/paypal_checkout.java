@@ -305,7 +305,7 @@ public class paypal_checkout extends SetupClass {
 	public void user_is_redirected_to_pricing_page_and_check_the_text8_PP8() throws Throwable {
 		//Thread.sleep(7000);
 		//driver.get("https://www.slidegeeks.com/subscriptions");
-		       T//hread.sleep(4000);
+		       //hread.sleep(4000);
 		
 		//Thread.sleep(3000);
 		//String actualTitle = "$299.99";
