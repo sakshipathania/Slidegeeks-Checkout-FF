@@ -215,7 +215,7 @@ public class Coupon extends SetupClass {
               String actual = Value_after_coupon.getText();
               System.out.println(actual);
 		
-              Assert.assertTrue("Price does not matched", actual.contentEquals("47.49"))
+              Assert.assertTrue("Price does not matched", actual.contentEquals("47.49"));
 
               if(expected.equals(actual)){
               System.out.println("Coupon applied Successfully");
