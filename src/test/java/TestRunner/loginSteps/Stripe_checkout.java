@@ -46,12 +46,12 @@ public class Stripe_checkout extends SetupClass {
 		}
 	    
 		Thread.sleep(3000);
-		//driver.get("https://www.slidegeeks.com/register");
+		driver.get("https://www.slidegeeks.com/register");
 		Thread.sleep(3000);
-		WebElement login_signup_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='/register']")));
+		/*WebElement login_signup_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='/register']")));
 		 Thread.sleep(1000);
 		 login_signup_btn.click();
-		 Thread.sleep(2000);
+		 Thread.sleep(2000);*/
 		 
 		System.out.println("urlHome " + driver.getCurrentUrl()); 
 		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_name1")));
