@@ -117,7 +117,7 @@ public class Stripe_checkout extends SetupClass {
 		      // Thread.sleep(4000);
 		
 		//Thread.sleep(3000);
-		System.out.println("user is on pricing page --> "+driver.getTitle(););
+		System.out.println("user is on pricing page --> "+driver.getTitle());
 		String actualTitle = "Monthly";
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
@@ -359,8 +359,7 @@ public class Stripe_checkout extends SetupClass {
 		//Thread.sleep(1000);
 		//wait.implictywait(driver);
 		//Assert.assertEquals(expectedTitle, actualTitle);
-		WebElement Annual_4_User_License1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"//div[@id='Business']//em[contains(text(),'$599.99')]")));
+		WebElement Annual_4_User_License1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='Business']//em[contains(text(),'$599.99')]")));
 		js.executeScript("arguments[0].scrollIntoView();",Annual_4_User_License1);
 		String Annual_4_User_License = Annual_4_User_License1.getText();
 		
@@ -793,7 +792,7 @@ public class Stripe_checkout extends SetupClass {
 		//Thread.sleep(2000);
 		
 		Thread.sleep(3000);
-	    System.out.println("Title of the Page is --> "+driver.getTitle(););
+	    System.out.println("Title of the Page is --> "+driver.getTitle());
 	WebElement Account = driver.findElement(By.xpath("//a[normalize-space()='Account']"));
 		Thread.sleep(2000);
 		Account.click();
