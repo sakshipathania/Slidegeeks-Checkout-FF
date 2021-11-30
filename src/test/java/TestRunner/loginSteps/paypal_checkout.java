@@ -315,8 +315,7 @@ public class paypal_checkout extends SetupClass {
 		//Thread.sleep(1000);
 		//wait.implictywait(driver);
 		//Assert.assertEquals(expectedTitle, actualTitle);
-		WebElement annualCustom1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"//div[@id='Individual']//em[contains(text(),'$299.99')]")));
+		WebElement annualCustom1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='Individual']//em[contains(text(),'$299.99')]")));
 		js.executeScript("arguments[0].scrollIntoView();",annualCustom1);
 		String annualCustom = annualCustom1.getText();
 		
