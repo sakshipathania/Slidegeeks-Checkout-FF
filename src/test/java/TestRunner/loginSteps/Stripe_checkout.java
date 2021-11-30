@@ -346,7 +346,7 @@ public class Stripe_checkout extends SetupClass {
 	public void user_is_redirected_to_pricing_page_and_check_the_text10_CO(int arg1) throws Throwable {
 		//Thread.sleep(7000);
 		//driver.get("https://www.slidegeeks.com/subscriptions");
-		       T//hread.sleep(4000);
+		       //hread.sleep(4000);
 		//WebElement Business_Team = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[1]/div/div/button[2]")));
 				//Thread.sleep(2000);
 		//Business_Team.click();
