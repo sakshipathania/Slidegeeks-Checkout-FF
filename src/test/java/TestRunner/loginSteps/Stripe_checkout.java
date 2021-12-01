@@ -482,8 +482,6 @@ public class Stripe_checkout extends SetupClass {
                 Assert.assertTrue("Business||Annual_Company_Wide_Unlimited_User_License price does not matched", Annual_Company_Wide_Unlimited_User_License.contentEquals("$2,999.99"));
 		js.executeScript("alert('Text $2999.99 is present and correct');");
 		Thread.sleep(1000);
-		js.executeScript("alert('Text $2999.99 is present and correct');");
-		Thread.sleep(1000);
 		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
