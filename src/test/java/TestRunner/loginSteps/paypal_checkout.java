@@ -119,10 +119,8 @@ public class paypal_checkout extends SetupClass {
     @Then("^user is redirected to pricing page and check the text1 PP1$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text1_PP1() throws Throwable {
 		//Thread.sleep(7000);
-		driver.get("https://www.slidegeeks.com/subscriptions");
+		//driver.get("https://www.slidegeeks.com/subscriptions");
 	       Thread.sleep(4000);
-		
-		//Thread.sleep(3000);
 		String actualTitle = "Monthly";
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
