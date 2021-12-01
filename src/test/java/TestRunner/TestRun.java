@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"."}, tags= {"@Stripe_Checkout"},
+@CucumberOptions(features = {"."}, // tags= {"@Stripe_Checkout"},
 plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucumber.json","usage:target/usage.jsonx","junit:target/cucumber.xml"}//,
 //monochrome = true, //display the console output in a proper readable format
 //strict = true, //it will check if any step is not defined in step definition file
