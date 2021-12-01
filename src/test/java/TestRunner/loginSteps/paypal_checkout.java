@@ -119,8 +119,8 @@ public class paypal_checkout extends SetupClass {
     @Then("^user is redirected to pricing page and check the text1 PP1$")
 	public void user_is_redirected_to_pricing_page_and_check_the_text1_PP1() throws Throwable {
 		//Thread.sleep(7000);
-		//driver.get("https://www.slidegeeks.com/subscriptions");
-		      // Thread.sleep(4000);
+		driver.get("https://www.slidegeeks.com/subscriptions");
+	       Thread.sleep(4000);
 		
 		//Thread.sleep(3000);
 		String actualTitle = "Monthly";
@@ -130,9 +130,9 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		js.executeScript("alert('Text Monthly is present and correct');");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
@@ -166,7 +166,7 @@ public class paypal_checkout extends SetupClass {
                 Assert.assertTrue("monthlyPrice does not matched", monthlyPrice .contentEquals("$49.99"));
 		
 		js.executeScript("alert('Text $49.99 is present and correct');");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
