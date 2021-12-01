@@ -27,8 +27,8 @@ public class Stripe_checkout extends SetupClass {
 	
 	@Given("^user is already on Website Home Page CO$")
 	public void user_is_already_on_Website_Home_Page_CO() throws Throwable {
-		driver.get(AppURL);
-		//driver.get("https://www.slidegeeks.com/");
+		//driver.get(AppURL);
+		driver.get("https://www.slidegeeks.com/");
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(1000);
@@ -122,12 +122,12 @@ public class Stripe_checkout extends SetupClass {
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		String expectedTitle = "Monthly";
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		js.executeScript("alert('Text Monthly is present and correct');");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
@@ -156,7 +156,7 @@ public class Stripe_checkout extends SetupClass {
 		System.out.println("monthlyPrice  = " + monthlyPrice );
                 Assert.assertTrue("monthlyPrice does not matched", monthlyPrice .contentEquals("$49.99"));
 		js.executeScript("alert('Text $49.99 is present and correct');");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
