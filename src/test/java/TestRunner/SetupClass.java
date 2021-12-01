@@ -60,7 +60,10 @@ public class SetupClass {
 			localFF = System.setProperty(CommonData.Firefox_Name, CommonData.Firefox_Path);
 			FirefoxProfile profile = new FirefoxProfile();
 			profile.setPreference("dom.webnotifications.enabled", false);
-		   driver = new FirefoxDriver();
+		    driver = new FirefoxDriver();
+		    driver.manage().window().maximize();
+		    driver.manage().deleteAllCookies();
+		   driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		   Thread.sleep(1000);
 
 		}
