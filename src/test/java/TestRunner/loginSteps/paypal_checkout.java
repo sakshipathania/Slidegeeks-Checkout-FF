@@ -35,6 +35,8 @@ public class paypal_checkout extends SetupClass {
 		
 		try {
 			WebElement logout = driver.findElement(By.xpath("//a[@href ='/logout']"));
+			boolean value = logout.isDisplayed();	
+                        System.out.println("Logout is displayed = " + value);
 			if (logout.isEnabled()) {
 				logout.click();
 				Thread.sleep(1000);
@@ -47,6 +49,7 @@ public class paypal_checkout extends SetupClass {
 	    
 		 Thread.sleep(3000);
 		 driver.get("https://www.slidegeeks.com/register");
+		
 		//Thread.sleep(3000);
 		//WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_name1")));
 		
