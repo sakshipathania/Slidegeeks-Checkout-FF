@@ -529,14 +529,14 @@ public class Stripe_checkout extends SetupClass {
 		//String actualTitle = "$999.99";
 		//Thread.sleep(1000);
 		//wait.implictywait(driver);
-		String expectedTitle = "$999.99";
+		//String expectedTitle = "$999.99";
 		//Thread.sleep(1000);
 		//wait.implictywait(driver);
 		//Assert.assertEquals(expectedTitle, actualTitle);
-		//Thread.sleep(2000);
-		WebElement Annual_15_User_Education_License1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"//div[@id='Education']//em[contains(text(),'$999.99')]")));
+		Thread.sleep(1000);
+		WebElement Annual_15_User_Education_License1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='Education']//em[contains(text(),'$999.99')]")));
 		js.executeScript("arguments[0].scrollIntoView();",Annual_15_User_Education_License1);
+		Thread.sleep(1000);
 		String Annual_15_User_Education_License = Annual_15_User_Education_License1.getText();
 		
 		System.out.println("Annual_15_User_Education_License = " + Annual_15_User_Education_License);
