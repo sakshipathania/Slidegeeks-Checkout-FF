@@ -792,8 +792,8 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user Signout account PP$")
 	public void user_Signout_account_PP() throws Throwable {
 		Thread.sleep(3000);
-	   // driver.get("https://www.slidegeeks.com/component/pago/checkout");
-		//Thread.sleep(2000);
+	    driver.get("https://www.slidegeeks.com/component/pago/checkout");
+		Thread.sleep(2000);
 		
 	WebElement Account = driver.findElement(By.xpath("/html/body/div[1]/header/div/div/nav/div/div[2]/div[2]/div[2]/div/div[2]/ul/li[1]/a"));
 		Thread.sleep(2000);
