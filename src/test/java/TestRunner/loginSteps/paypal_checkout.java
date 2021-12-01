@@ -27,7 +27,7 @@ public class paypal_checkout extends SetupClass {
 	
 	@Given("^user is already on Website Home Page$")
 	public void user_is_already_on_Website_Home_Page() throws Throwable {
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		//driver.get(AppURL);
 		driver.get("https://www.slidegeeks.com/");
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
