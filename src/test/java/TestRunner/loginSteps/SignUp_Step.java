@@ -2,7 +2,7 @@ package TestRunner.loginSteps;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.JavascriptExecutor;
-Thread.sleep(3000);
+
 import TestRunner.SetupClass;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
