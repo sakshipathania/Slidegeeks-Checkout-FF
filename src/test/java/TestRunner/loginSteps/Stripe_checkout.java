@@ -28,13 +28,15 @@ public class Stripe_checkout extends SetupClass {
 	@Given("^user is already on Website Home Page CO$")
 	public void user_is_already_on_Website_Home_Page_CO() throws Throwable {
 		//driver.get(AppURL);
-		 Thread.sleep(4000);
+		 //Thread.sleep(4000);
 		driver.get("https://www.slidegeeks.com/");
+		driver.manage().deleteAllCookies();
+		Thread.sleep(4000);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(1000);
 		
-		try {
+		/*try {
 			WebElement logout = driver.findElement(By.xpath("//a[@href ='/logout']"));
 			if (logout.isEnabled()) {
 				logout.click();
@@ -44,7 +46,7 @@ public class Stripe_checkout extends SetupClass {
 			}
 		} catch (NoSuchElementException Ext) {
 
-		}
+		}*/
 	    
 		Thread.sleep(3000);
 		driver.get("https://www.slidegeeks.com/register");
