@@ -30,11 +30,15 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(4000);
 		//driver.get(AppURL);
 		driver.get("https://www.slidegeeks.com/");
+		
+		driver.manage().deleteAllCookies();
+		
+		Thread.sleep(5000);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(1000);
 		
-		try {
+		/*try {
 			WebElement logout = driver.findElement(By.xpath("//a[@href ='/logout']"));
 			boolean value = logout.isDisplayed();	
                         System.out.println("Logout is displayed = " + value);
@@ -46,7 +50,7 @@ public class paypal_checkout extends SetupClass {
 			}
 		} catch (NoSuchElementException Ext) {
 
-		}
+		}*/
 	    
 		 Thread.sleep(3000);
 		 driver.get("https://www.slidegeeks.com/register");
