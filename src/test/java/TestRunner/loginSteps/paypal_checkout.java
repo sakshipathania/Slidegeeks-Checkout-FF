@@ -120,6 +120,7 @@ public class paypal_checkout extends SetupClass {
 	public void user_is_redirected_to_pricing_page_and_check_the_text1_PP1() throws Throwable {
 		//Thread.sleep(7000);
 		//driver.get("https://www.slidegeeks.com/subscriptions");
+		System.out.println("urlpaypal " + driver.getCurrentUrl()); 
 	       Thread.sleep(4000);
 		String actualTitle = "Monthly";
 		Thread.sleep(1000);
@@ -128,9 +129,9 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(1000);
 		//wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		js.executeScript("alert('Text Monthly is present and correct');");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.switchTo().alert().accept();
 		//wait.implictywait(driver);
 		Thread.sleep(2000);
