@@ -117,7 +117,7 @@ public class Stripe_checkout extends SetupClass {
 		//driver.get("https://www.slidegeeks.com/subscriptions");
 		      // Thread.sleep(4000);
 		
-		//Thread.sleep(3000);
+		Thread.sleep(3000);
 		System.out.println("user is on pricing page --> "+driver.getTitle());
 		String actualTitle = "Monthly";
 		Thread.sleep(1000);
