@@ -822,7 +822,7 @@ public class Stripe_checkout extends SetupClass {
 				.getText();
 		System.out.println("verifyText1 = " + verifyDeleteAccountMessage);
 
-		Assert.assertTrue("Your are not on paypal page", verifyDeleteAccountMessage.contentEquals("Your Account has been deleted successfully."));
+		Assert.assertTrue("Your account is not deleted", verifyDeleteAccountMessage.contentEquals("Your Account has been deleted successfully."));
      //  WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
 	//	Thread.sleep(3000);
 		//Signout.click();
