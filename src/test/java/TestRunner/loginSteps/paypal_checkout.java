@@ -746,25 +746,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^paypal popup appears and user navigates back to my account pp$")
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
 	         
-		// page title
-		String mainWindow = driver.getWindowHandle();
-
-		System.out.println("user is on mainWindow ------" + mainWindow);
-		// It returns no. of windows opened by WebDriver and will return Set of Strings
-		Thread.sleep(4000);
-		Set<String> set = driver.getWindowHandles();
-
-		// Using Iterator to iterate with in windows
-		Iterator<String> itr = set.iterator();
-		while (itr.hasNext()) {
-			String childWindow = itr.next();
-			// Compare whether the main windows is not equal to child window. If not equal,
-			// we will close.
-
-			System.out.println("set size = " + set.size());
-			if (!mainWindow.equals(childWindow)) {
-				System.out.println("user is on mainWindow ------" + childWindow);
-				driver.switchTo().window(childWindow);
+		
 				System.out.println("Title = " + driver.getTitle());
 
 				Assert.assertTrue("title does not matched",
@@ -784,10 +766,7 @@ public class paypal_checkout extends SetupClass {
 						.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='btnNext']")));
 				next.click();
 				
-				}
-		}
-		// This is to switch to the main window
-		driver.switchTo().window(mainWindow);
+		
 			 
 	}
 
