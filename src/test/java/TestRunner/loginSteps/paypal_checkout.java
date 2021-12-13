@@ -747,7 +747,7 @@ public class paypal_checkout extends SetupClass {
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_pp() throws Throwable {
 	         
 		
-				System.out.println("Title = " + driver.getTitle());
+				/*System.out.println("Title = " + driver.getTitle());
 
 				Assert.assertTrue("title does not matched",
 						driver.getTitle().contains("Log in to your PayPal account"));
@@ -764,7 +764,30 @@ public class paypal_checkout extends SetupClass {
 				Thread.sleep(1000);
 				WebElement next = wait
 						.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='btnNext']")));
-				next.click();
+				next.click();*/
+		String pp_page_URL = driver.getCurrentUrl();
+		System.out.println("URL of the Page is --> " + pp_page_URL);
+
+		if (pp_page_URL.equals("https://www.paypal.com/cgi-bin/webscr")) {
+
+			System.out.println("security captcha is visible");
+
+		} else {
+
+			String pp_page_title = driver.getTitle();
+			System.out.println("Title of the Page is --> " + pp_page_title);
+
+			Assert.assertTrue("title does not matched", driver.getTitle().contains("Log in to your PayPal account"));
+
+			Thread.sleep(1000);
+
+			WebElement email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
+			email.sendKeys("nishadhiman0027@gmail.com");
+			WebElement next = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='btnNext']")));
+			next.click();
+
+			Thread.sleep(1000);
+		}
 				
 		
 			 
