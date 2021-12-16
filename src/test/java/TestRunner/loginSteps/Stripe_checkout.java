@@ -32,6 +32,8 @@ public class Stripe_checkout extends SetupClass {
 		driver.get("https://www.slidegeeks.com/");
 		driver.manage().deleteAllCookies();
 		Thread.sleep(4000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(1000);
