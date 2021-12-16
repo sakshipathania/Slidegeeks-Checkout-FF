@@ -34,6 +34,8 @@ public class paypal_checkout extends SetupClass {
 		driver.manage().deleteAllCookies();
 		
 		Thread.sleep(5000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(1000);
