@@ -22,9 +22,13 @@ public class SignUp_Step extends SetupClass {
 	
 	@Given("^user is already on Website Home Page ii$")
 	public void user_is_already_on_Website_Home_Page_ii() throws Throwable {
-	//	driver.get(AppURL);
-		 Thread.sleep(5000);
+		Thread.sleep(2000);
+		driver.manage().deleteAllCookies();
+			Thread.sleep(4000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		driver.get("https://www.slidegeeks.com/");
+		
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(3000);
