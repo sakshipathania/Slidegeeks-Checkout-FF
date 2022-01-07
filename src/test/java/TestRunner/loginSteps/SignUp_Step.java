@@ -197,11 +197,12 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(3000);
 		No_Delete.click();
 		Thread.sleep(7000);
+		Thread.sleep(7000);
 		String verifyDeleteAccountMessage = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='alert-message login-sucesmsg']")))
 				.getText();
 		System.out.println("verifyText1 = " + verifyDeleteAccountMessage);
-
+                Thread.sleep(3000);
 		Assert.assertTrue("Your are not on paypal page", verifyDeleteAccountMessage.contentEquals("Your Account has been deleted successfully."));
                 
      //  WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
