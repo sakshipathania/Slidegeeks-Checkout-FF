@@ -817,8 +817,7 @@ public class Stripe_checkout extends SetupClass {
 	WebElement No_Delete = driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/div/div[3]/button[2]"));
 		Thread.sleep(1000);
 		No_Delete.click();
-                 Thread.sleep(7000);
-		Thread.sleep(7000);
+               	Thread.sleep(60000);
 		String verifyDeleteAccountMessage = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='alert-message login-sucesmsg']")))
 				.getText();
