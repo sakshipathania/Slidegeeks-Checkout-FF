@@ -197,10 +197,10 @@ public class Coupon extends SetupClass {
 		Thread.sleep(3000);
 
 		// Apply Coupon Again
-		WebElement Coupon1 = driver.findElement(By.cssSelector("label[for='discount-checkbox']"));
-		Thread.sleep(3000);
-		Coupon1.click();
-		Thread.sleep(3000);
+		//WebElement Coupon1 = driver.findElement(By.cssSelector("label[for='discount-checkbox']"));
+		//Thread.sleep(3000);
+		//Coupon1.click();
+		//Thread.sleep(3000);
 		WebElement Add_Coupon1 = driver.findElement(By.cssSelector("#hikashop_checkout_coupon_input_1_3"));
 		Thread.sleep(3000);
 		Add_Coupon1.sendKeys("5OFF");
