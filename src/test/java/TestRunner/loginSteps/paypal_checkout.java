@@ -346,7 +346,8 @@ public class paypal_checkout extends SetupClass {
 		//driver.get("https://www.slidegeeks.com/subscriptions");
 		       //Thread.sleep(4000);
 		
-		WebElement Business_Team = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[1]/div/div/button[2]")));
+		WebElement Business_Team = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick=\"if (!window.__cfRLUnblockHandlers) return false; pricingbutton(event, 'Business')\"]")));
+                Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView();",Business_Team);
 		Thread.sleep(2000);
 		Business_Team.click();
@@ -527,7 +528,8 @@ public class paypal_checkout extends SetupClass {
 		/*Thread.sleep(7000);
 		driver.get("https://www.slidegeeks.com/subscriptions");
 		       Thread.sleep(4000);*/
-		WebElement Education = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[1]/div/div/button[3]")));
+		WebElement Education = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick=\"if (!window.__cfRLUnblockHandlers) return false; pricingbutton(event, 'Education')\"]")));
+	        Thread.sleep(2000);
 		js.executeScript("arguments[0].scrollIntoView();", Education);
 		Thread.sleep(2000);
 		Education.click();
@@ -645,13 +647,13 @@ public class paypal_checkout extends SetupClass {
 		// choose a plan
 		//driver.get("https://www.slidegeeks.com/subscriptions");
 		Thread.sleep(3000);
-		WebElement Business_Team = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[1]/div/div/button[2]")));
-				Thread.sleep(2000);
+		WebElement Business_Team = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick=\"if (!window.__cfRLUnblockHandlers) return false; pricingbutton(event, 'Business')\"]")));
+                Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView();",Business_Team);
 		Business_Team.click();
 		Thread.sleep(2000);
 		//js.executeScript("window.scrollBy(0,1000)");
-		 WebElement Subscribe_btn  =  driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div/div[4]/div[3]/span/form/span/button"));
+		 WebElement Subscribe_btn  =  driver.findElement(By.xpath("//div[@id='Business']//div[@class='col-box table-col item education_call last']//span[contains(text(),'Join now')]"));
 		js.executeScript("arguments[0].scrollIntoView();",Subscribe_btn);
 			Thread.sleep(2000);
 		    Subscribe_btn.click();
@@ -682,67 +684,61 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user proceed to pay with paypal pp$")
 	public void user_proceed_to_pay_with_paypal_pp() throws Throwable {
 	
-		Thread.sleep(1000);
-		
-		    try
-		{
-			//WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#pg-checkout-billing-payment-form > div > div:nth-child(2) > label")));
-			//WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='pg-paypal_subscription']")));
-			    
-		WebElement cp_btn= driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"));
-			    Thread.sleep(2000);
-		    cp_btn.click();
-		    Thread.sleep(3000);
-		}
-		catch (NoSuchElementException popup) {
+		Thread.sleep(1400);
+
+		try {
+			WebElement cp_btn = driver.findElement(By.xpath("//label[@for='payment_radio_1_2__paypal_1']"));
+			// WebElement cp_btn =
+			// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#pg-checkout-billing-payment-form
+			// > div > div:nth-child(2) > label")));
+			Thread.sleep(2000);
+			cp_btn.click();
+			Thread.sleep(3000);
+		} catch (NoSuchElementException popup) {
 			// TODO: handle exception
 		}
-		
-		Thread.sleep(3000);
-		//Apply coupon
 
-		WebElement Coupon= driver.findElement(By.cssSelector("#discount-checkbox"));
+		Thread.sleep(3000);
+		// Apply coupon
+
+		WebElement Coupon = driver.findElement(By.cssSelector("label[for='discount-checkbox']"));
 		Thread.sleep(3000);
 		Coupon.click();
 		Thread.sleep(3000);
-		 WebElement Add_Coupon= driver.findElement(By.cssSelector("#checkbox-input"));
+		WebElement Add_Coupon = driver.findElement(By.cssSelector("#hikashop_checkout_coupon_input_1_3"));
 		Thread.sleep(3000);
 		Add_Coupon.sendKeys("5OFF");
 		Thread.sleep(3000);
-		 WebElement Apply_Coupon= driver.findElement(By.cssSelector("#applyPromoCode"));
+		WebElement Apply_Coupon = driver
+				.findElement(By.cssSelector(".hikabtn.hikabtn-primary.hikabtn_checkout_coupon_add.btn.primary-btn"));
 		Thread.sleep(3000);
 		Apply_Coupon.click();
 		Thread.sleep(3000);
-		
-		WebElement Value_after_coupon= driver.findElement(By.cssSelector("body > div.afterBody.checkout-wrapper.main-wrapper.no-left-menu > div.main_wrapper > div > div.checkout-inner-wrapper > div.checkout-box-wrapper.checkout-order > div > div > table > tbody > tr:nth-child(4) > td:nth-child(2) > strong > em"));
-		
-		
-	      String expected = "2849.99";
-              String actual = Value_after_coupon.getText();
-              System.out.println(actual);
 
-              if(expected.equals(actual)){
-              System.out.println("Coupon applied Successfully");
-              }
-           else {
-            System.out.println("Coupon Error");
-        }
-		
-		
+		WebElement Value_after_coupon = driver.findElement(By.cssSelector(".cart_price"));
+
+		String expected = "$2849.99";
+		String actual = Value_after_coupon.getText();
+		System.out.println("actual = " + actual);
+		Assert.assertTrue("Price does not matched", actual.contentEquals("$2849.99"));
+		if (expected.equals(actual)) {
+			System.out.println("Coupon applied Successfully");
+		} else {
+			System.out.println("Coupon Error");
+		}
+
 		Thread.sleep(1000);
-		   try {
-			
-		 WebElement place_order_btn  =  driver.findElement(By.cssSelector("body > div.afterBody.checkout-wrapper.main-wrapper.no-left-menu > div.main_wrapper > div > div.checkout-inner-wrapper > div.checkout-box-wrapper.checkout-order > div > div > table > tbody > tr:nth-child(4) > td:nth-child(1) > button.btn.primary-btn.pg-button.pg-checkout-continue"));
+		try {
+
+			WebElement place_order_btn = driver.findElement(By.cssSelector("#hikabtn_checkout_next"));
 			Thread.sleep(2000);
-			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);	
-			//js.executeScript("arguments[0].click();", place_order_btn);
+			js.executeScript("arguments[0].scrollIntoView();", place_order_btn);
+			// js.executeScript("arguments[0].click();", place_order_btn);
 			Thread.sleep(2000);
-		    place_order_btn.click();
-			Thread.sleep(3000);
+			place_order_btn.click();
+			Thread.sleep(5000);
 		} catch (NoSuchElementException popup) {
 		}
-		
-		
 	}
 
 	@Then("^paypal popup appears and user navigates back to my account pp$")
