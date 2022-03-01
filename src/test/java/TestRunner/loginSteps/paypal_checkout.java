@@ -717,10 +717,10 @@ public class paypal_checkout extends SetupClass {
 
 		WebElement Value_after_coupon = driver.findElement(By.cssSelector(".cart_price"));
 
-		String expected = "$2849.99";
+		String expected = "$2,849.99";
 		String actual = Value_after_coupon.getText();
 		System.out.println("actual = " + actual);
-		Assert.assertTrue("Price does not matched", actual.contentEquals("$2849.99"));
+		Assert.assertTrue("Price does not matched", actual.contentEquals("$2,849.99"));
 		if (expected.equals(actual)) {
 			System.out.println("Coupon applied Successfully");
 		} else {
