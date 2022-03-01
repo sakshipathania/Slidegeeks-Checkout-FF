@@ -27,99 +27,85 @@ public class paypal_checkout extends SetupClass {
 	
 	@Given("^user is already on Website Home Page$")
 	public void user_is_already_on_Website_Home_Page() throws Throwable {
-		//Thread.sleep(4000);
-		//driver.get(AppURL);
+		// driver.get(AppURL);
 		driver.get("https://www.slidegeeks.com/");
-		
+
 		driver.manage().deleteAllCookies();
-		
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 		driver.navigate().refresh();
 		Thread.sleep(2000);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(1000);
-		
-		/*try {
-			WebElement logout = driver.findElement(By.xpath("//a[@href ='/logout']"));
-			boolean value = logout.isDisplayed();	
-                        System.out.println("Logout is displayed = " + value);
-			if (logout.isEnabled()) {
-				logout.click();
-				Thread.sleep(1000);
-				driver.navigate().refresh();
-				Thread.sleep(1000);
-			}
-		} catch (NoSuchElementException Ext) {
 
-		}*/
-	    
-		 Thread.sleep(3000);
-		 driver.get("https://www.slidegeeks.com/register");
-		
-		//Thread.sleep(3000);
-		//WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_name1")));
-		
-		/*WebElement login_signup_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='/register']")));
-		 Thread.sleep(1000);
-		 login_signup_btn.click();*/
-		 Thread.sleep(2000);
-		System.out.println("urlpaypal " + driver.getCurrentUrl()); 
-		
-		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.name("jform[name1]")));
-		Thread.sleep(1000);
+		/*
+		 * try { WebElement logout =
+		 * driver.findElement(By.xpath("//a[@href ='/logout']")); if
+		 * (logout.isEnabled()) { logout.click(); Thread.sleep(1000);
+		 * driver.navigate().refresh(); Thread.sleep(1000); } } catch
+		 * (NoSuchElementException Ext) { }
+		 */
+		Thread.sleep(3000);
+		driver.get("https://www.slidegeeks.com/register");
+		Thread.sleep(3000);
+		/*
+		 * WebElement login_signup_btn =
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+		 * "//a[@href='/register']"))); Thread.sleep(1000); login_signup_btn.click();
+		 */
+		Thread.sleep(2000);
+		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
+		// Thread.sleep(3000);
+		name.clear();
 		name.sendKeys("Automated Program");
-		Thread.sleep(1000);
-	   
-	
+		// Thread.sleep(3000);
+
 		// Generate Random Email Address
 		int leftLimit = 97; // letter 'a'
-	    int rightLimit = 122; // letter 'z'
-	    int targetStringLength = 10;
-	    Random random = new Random();
-	    StringBuilder buffer = new StringBuilder(targetStringLength);
-	    for (int i = 0; i < targetStringLength; i++) {
-	        int randomLimitedInt = leftLimit + (int) 
-	          (random.nextFloat() * (rightLimit - leftLimit + 1));
-	        buffer.append((char) randomLimitedInt);
-	    }
-	    String generatedString = buffer.toString();
-	 
-	    System.out.println(generatedString);
-	    
-	    String signup_email=generatedString;
-	    String full_email="selenium.testing."+generatedString+"@gmail.com";
-	    System.out.println(full_email);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
-		Thread.sleep(1000);
-		
-		WebElement new_email = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_email1")));
-		 //Thread.sleep(3000);
-		 new_email.sendKeys(full_email);
-		 Thread.sleep(1000);
-		
-	
-		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_password1")));
-		 //Thread.sleep(3000);
+		int rightLimit = 122; // letter 'z'
+		int targetStringLength = 10;
+		Random random = new Random();
+		StringBuilder buffer = new StringBuilder(targetStringLength);
+		for (int i = 0; i < targetStringLength; i++) {
+			int randomLimitedInt = leftLimit + (int) (random.nextFloat() * (rightLimit - leftLimit + 1));
+			buffer.append((char) randomLimitedInt);
+		}
+		String generatedString = buffer.toString();
+
+		System.out.println(generatedString);
+
+		String signup_email = generatedString;
+		String full_email = "selenium.testing." + generatedString + "@gmail.com";
+		System.out.println(full_email);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(2000);
+
+		WebElement new_email = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_email")));
+		// Thread.sleep(3000);
+		new_email.sendKeys(full_email);
+		Thread.sleep(3000);
+
+		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_password")));
+		// Thread.sleep(3000);
 		password.sendKeys("Geeks@123");
-		 Thread.sleep(1000);
-		 
-		 WebElement confirm_passwoed = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_password2")));
+		Thread.sleep(3000);
+
+		WebElement confirm_passwoed = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_password2")));
 		// Thread.sleep(3000);
 		confirm_passwoed.sendKeys("Geeks@123");
-		 Thread.sleep(1000);
-	    
-	
-		WebElement captcha = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#captchtext")));
-		 //Thread.sleep(3000);
-		captcha.sendKeys("Y3Tt6bfwI");
-		 Thread.sleep(1000);
-	    
+		Thread.sleep(3000);
 
-		WebElement register_btn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));
-		 //Thread.sleep(3000);
+		WebElement captcha = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#captchtext")));
+		// Thread.sleep(3000);
+		captcha.sendKeys("Y3Tt6bfwI");
+		Thread.sleep(3000);
+
+		WebElement register_btn = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));
+		// Thread.sleep(3000);
 		register_btn.click();
-		 Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 	
     @Then("^user is redirected to pricing page and check the text1 PP1$")
