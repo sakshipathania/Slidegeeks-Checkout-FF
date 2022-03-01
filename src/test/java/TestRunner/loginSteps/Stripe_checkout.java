@@ -609,7 +609,7 @@ public class Stripe_checkout extends SetupClass {
 				Thread.sleep(2000);
 		js.executeScript("arguments[0].scrollIntoView();",individual);
 		individual.click();
-		 WebElement Subscribe_btn  =  driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div/div[3]/div[3]/span/form/span/button"));
+		 WebElement Subscribe_btn  =  driver.findElement(By.xpath("//div[@id='Individual']//form[@name='hikashop_product_form_99148_hikashop_category_information_menu_117']//span[contains(text(),'Join now')]"));
 		js.executeScript("arguments[0].scrollIntoView();",Subscribe_btn);
 		Thread.sleep(2000);
 		    Subscribe_btn.click();
