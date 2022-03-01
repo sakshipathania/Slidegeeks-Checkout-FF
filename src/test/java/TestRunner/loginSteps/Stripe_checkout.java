@@ -27,9 +27,8 @@ public class Stripe_checkout extends SetupClass {
 	
 	@Given("^user is already on Website Home Page CO$")
 	public void user_is_already_on_Website_Home_Page_CO() throws Throwable {
-		//driver.get(AppURL);
-		 //Thread.sleep(4000);
 		driver.get("https://www.slidegeeks.com/");
+
 		driver.manage().deleteAllCookies();
 		Thread.sleep(4000);
 		driver.navigate().refresh();
@@ -37,82 +36,75 @@ public class Stripe_checkout extends SetupClass {
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(1000);
-		
-		/*try {
-			WebElement logout = driver.findElement(By.xpath("//a[@href ='/logout']"));
-			if (logout.isEnabled()) {
-				logout.click();
-				Thread.sleep(1000);
-				driver.navigate().refresh();
-				Thread.sleep(1000);
-			}
-		} catch (NoSuchElementException Ext) {
 
-		}*/
-	    
-		Thread.sleep(3000);
+		/*
+		 * try { WebElement logout =
+		 * driver.findElement(By.xpath("//a[@href ='/logout']")); if
+		 * (logout.isEnabled()) { logout.click(); Thread.sleep(1000);
+		 * driver.navigate().refresh(); Thread.sleep(1000); } } catch
+		 * (NoSuchElementException Ext) { }
+		 */
+
+		Thread.sleep(1000);
 		driver.get("https://www.slidegeeks.com/register");
 		Thread.sleep(3000);
-		/*WebElement login_signup_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='/register']")));
-		 Thread.sleep(1000);
-		 login_signup_btn.click();
-		 Thread.sleep(2000);*/
-		 
-		System.out.println("urlHome " + driver.getCurrentUrl()); 
-		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_name1")));
-		 //Thread.sleep(3000);
-		 name.sendKeys("Automated Program");
-		 //Thread.sleep(3000);
-	   
-	
+		/*
+		 * WebElement login_signup_btn =
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+		 * "//a[@href='/register']"))); Thread.sleep(1000); login_signup_btn.click();
+		 */
+		Thread.sleep(2000);
+		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
+		// Thread.sleep(3000);
+		name.sendKeys("Automated Program");
+		// Thread.sleep(3000);
+
 		// Generate Random Email Address
 		int leftLimit = 97; // letter 'a'
-	    int rightLimit = 122; // letter 'z'
-	    int targetStringLength = 10;
-	    Random random = new Random();
-	    StringBuilder buffer = new StringBuilder(targetStringLength);
-	    for (int i = 0; i < targetStringLength; i++) {
-	        int randomLimitedInt = leftLimit + (int) 
-	          (random.nextFloat() * (rightLimit - leftLimit + 1));
-	        buffer.append((char) randomLimitedInt);
-	    }
-	    String generatedString = buffer.toString();
-	 
-	    System.out.println(generatedString);
-	    
-	    String signup_email=generatedString;
-	    String full_email="selenium.testing."+generatedString+"@gmail.com";
-	    System.out.println(full_email);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
-		Thread.sleep(2000);
-		
-		WebElement new_email = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_email1")));
-		// Thread.sleep(3000);
-		 new_email.sendKeys(full_email);
-		 Thread.sleep(1000);
-		
-	
-		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_password1")));
-		// Thread.sleep(3000);
-		password.sendKeys("Geeks@123");
-		 Thread.sleep(1000);
-		 
-		 WebElement confirm_passwoed = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#jform_password2")));
-		 //Thread.sleep(3000);
-		confirm_passwoed.sendKeys("Geeks@123");
-		 Thread.sleep(2000);
-	    
-	
-		WebElement captcha = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#captchtext")));
-		 //Thread.sleep(3000);
-		captcha.sendKeys("Y3Tt6bfwI");
-		 Thread.sleep(2000);
-	    
+		int rightLimit = 122; // letter 'z'
+		int targetStringLength = 10;
+		Random random = new Random();
+		StringBuilder buffer = new StringBuilder(targetStringLength);
+		for (int i = 0; i < targetStringLength; i++) {
+			int randomLimitedInt = leftLimit + (int) (random.nextFloat() * (rightLimit - leftLimit + 1));
+			buffer.append((char) randomLimitedInt);
+		}
+		String generatedString = buffer.toString();
 
-		WebElement register_btn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));
-		 //Thread.sleep(3000);
+		System.out.println(generatedString);
+
+		String signup_email = generatedString;
+		String full_email = "selenium.testing." + generatedString + "@gmail.com";
+		System.out.println(full_email);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(2000);
+
+		WebElement new_email = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_email")));
+		Thread.sleep(3000);
+		new_email.sendKeys(full_email);
+		Thread.sleep(3000);
+
+		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_password")));
+		Thread.sleep(3000);
+		password.sendKeys("Geeks@123");
+		Thread.sleep(3000);
+
+		WebElement confirm_passwoed = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_password2")));
+		Thread.sleep(3000);
+		confirm_passwoed.sendKeys("Geeks@123");
+		Thread.sleep(3000);
+
+		WebElement captcha = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#captchtext")));
+		Thread.sleep(3000);
+		captcha.sendKeys("Y3Tt6bfwI");
+		Thread.sleep(3000);
+
+		WebElement register_btn = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));
+		Thread.sleep(3000);
 		register_btn.click();
-		 Thread.sleep(2000);
+		Thread.sleep(2000);
 	}
 
       @Then("^user is redirected to pricing page and check the text1 (\\d+)CO$")
@@ -326,7 +318,8 @@ public class Stripe_checkout extends SetupClass {
 		//driver.get("https://www.slidegeeks.com/subscriptions");
 		      // Thread.sleep(4000);
 		
-		WebElement Business_Team = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[1]/div/div/button[2]")));
+		WebElement Business_Team = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick=\"if (!window.__cfRLUnblockHandlers) return false; pricingbutton(event, 'Business')\"]")));
+	        Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView();",Business_Team);
 		Thread.sleep(1000);
 		Business_Team.click();
@@ -497,7 +490,7 @@ public class Stripe_checkout extends SetupClass {
 		//Thread.sleep(7000);
 		//driver.get("https://www.slidegeeks.com/subscriptions");
 		     //  Thread.sleep(4000);
-		WebElement Education = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div[1]/div/div/button[3]")));
+		WebElement Education = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick=\"if (!window.__cfRLUnblockHandlers) return false; pricingbutton(event, 'Education')\"]")));
 		js.executeScript("arguments[0].scrollIntoView();", Education);
 		Thread.sleep(1000);
 		Education.click();
@@ -638,30 +631,32 @@ public class Stripe_checkout extends SetupClass {
 	public void user_proceed_to_pay_with_CO_CO(int arg1, int arg2) throws InterruptedException {
 	    
 		 try {
-		Thread.sleep(200);
-		// select 2co option
-		//WebElement co_btn  =  wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#pg-checkout-billing-payment-form > div > div:nth-child(1) > label")));
-		WebElement  co_btn  = driver.findElement(By.xpath(" /html[1]/body[1]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"));
-	         Thread.sleep(1000);
-	         co_btn.click();
-		Thread.sleep(2000);
-	     } catch( NoSuchElementException popup) { 
-	     }
-		
-		// place order button 
-		try {
-			
-		 WebElement place_order_btn  =  driver.findElement(By.cssSelector("body > div.afterBody.checkout-wrapper.main-wrapper.no-left-menu > div.main_wrapper > div > div.checkout-inner-wrapper > div.checkout-box-wrapper.checkout-order > div > div > table > tbody > tr:nth-child(4) > td:nth-child(1) > button.btn.primary-btn.pg-button.pg-checkout-continue"));
 			Thread.sleep(2000);
-			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);	
-			//js.executeScript("arguments[0].click();", place_order_btn);
+			// select stripe option
+			// WebElement co_btn =
+			// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#pg-checkout-billing-payment-form
+			// > div > div:nth-child(1) > label")));
+			WebElement cp_btn = driver.findElement(By.xpath("//label[@for='payment_radio_1_2__stripe_2']"));
+
+			Thread.sleep(2000);
+			// Thread.sleep(2000);
+			cp_btn.click();
+			Thread.sleep(5000);
+		} catch (NoSuchElementException popup) {
+		}
+
+		// place order button
+		try {
+
+			WebElement place_order_btn = driver.findElement(By.cssSelector("#hikabtn_checkout_next"));
 			Thread.sleep(1000);
-		    place_order_btn.click();
+			js.executeScript("arguments[0].scrollIntoView();", place_order_btn);
+			// js.executeScript("arguments[0].click();", place_order_btn);
+			Thread.sleep(1000);
+			place_order_btn.click();
 			Thread.sleep(2000);
 		} catch (NoSuchElementException popup) {
 		}
-		
-		
 	}
 
 	@Then("^CO page appears and user navigates back to my account (\\d+)CO$")
@@ -791,10 +786,6 @@ public class Stripe_checkout extends SetupClass {
 	@Then("^user signout the account (\\d+)CO$")
 	public void user_signout_the_account_CO(int arg1) throws Throwable {
 		Thread.sleep(3000);
-	  //  driver.get("https://www.slidegeeks.com/component/pago/checkout");
-		//Thread.sleep(2000);
-		
-		Thread.sleep(3000);
 	    System.out.println("Title of the Page is --> "+driver.getTitle());
 	WebElement Account = driver.findElement(By.xpath("//a[normalize-space()='Account']"));
 		Thread.sleep(2000);
@@ -818,12 +809,12 @@ public class Stripe_checkout extends SetupClass {
 		Thread.sleep(1000);
 		No_Delete.click();
                	Thread.sleep(5000);
-	/*	String verifyDeleteAccountMessage = wait
+	String verifyDeleteAccountMessage = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='alert-message login-sucesmsg']")))
 				.getText();
 		System.out.println("verifyText1 = " + verifyDeleteAccountMessage);
                Thread.sleep(3000);
-		Assert.assertTrue("Your account is not deleted", verifyDeleteAccountMessage.contentEquals("Your Account has been deleted successfully."));*/
+		Assert.assertTrue("Your account is not deleted", verifyDeleteAccountMessage.contentEquals("Your Account has been deleted successfully."));
      //  WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
 	//	Thread.sleep(3000);
 		//Signout.click();
