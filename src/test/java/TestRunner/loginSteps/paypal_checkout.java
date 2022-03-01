@@ -713,7 +713,7 @@ public class paypal_checkout extends SetupClass {
 				.findElement(By.cssSelector(".hikabtn.hikabtn-primary.hikabtn_checkout_coupon_add.btn.primary-btn"));
 		Thread.sleep(3000);
 		Apply_Coupon.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		WebElement Value_after_coupon = driver.findElement(By.cssSelector(".cart_price"));
 
@@ -795,7 +795,7 @@ public class paypal_checkout extends SetupClass {
 	@Then("^user Signout account PP$")
 	public void user_Signout_account_PP() throws Throwable {
 		Thread.sleep(3000);
-	    driver.get("https://www.slidegeeks.com/component/pago/checkout");
+	    driver.get("https://www.slidegeeks.com/checkout");
 		Thread.sleep(2000);
 		
 	WebElement Account = driver.findElement(By.xpath("/html/body/div[1]/header/div/div/nav/div/div[2]/div[2]/div[2]/div/div[2]/ul/li[1]/a"));
