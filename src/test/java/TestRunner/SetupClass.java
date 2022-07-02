@@ -2,90 +2,95 @@ package TestRunner;
 
 import java.io.FileReader;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.interactions.Actions;
-import java.util.concurrent.TimeUnit;
-import webApp.CommonData;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SetupClass {
+
 	public static WebDriver driver;
 	public static String AppURL;
 	public static Properties property = new Properties(System.getProperties());
 	public static String browserName;
 	public static Logger log;
-	public static String Seleniumdriver;
 	public static WebElement webelement;
-	public static String localtestFF;
-	public static String localFF;
-	
-	public static String local_chromebrowser;
 	public static String local_chrome;
-	public Actions ac=new Actions(driver);
+	public static String local_FFbrowser;
+
 	@BeforeClass
 	public static void before_Class() throws Exception {
-
 		log = Logger.getLogger(BeforeClass.class.getName());
-		property.load(new FileReader("C:\\Users\\Administrator\\eclipse-workspace\\AutoSlideTest_FFBrowser\\src\\main\\resources\\configure.properties"));
+		property.load(new FileReader("Config//config.properties"));
 		AppURL = property.getProperty("App_url");
-		
-		local_chromebrowser = property.getProperty("local_chrome_browser");
 		local_chrome = property.getProperty("local_chrome");
-		localtestFF = property.getProperty("localtestFF");
-		localFF = property.getProperty("local_Fifefox_browser");
-	
-
+		local_FFbrowser = property.getProperty("local_FFbrowser");
+		// on source lab setup
 		AppURL = property.getProperty("App_url");
 		System.out.println("Bname=====" + AppURL);
 
-
-
 		if ((local_chrome.equals("yes"))) {
-			local_chromebrowser = System.setProperty(CommonData.Chrome_Name, CommonData.Chrome_Path);
+			WebDriverManager.chromedriver().setup();
+
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");
+			options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 			driver = new ChromeDriver(options);
+
 			driver.manage().window().maximize();
-			 driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	
-		} else if ((localtestFF.equals("yes"))) {
 
-			localFF = System.setProperty(CommonData.Firefox_Name, CommonData.Firefox_Path);
-			FirefoxProfile profile = new FirefoxProfile();
-			profile.setPreference("dom.webnotifications.enabled", false);
-		    driver = new FirefoxDriver();
-		    driver.manage().window().maximize();
-		    driver.manage().deleteAllCookies();
-		    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-		   Thread.sleep(1000);
+			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
+			driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+			Thread.sleep(1000);
 		}
-		
-		else {
-			System.out.println("browser is not open");
-			
+		// if (browser.equalsIgnoreCase("firefox"))
+
+		// if (browser.equalsIgnoreCase("chrome"))
+		else if ((local_FFbrowser.equals("yes"))) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+			driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+
+			Thread.sleep(1000);
+		} else {
+
+			System.out.println("platform does not provide");
 		}
 
 	}
-	
+
+	public static void ClearBrowserCache() throws Throwable {
+
+		driver.manage().deleteAllCookies();
+		Thread.sleep(4000); // wait 7 seconds to clear cookies.
+		driver.navigate().refresh();
+		Thread.sleep(3000);
+	}
 
 	@AfterClass
 
 	public static void after_Class() {
-try {
-		driver.quit();
-		Thread.sleep(2000);
-}catch (Exception closeBrowser) {
-	
-}
+		try {
+			driver.quit();
+			Thread.sleep(2000);
+		} catch (Exception closeBrowser) {
+
+		}
 	}
 }
