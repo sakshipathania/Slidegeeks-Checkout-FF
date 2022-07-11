@@ -38,22 +38,20 @@ public class Coupon extends SetupClass {
 		Join_now.click();
 		Thread.sleep(2000);
 
-		WebElement signup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='signupclass']")));
-
-		signup.click();
-		Thread.sleep(2000);
-
 		/*
-		 * WebElement name = wait
-		 * .until(ExpectedConditions.elementToBeClickable(By.xpath(
-		 * "//input[@id='site_signup_name']"))); Thread.sleep(3000);
-		 * name.sendKeys("Automated Program"); Thread.sleep(3000);
+		 * WebElement signup =
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+		 * "//a[@class='signupclass']")));
+		 * 
+		 * signup.click(); Thread.sleep(2000);
 		 */
 
-		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
-		Thread.sleep(3000);
-		name.sendKeys("Automated Program");
-		Thread.sleep(3000);
+		/*
+		 * WebElement name =
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+		 * "#register_name"))); Thread.sleep(3000); name.sendKeys("Automated Program");
+		 * Thread.sleep(3000);
+		 */
 
 		// Generate Random Email Address
 		int leftLimit = 97; // letter 'a'
@@ -75,64 +73,67 @@ public class Coupon extends SetupClass {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(2000);
 
+		// without pop-up
 		/*
-		 * WebElement new_email = wait
-		 * .until(ExpectedConditions.elementToBeClickable(By.xpath(
-		 * "//input[@id='site_signup_email']")));
+		 * WebElement new_email =
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+		 * "#register_email"))); Thread.sleep(3000); new_email.sendKeys(full_email);
+		 * Thread.sleep(3000);
 		 * 
-		 * new_email.sendKeys(full_email); Thread.sleep(3000);
+		 * WebElement password =
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+		 * "#register_password"))); Thread.sleep(3000); password.sendKeys("Geeks@123");
+		 * Thread.sleep(3000);
 		 * 
-		 * WebElement password = wait
-		 * .until(ExpectedConditions.elementToBeClickable(By.xpath(
-		 * "//input[@id='site_signup_password']")));
-		 * 
-		 * password.sendKeys("Geeks@123");
+		 * WebElement confirm_passwoed = wait
+		 * .until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+		 * "#register_password2"))); Thread.sleep(3000);
+		 * confirm_passwoed.sendKeys("Geeks@123"); Thread.sleep(3000);
 		 * 
 		 * WebElement captcha =
-		 * wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-		 * "//input[@id='captchtext']")));
-		 * 
-		 * captcha.sendKeys("Y3Tt6bfwI");
-		 * 
-		 * WebElement selectRadioBtn = wait
-		 * .until(ExpectedConditions.elementToBeClickable(By.xpath(
-		 * "//input[@id='site_signup_checkbox']")));
-		 * 
-		 * selectRadioBtn.click();
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+		 * "#captchtext"))); Thread.sleep(3000); captcha.sendKeys("Y3Tt6bfwI");
+		 * Thread.sleep(3000);
 		 * 
 		 * WebElement register_btn = wait
-		 * .until(ExpectedConditions.elementToBeClickable(By.xpath(
-		 * "//button[@id='site_signup_btn']"))); Thread.sleep(3000);
-		 * register_btn.click(); Thread.sleep(5000);
+		 * .until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+		 * ".pg-register-button-new"))); Thread.sleep(3000); register_btn.click();
+		 * Thread.sleep(5000);
 		 */
 
-		// without pop-up
-		WebElement new_email = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_email")));
+		// with login pop-up
+		WebElement name = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='site_signup_name']")));
 		Thread.sleep(3000);
+		name.sendKeys("Automated Program");
+		Thread.sleep(3000);
+
+		WebElement new_email = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='site_signup_email']")));
+
 		new_email.sendKeys(full_email);
 		Thread.sleep(3000);
 
-		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_password")));
-		Thread.sleep(3000);
+		WebElement password = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='site_signup_password']")));
+
 		password.sendKeys("Geeks@123");
-		Thread.sleep(3000);
 
-		WebElement confirm_passwoed = wait
-				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_password2")));
-		Thread.sleep(3000);
-		confirm_passwoed.sendKeys("Geeks@123");
-		Thread.sleep(3000);
+		WebElement captcha = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='captchtext']")));
 
-		WebElement captcha = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#captchtext")));
-		Thread.sleep(3000);
 		captcha.sendKeys("Y3Tt6bfwI");
-		Thread.sleep(3000);
+
+		WebElement selectRadioBtn = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='site_signup_checkbox']")));
+
+		selectRadioBtn.click();
 
 		WebElement register_btn = wait
-				.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='site_signup_btn']")));
 		Thread.sleep(3000);
 		register_btn.click();
 		Thread.sleep(5000);
+
 	}
 
 	@Then("^user is redirected to pricing page and choose the plan to pay cc$")
@@ -285,18 +286,15 @@ public class Coupon extends SetupClass {
 		No_Delete.click();
 
 		Thread.sleep(5000);
-		/*
-		 * String verifyDeleteAccountMessage = wait
-		 * .until(ExpectedConditions.elementToBeClickable(By.
-		 * xpath("//div[@class='alert-message login-sucesmsg']"))) .getText();
-		 * System.out.println("verifyText1 = " + verifyDeleteAccountMessage);
-		 * Thread.sleep(3000); Assert.assertTrue("Your are not on paypal page",
-		 * verifyDeleteAccountMessage.
-		 * contentEquals("Your Account has been deleted successfully."));
-		 */
-		// WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
-		// Thread.sleep(3000);
-		// Signout.click();
+
+		String verifyDeleteAccountMessage = wait.until(
+				ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='alert-message login-sucesmsg']")))
+				.getText();
+		System.out.println("verifyText1 = " + verifyDeleteAccountMessage);
+		Thread.sleep(3000);
+		Assert.assertTrue("Your are not on paypal page",
+				verifyDeleteAccountMessage.contentEquals("Your Account has been deleted successfully."));
+
 	}
 
 }
