@@ -798,7 +798,7 @@ public class Stripe_checkout extends SetupClass {
 				ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='alert-message login-sucesmsg']")))
 				.getText();
 		System.out.println("verifyText1 = " + verifyDeleteAccountMessage);
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		Assert.assertTrue("Your account is not deleted",
 				verifyDeleteAccountMessage.contentEquals("Your Account has been deleted successfully."));
 		// WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
