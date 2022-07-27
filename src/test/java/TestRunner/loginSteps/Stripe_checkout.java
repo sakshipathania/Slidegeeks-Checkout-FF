@@ -785,7 +785,8 @@ public class Stripe_checkout extends SetupClass {
 		WebElement No_Delete = driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/div/div[3]/button[2]"));
 		Thread.sleep(1000);
 		No_Delete.click();
-		Thread.sleep(5000);
+		
+		Thread.sleep(30000);
 		String verifyDeleteAccountMessage = wait.until(
 				ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='alert-message login-sucesmsg']")))
 				.getText();
@@ -793,9 +794,7 @@ public class Stripe_checkout extends SetupClass {
 		Thread.sleep(7000);
 		Assert.assertTrue("Your account is not deleted",
 				verifyDeleteAccountMessage.contentEquals("Your Account has been deleted successfully."));
-		// WebElement Signout = driver.findElement(By.xpath("//a[@href ='/logout']"));
-		// Thread.sleep(3000);
-		// Signout.click();
+		
 
 	}
 }

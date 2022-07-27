@@ -287,7 +287,7 @@ public class Coupon extends SetupClass {
 		Thread.sleep(3000);
 		No_Delete.click();
 
-		Thread.sleep(7000);
+		Thread.sleep(30000);
 
 		String verifyDeleteAccountMessage = wait.until(
 				ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='alert-message login-sucesmsg']")))
