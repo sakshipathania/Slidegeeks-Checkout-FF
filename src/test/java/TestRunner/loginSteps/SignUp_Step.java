@@ -65,10 +65,12 @@ public class SignUp_Step extends SetupClass {
 
 		WebElement new_email = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_email")));
 		Thread.sleep(3000);
+		new_email.clear();
 		new_email.sendKeys(full_email);
 		Thread.sleep(3000);
 
 		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_password")));
+		password.clear();
 		Thread.sleep(3000);
 		password.sendKeys("Geeks@123");
 		Thread.sleep(3000);
