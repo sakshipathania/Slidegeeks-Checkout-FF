@@ -24,8 +24,7 @@ public class SignUp_Step extends SetupClass {
 
 		driver.get("https://www.slidegeeks.com/");
 		ClearBrowserCache();
-		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-		log.info("It's opening the website URL");
+	
 		Thread.sleep(3000);
 
 	}
@@ -33,8 +32,12 @@ public class SignUp_Step extends SetupClass {
 	@Then("^user navigates to sign up page ii$")
 	public void user_navigates_to_sign_up_page_ii() throws Throwable {
 
-		driver.get("https://www.slidegeeks.com/register");
-
+		WebElement login_signup_btn = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='signupclass']")));
+		Thread.sleep(1000);
+		login_signup_btn.click();
+		
+		Thread.sleep(4000);
 		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
 		Thread.sleep(3000);
 		name.sendKeys("Automated Program");

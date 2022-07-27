@@ -22,30 +22,20 @@ public class paypal_checkout extends SetupClass {
 
 	@Given("^user is already on Website Home Page$")
 	public void user_is_already_on_Website_Home_Page() throws Throwable {
-		// driver.get(AppURL);
-		driver.get("https://www.slidegeeks.com/");
+		driver.get(AppURL);
+		Thread.sleep(3000);
 		ClearBrowserCache();
-		log.info("It's opening the website URL");
-		Thread.sleep(1000);
 
-		/*
-		 * try { WebElement logout =
-		 * driver.findElement(By.xpath("//a[@href ='/logout']")); if
-		 * (logout.isEnabled()) { logout.click(); Thread.sleep(1000);
-		 * driver.navigate().refresh(); Thread.sleep(1000); } } catch
-		 * (NoSuchElementException Ext) { }
-		 */
 		Thread.sleep(3000);
-		driver.get("https://www.slidegeeks.com/register");
-		Thread.sleep(3000);
-		/*
-		 * WebElement login_signup_btn =
-		 * wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-		 * "//a[@href='/register']"))); Thread.sleep(1000); login_signup_btn.click();
-		 */
-		Thread.sleep(2000);
+
+		WebElement login_signup_btn = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='signupclass']")));
+		Thread.sleep(1000);
+		login_signup_btn.click();
+
+		Thread.sleep(4000);
 		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
-		// Thread.sleep(3000);
+	
 		name.clear();
 		name.sendKeys("Automated Program");
 		// Thread.sleep(3000);
@@ -71,12 +61,14 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(2000);
 
 		WebElement new_email = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_email")));
-		// Thread.sleep(3000);
+		new_email.clear();
+		Thread.sleep(3000);
 		new_email.sendKeys(full_email);
 		Thread.sleep(3000);
 
 		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_password")));
-		// Thread.sleep(3000);
+		password.clear();
+		Thread.sleep(3000);
 		password.sendKeys("Geeks@123");
 		Thread.sleep(3000);
 
