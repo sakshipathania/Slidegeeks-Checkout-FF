@@ -24,7 +24,7 @@ public class SignUp_Step extends SetupClass {
 
 		driver.get("https://www.slidegeeks.com/");
 		ClearBrowserCache();
-	
+
 		Thread.sleep(3000);
 
 	}
@@ -36,7 +36,7 @@ public class SignUp_Step extends SetupClass {
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='signupclass']")));
 		Thread.sleep(1000);
 		login_signup_btn.click();
-		
+
 		Thread.sleep(4000);
 		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
 		Thread.sleep(3000);
@@ -116,8 +116,7 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(3000);
 		WebElement Coupon = driver.findElement(By.cssSelector("label[for='discount-checkbox']"));
 		Thread.sleep(3000);
-		Coupon.click();
-
+		js.executeScript("arguments[0].click();", Coupon);
 		WebElement Add_Coupon = driver.findElement(By.xpath("//input[@id='hikashop_checkout_coupon_input_1_3']"));
 		Thread.sleep(3000);
 		Add_Coupon.sendKeys("5OFF");

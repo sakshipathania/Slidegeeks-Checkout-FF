@@ -674,7 +674,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(3000);
 		WebElement Coupon = driver.findElement(By.cssSelector("label[for='discount-checkbox']"));
 		Thread.sleep(3000);
-		Coupon.click();
+		js.executeScript("arguments[0].click();", Coupon);
 
 		WebElement Add_Coupon = driver.findElement(By.xpath("//input[@id='hikashop_checkout_coupon_input_1_3']"));
 		Thread.sleep(3000);
