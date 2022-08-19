@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -685,77 +686,15 @@ public class Stripe_checkout extends SetupClass {
 				"#root > div > div > div.App-Overview > header > div > div > a > div > div > div.Header-backArrowContainer > svg"));
 		Thread.sleep(2000);
 		Stripe_back.click();
+		Thread.sleep(2000);
+		if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
+			Alert alert = driver.switchTo().alert();
+			System.out.println(alert.getText());
+			alert.accept();
+		} else {
+			System.out.println("Alert not exists");
+		}
 		Thread.sleep(5000);
-		// driver.switchTo().alert().accept();
-		// driver.get("https://www.slidegeeks.com/component/pago/checkout");
-		// Thread.sleep(2000);
-
-		/*
-		 * String actualTitle = "$149.99"; Thread.sleep(1000);
-		 * //wait.implictywait(driver); String expectedTitle = "$149.99";
-		 * Thread.sleep(1000); //wait.implictywait(driver);
-		 * Assert.assertEquals(expectedTitle, actualTitle); Thread.sleep(2000);
-		 * js.executeScript("alert('Text $149.99 is present and correct');");
-		 * Thread.sleep(3000); driver.switchTo().alert().accept();
-		 * //wait.implictywait(driver); Thread.sleep(5000);
-		 */
-
-		// driver.get("https://www.slidegeeks.com/component/pago/checkout");
-		// Thread.sleep(2000);
-		// driver.get("https://www.slidegeeks.com/subscriptions");
-		// Thread.sleep(2000);
-		// js.executeScript("window.scrollBy(0,1000)");
-		/*
-		 * WebElement Subscribe_btn1 = driver.findElement(By.xpath(
-		 * "/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div/div[5]/div[3]/span/form/span/button"
-		 * )); js.executeScript("arguments[0].scrollIntoView();",Subscribe_btn1);
-		 * Thread.sleep(2000); Subscribe_btn1.click(); Thread.sleep(6000); try {
-		 * Thread.sleep(1400); // select 2co option WebElement co_btn1 =
-		 * wait.until(ExpectedConditions.elementToBeClickable(By.
-		 * cssSelector("#pg-checkout-billing-payment-form > div > div:nth-child(1) > label"
-		 * ))); Thread.sleep(2000); co_btn1.click(); Thread.sleep(5000); } catch(
-		 * NoSuchElementException popup) { }
-		 * 
-		 * // place order button try {
-		 * 
-		 * WebElement place_order_btn1 = driver.findElement(By.
-		 * cssSelector("body > div.afterBody.checkout-wrapper.main-wrapper.no-left-menu > div.main_wrapper > div > div.checkout-inner-wrapper > div.checkout-box-wrapper.checkout-order > div > div > table > tbody > tr:nth-child(4) > td:nth-child(1) > button.btn.primary-btn.pg-button.pg-checkout-continue"
-		 * )); Thread.sleep(2000);
-		 * js.executeScript("arguments[0].scrollIntoView();",place_order_btn1);
-		 * //js.executeScript("arguments[0].click();", place_order_btn);
-		 * Thread.sleep(2000); place_order_btn1.click(); Thread.sleep(5000); } catch
-		 * (NoSuchElementException popup) { } String
-		 * stripe_page_title1=driver.getTitle(); Thread.sleep(3000);
-		 * System.out.println("Title of the Page is --> "+stripe_page_title1);
-		 * 
-		 * String page_title1="https://checkout.stripe.com/";
-		 * 
-		 * if(page_title1.equalsIgnoreCase(stripe_page_title1)) {
-		 * System.out.println(" user is on the Stripe page");
-		 * log.info("USER IS ON THE STRIPE PAGE"); } else {
-		 * System.out.println("user is on the wrong page");
-		 * log.info("USER IS ON THE WRONG PAGE"); } Thread.sleep(3000); WebElement
-		 * Stripe_email1 = driver.findElement(By.cssSelector("#email"));
-		 * Thread.sleep(2000); Stripe_email1.sendKeys("slidetech.qa@gmail.com");
-		 * Thread.sleep(2000);
-		 * 
-		 * Thread.sleep(5000);
-		 * //driver.get("https://www.slidegeeks.com/component/pago/checkout");
-		 * //Thread.sleep(2000);
-		 * 
-		 * /*String actualTitle1 = "$299.99"; Thread.sleep(1000);
-		 * //wait.implictywait(driver); String expectedTitle1 = "$299.99";
-		 * Thread.sleep(1000); //wait.implictywait(driver);
-		 * Assert.assertEquals(expectedTitle, actualTitle); Thread.sleep(2000);
-		 * js.executeScript("alert('Text $299.99 is present and correct');");
-		 * Thread.sleep(3000); driver.switchTo().alert().accept();
-		 * //wait.implictywait(driver); Thread.sleep(5000);
-		 */
-		// WebElement Stripe_back1 = driver.findElement(By.cssSelector("#root > div >
-		// div > div.App-Overview > header > div > div > a > div > div >
-		// div.Header-backArrowContainer > svg"));
-		// Thread.sleep(2000);
-		// Stripe_back1.click();
 
 	}
 
@@ -785,7 +724,7 @@ public class Stripe_checkout extends SetupClass {
 		WebElement No_Delete = driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/div/div[3]/button[2]"));
 		Thread.sleep(1000);
 		No_Delete.click();
-		
+
 		Thread.sleep(30000);
 		String verifyDeleteAccountMessage = wait.until(
 				ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='alert-message login-sucesmsg']")))
@@ -794,7 +733,6 @@ public class Stripe_checkout extends SetupClass {
 		Thread.sleep(7000);
 		Assert.assertTrue("Your account is not deleted",
 				verifyDeleteAccountMessage.contentEquals("Your Account has been deleted successfully."));
-		
 
 	}
 }
