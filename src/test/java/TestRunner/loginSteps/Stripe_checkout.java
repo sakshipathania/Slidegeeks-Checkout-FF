@@ -687,13 +687,11 @@ public class Stripe_checkout extends SetupClass {
 		Thread.sleep(2000);
 		Stripe_back.click();
 		Thread.sleep(2000);
-		if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
-			Alert alert = driver.switchTo().alert();
-			System.out.println(alert.getText());
-			alert.accept();
-		} else {
-			System.out.println("Alert not exists");
-		}
+		/*
+		 * if (wait.until(ExpectedConditions.alertIsPresent()) != null) { Alert alert =
+		 * driver.switchTo().alert(); System.out.println(alert.getText());
+		 * alert.accept(); } else { System.out.println("Alert not exists"); }
+		 */
 		Thread.sleep(5000);
 
 	}
