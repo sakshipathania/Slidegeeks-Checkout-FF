@@ -93,6 +93,12 @@ public class Coupon extends SetupClass {
 		captcha.sendKeys("Y3Tt6bfwI");
 		Thread.sleep(3000);
 
+		WebElement captcha2 = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#captchtext")));
+		Thread.sleep(3000);
+		captcha2.click();
+
+		// div[@class = 'recaptcha-checkbox-border']
+
 		WebElement register_btn = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));
 		Thread.sleep(3000);
