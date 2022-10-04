@@ -32,8 +32,9 @@ public class Stripe_checkout extends SetupClass {
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='signupclass']")));
 		Thread.sleep(1000);
 		login_signup_btn.click();
-		Thread.sleep(4000);
-
+		Thread.sleep(3000);
+		driver.get("https://www.slidegeeks.com/register?133=958");
+		Thread.sleep(3000);
 		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
 		// Thread.sleep(3000);
 		name.sendKeys("Automated Program");

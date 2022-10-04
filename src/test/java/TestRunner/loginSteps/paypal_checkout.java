@@ -33,9 +33,11 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(1000);
 		login_signup_btn.click();
 
-		Thread.sleep(4000);
+		Thread.sleep(2000);
+		driver.get("https://www.slidegeeks.com/register?173=958");
+		Thread.sleep(3000);
 		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
-	
+
 		name.clear();
 		name.sendKeys("Automated Program");
 		// Thread.sleep(3000);
@@ -78,10 +80,12 @@ public class paypal_checkout extends SetupClass {
 		confirm_passwoed.sendKeys("Geeks@123");
 		Thread.sleep(3000);
 
-		WebElement captcha = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#captchtext")));
-		// Thread.sleep(3000);
-		captcha.sendKeys("Y3Tt6bfwI");
-		Thread.sleep(3000);
+		/*
+		 * WebElement captcha =
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+		 * "#captchtext"))); // Thread.sleep(3000); captcha.sendKeys("Y3Tt6bfwI");
+		 * Thread.sleep(3000);
+		 */
 
 		WebElement register_btn = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));

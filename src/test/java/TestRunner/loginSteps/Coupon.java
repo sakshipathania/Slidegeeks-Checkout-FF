@@ -40,9 +40,13 @@ public class Coupon extends SetupClass {
 
 		WebElement signup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='signupclass']")));
 
-		signup.click();
-		Thread.sleep(2000);
+		// signup.click();
 
+		js.executeScript("arguments[0].click();", signup);
+		Thread.sleep(2000);
+		
+		driver.get("https://www.slidegeeks.com/register?143=058");
+		Thread.sleep(3000);
 		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
 		Thread.sleep(3000);
 		name.sendKeys("Automated Program");
@@ -88,20 +92,28 @@ public class Coupon extends SetupClass {
 		confirm_passwoed.sendKeys("Geeks@123");
 		Thread.sleep(3000);
 
-		WebElement captcha = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#captchtext")));
-		Thread.sleep(3000);
-		captcha.sendKeys("Y3Tt6bfwI");
-		Thread.sleep(3000);
+		/*
+		 * WebElement captcha =
+		 * wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+		 * "#captchtext"))); Thread.sleep(3000); captcha.sendKeys("Y3Tt6bfwI");
+		 * Thread.sleep(3000);
+		 */
 
-		WebElement captcha2 = wait.until(
-				ExpectedConditions.elementToBeClickable(By.xpath("//div[@class = 'recaptcha-checkbox-border']")));
-		Thread.sleep(3000);
-		captcha2.click();
+		/*
+		 * wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(
+		 * "//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha')]"
+		 * )));
+		 * 
+		 * WebElement recaptcha = wait
+		 * .until(ExpectedConditions.elementToBeClickable(By.cssSelector(
+		 * "div.recaptcha-checkbox-checkmark")));
+		 * js.executeScript("arguments[0].click();", recaptcha); Thread.sleep(3000);
+		 */
 
-		WebElement register_btn = wait
-				.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));
-		Thread.sleep(3000);
-		register_btn.click();
+		WebElement register_btn = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//div[@class = 'btn-wrapper login_btn']//a[@title='Sign_up']")));
+		// register_btn.click();
+		js.executeScript("arguments[0].click();", register_btn);
 		Thread.sleep(5000);
 
 		// with login pop-up
