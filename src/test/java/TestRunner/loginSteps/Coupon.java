@@ -24,7 +24,7 @@ public class Coupon extends SetupClass {
 	public void user_is_already_on_Website_Home_Page_cc() throws Throwable {
 		driver.get(AppURL);
 		Thread.sleep(3000);
-		ClearBrowserCache();
+		// ClearBrowserCache();
 
 		Thread.sleep(3000);
 
@@ -44,7 +44,7 @@ public class Coupon extends SetupClass {
 
 		js.executeScript("arguments[0].click();", signup);
 		Thread.sleep(2000);
-		
+
 		driver.get("https://www.slidegeeks.com/register?143=058");
 		Thread.sleep(3000);
 		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#register_name")));
@@ -110,11 +110,11 @@ public class Coupon extends SetupClass {
 		 * js.executeScript("arguments[0].click();", recaptcha); Thread.sleep(3000);
 		 */
 
-		WebElement register_btn = wait.until(ExpectedConditions
-				.elementToBeClickable(By.xpath("//div[@class = 'btn-wrapper login_btn']//a[@title='Sign_up']")));
-		// register_btn.click();
-		js.executeScript("arguments[0].click();", register_btn);
-		Thread.sleep(5000);
+		WebElement register_btn = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".pg-register-button-new")));
+		// Thread.sleep(3000);
+		register_btn.click();
+		Thread.sleep(3000);
 
 		// with login pop-up
 		/*
