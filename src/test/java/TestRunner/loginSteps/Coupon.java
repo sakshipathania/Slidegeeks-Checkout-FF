@@ -31,9 +31,9 @@ public class Coupon extends SetupClass {
 		WebElement pricing = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Pricing']")));
 		pricing.click();
-		Thread.sleep(2000);
-		WebElement Join_now = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(
-				"div[id='Individual'] form[name='hikashop_product_form_205548_hikashop_category_information_menu_117']")));
+		Thread.sleep(3000);
+		WebElement Join_now = wait.until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//div[@id = 'Individual']/div[1]/div[2]/div[3]/span[1]/form[1]/a[1]/span[1]")));
 
 		Join_now.click();
 		Thread.sleep(5000);
@@ -160,8 +160,8 @@ public class Coupon extends SetupClass {
 		// choose a plan
 		driver.get("https://www.slidegeeks.com/subscriptions");
 		Thread.sleep(3000);
-		WebElement Subscribe_btn = driver.findElement(By.cssSelector(
-				"div[id='Individual'] form[name='hikashop_product_form_205548_hikashop_category_information_menu_117']"));
+		WebElement Subscribe_btn = driver
+				.findElement(By.xpath("//div[@id = 'Individual']/div[1]/div[2]/div[3]/span[1]/form[1]/a[1]/span[1]"));
 		js.executeScript("arguments[0].scrollIntoView();", Subscribe_btn);
 		Thread.sleep(2000);
 		Subscribe_btn.click();
@@ -246,7 +246,7 @@ public class Coupon extends SetupClass {
 		Thread.sleep(1000);
 		try {
 
-			WebElement place_order_btn = driver.findElement(By.cssSelector("#hikabtn_checkout_next"));
+			WebElement place_order_btn = driver.findElement(By.xpath("//button[@id='hikabtn_checkout_next']"));
 			Thread.sleep(2000);
 			js.executeScript("arguments[0].scrollIntoView();", place_order_btn);
 			// js.executeScript("arguments[0].click();", place_order_btn);

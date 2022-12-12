@@ -618,18 +618,16 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(3000);
 		WebElement Business_Team = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
 				"//button[@onclick=\"if (!window.__cfRLUnblockHandlers) return false; pricingbutton(event, 'Business')\"]")));
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		js.executeScript("arguments[0].scrollIntoView();", Business_Team);
 		Business_Team.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		// js.executeScript("window.scrollBy(0,1000)");
 		WebElement Subscribe_btn = driver.findElement(By.xpath(
-				"//div[@id='Business']//div[@class='col-box table-col item education_call last']//span[contains(text(),'Join now')]"));
+				"//div[@id='Business']//form[@name='hikashop_product_form_389637_hikashop_category_information_menu_117']//span[contains(text(),'Join now')]"));
 		js.executeScript("arguments[0].scrollIntoView();", Subscribe_btn);
 		Thread.sleep(2000);
 		Subscribe_btn.click();
-		Thread.sleep(2000);
-		;
 
 	}
 
@@ -705,7 +703,7 @@ public class paypal_checkout extends SetupClass {
 		Thread.sleep(1000);
 		try {
 
-			WebElement place_order_btn = driver.findElement(By.cssSelector("#hikabtn_checkout_next"));
+			WebElement place_order_btn = driver.findElement(By.xpath("//button[@id='hikabtn_checkout_next']"));
 			Thread.sleep(2000);
 			js.executeScript("arguments[0].scrollIntoView();", place_order_btn);
 			// js.executeScript("arguments[0].click();", place_order_btn);

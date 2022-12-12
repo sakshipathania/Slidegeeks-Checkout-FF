@@ -653,7 +653,7 @@ public class Stripe_checkout extends SetupClass {
 		// place order button
 		try {
 
-			WebElement place_order_btn = driver.findElement(By.cssSelector("#hikabtn_checkout_next"));
+			WebElement place_order_btn = driver.findElement(By.xpath("//button[@id='hikabtn_checkout_next']"));
 			Thread.sleep(1000);
 			js.executeScript("arguments[0].scrollIntoView();", place_order_btn);
 			// js.executeScript("arguments[0].click();", place_order_btn);

@@ -112,8 +112,8 @@ public class SignUp_Step extends SetupClass {
 		// Apply Coupon
 		driver.get("https://www.slidegeeks.com/subscriptions");
 		Thread.sleep(4000);
-		WebElement Join_now = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(
-				"div[id='Individual'] form[name='hikashop_product_form_205548_hikashop_category_information_menu_117']")));
+		WebElement Join_now = wait.until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//div[@id = 'Individual']/div[1]/div[2]/div[3]/span[1]/form[1]/a[1]/span[1]")));
 		Thread.sleep(3000);
 		Join_now.click();
 		Thread.sleep(3000);
@@ -137,7 +137,7 @@ public class SignUp_Step extends SetupClass {
 		Thread.sleep(3000);
 		// Checkout
 		WebElement place_order_btn = wait
-				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#hikabtn_checkout_next")));
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='hikabtn_checkout_next']")));
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].scrollIntoView();", place_order_btn);
 		// js.executeScript("arguments[0].click();", place_order_btn);
