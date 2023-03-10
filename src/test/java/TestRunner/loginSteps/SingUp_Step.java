@@ -134,7 +134,12 @@ public class SingUp_Step extends SetupClass {
 		Apply_Coupon.click();
 		Thread.sleep(3000);
 
-		System.out.println("copon applied");
+		WebElement verify_Sucess_Message = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//div[@class = 'coupon_applied_msg alert alert-message']"))); //
+		Thread.sleep(3000);
+		String sucess_Message = verify_Sucess_Message.getText();
+		Assert.assertTrue("5off coupon is not applied successfully", sucess_Message.contains("You have successfully applied"));
+		Thread.sleep(3000);
 		// Remove Coupon
 		WebElement Remove_Coupon = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='cancel_coupon']"))); //
